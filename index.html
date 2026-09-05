@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>B&amp;L Tractor | Tree Removal, Mowing &amp; Land Clearing — 806-336-2749</title>
+<meta name="description" content="B&L Tractor: tree removal, acreage mowing, brush hogging, land clearing and dirt work. Owner-operated since 2015. Call 806-336-2749 for a free estimate.">
+<meta name="theme-color" content="#0b1f16">
+<meta property="og:title" content="B&L Tractor — Tree Removal, Mowing & Land Clearing">
+<meta property="og:description" content="Big jobs, small crew, done right. Owner-operated since 2015. Free estimates: 806-336-2749.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b1f16'/%3E%3Ccircle cx='32' cy='32' r='19' fill='none' stroke='%23f5a623' stroke-width='7'/%3E%3Ccircle cx='32' cy='32' r='6' fill='%23f5a623'/%3E%3Cpath d='M32 13v38M13 32h38M18.6 18.6l26.8 26.8M45.4 18.6L18.6 45.4' stroke='%23f5a623' stroke-width='4'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============ TOKENS ============ */
+:root{
+  --forest:#0b1f16; --forest-2:#10291d; --pine:#14532d; --moss:#2f6b3a;
+  --leaf:#7cc242; --lime:#b9e26a;
+  --amber:#f5a623; --amber-2:#ffbf47; --amber-deep:#c97f0a;
+  --cream:#f6f2e8; --sand:#e9e2d0; --ink:#111a14; --mute:#5b665e; --soil:#6b4423;
+  --font-display:'Bebas Neue', Impact, 'Arial Narrow Bold', 'Arial Narrow', sans-serif;
+  --font-body:'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --radius:20px;
+  --ease:cubic-bezier(.22,1,.36,1);
+  --ease-io:cubic-bezier(.65,0,.35,1);
+  --container:1240px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:var(--font-body);color:var(--ink);background:var(--cream);line-height:1.6;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer}
+h1,h2,h3{font-family:var(--font-display);font-weight:400;letter-spacing:.01em;line-height:.95;margin:0}
+p{margin:0}
+::selection{background:var(--amber);color:var(--ink)}
+:focus-visible{outline:3px solid var(--amber);outline-offset:3px;border-radius:6px}
+.container{width:min(var(--container),calc(100% - 2.5rem));margin-inline:auto}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ============ BUTTONS ============ */
+.btn{--bg:var(--amber);--fg:var(--ink);position:relative;display:inline-flex;align-items:center;gap:.65rem;padding:1rem 1.6rem;border-radius:999px;background:var(--bg);color:var(--fg);font-weight:700;font-size:1rem;border:0;overflow:hidden;isolation:isolate;transition:transform .35s var(--ease),box-shadow .35s var(--ease);box-shadow:0 10px 30px -10px rgba(245,166,35,.55);white-space:nowrap}
+.btn svg{width:20px;height:20px;flex:none}
+.btn::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent 30%,rgba(255,255,255,.55) 50%,transparent 70%);transform:translateX(-120%);transition:transform .8s var(--ease);z-index:-1}
+.btn:hover{transform:translateY(-3px);box-shadow:0 18px 40px -12px rgba(245,166,35,.7)}
+.btn:hover::after{transform:translateX(120%)}
+.btn:active{transform:translateY(0) scale(.98)}
+.btn--ghost{--bg:transparent;--fg:#fff;box-shadow:inset 0 0 0 2px rgba(255,255,255,.35)}
+.btn--ghost:hover{box-shadow:inset 0 0 0 2px rgba(255,255,255,.8)}
+.btn--ghost::after{opacity:.3}
+.btn--dark{--bg:var(--forest);--fg:#fff;box-shadow:0 10px 30px -10px rgba(11,31,22,.6)}
+.btn--big{padding:1.3rem 2.2rem;font-size:1.2rem}
+
+/* ============ NAV ============ */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.1rem 0;transition:padding .4s var(--ease),background .4s,box-shadow .4s}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.nav.is-scrolled{padding:.6rem 0;background:rgba(11,31,22,.85);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 10px 40px -20px rgba(0,0,0,.6)}
+.brand{display:flex;align-items:center;gap:.7rem;color:#fff}
+.brand__mark{width:44px;height:44px;flex:none}
+.brand__mark .spin{transform-origin:32px 32px;animation:spin 14s linear infinite}
+.brand__name{font-family:var(--font-display);font-size:1.7rem;line-height:1;letter-spacing:.04em}
+.brand__name small{display:block;font-family:var(--font-body);font-size:.62rem;font-weight:600;letter-spacing:.22em;color:var(--amber);text-transform:uppercase;margin-top:.1rem}
+.nav__links{display:flex;gap:2rem;list-style:none;margin:0;padding:0}
+.nav__links a{color:rgba(255,255,255,.85);font-weight:500;font-size:.95rem;position:relative;padding:.3rem 0}
+.nav__links a::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:2px;background:var(--amber);transform:scaleX(0);transform-origin:right;transition:transform .4s var(--ease)}
+.nav__links a:hover::after{transform:scaleX(1);transform-origin:left}
+.nav__cta{display:inline-flex}
+.nav__cta .btn{padding:.75rem 1.2rem;font-size:.95rem}
+.burger{display:none;width:48px;height:48px;border:0;background:transparent;position:relative;z-index:102}
+.burger span{position:absolute;left:12px;width:24px;height:2px;background:#fff;transition:transform .4s var(--ease),opacity .3s,top .3s}
+.burger span:nth-child(1){top:16px}.burger span:nth-child(2){top:23px}.burger span:nth-child(3){top:30px}
+.burger.is-open span:nth-child(1){top:23px;transform:rotate(45deg)}
+.burger.is-open span:nth-child(2){opacity:0}
+.burger.is-open span:nth-child(3){top:23px;transform:rotate(-45deg)}
+.progress{position:fixed;top:0;left:0;height:3px;width:100%;z-index:101;transform-origin:left;transform:scaleX(0);background:linear-gradient(90deg,var(--amber),var(--lime))}
+@media (max-width:900px){
+  .nav__links,.nav__cta{display:none}
+  .burger{display:block}
+  .nav.menu-open{background:rgba(11,31,22,.97)}
+  .nav.menu-open .nav__links{display:flex;flex-direction:column;position:fixed;inset:0;padding:6.5rem 1.5rem 2rem;gap:.5rem;background:var(--forest)}
+  .nav.menu-open .nav__links a{font-family:var(--font-display);font-size:2.6rem;color:#fff;padding:.4rem 0;transform:translateY(20px);opacity:0;animation:menuIn .6s var(--ease) forwards}
+  .nav.menu-open .nav__links li:nth-child(2) a{animation-delay:.06s}
+  .nav.menu-open .nav__links li:nth-child(3) a{animation-delay:.12s}
+  .nav.menu-open .nav__links li:nth-child(4) a{animation-delay:.18s}
+  .nav.menu-open .nav__links li:nth-child(5) a{animation-delay:.24s}
+  .nav.menu-open .nav__links li.menu-phone{margin-top:auto}
+  .nav.menu-open .nav__links li.menu-phone a{font-family:var(--font-body);font-size:1rem;display:inline-flex;align-items:center;gap:.6rem;background:var(--amber);color:var(--ink);padding:1rem 1.4rem;border-radius:999px;font-weight:700}
+}
+@keyframes menuIn{to{transform:none;opacity:1}}
+@keyframes spin{to{transform:rotate(360deg)}}
+.menu-phone{display:none}
+@media (max-width:900px){.menu-phone{display:block}}
+
+/* ============ HERO ============ */
+.hero{position:relative;min-height:100svh;display:grid;grid-template-columns:100%;align-items:center;color:#fff;overflow:hidden;background:var(--forest);isolation:isolate}
+.hero__scene{position:absolute;inset:0;z-index:-1}
+.hero__scene svg{width:100%;height:100%}
+.hero__shade{position:absolute;inset:0;z-index:0;background:linear-gradient(100deg,rgba(6,20,14,.86) 0%,rgba(6,20,14,.55) 45%,rgba(6,20,14,.05) 75%),linear-gradient(0deg,rgba(6,20,14,.7) 0%,transparent 40%)}
+.hero__content{position:relative;z-index:1;padding:9rem 0 7rem;max-width:760px}
+.eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.8rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--amber)}
+.eyebrow::before{content:"";width:34px;height:2px;background:var(--amber)}
+.hero h1{font-size:clamp(3.6rem,10vw,8.5rem);margin:.9rem 0 1.2rem;text-shadow:0 10px 40px rgba(0,0,0,.35)}
+.hero h1 .line{display:block;overflow:hidden;padding-bottom:.05em}
+.hero h1 .word{display:inline-block;transform:translateY(110%) rotate(4deg);opacity:0;transform-origin:left bottom;transition:transform 1s var(--ease),opacity .6s;margin-right:.18em}
+.hero h1 .word.accent{color:var(--amber)}
+.hero.is-ready h1 .word{transform:none;opacity:1}
+.hero p.lead{font-size:clamp(1.05rem,1.6vw,1.3rem);color:rgba(255,255,255,.82);max-width:560px;margin-bottom:2rem;opacity:0;transform:translateY(20px);transition:all .9s var(--ease) .6s}
+.hero__actions{display:flex;flex-wrap:wrap;gap:.9rem;opacity:0;transform:translateY(20px);transition:all .9s var(--ease) .8s}
+.hero.is-ready p.lead,.hero.is-ready .hero__actions,.hero.is-ready .hero__chips{opacity:1;transform:none}
+.hero__chips{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:2.4rem;opacity:0;transform:translateY(20px);transition:all .9s var(--ease) 1s}
+.chip{display:inline-flex;align-items:center;gap:.5rem;padding:.55rem .95rem;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);font-size:.85rem;font-weight:600;backdrop-filter:blur(8px)}
+.chip svg{width:16px;height:16px;color:var(--lime)}
+.scroll-cue{position:absolute;left:50%;bottom:1.6rem;transform:translateX(-50%);z-index:1;display:flex;flex-direction:column;align-items:center;gap:.4rem;color:rgba(255,255,255,.6);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase}
+.scroll-cue span{width:1px;height:44px;background:linear-gradient(to bottom,var(--amber),transparent);animation:cue 2s var(--ease-io) infinite;transform-origin:top}
+@media (max-width:600px){.hero__actions{flex-direction:column;align-items:stretch}.hero__actions .btn{justify-content:center;white-space:normal;text-align:center}.hero__chips{padding-bottom:3.5rem}.lg-only{display:none}}
+@media (min-width:601px){.sm-only{display:none}}
+@keyframes cue{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* scene animations */
+.cloud{animation:drift linear infinite}
+@keyframes drift{from{transform:translateX(-300px)}to{transform:translateX(1900px)}}
+.sway{transform-box:fill-box;transform-origin:50% 100%;animation:sway 5s ease-in-out infinite}
+@keyframes sway{0%,100%{transform:rotate(-1.4deg)}50%{transform:rotate(1.4deg)}}
+.grass{transform-box:fill-box;transform-origin:50% 100%;animation:grass 3.2s ease-in-out infinite}
+@keyframes grass{0%,100%{transform:skewX(-6deg)}50%{transform:skewX(6deg)}}
+.sun-glow{transform-box:fill-box;transform-origin:center;animation:glow 6s ease-in-out infinite}
+@keyframes glow{0%,100%{transform:scale(1);opacity:.55}50%{transform:scale(1.12);opacity:.8}}
+.tractor{transform:translate(-520px,0)}
+.hero.is-ready .tractor{animation:drive 2.6s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes drive{to{transform:translate(0,0)}}
+.hero.is-ready .tractor.idle{animation:drive 2.6s cubic-bezier(.2,.8,.2,1) forwards,rumble .35s ease-in-out 2.6s infinite}
+@keyframes rumble{0%,100%{transform:translate(0,0)}50%{transform:translate(0,-1.5px)}}
+.wheel-spin{transform-box:fill-box;transform-origin:center;animation:spin 1.1s linear infinite}
+.hero.is-ready .wheel-spin{animation-duration:.5s}
+.puff{transform-box:fill-box;transform-origin:center;opacity:0;animation:puff 2.2s ease-out infinite}
+.puff:nth-child(2){animation-delay:.7s}.puff:nth-child(3){animation-delay:1.4s}
+@keyframes puff{0%{transform:translate(0,0) scale(.5);opacity:.7}100%{transform:translate(-40px,-110px) scale(2.4);opacity:0}}
+.dust{transform-box:fill-box;transform-origin:center;opacity:0;animation:dust 1.4s ease-out infinite}
+.dust:nth-child(2){animation-delay:.45s}.dust:nth-child(3){animation-delay:.9s}
+@keyframes dust{0%{transform:translate(0,0) scale(.4);opacity:.6}100%{transform:translate(-70px,-30px) scale(2);opacity:0}}
+.bird{animation:fly 38s linear infinite}
+.bird:nth-child(2){animation-delay:-14s}.bird:nth-child(3){animation-delay:-27s}
+@keyframes fly{from{transform:translate(-120px,0)}to{transform:translate(1800px,-60px)}}
+.flap{transform-box:fill-box;transform-origin:center;animation:flap .5s ease-in-out infinite alternate}
+@keyframes flap{from{transform:scaleY(1)}to{transform:scaleY(.2)}}
+
+/* ============ MARQUEE ============ */
+.marquee{background:var(--amber);color:var(--ink);overflow:hidden;padding:1rem 0;font-family:var(--font-display);font-size:clamp(1.4rem,2.6vw,2.2rem);letter-spacing:.06em;position:relative;z-index:2}
+.marquee__track{display:flex;gap:3rem;width:max-content;animation:marquee 28s linear infinite}
+.marquee__track span{display:flex;align-items:center;gap:3rem;white-space:nowrap}
+.marquee__track i{width:10px;height:10px;background:var(--ink);border-radius:50%;flex:none}
+@keyframes marquee{to{transform:translateX(-50%)}}
+.marquee:hover .marquee__track{animation-play-state:paused}
+
+/* ============ SECTIONS ============ */
+.section{padding:clamp(5rem,10vw,8.5rem) 0;position:relative}
+.section__head{max-width:720px;margin-bottom:3.5rem}
+.section__head h2{font-size:clamp(2.8rem,6vw,5.2rem);margin:.6rem 0 1rem}
+.section__head p{font-size:1.1rem;color:var(--mute);max-width:600px}
+.on-dark{background:var(--forest);color:#fff}
+.on-dark .section__head p{color:rgba(255,255,255,.72)}
+.on-dark .eyebrow{color:var(--lime)}.on-dark .eyebrow::before{background:var(--lime)}
+
+/* reveal */
+[data-reveal]{opacity:0;transform:translateY(34px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+[data-reveal].in{opacity:1;transform:none}
+[data-reveal="left"]{transform:translateX(-40px)}
+[data-reveal="right"]{transform:translateX(40px)}
+[data-reveal="scale"]{transform:scale(.92)}
+@media (prefers-reduced-motion:reduce){
+  [data-reveal]{opacity:1;transform:none;transition:none}
+  .hero h1 .word,.hero p.lead,.hero__actions,.hero__chips{opacity:1;transform:none;transition:none}
+  .tractor,.hero.is-ready .tractor,.hero.is-ready .tractor.idle{animation:none;transform:none}
+  .cloud,.sway,.grass,.sun-glow,.wheel-spin,.puff,.dust,.bird,.flap,.marquee__track,.brand__mark .spin,.scroll-cue span{animation:none!important}
+  .puff,.dust{opacity:0}
+  html{scroll-behavior:auto}
+}
+
+/* ============ SERVICES ============ */
+.services{background:var(--cream)}
+.services__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:1.4rem}
+.card{background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:0 1px 0 rgba(17,26,20,.06),0 20px 50px -30px rgba(17,26,20,.35);transition:transform .5s var(--ease),box-shadow .5s var(--ease);display:flex;flex-direction:column;position:relative}
+.card:hover{transform:translateY(-8px);box-shadow:0 1px 0 rgba(17,26,20,.06),0 40px 70px -30px rgba(17,26,20,.45)}
+.card__art{aspect-ratio:16/10;background:linear-gradient(160deg,#153f27,#0b1f16);position:relative;overflow:hidden}
+.card__art svg{width:100%;height:100%}
+.card__art::after{content:"";position:absolute;inset:0;background:radial-gradient(60% 60% at 70% 20%,rgba(245,166,35,.22),transparent 70%);pointer-events:none}
+.card__body{padding:1.6rem 1.6rem 1.8rem;display:flex;flex-direction:column;gap:.7rem;flex:1}
+.card__body h3{font-size:2rem;display:flex;align-items:baseline;gap:.6rem}
+.card__body h3 em{font-style:normal;font-size:.9rem;font-family:var(--font-body);font-weight:700;color:var(--amber-deep);letter-spacing:.14em}
+.card__body p{color:var(--mute);font-size:.98rem}
+.card__list{list-style:none;padding:0;margin:.4rem 0 0;display:grid;gap:.4rem}
+.card__list li{display:flex;gap:.55rem;align-items:flex-start;font-size:.92rem;font-weight:500}
+.card__list svg{width:18px;height:18px;flex:none;color:var(--moss);margin-top:.15rem}
+.card__link{margin-top:auto;padding-top:1rem;display:inline-flex;align-items:center;gap:.5rem;font-weight:700;color:var(--forest);font-size:.95rem}
+.card__link svg{width:18px;height:18px;transition:transform .4s var(--ease)}
+.card:hover .card__link svg{transform:translateX(6px)}
+
+/* card art hover animations */
+.art-tree .fall{transform-box:fill-box;transform-origin:50% 100%;transition:transform 1.4s cubic-bezier(.6,0,.9,.4)}
+.card:hover .art-tree .fall{transform:rotate(78deg)}
+.art-tree .saw{transform-box:fill-box;transform-origin:center;transition:transform .3s}
+.card:hover .art-tree .saw{animation:sawShake .08s linear infinite}
+@keyframes sawShake{0%{transform:translate(0,0)}50%{transform:translate(1px,-1px)}100%{transform:translate(-1px,1px)}}
+.art-trim .branch{transform-box:fill-box;transform-origin:0% 50%;transition:transform 1s var(--ease),opacity .8s}
+.card:hover .art-trim .branch{transform:translate(20px,60px) rotate(40deg);opacity:0}
+.card:hover .art-trim .branch.b2{transition-delay:.25s;transform:translate(-20px,60px) rotate(-40deg)}
+.art-trim .shears{transform-box:fill-box;transform-origin:center;transition:transform .8s var(--ease)}
+.card:hover .art-trim .shears{transform:translate(0,-22px) rotate(-12deg)}
+.art-clear .mini-tractor{transition:transform 2s cubic-bezier(.3,.7,.3,1)}
+.card:hover .art-clear .mini-tractor{transform:translateX(150px)}
+.art-clear .bush{transform-box:fill-box;transform-origin:50% 100%;transition:transform .5s var(--ease-io)}
+.card:hover .art-clear .bush.b1{transform:scaleY(.08);transition-delay:.55s}
+.card:hover .art-clear .bush.b2{transform:scaleY(.08);transition-delay:.95s}
+.card:hover .art-clear .bush.b3{transform:scaleY(.08);transition-delay:1.35s}
+.art-clear .mini-wheel{transform-box:fill-box;transform-origin:center}
+.card:hover .art-clear .mini-wheel{animation:spin .6s linear infinite}
+.art-mow .stripe{stroke-dasharray:400;stroke-dashoffset:400;transition:stroke-dashoffset 1.6s var(--ease)}
+.card:hover .art-mow .stripe{stroke-dashoffset:0}
+.card:hover .art-mow .stripe:nth-child(2){transition-delay:.15s}
+.card:hover .art-mow .stripe:nth-child(3){transition-delay:.3s}
+.card:hover .art-mow .stripe:nth-child(4){transition-delay:.45s}
+.art-mow .mower{transition:transform 1.8s var(--ease)}
+.card:hover .art-mow .mower{transform:translateX(170px)}
+.art-mow .blade{transform-box:fill-box;transform-origin:center}
+.card:hover .art-mow .blade{animation:spin .25s linear infinite}
+.art-dirt .bumpy{transition:opacity .8s,transform .8s var(--ease)}
+.art-dirt .flat{opacity:0;transition:opacity .8s .4s}
+.card:hover .art-dirt .bumpy{opacity:0;transform:translateY(10px)}
+.card:hover .art-dirt .flat{opacity:1}
+.art-dirt .blade-tractor{transition:transform 1.8s var(--ease)}
+.card:hover .art-dirt .blade-tractor{transform:translateX(140px)}
+.art-storm .log{transition:transform 1.1s var(--ease)}
+.card:hover .art-storm .log.l1{transform:translate(120px,-32px) rotate(-8deg)}
+.card:hover .art-storm .log.l2{transform:translate(110px,-46px) rotate(4deg);transition-delay:.2s}
+.card:hover .art-storm .log.l3{transform:translate(126px,-58px) rotate(-3deg);transition-delay:.4s}
+.art-storm .bolt{opacity:0;transform-box:fill-box;transform-origin:top;animation:bolt 4s ease-in-out infinite}
+@keyframes bolt{0%,84%,100%{opacity:0}86%,90%{opacity:1}88%{opacity:.3}}
+
+/* ============ BEFORE / AFTER ============ */
+.compare{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:16/9;box-shadow:0 40px 80px -40px rgba(0,0,0,.7);user-select:none;touch-action:pan-y}
+.compare svg{position:absolute;inset:0;width:100%;height:100%}
+.compare__after{clip-path:inset(0 0 0 50%)}
+.compare__handle{position:absolute;top:0;bottom:0;left:50%;width:0;z-index:2;pointer-events:none}
+.compare__handle::before{content:"";position:absolute;top:0;bottom:0;left:-2px;width:4px;background:#fff;box-shadow:0 0 20px rgba(0,0,0,.4)}
+.compare__knob{position:absolute;top:50%;left:0;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;background:var(--amber);display:grid;place-items:center;box-shadow:0 10px 30px -8px rgba(0,0,0,.6);color:var(--ink)}
+.compare__knob svg{width:30px;height:30px;position:static}
+.compare input[type=range]{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0;z-index:3;-webkit-appearance:none}
+.compare__label{position:absolute;top:1rem;padding:.45rem .9rem;border-radius:999px;background:rgba(0,0,0,.55);color:#fff;font-size:.75rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;z-index:2;backdrop-filter:blur(6px)}
+.compare__label--before{left:1rem}.compare__label--after{right:1rem;background:var(--amber);color:var(--ink)}
+.compare-wrap{display:grid;grid-template-columns:1fr 1.7fr;gap:3rem;align-items:center}
+.compare-wrap .section__head{margin-bottom:0}
+.compare-note{display:flex;gap:.8rem;align-items:center;margin-top:1.4rem;color:rgba(255,255,255,.7);font-size:.9rem}
+.compare-note svg{width:22px;height:22px;color:var(--amber)}
+@media (max-width:960px){.compare-wrap{grid-template-columns:1fr}}
+
+/* ============ PROCESS ============ */
+.process{background:var(--sand)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;position:relative;counter-reset:step}
+.steps::before{content:"";position:absolute;top:56px;left:8%;right:8%;height:2px;background:repeating-linear-gradient(90deg,var(--forest) 0 10px,transparent 10px 20px);opacity:.25}
+.step{background:#fff;border-radius:var(--radius);padding:2rem;position:relative;box-shadow:0 20px 50px -35px rgba(17,26,20,.5);transition:transform .5s var(--ease)}
+.step:hover{transform:translateY(-6px)}
+.step__num{width:64px;height:64px;border-radius:50%;background:var(--forest);color:var(--amber);font-family:var(--font-display);font-size:2rem;display:grid;place-items:center;margin-bottom:1.4rem;position:relative}
+.step__num::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:2px solid var(--amber);opacity:0;transform:scale(.8);transition:all .5s var(--ease)}
+.step:hover .step__num::after{opacity:1;transform:scale(1)}
+.step h3{font-size:1.9rem;margin-bottom:.5rem}
+.step p{color:var(--mute);font-size:.97rem}
+.step a{font-weight:700;color:var(--forest);text-decoration:underline;text-decoration-color:var(--amber);text-underline-offset:4px;text-decoration-thickness:2px}
+@media (max-width:820px){.steps{grid-template-columns:1fr}.steps::before{display:none}}
+
+/* ============ ABOUT ============ */
+.about{background:var(--forest);color:#fff;overflow:hidden}
+.about__grid{display:grid;grid-template-columns:1.1fr .9fr;gap:4rem;align-items:center}
+.about h2{font-size:clamp(2.8rem,6vw,5rem);margin:.6rem 0 1.2rem}
+.about p{color:rgba(255,255,255,.78);font-size:1.08rem;margin-bottom:1rem;max-width:560px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.4rem}
+.stat{padding:1.3rem 1.2rem;border-radius:16px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1)}
+.stat b{display:block;font-family:var(--font-display);font-size:3rem;line-height:1;color:var(--amber);font-weight:400}
+.stat span{font-size:.82rem;color:rgba(255,255,255,.7);font-weight:500;letter-spacing:.04em}
+.about__art{position:relative}
+.about__art svg{width:100%;height:auto;filter:drop-shadow(0 40px 60px rgba(0,0,0,.5))}
+.badge-ring{transform-box:fill-box;transform-origin:center;animation:spin 30s linear infinite}
+.spotlight{position:absolute;inset:0;pointer-events:none;background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(245,166,35,.13),transparent 60%);transition:opacity .4s;opacity:0}
+.on-dark:hover .spotlight{opacity:1}
+@media (max-width:960px){.about__grid{grid-template-columns:1fr}.about__art{max-width:460px;margin:0 auto}}
+@media (max-width:560px){.stats{grid-template-columns:1fr 1fr}}
+
+/* ============ WHY ============ */
+.why{background:var(--cream)}
+.why__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem}
+.why__item{padding:1.8rem;border-radius:var(--radius);background:#fff;border:1px solid rgba(17,26,20,.06);display:flex;flex-direction:column;gap:.8rem;transition:transform .5s var(--ease),border-color .5s}
+.why__item:hover{transform:translateY(-6px);border-color:var(--amber)}
+.why__icon{width:54px;height:54px;border-radius:14px;background:linear-gradient(140deg,var(--amber),var(--amber-2));display:grid;place-items:center;color:var(--ink)}
+.why__icon svg{width:26px;height:26px}
+.why__item h3{font-size:1.7rem}
+.why__item p{color:var(--mute);font-size:.95rem}
+
+/* ============ CTA ============ */
+.cta{background:var(--forest);color:#fff;text-align:center;position:relative;overflow:hidden;isolation:isolate}
+.cta::before{content:"";position:absolute;inset:-40%;background:conic-gradient(from 0deg at 50% 50%,transparent 0 80%,rgba(245,166,35,.12) 88%,transparent 96%);animation:spin 26s linear infinite;z-index:-1}
+.cta__phone{font-family:var(--font-display);font-size:clamp(3.2rem,11vw,9rem);line-height:1;color:var(--amber);display:inline-block;margin:1rem 0 .5rem;letter-spacing:.02em;position:relative}
+.cta__phone::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:6px;background:var(--amber);transform:scaleX(0);transition:transform .6s var(--ease);transform-origin:left;border-radius:3px}
+.cta__phone:hover::after{transform:scaleX(1)}
+.cta h2{font-size:clamp(2.6rem,6vw,5rem)}
+.cta p{color:rgba(255,255,255,.75);font-size:1.1rem;max-width:560px;margin:.6rem auto 2rem}
+.cta__actions{display:flex;justify-content:center;flex-wrap:wrap;gap:1rem}
+
+/* ============ FOOTER ============ */
+.footer{background:#071510;color:rgba(255,255,255,.7);padding:3.5rem 0 2rem;font-size:.92rem}
+.footer__grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2.5rem;margin-bottom:2.5rem}
+.footer h4{font-family:var(--font-display);font-size:1.3rem;letter-spacing:.06em;color:#fff;margin:0 0 .8rem}
+.footer ul{list-style:none;margin:0;padding:0;display:grid;gap:.45rem}
+.footer a:hover{color:var(--amber)}
+.footer__bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:1.4rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.6rem;font-size:.82rem;color:rgba(255,255,255,.5)}
+@media (max-width:760px){.footer__grid{grid-template-columns:1fr}}
+
+/* ============ FLOATING CALL (mobile) ============ */
+.float-call{position:fixed;right:1rem;bottom:1rem;z-index:90;display:none}
+@media (max-width:900px){.float-call{display:block}.float-call .btn{box-shadow:0 12px 30px -8px rgba(0,0,0,.6),0 0 0 6px rgba(245,166,35,.25);animation:pulse 2.4s ease-in-out infinite}}
+@keyframes pulse{0%,100%{box-shadow:0 12px 30px -8px rgba(0,0,0,.6),0 0 0 0 rgba(245,166,35,.45)}50%{box-shadow:0 12px 30px -8px rgba(0,0,0,.6),0 0 0 14px rgba(245,166,35,0)}}
+</style>
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="container nav__inner">
+    <a href="#top" class="brand" aria-label="B&L Tractor home">
+      <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#f5a623"/>
+        <g class="spin" fill="none" stroke="#0b1f16" stroke-width="5">
+          <circle cx="32" cy="32" r="18"/>
+          <path d="M32 14v36M14 32h36M19.3 19.3l25.4 25.4M44.7 19.3L19.3 44.7"/>
+        </g>
+        <circle cx="32" cy="32" r="6" fill="#0b1f16"/>
+      </svg>
+      <span class="brand__name">B&amp;L Tractor<small>Mowing &amp; Tree Removal</small></span>
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav__links" id="menu">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#results">Results</a></li>
+        <li><a href="#process">How it works</a></li>
+        <li><a href="#about">About</a></li>
+        <li class="menu-phone"><a href="tel:+18063362749"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.9 2.1z"/></svg>Call 806-336-2749</a></li>
+      </ul>
+    </nav>
+    <div class="nav__cta">
+      <a class="btn" href="tel:+18063362749" data-magnetic>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.9 2.1z"/></svg>
+        806-336-2749
+      </a>
+    </div>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+  <div class="hero__scene" aria-hidden="true">
+    <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice">
+      <defs>
+        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#06140e"/>
+          <stop offset=".45" stop-color="#0e3423"/>
+          <stop offset=".78" stop-color="#2a5b2f"/>
+          <stop offset="1" stop-color="#c98a2c"/>
+        </linearGradient>
+        <radialGradient id="sunGrad" cx=".5" cy=".5" r=".5">
+          <stop offset="0" stop-color="#fff3c4"/>
+          <stop offset=".6" stop-color="#ffbf47"/>
+          <stop offset="1" stop-color="#f5a623"/>
+        </radialGradient>
+        <radialGradient id="glowGrad" cx=".5" cy=".5" r=".5">
+          <stop offset="0" stop-color="#ffbf47" stop-opacity=".9"/>
+          <stop offset="1" stop-color="#ffbf47" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="field" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#3d8a3e"/>
+          <stop offset="1" stop-color="#173e25"/>
+        </linearGradient>
+        <linearGradient id="hillFar" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#1b4a2f"/>
+          <stop offset="1" stop-color="#0f3323"/>
+        </linearGradient>
+        <linearGradient id="hillMid" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#255d33"/>
+          <stop offset="1" stop-color="#143d26"/>
+        </linearGradient>
+        <symbol id="pine" viewBox="0 0 100 160">
+          <rect x="44" y="120" width="12" height="40" fill="#3a2414"/>
+          <path d="M50 0 L88 62 H66 L94 104 H70 L100 140 H0 L30 104 H6 L34 62 H12 Z"/>
+        </symbol>
+        <symbol id="oak" viewBox="0 0 160 180">
+          <rect x="70" y="120" width="20" height="60" rx="4" fill="#3a2414"/>
+          <ellipse cx="80" cy="75" rx="72" ry="52"/>
+          <ellipse cx="40" cy="95" rx="40" ry="36"/>
+          <ellipse cx="120" cy="95" rx="42" ry="38"/>
+          <ellipse cx="80" cy="45" rx="45" ry="40"/>
+        </symbol>
+      </defs>
+
+      <rect width="1600" height="900" fill="url(#sky)"/>
+
+      <!-- stars fading into dusk -->
+      <g fill="#fff" opacity=".35">
+        <circle cx="160" cy="90" r="1.5"/><circle cx="420" cy="140" r="1.2"/><circle cx="700" cy="60" r="1.6"/><circle cx="980" cy="120" r="1.1"/><circle cx="1300" cy="70" r="1.4"/><circle cx="1500" cy="180" r="1.2"/><circle cx="260" cy="230" r="1"/><circle cx="1120" cy="220" r="1.3"/>
+      </g>
+
+      <!-- sun -->
+      <g data-depth=".08">
+        <circle class="sun-glow" cx="1240" cy="500" r="230" fill="url(#glowGrad)"/>
+        <circle cx="1240" cy="500" r="92" fill="url(#sunGrad)"/>
+      </g>
+
+      <!-- clouds -->
+      <g data-depth=".12" fill="#fff" opacity=".07">
+        <g class="cloud" style="animation-duration:95s">
+          <ellipse cx="200" cy="200" rx="120" ry="28"/><ellipse cx="260" cy="185" rx="70" ry="30"/>
+        </g>
+        <g class="cloud" style="animation-duration:130s;animation-delay:-60s">
+          <ellipse cx="0" cy="300" rx="160" ry="30"/><ellipse cx="80" cy="282" rx="80" ry="34"/>
+        </g>
+        <g class="cloud" style="animation-duration:110s;animation-delay:-30s">
+          <ellipse cx="100" cy="120" rx="90" ry="20"/>
+        </g>
+      </g>
+
+      <!-- birds -->
+      <g stroke="#fff" stroke-width="2" fill="none" opacity=".55" stroke-linecap="round">
+        <g class="bird"><g class="flap" transform="translate(0,260)"><path d="M0 0q7 -8 14 0q7 -8 14 0"/></g></g>
+        <g class="bird"><g class="flap" transform="translate(40,300) scale(.7)"><path d="M0 0q7 -8 14 0q7 -8 14 0"/></g></g>
+        <g class="bird"><g class="flap" transform="translate(-30,230) scale(.85)"><path d="M0 0q7 -8 14 0q7 -8 14 0"/></g></g>
+      </g>
+
+      <!-- far hills -->
+      <g data-depth=".18">
+        <path d="M0 610 C220 540 480 570 760 545 C1040 520 1300 590 1600 560 L1600 760 L0 760Z" fill="url(#hillFar)"/>
+        <!-- far treeline -->
+        <g fill="#0a2619">
+          <use href="#pine" x="20" y="560" width="46" height="74"/><use href="#pine" x="70" y="548" width="54" height="86"/><use href="#pine" x="130" y="556" width="44" height="70"/>
+          <use href="#pine" x="300" y="545" width="50" height="80"/><use href="#pine" x="350" y="552" width="42" height="68"/>
+          <use href="#pine" x="520" y="540" width="46" height="74"/><use href="#pine" x="565" y="530" width="56" height="90"/><use href="#pine" x="620" y="545" width="44" height="70"/>
+          <use href="#oak" x="820" y="520" width="90" height="100"/>
+          <use href="#pine" x="1380" y="560" width="46" height="74"/><use href="#pine" x="1430" y="548" width="52" height="84"/><use href="#pine" x="1490" y="558" width="44" height="70"/>
+        </g>
+      </g>
+
+      <!-- mid hills -->
+      <g data-depth=".3">
+        <path d="M0 680 C300 620 600 660 900 630 C1200 600 1400 660 1600 640 L1600 800 L0 800Z" fill="url(#hillMid)"/>
+        <g fill="#0f3522">
+          <g class="sway" style="animation-delay:-1s"><use href="#oak" x="1180" y="520" width="170" height="190"/></g>
+          <g class="sway" style="animation-delay:-2.5s"><use href="#pine" x="1350" y="500" width="90" height="150"/></g>
+          <g class="sway" style="animation-delay:-.5s"><use href="#pine" x="1420" y="520" width="70" height="120"/></g>
+          <g class="sway" style="animation-delay:-3.2s"><use href="#pine" x="60" y="560" width="80" height="130"/></g>
+        </g>
+      </g>
+
+      <!-- field -->
+      <g data-depth=".45">
+        <path d="M0 700 C400 660 900 720 1600 680 L1600 900 L0 900Z" fill="url(#field)"/>
+        <!-- mow stripes -->
+        <g opacity=".12" fill="#fff">
+          <path d="M0 740 L1600 700 L1600 730 L0 770Z"/>
+          <path d="M0 800 L1600 760 L1600 790 L0 830Z"/>
+          <path d="M0 860 L1600 820 L1600 850 L0 890Z"/>
+        </g>
+      </g>
+
+      <!-- tractor (position on field) -->
+      <g transform="translate(1090,718)">
+        <g class="tractor idle">
+          <!-- mowed stripe following the tractor -->
+          <rect x="-2200" y="-12" width="2080" height="26" rx="13" fill="#b9e26a" opacity=".22"/>
+          <!-- brush hog -->
+          <g>
+            <line x1="-78" y1="-72" x2="-130" y2="-40" stroke="#2a2a2a" stroke-width="9" stroke-linecap="round"/>
+            <rect x="-190" y="-42" width="108" height="30" rx="5" fill="#3a3a3a"/>
+            <rect x="-190" y="-42" width="108" height="8" rx="3" fill="#555"/>
+            <circle cx="-172" cy="-10" r="12" fill="#1c1c1c"/><circle cx="-172" cy="-10" r="5" fill="#666"/>
+          </g>
+          <!-- dust -->
+          <g fill="#c9b28a">
+            <circle class="dust" cx="-40" cy="-6" r="9"/><circle class="dust" cx="-30" cy="-4" r="7"/><circle class="dust" cx="-50" cy="-8" r="8"/>
+          </g>
+          <!-- rear wheel -->
+          <g>
+            <circle cx="0" cy="-64" r="64" fill="#1c1c1c"/>
+            <g class="wheel-spin">
+              <circle cx="0" cy="-64" r="58" fill="none" stroke="#333" stroke-width="9" stroke-dasharray="9 11"/>
+              <circle cx="0" cy="-64" r="40" fill="#f5a623"/>
+              <g stroke="#b87a12" stroke-width="7" stroke-linecap="round">
+                <line x1="0" y1="-64" x2="0" y2="-98"/><line x1="0" y1="-64" x2="29" y2="-47"/><line x1="0" y1="-64" x2="-29" y2="-47"/>
+                <line x1="0" y1="-64" x2="0" y2="-30"/><line x1="0" y1="-64" x2="29" y2="-81"/><line x1="0" y1="-64" x2="-29" y2="-81"/>
+              </g>
+              <circle cx="0" cy="-64" r="11" fill="#333"/>
+            </g>
+          </g>
+          <!-- chassis -->
+          <rect x="-40" y="-122" width="180" height="44" rx="8" fill="#2f7d3a"/>
+          <!-- fender -->
+          <path d="M-76 -64 A76 76 0 0 1 76 -64 L66 -64 A66 66 0 0 0 -66 -64Z" fill="#2f7d3a"/>
+          <path d="M-76 -64 A76 76 0 0 1 76 -64 L66 -64 A66 66 0 0 0 -66 -64Z" fill="#000" opacity=".15"/>
+          <!-- hood -->
+          <rect x="34" y="-152" width="116" height="46" rx="10" fill="#3a9a46"/>
+          <rect x="34" y="-152" width="116" height="9" rx="4" fill="#2f7d3a"/>
+          <rect x="138" y="-142" width="12" height="32" rx="3" fill="#1c1c1c"/>
+          <circle cx="146" cy="-128" r="6" fill="#ffe08a"/>
+          <!-- exhaust -->
+          <rect x="50" y="-214" width="11" height="64" rx="3" fill="#333"/>
+          <rect x="47" y="-218" width="17" height="8" rx="3" fill="#444"/>
+          <g fill="#d9d9d9" opacity=".8">
+            <circle class="puff" cx="55" cy="-224" r="9"/><circle class="puff" cx="55" cy="-224" r="9"/><circle class="puff" cx="55" cy="-224" r="9"/>
+          </g>
+          <!-- cab -->
+          <rect x="-64" y="-232" width="104" height="90" rx="12" fill="#2f7d3a"/>
+          <rect x="-54" y="-222" width="84" height="62" rx="7" fill="#bfe6ff" opacity=".9"/>
+          <path d="M-54 -222 L-10 -160 L-54 -160Z" fill="#fff" opacity=".3"/>
+          <!-- driver -->
+          <g>
+            <circle cx="-8" cy="-200" r="10" fill="#3a2414"/>
+            <path d="M-24 -160 Q-8 -190 8 -160Z" fill="#c95b1f"/>
+            <rect x="-22" y="-208" width="28" height="7" rx="3" fill="#f5a623"/>
+          </g>
+          <rect x="-72" y="-240" width="120" height="13" rx="5" fill="#1f5c2a"/>
+          <!-- steps -->
+          <rect x="-50" y="-30" width="30" height="6" rx="2" fill="#333"/>
+          <!-- front wheel -->
+          <g>
+            <circle cx="120" cy="-40" r="40" fill="#1c1c1c"/>
+            <g class="wheel-spin">
+              <circle cx="120" cy="-40" r="35" fill="none" stroke="#333" stroke-width="7" stroke-dasharray="7 9"/>
+              <circle cx="120" cy="-40" r="24" fill="#f5a623"/>
+              <g stroke="#b87a12" stroke-width="5" stroke-linecap="round">
+                <line x1="120" y1="-40" x2="120" y2="-60"/><line x1="120" y1="-40" x2="137" y2="-30"/><line x1="120" y1="-40" x2="103" y2="-30"/>
+              </g>
+              <circle cx="120" cy="-40" r="7" fill="#333"/>
+            </g>
+          </g>
+        </g>
+      </g>
+
+      <!-- foreground trees -->
+      <g data-depth=".6" fill="#0a2a1b">
+        <g class="sway" style="animation-delay:-1.8s"><use href="#oak" x="-30" y="470" width="300" height="340"/></g>
+        <g class="sway" style="animation-delay:-4s"><use href="#pine" x="1480" y="420" width="170" height="300"/></g>
+      </g>
+
+      <!-- foreground grass -->
+      <g data-depth=".7" fill="#1b4a2a">
+        <g class="grass" style="animation-delay:-.4s"><path d="M120 900 q-6 -60 10 -110 q4 60 20 110Z"/><path d="M150 900 q2 -50 22 -90 q-4 50 -2 90Z"/></g>
+        <g class="grass" style="animation-delay:-1.2s"><path d="M420 900 q-8 -55 6 -100 q6 55 22 100Z"/><path d="M450 900 q0 -40 18 -75 q-2 40 0 75Z"/></g>
+        <g class="grass" style="animation-delay:-2s"><path d="M900 900 q-6 -50 12 -95 q4 50 18 95Z"/></g>
+        <g class="grass" style="animation-delay:-.9s"><path d="M1240 900 q-10 -60 6 -115 q8 60 26 115Z"/><path d="M1275 900 q2 -45 20 -80 q-4 45 -2 80Z"/></g>
+        <g class="grass" style="animation-delay:-2.6s"><path d="M1500 900 q-6 -50 10 -95 q6 50 20 95Z"/></g>
+        <g class="grass" style="animation-delay:-1.5s"><path d="M680 900 q-4 -40 10 -70 q4 40 14 70Z"/></g>
+      </g>
+    </svg>
+  </div>
+  <div class="hero__shade" aria-hidden="true"></div>
+
+  <div class="container hero__content">
+    <span class="eyebrow">Tree removal · Mowing · Tractor work</span>
+    <h1 id="headline">
+      <span class="line"><span class="word">Big</span><span class="word">jobs.</span></span>
+      <span class="line"><span class="word">Small</span><span class="word">crew.</span></span>
+      <span class="line"><span class="word accent">Done</span><span class="word accent">right.</span></span>
+    </h1>
+    <p class="lead">B&amp;L Tractor takes the overgrown, the dangerous and the just-plain-ugly off your property. Trees down, brush cleared, acreage mowed. Owner on every job since 2015.</p>
+    <div class="hero__actions">
+      <a class="btn btn--big" href="tel:+18063362749" data-magnetic>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.9 2.1z"/></svg>
+        <span class="lg-only">Free estimate · </span><span class="sm-only">Call </span>806-336-2749
+      </a>
+      <a class="btn btn--ghost btn--big" href="#services" data-magnetic>See what we do
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      </a>
+    </div>
+    <div class="hero__chips">
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Free estimates</span>
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Owner-operated since 2015</span>
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Serving the Texas Panhandle</span>
+    </div>
+  </div>
+  <div class="scroll-cue" aria-hidden="true">Scroll<span></span></div>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span>Tree Removal<i></i>Acreage Mowing<i></i>Brush Hogging<i></i>Land Clearing<i></i>Dirt Work<i></i>Storm Cleanup<i></i>Free Estimates<i></i></span>
+    <span>Tree Removal<i></i>Acreage Mowing<i></i>Brush Hogging<i></i>Land Clearing<i></i>Dirt Work<i></i>Storm Cleanup<i></i>Free Estimates<i></i></span>
+  </div>
+</div>
+
+<!-- ============ SERVICES ============ -->
+<section class="section services" id="services">
+  <div class="container">
+    <div class="section__head" data-reveal>
+      <span class="eyebrow">What we do</span>
+      <h2>Trees, brush, dirt &amp; acreage. Handled.</h2>
+      <p>Hover a card. That's roughly what your property looks like before and after we show up.</p>
+    </div>
+
+    <div class="services__grid">
+
+      <!-- Tree removal -->
+      <article class="card" data-reveal data-delay="0">
+        <div class="card__art">
+          <svg class="art-tree" viewBox="0 0 320 200" aria-hidden="true">
+            <rect width="320" height="200" fill="url(#cardSky1)"/>
+            <defs>
+              <linearGradient id="cardSky1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#153f27"/><stop offset="1" stop-color="#0b1f16"/></linearGradient>
+            </defs>
+            <ellipse cx="160" cy="190" rx="200" ry="26" fill="#245a31"/>
+            <g class="fall">
+              <rect x="150" y="90" width="20" height="90" rx="4" fill="#4a2f1a"/>
+              <ellipse cx="160" cy="76" rx="58" ry="40" fill="#2f8f46"/>
+              <ellipse cx="128" cy="92" rx="30" ry="24" fill="#3aa650"/>
+              <ellipse cx="192" cy="92" rx="30" ry="24" fill="#2b7f3f"/>
+              <ellipse cx="160" cy="52" rx="36" ry="28" fill="#3aa650"/>
+            </g>
+            <rect x="150" y="164" width="20" height="18" fill="#4a2f1a"/>
+            <g transform="translate(72,140)"><g class="saw">
+              <rect x="0" y="6" width="34" height="18" rx="4" fill="#f5a623"/>
+              <rect x="6" y="0" width="14" height="10" rx="3" fill="#c97f0a"/>
+              <rect x="32" y="12" width="70" height="7" rx="3" fill="#ccc"/>
+              <rect x="32" y="10" width="70" height="3" fill="#888"/>
+              <rect x="32" y="18" width="70" height="3" fill="#888"/>
+            </g></g>
+          </svg>
+        </div>
+        <div class="card__body">
+          <h3>Tree Removal <em>01</em></h3>
+          <p>Dead, leaning, storm-damaged or just in the way. We drop it safely, cut it up and haul it off.</p>
+          <ul class="card__list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Full removal, any size</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Hazard &amp; dead tree takedowns</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Debris hauled away</li>
+          </ul>
+          <a class="card__link" href="tel:+18063362749">Get a free estimate <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+
+      <!-- Tree trimming -->
+      <article class="card" data-reveal data-delay="80">
+        <div class="card__art">
+          <svg class="art-trim" viewBox="0 0 320 200" aria-hidden="true">
+            <rect width="320" height="200" fill="url(#cardSky1)"/>
+            <ellipse cx="160" cy="190" rx="200" ry="26" fill="#245a31"/>
+            <rect x="152" y="96" width="16" height="90" rx="4" fill="#4a2f1a"/>
+            <ellipse cx="160" cy="78" rx="54" ry="42" fill="#2f8f46"/>
+            <ellipse cx="160" cy="58" rx="34" ry="26" fill="#3aa650"/>
+            <g class="branch b1">
+              <path d="M160 130 L96 96" stroke="#4a2f1a" stroke-width="8" stroke-linecap="round"/>
+              <ellipse cx="88" cy="90" rx="22" ry="16" fill="#3aa650"/>
+            </g>
+            <g class="branch b2">
+              <path d="M160 128 L226 100" stroke="#4a2f1a" stroke-width="8" stroke-linecap="round"/>
+              <ellipse cx="234" cy="94" rx="22" ry="16" fill="#3aa650"/>
+            </g>
+            <g transform="translate(206,140)"><g class="shears">
+              <path d="M0 26 L40 0" stroke="#ccc" stroke-width="6" stroke-linecap="round"/>
+              <path d="M0 0 L40 26" stroke="#ddd" stroke-width="6" stroke-linecap="round"/>
+              <circle cx="20" cy="13" r="4" fill="#333"/>
+              <path d="M0 26 L-22 44" stroke="#f5a623" stroke-width="8" stroke-linecap="round"/>
+              <path d="M0 0 L-22 -18" stroke="#f5a623" stroke-width="8" stroke-linecap="round"/>
+            </g></g>
+          </svg>
+        </div>
+        <div class="card__body">
+          <h3>Tree Trimming <em>02</em></h3>
+          <p>Limbs over the roof, over the fence, over the driveway. We clean it up so the tree stays and the problem goes.</p>
+          <ul class="card__list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Limb &amp; canopy trimming</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Clearance from structures &amp; lines</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Deadwood removal</li>
+          </ul>
+          <a class="card__link" href="tel:+18063362749">Get a free estimate <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+
+      <!-- Land clearing -->
+      <article class="card" data-reveal data-delay="160">
+        <div class="card__art">
+          <svg class="art-clear" viewBox="0 0 320 200" aria-hidden="true">
+            <rect width="320" height="200" fill="url(#cardSky1)"/>
+            <rect x="0" y="150" width="320" height="50" fill="#245a31"/>
+            <g class="bush b1"><ellipse cx="150" cy="140" rx="26" ry="20" fill="#5b7a2a"/><ellipse cx="136" cy="146" rx="16" ry="12" fill="#6d8f33"/></g>
+            <g class="bush b2"><ellipse cx="210" cy="138" rx="30" ry="22" fill="#5b7a2a"/><ellipse cx="226" cy="146" rx="18" ry="12" fill="#6d8f33"/></g>
+            <g class="bush b3"><ellipse cx="275" cy="141" rx="24" ry="18" fill="#5b7a2a"/></g>
+            <g transform="translate(30,150)"><g class="mini-tractor">
+              <rect x="-40" y="-14" width="34" height="12" rx="3" fill="#3a3a3a"/>
+              <line x1="-8" y1="-22" x2="-28" y2="-12" stroke="#2a2a2a" stroke-width="4" stroke-linecap="round"/>
+              <rect x="-6" y="-42" width="70" height="20" rx="4" fill="#2f7d3a"/>
+              <rect x="24" y="-56" width="42" height="18" rx="4" fill="#3a9a46"/>
+              <rect x="-8" y="-84" width="38" height="44" rx="5" fill="#2f7d3a"/>
+              <rect x="-2" y="-78" width="26" height="26" rx="3" fill="#bfe6ff"/>
+              <rect x="28" y="-96" width="5" height="40" fill="#333"/>
+              <g class="mini-wheel"><circle cx="8" cy="-16" r="18" fill="#1c1c1c"/><circle cx="8" cy="-16" r="10" fill="#f5a623"/><path d="M8 -16v-9M8 -16l8 5M8 -16l-8 5" stroke="#b87a12" stroke-width="3" stroke-linecap="round"/></g>
+              <g class="mini-wheel"><circle cx="56" cy="-10" r="11" fill="#1c1c1c"/><circle cx="56" cy="-10" r="6" fill="#f5a623"/><path d="M56 -10v-5M56 -10l4 3M56 -10l-4 3" stroke="#b87a12" stroke-width="2" stroke-linecap="round"/></g>
+            </g></g>
+          </svg>
+        </div>
+        <div class="card__body">
+          <h3>Land Clearing &amp; Brush Hogging <em>03</em></h3>
+          <p>Mesquite, cedar, weeds head-high. We knock it down and turn a jungle back into usable land.</p>
+          <ul class="card__list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Brush hogging &amp; shredding</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Lot &amp; fence line clearing</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Overgrowth &amp; small tree removal</li>
+          </ul>
+          <a class="card__link" href="tel:+18063362749">Get a free estimate <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+
+      <!-- Mowing -->
+      <article class="card" data-reveal data-delay="0">
+        <div class="card__art">
+          <svg class="art-mow" viewBox="0 0 320 200" aria-hidden="true">
+            <rect width="320" height="200" fill="url(#cardSky1)"/>
+            <rect x="0" y="110" width="320" height="90" fill="#2c6b36"/>
+            <g stroke="#7cc242" stroke-width="14" stroke-linecap="round" opacity=".55">
+              <path class="stripe" d="M0 128 H320"/>
+              <path class="stripe" d="M0 150 H320"/>
+              <path class="stripe" d="M0 172 H320"/>
+              <path class="stripe" d="M0 194 H320"/>
+            </g>
+            <g transform="translate(40,150)"><g class="mower">
+              <rect x="-10" y="-30" width="76" height="22" rx="5" fill="#f5a623"/>
+              <rect x="0" y="-52" width="40" height="24" rx="5" fill="#1c1c1c"/>
+              <rect x="60" y="-24" width="30" height="12" rx="3" fill="#3a3a3a"/>
+              <g class="blade"><circle cx="75" cy="-6" r="12" fill="#555"/><path d="M63 -6h24M75 -18v24" stroke="#ccc" stroke-width="3"/></g>
+              <circle cx="4" cy="-6" r="12" fill="#1c1c1c"/><circle cx="4" cy="-6" r="6" fill="#f5a623"/>
+              <circle cx="50" cy="-6" r="12" fill="#1c1c1c"/><circle cx="50" cy="-6" r="6" fill="#f5a623"/>
+              <circle cx="20" cy="-60" r="8" fill="#3a2414"/>
+              <path d="M8 -40 Q20 -56 32 -40Z" fill="#c95b1f"/>
+            </g></g>
+          </svg>
+        </div>
+        <div class="card__body">
+          <h3>Acreage Mowing <em>04</em></h3>
+          <p>Pastures, lots, road frontage, weed-choked acreage. One pass and the neighbors will ask who you called.</p>
+          <ul class="card__list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Pasture &amp; large lot mowing</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Tall weed &amp; grass knockdown</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>One-time or seasonal</li>
+          </ul>
+          <a class="card__link" href="tel:+18063362749">Get a free estimate <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+
+      <!-- Dirt work -->
+      <article class="card" data-reveal data-delay="80">
+        <div class="card__art">
+          <svg class="art-dirt" viewBox="0 0 320 200" aria-hidden="true">
+            <rect width="320" height="200" fill="url(#cardSky1)"/>
+            <path class="bumpy" d="M0 160 Q30 130 60 158 Q90 175 120 148 Q150 125 180 156 Q210 178 240 150 Q270 128 320 158 L320 200 L0 200Z" fill="#7a4a24"/>
+            <path class="flat" d="M0 156 L320 156 L320 200 L0 200Z" fill="#8a5a2c"/>
+            <g class="flat" stroke="#a06a34" stroke-width="2" opacity=".8"><path d="M0 166H320M0 176H320M0 186H320"/></g>
+            <g transform="translate(40,156)"><g class="blade-tractor">
+              <rect x="-44" y="-26" width="34" height="26" rx="3" fill="#f5a623"/>
+              <rect x="-44" y="-26" width="34" height="6" fill="#c97f0a"/>
+              <line x1="-10" y1="-20" x2="4" y2="-30" stroke="#2a2a2a" stroke-width="4" stroke-linecap="round"/>
+              <rect x="-6" y="-42" width="70" height="20" rx="4" fill="#2f7d3a"/>
+              <rect x="24" y="-56" width="42" height="18" rx="4" fill="#3a9a46"/>
+              <rect x="-8" y="-84" width="38" height="44" rx="5" fill="#2f7d3a"/>
+              <rect x="-2" y="-78" width="26" height="26" rx="3" fill="#bfe6ff"/>
+              <rect x="28" y="-96" width="5" height="40" fill="#333"/>
+              <circle cx="8" cy="-16" r="18" fill="#1c1c1c"/><circle cx="8" cy="-16" r="10" fill="#f5a623"/>
+              <circle cx="56" cy="-10" r="11" fill="#1c1c1c"/><circle cx="56" cy="-10" r="6" fill="#f5a623"/>
+            </g></g>
+          </svg>
+        </div>
+        <div class="card__body">
+          <h3>Dirt Work &amp; Grading <em>05</em></h3>
+          <p>Rough ground made level. Driveways, pads, drainage and the spots where water always sits.</p>
+          <ul class="card__list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Leveling &amp; grading</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Driveway &amp; pad prep</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Spreading gravel, dirt &amp; fill</li>
+          </ul>
+          <a class="card__link" href="tel:+18063362749">Get a free estimate <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+
+      <!-- Storm cleanup -->
+      <article class="card" data-reveal data-delay="160">
+        <div class="card__art">
+          <svg class="art-storm" viewBox="0 0 320 200" aria-hidden="true">
+            <rect width="320" height="200" fill="url(#cardSky1)"/>
+            <path class="bolt" d="M70 10 L52 60 L70 58 L50 110 L90 48 L72 50 L92 10Z" fill="#ffe08a"/>
+            <ellipse cx="160" cy="190" rx="200" ry="26" fill="#245a31"/>
+            <!-- broken stump -->
+            <rect x="40" y="120" width="18" height="60" fill="#4a2f1a"/>
+            <path d="M40 120 L49 106 L58 120Z" fill="#6b4423"/>
+            <!-- logs -->
+            <g class="log l1"><rect x="70" y="150" width="70" height="22" rx="11" fill="#6b4423"/><circle cx="140" cy="161" r="11" fill="#a9754a"/></g>
+            <g class="log l2"><rect x="90" y="128" width="60" height="20" rx="10" fill="#5d3a1e" transform="rotate(-12 120 138)"/></g>
+            <g class="log l3"><rect x="60" y="112" width="52" height="18" rx="9" fill="#6b4423" transform="rotate(8 86 121)"/></g>
+            <!-- trailer -->
+            <g transform="translate(190,150)">
+              <rect x="0" y="0" width="110" height="24" rx="3" fill="#3a3a3a"/>
+              <rect x="0" y="-8" width="4" height="34" fill="#555"/><rect x="106" y="-8" width="4" height="34" fill="#555"/>
+              <line x1="0" y1="12" x2="-24" y2="6" stroke="#444" stroke-width="5" stroke-linecap="round"/>
+              <circle cx="30" cy="30" r="12" fill="#1c1c1c"/><circle cx="30" cy="30" r="5" fill="#888"/>
+              <circle cx="80" cy="30" r="12" fill="#1c1c1c"/><circle cx="80" cy="30" r="5" fill="#888"/>
+            </g>
+          </svg>
+        </div>
+        <div class="card__body">
+          <h3>Storm Cleanup &amp; Haul-Off <em>06</em></h3>
+          <p>Wind took a tree down across the yard, the fence or the drive. We cut it, load it and haul it. Gone.</p>
+          <ul class="card__list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Downed tree &amp; limb removal</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Debris loading &amp; haul-off</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Yard put back the way it was</li>
+          </ul>
+          <a class="card__link" href="tel:+18063362749">Get a free estimate <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ BEFORE / AFTER ============ -->
+<section class="section on-dark" id="results">
+  <div class="spotlight" aria-hidden="true"></div>
+  <div class="container compare-wrap">
+    <div class="section__head" data-reveal="left">
+      <span class="eyebrow">The difference</span>
+      <h2>From overgrown to open ground.</h2>
+      <p>Drag the handle. Left is the lot you've been avoiding. Right is the same lot after one visit from B&amp;L.</p>
+      <div class="compare-note">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3M21 8V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3M16 21h3a2 2 0 0 0 2-2v-3"/><path d="M9 12h6M12 9v6"/></svg>
+        <span>Brush hogged, trees cleared, graded and mowed. Cleanup included.</span>
+      </div>
+    </div>
+
+    <div class="compare" id="compare" data-reveal="scale">
+      <!-- BEFORE -->
+      <svg viewBox="0 0 800 450" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <linearGradient id="skyB" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4b5a55"/><stop offset="1" stop-color="#9aa08a"/></linearGradient>
+          <linearGradient id="groundB" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6e6b3a"/><stop offset="1" stop-color="#4e4a28"/></linearGradient>
+        </defs>
+        <rect width="800" height="450" fill="url(#skyB)"/>
+        <path d="M0 260 C200 240 400 270 800 250 L800 450 L0 450Z" fill="url(#groundB)"/>
+        <!-- dead tree -->
+        <g fill="#3b2a1c"><rect x="600" y="120" width="16" height="150"/><path d="M608 170 L560 120 M608 150 L650 110 M608 200 L570 190 M608 185 L660 160" stroke="#3b2a1c" stroke-width="8" stroke-linecap="round"/></g>
+        <!-- dense brush -->
+        <g fill="#5a6a2a">
+          <ellipse cx="80" cy="300" rx="90" ry="60"/><ellipse cx="220" cy="320" rx="110" ry="70"/><ellipse cx="380" cy="300" rx="90" ry="62"/><ellipse cx="540" cy="330" rx="120" ry="75"/><ellipse cx="720" cy="310" rx="100" ry="66"/>
+        </g>
+        <g fill="#6e7d33">
+          <ellipse cx="150" cy="340" rx="80" ry="50"/><ellipse cx="300" cy="360" rx="90" ry="55"/><ellipse cx="460" cy="350" rx="80" ry="52"/><ellipse cx="640" cy="365" rx="95" ry="58"/>
+        </g>
+        <!-- tall weeds -->
+        <g stroke="#8a8f4a" stroke-width="3" stroke-linecap="round" fill="none">
+          <path d="M60 420 q-10 -60 5 -110"/><path d="M110 430 q6 -70 -4 -120"/><path d="M250 440 q-8 -60 8 -105"/><path d="M330 430 q4 -50 -6 -100"/><path d="M420 445 q-10 -55 10 -100"/><path d="M500 440 q10 -70 -2 -120"/><path d="M590 435 q-8 -50 6 -100"/><path d="M700 445 q6 -65 -6 -115"/><path d="M760 430 q-8 -55 8 -100"/>
+        </g>
+        <!-- fallen log -->
+        <rect x="300" y="395" width="200" height="26" rx="13" fill="#4a3320" transform="rotate(-4 400 408)"/>
+        <!-- old tire -->
+        <circle cx="180" cy="410" r="24" fill="#222"/><circle cx="180" cy="410" r="10" fill="#4e4a28"/>
+      </svg>
+      <!-- AFTER -->
+      <svg class="compare__after" id="compareAfter" viewBox="0 0 800 450" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <linearGradient id="skyA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5fb6e6"/><stop offset="1" stop-color="#d8efff"/></linearGradient>
+          <linearGradient id="groundA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5fae4a"/><stop offset="1" stop-color="#2e7a35"/></linearGradient>
+        </defs>
+        <rect width="800" height="450" fill="url(#skyA)"/>
+        <circle cx="680" cy="80" r="40" fill="#fff3c4"/>
+        <g fill="#fff" opacity=".8"><ellipse cx="150" cy="90" rx="70" ry="18"/><ellipse cx="180" cy="80" rx="40" ry="20"/><ellipse cx="420" cy="60" rx="60" ry="15"/></g>
+        <path d="M0 260 C200 240 400 270 800 250 L800 450 L0 450Z" fill="url(#groundA)"/>
+        <g fill="#fff" opacity=".14">
+          <path d="M0 290 L800 275 L800 300 L0 315Z"/><path d="M0 340 L800 325 L800 350 L0 365Z"/><path d="M0 390 L800 375 L800 400 L0 415Z"/>
+        </g>
+        <!-- healthy tree -->
+        <g><rect x="602" y="150" width="16" height="120" rx="4" fill="#4a2f1a"/><ellipse cx="610" cy="130" rx="70" ry="52" fill="#2f8f46"/><ellipse cx="570" cy="150" rx="36" ry="28" fill="#3aa650"/><ellipse cx="650" cy="150" rx="36" ry="28" fill="#2b7f3f"/><ellipse cx="610" cy="100" rx="42" ry="34" fill="#3aa650"/></g>
+        <!-- fence -->
+        <g stroke="#8a5a2c" stroke-width="6" stroke-linecap="round">
+          <path d="M40 320 V270 M140 316 V266 M240 312 V262 M340 308 V258 M440 304 V254"/>
+          <path d="M40 285 L440 268 M40 305 L440 288" stroke-width="4"/>
+        </g>
+        <!-- fresh gravel drive -->
+        <path d="M480 450 L560 300 L640 300 L800 450Z" fill="#b8a98a"/>
+        <path d="M480 450 L560 300 L640 300 L800 450Z" fill="#fff" opacity=".1"/>
+      </svg>
+      <div class="compare__label compare__label--before">Before</div>
+      <div class="compare__label compare__label--after">After B&amp;L</div>
+      <div class="compare__handle" id="compareHandle">
+        <div class="compare__knob"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></div>
+      </div>
+      <input type="range" min="0" max="100" value="50" id="compareRange" aria-label="Compare before and after">
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="section process" id="process">
+  <div class="container">
+    <div class="section__head" data-reveal>
+      <span class="eyebrow">How it works</span>
+      <h2>Three steps. No runaround.</h2>
+      <p>You've got better things to do than chase contractors. Here's the whole process.</p>
+    </div>
+    <div class="steps">
+      <div class="step" data-reveal data-delay="0">
+        <div class="step__num">1</div>
+        <h3>Call or text</h3>
+        <p>Tell us what you've got: a tree, a lot, a pasture, a mess. <a href="tel:+18063362749">806-336-2749</a>. You'll talk to the person who does the work.</p>
+      </div>
+      <div class="step" data-reveal data-delay="120">
+        <div class="step__num">2</div>
+        <h3>Free on-site estimate</h3>
+        <p>We come look, walk it with you and give you a straight price. No pressure, no "starting at" games.</p>
+      </div>
+      <div class="step" data-reveal data-delay="240">
+        <div class="step__num">3</div>
+        <h3>We show up and get it done</h3>
+        <p>Equipment on the trailer, crew on site, job finished and cleaned up. You just look out the window and enjoy it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="section about on-dark" id="about">
+  <div class="spotlight" aria-hidden="true"></div>
+  <div class="container about__grid">
+    <div data-reveal="left">
+      <span class="eyebrow">About B&amp;L</span>
+      <h2>Two guys, one tractor, and a decade of ugly jobs made easy.</h2>
+      <p>B&amp;L Tractor has been running since 2015. We're not a franchise and we don't send a salesman. The person who answers the phone is the person who shows up with the equipment, and the same one who makes sure the place looks right before we leave.</p>
+      <p>Small crew means we're careful with your property, honest about what a job takes, and we don't need to pad the invoice to keep the lights on.</p>
+      <div class="stats">
+        <div class="stat"><b><span data-count="11">0</span>+</b><span>Years in business</span></div>
+        <div class="stat"><b><span data-count="100">0</span>%</b><span>Owner on every job</span></div>
+        <div class="stat"><b>$<span data-count="0">0</span></b><span>Cost of an estimate</span></div>
+      </div>
+    </div>
+    <div class="about__art" data-reveal="right">
+      <svg viewBox="0 0 500 500" aria-hidden="true">
+        <defs>
+          <path id="ringPath" d="M250 250 m-190 0 a190 190 0 1 1 380 0 a190 190 0 1 1 -380 0"/>
+          <linearGradient id="badgeBg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1c5a33"/><stop offset="1" stop-color="#0b1f16"/></linearGradient>
+        </defs>
+        <circle cx="250" cy="250" r="230" fill="url(#badgeBg)" stroke="#f5a623" stroke-width="4"/>
+        <circle cx="250" cy="250" r="214" fill="none" stroke="#f5a623" stroke-width="1.5" stroke-dasharray="4 8"/>
+        <g class="badge-ring">
+          <text font-family="Inter, system-ui, sans-serif" font-size="19" font-weight="700" letter-spacing="6" fill="#f5a623">
+            <textPath href="#ringPath">TREE REMOVAL • MOWING • LAND CLEARING • DIRT WORK • EST. 2015 • FREE ESTIMATES •</textPath>
+          </text>
+        </g>
+        <circle cx="250" cy="250" r="150" fill="#0b1f16" stroke="#2f7d3a" stroke-width="3"/>
+        <!-- mini scene inside badge -->
+        <clipPath id="badgeClip"><circle cx="250" cy="250" r="148"/></clipPath>
+        <g clip-path="url(#badgeClip)">
+          <rect x="100" y="100" width="300" height="300" fill="#0e3423"/>
+          <circle cx="320" cy="200" r="34" fill="#f5a623"/>
+          <path d="M100 290 C180 270 260 300 400 280 L400 400 L100 400Z" fill="#2f7d3a"/>
+          <g fill="#0a2619"><use href="#pine" x="120" y="200" width="50" height="90"/><use href="#pine" x="165" y="215" width="40" height="72"/><use href="#oak" x="330" y="225" width="70" height="72"/></g>
+          <g transform="translate(240,335) scale(.55)">
+            <rect x="-40" y="-14" width="34" height="12" rx="3" fill="#3a3a3a"/>
+            <rect x="-6" y="-42" width="70" height="20" rx="4" fill="#3a9a46"/>
+            <rect x="24" y="-56" width="42" height="18" rx="4" fill="#4ab357"/>
+            <rect x="-8" y="-84" width="38" height="44" rx="5" fill="#3a9a46"/>
+            <rect x="-2" y="-78" width="26" height="26" rx="3" fill="#bfe6ff"/>
+            <rect x="28" y="-96" width="5" height="40" fill="#333"/>
+            <g class="wheel-spin"><circle cx="8" cy="-16" r="18" fill="#1c1c1c"/><circle cx="8" cy="-16" r="10" fill="#f5a623"/><path d="M8 -16v-9M8 -16l8 5M8 -16l-8 5" stroke="#b87a12" stroke-width="3" stroke-linecap="round"/></g>
+            <g class="wheel-spin"><circle cx="56" cy="-10" r="11" fill="#1c1c1c"/><circle cx="56" cy="-10" r="6" fill="#f5a623"/></g>
+          </g>
+        </g>
+        <text x="250" y="425" text-anchor="middle" font-family="'Bebas Neue', Impact, sans-serif" font-size="44" fill="#fff" letter-spacing="3">B&amp;L TRACTOR</text>
+        <text x="250" y="452" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="700" fill="#f5a623" letter-spacing="4">TEXAS PANHANDLE</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY ============ -->
+<section class="section why">
+  <div class="container">
+    <div class="section__head" data-reveal>
+      <span class="eyebrow">Why people call us back</span>
+      <h2>What you get when you hire small.</h2>
+    </div>
+    <div class="why__grid">
+      <div class="why__item" data-reveal data-delay="0">
+        <div class="why__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.9 2.1z"/></svg></div>
+        <h3>We answer the phone</h3>
+        <p>No call center, no ticket number. Call 806-336-2749 and you get the owner.</p>
+      </div>
+      <div class="why__item" data-reveal data-delay="80">
+        <div class="why__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg></div>
+        <h3>Straight pricing</h3>
+        <p>You get a real number after we see the job, and that's the number you pay.</p>
+      </div>
+      <div class="why__item" data-reveal data-delay="160">
+        <div class="why__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg></div>
+        <h3>Respect for your place</h3>
+        <p>Fences, gates, sprinkler heads and your neighbor's yard all look the same when we leave as when we came.</p>
+      </div>
+      <div class="why__item" data-reveal data-delay="240">
+        <div class="why__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <h3>Finished means finished</h3>
+        <p>Cut, hauled, raked. We don't leave a pile for you to deal with later.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="section cta" id="contact">
+  <div class="container" data-reveal>
+    <span class="eyebrow" style="justify-content:center">Free estimates</span>
+    <h2>Got a job? Let's look at it.</h2>
+    <a class="cta__phone" href="tel:+18063362749">806-336-2749</a>
+    <p>Call or text. Tell us what you've got and where it is. We'll come out, look it over and give you a price on the spot.</p>
+    <div class="cta__actions">
+      <a class="btn btn--big" href="tel:+18063362749" data-magnetic>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.9 2.1z"/></svg>
+        Call now
+      </a>
+      <a class="btn btn--ghost btn--big" href="sms:+18063362749" data-magnetic>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Text us
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <a href="#top" class="brand"><svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#f5a623"/><g fill="none" stroke="#0b1f16" stroke-width="5"><circle cx="32" cy="32" r="18"/><path d="M32 14v36M14 32h36M19.3 19.3l25.4 25.4M44.7 19.3L19.3 44.7"/></g><circle cx="32" cy="32" r="6" fill="#0b1f16"/></svg><span class="brand__name">B&amp;L Tractor<small>Mowing &amp; Tree Removal</small></span></a>
+        <p style="margin-top:1rem;max-width:340px">Tree removal, mowing, brush hogging, land clearing and dirt work across the Texas Panhandle. Owner-operated since 2015.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Tree Removal</a></li>
+          <li><a href="#services">Tree Trimming</a></li>
+          <li><a href="#services">Land Clearing &amp; Brush Hogging</a></li>
+          <li><a href="#services">Acreage Mowing</a></li>
+          <li><a href="#services">Dirt Work &amp; Grading</a></li>
+          <li><a href="#services">Storm Cleanup &amp; Haul-Off</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+18063362749" style="font-family:var(--font-display);font-size:1.8rem;color:var(--amber);letter-spacing:.03em">806-336-2749</a></li>
+          <li><a href="sms:+18063362749">Text for a free estimate</a></li>
+          <li>Serving the Texas Panhandle</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© <span id="year">2026</span> B&amp;L Tractor. All rights reserved.</span>
+      <span>Free estimates · Est. 2015</span>
+    </div>
+  </div>
+</footer>
+
+<div class="float-call">
+  <a class="btn" href="tel:+18063362749" aria-label="Call B&L Tractor">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.9 2.1z"/></svg>
+    Call now
+  </a>
+</div>
+
+<script>
+(function(){
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const $ = (s, c=document) => c.querySelector(s);
+  const $$ = (s, c=document) => [...c.querySelectorAll(s)];
+
+  // year
+  $('#year').textContent = new Date().getFullYear();
+
+  // hero ready
+  const hero = $('#hero');
+  requestAnimationFrame(() => requestAnimationFrame(() => hero.classList.add('is-ready')));
+
+  // nav
+  const nav = $('#nav'), burger = $('#burger'), progress = $('#progress');
+  const onScroll = () => {
+    const y = scrollY;
+    nav.classList.toggle('is-scrolled', y > 30);
+    const h = document.documentElement.scrollHeight - innerHeight;
+    progress.style.transform = 'scaleX(' + (h > 0 ? y / h : 0) + ')';
+  };
+  addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  burger.addEventListener('click', () => {
+    const open = nav.classList.toggle('menu-open');
+    burger.classList.toggle('is-open', open);
+    burger.setAttribute('aria-expanded', open);
+    burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  $$('#menu a').forEach(a => a.addEventListener('click', () => {
+    nav.classList.remove('menu-open'); burger.classList.remove('is-open');
+    burger.setAttribute('aria-expanded','false'); document.body.style.overflow='';
+  }));
+
+  // reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target, d = +el.dataset.delay || 0;
+      setTimeout(() => el.classList.add('in'), reduce ? 0 : d);
+      io.unobserve(el);
+    });
+  }, {threshold:.15, rootMargin:'0px 0px -8% 0px'});
+  $$('[data-reveal]').forEach(el => io.observe(el));
+
+  // counters
+  const cio = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target, end = +el.dataset.count, dur = 1400, t0 = performance.now();
+      const tick = (t) => {
+        const p = Math.min(1, (t - t0) / dur), ease = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(end * ease);
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      reduce ? el.textContent = end : requestAnimationFrame(tick);
+      cio.unobserve(el);
+    });
+  }, {threshold:.6});
+  $$('[data-count]').forEach(el => cio.observe(el));
+
+  // hero parallax
+  if (!reduce) {
+    const layers = $$('#hero [data-depth]');
+    let ticking = false;
+    const parallax = () => {
+      const y = scrollY;
+      if (y < innerHeight * 1.2) {
+        layers.forEach(l => { l.style.transform = 'translateY(' + (y * l.dataset.depth * .6).toFixed(1) + 'px)'; });
+        $('.hero__content').style.transform = 'translateY(' + (y * .25).toFixed(1) + 'px)';
+        $('.hero__content').style.opacity = Math.max(0, 1 - y / (innerHeight * .8));
+      }
+      ticking = false;
+    };
+    addEventListener('scroll', () => { if (!ticking) { requestAnimationFrame(parallax); ticking = true; } }, {passive:true});
+  }
+
+  // before / after
+  const cmp = $('#compare'), range = $('#compareRange'), after = $('#compareAfter'), handle = $('#compareHandle');
+  const setCompare = (v) => {
+    after.style.clipPath = 'inset(0 0 0 ' + v + '%)';
+    handle.style.left = v + '%';
+  };
+  range.addEventListener('input', () => setCompare(range.value));
+  // intro sweep when it scrolls into view
+  const swept = new IntersectionObserver((entries) => {
+    if (!entries[0].isIntersecting) return;
+    swept.disconnect();
+    if (reduce) return;
+    let start = null;
+    const sweep = (t) => {
+      if (!start) start = t;
+      const p = Math.min(1, (t - start) / 2200);
+      const ease = 1 - Math.pow(1 - p, 3);
+      const v = 50 + Math.sin(ease * Math.PI) * 38 * (1 - ease * .3);
+      const val = Math.round(p < .5 ? 50 - (v - 50) : v);
+      range.value = val; setCompare(val);
+      if (p < 1) requestAnimationFrame(sweep); else { range.value = 50; setCompare(50); }
+    };
+    requestAnimationFrame(sweep);
+  }, {threshold:.5});
+  swept.observe(cmp);
+
+  // magnetic buttons
+  if (!reduce && matchMedia('(hover:hover)').matches) {
+    $$('[data-magnetic]').forEach(btn => {
+      btn.addEventListener('mousemove', (e) => {
+        const r = btn.getBoundingClientRect();
+        const x = e.clientX - r.left - r.width / 2, y = e.clientY - r.top - r.height / 2;
+        btn.style.transform = 'translate(' + x * .18 + 'px,' + (y * .25 - 3) + 'px)';
+      });
+      btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
+    });
+    // spotlight on dark sections
+    $$('.on-dark').forEach(sec => {
+      sec.addEventListener('mousemove', (e) => {
+        const r = sec.getBoundingClientRect();
+        sec.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+        sec.style.setProperty('--my', (e.clientY - r.top) + 'px');
+      });
+    });
+  }
+})();
+</script>
+</body>
+</html>
