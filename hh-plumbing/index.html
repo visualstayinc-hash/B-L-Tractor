@@ -3,294 +3,263 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>H&amp;H Plumbing &amp; Mechanical | Amarillo, TX — (806) 353-2435</title>
-<meta name="description" content="H&H Plumbing & Mechanical: licensed Amarillo plumbers. Repairs, drains, leak detection, sewer and water heaters, residential and commercial. Call (806) 353-2435.">
-<meta name="theme-color" content="#ffffff">
-<meta property="og:title" content="H&H Plumbing & Mechanical — Amarillo, TX">
-<meta property="og:description" content="Licensed Amarillo plumbers. Repairs, drains, leaks, sewer, water heaters. Call (806) 353-2435.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%231d4ea6'/%3E%3Cpath d='M32 12c7 10 13 17 13 25a13 13 0 0 1-26 0c0-8 6-15 13-25z' fill='%23fff'/%3E%3C/svg%3E">
+<title>H&amp;H Plumbing &amp; Mechanical — Amarillo, TX</title>
+<meta name="description" content="H&H Plumbing & Mechanical. Licensed plumbing and mechanical work in Amarillo, Texas. Call (806) 353-2435.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=Oswald:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Oswald:wght@700&display=swap" rel="stylesheet">
 <style>
-/* =========================================================
-   TOKENS — structure lifted from the IBM/Carbon Design System
-   analysis in voltagent/awesome-design-md, palette mapped to
-   H&H's real logo blue instead of literal IBM Blue.
-   ========================================================= */
 :root{
-  --primary:#1d4ea6; --primary-60:#163d85; --primary-80:#0f2c5f; --primary-hover:#2456b0;
-  --ink:#161616; --ink-muted:#525252; --ink-subtle:#8c8c8c;
-  --canvas:#ffffff; --surface-1:#f4f4f4; --surface-2:#e0e0e0;
-  --inverse-canvas:#161616; --inverse-surface-1:#262626;
-  --inverse-ink:#ffffff; --inverse-ink-muted:#c6c6c6;
-  --hairline:#e0e0e0; --hairline-strong:#161616;
-  --success:#24a148; --warning:#f1c21b; --error:#da1e28;
-
-  --font:'IBM Plex Sans',ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
-  --font-mark:'Oswald','Arial Narrow',Impact,sans-serif;
-
-  --xxs:4px;--xs:8px;--sm:12px;--md:16px;--lg:24px;--xl:32px;--xxl:48px;--section:96px;
-  --container:1280px;
-  --ease:cubic-bezier(.2,.6,.2,1);
+  --obsidian:#000000;--carbon:#08090b;--graphite:#232323;--slate:#89898d;--fog:#b3b3b5;--ash:#c1c5c8;--bone:#dddddd;--chalk:#e2e8f0;
+  --signal:#1d4ea6;--signal-lift:#4f7fd9;--signal-soft:#8fdcf8;--hero-canvas:#f2f4f7;--hero-ink:#0f1115;
+  --border:rgba(226,232,240,.16);--r-card:24px;--r-btn:18px;--r-pill:999px;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  --nav-h:56px;
 }
-*,*::before,*::after{box-sizing:border-box}
+*{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;font-family:var(--font);color:var(--ink);background:var(--canvas);line-height:1.5;overflow-x:hidden}
-img,svg{display:block;max-width:100%}
+body{margin:0;background:var(--carbon);color:var(--chalk);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;font-weight:400;font-size:16px;line-height:1.5;position:relative;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
-button{font:inherit;cursor:pointer;background:none;border:0;color:inherit}
-h1,h2,h3,h4{font-family:var(--font);font-weight:400;line-height:1.2;margin:0}
-p{margin:0}
-::selection{background:var(--primary);color:#fff}
-:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
-.container{width:min(var(--container),calc(100% - 2.5rem));margin-inline:auto}
+img,svg{display:block;max-width:100%}
+h1,h2,h3,p{margin:0}
+.container{width:min(1200px,calc(100% - 152px));margin:0 auto;position:relative}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--slate)}
+.eyebrow b{color:var(--signal-lift);font-weight:500}
+.h2{font-size:clamp(32px,4.2vw,52px);font-weight:300;letter-spacing:-.025em;line-height:1.06;color:var(--chalk);margin-top:16px;max-width:14ch}
+.lede{color:var(--fog);font-size:17px;max-width:52ch;margin-top:18px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:9px 12px;border-radius:var(--r-btn);font-size:14px;font-weight:500;line-height:1.3;background:var(--carbon);color:var(--chalk);border:1px solid var(--graphite);cursor:pointer;transition:background .2s,border-color .2s,transform .2s,color .2s;white-space:nowrap}
+.btn:hover{border-color:var(--slate);transform:translateY(-1px)}
+.btn--signal{background:var(--signal);border-color:var(--signal);color:#fff}
+.btn--signal:hover{background:var(--signal-lift);border-color:var(--signal-lift)}
+.btn--ghost{background:transparent;border-color:rgba(15,17,21,.22);color:var(--hero-ink)}
+.btn--ghost:hover{border-color:var(--hero-ink)}
+.btn--inverse{background:var(--chalk);color:var(--carbon);border-color:var(--chalk)}
+.btn--inverse:hover{background:#fff}
+.btn svg{width:15px;height:15px}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:5px 12px;border-radius:var(--r-pill);border:1px solid var(--chalk);font-size:12px;font-weight:500;letter-spacing:.02em;color:var(--chalk)}
+.pill i{width:6px;height:6px;border-radius:50%;background:var(--signal-lift);box-shadow:0 0 0 0 rgba(79,127,217,.6);animation:ping 2.2s infinite}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(79,127,217,.55)}100%{box-shadow:0 0 0 10px rgba(79,127,217,0)}}
 
-/* type scale */
-.display-xl{font-size:clamp(2.6rem,6.4vw,76px);font-weight:300;line-height:1.08;letter-spacing:-.02em}
-.display-md{font-size:clamp(1.9rem,4vw,42px);font-weight:300;line-height:1.15;letter-spacing:-.01em}
-.headline{font-size:clamp(1.6rem,3vw,32px);font-weight:400;line-height:1.25}
-.card-title{font-size:24px;font-weight:400;line-height:1.3}
-.subhead{font-size:20px;font-weight:400;line-height:1.4;color:var(--ink-muted)}
-.body-lg{font-size:18px;line-height:1.5;color:var(--ink-muted)}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--primary)}
-.eyebrow::before{content:"";width:24px;height:2px;background:var(--primary)}
+/* ---------- nav ---------- */
+.nav{position:fixed;inset:0 0 auto 0;height:var(--nav-h);z-index:50;display:flex;align-items:center;transition:background .35s,border-color .35s,color .35s;color:var(--hero-ink);border-bottom:1px solid transparent}
+.nav .container{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.nav__logo{height:30px;width:auto;display:block}
+.nav__logo svg{height:30px;width:auto}
+.nav__logo .mono{display:none}
+.nav__links{display:flex;gap:26px;font-size:13px;font-weight:500;letter-spacing:.01em}
+.nav__links a{opacity:.72;transition:opacity .2s}
+.nav__links a:hover{opacity:1}
+.nav .btn{padding:7px 12px}
+.nav.is-dark{background:rgba(8,9,11,.86);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-color:var(--border);color:var(--chalk)}
+.nav.is-dark .nav__logo .color{display:none}
+.nav.is-dark .nav__logo .mono{display:block}
+.nav.is-dark .btn--ghost{border-color:var(--graphite);color:var(--chalk)}
+.nav__phone{font-family:var(--mono);font-size:12px;letter-spacing:.04em;opacity:.8}
 
-/* =========================================================
-   BUTTONS — square (0 radius), flat, color-shift hover only
-   (Carbon buttons never lift or gain a shadow on hover)
-   ========================================================= */
-.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 20px;font-size:15px;font-weight:500;transition:background-color .15s var(--ease),color .15s var(--ease),border-color .15s var(--ease)}
-.btn svg{width:18px;height:18px;flex:none}
-.btn-primary{background:var(--primary);color:#fff}
-.btn-primary:hover{background:var(--primary-60)}
-.btn-primary:active{background:var(--primary-80)}
-.btn-tertiary{background:transparent;color:var(--primary);box-shadow:inset 0 0 0 1px var(--primary)}
-.btn-tertiary:hover{background:var(--primary);color:#fff}
-.btn-ghost-inverse{background:transparent;color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.5)}
-.btn-ghost-inverse:hover{background:rgba(255,255,255,.12)}
-.btn-on-primary{background:#fff;color:var(--primary)}
-.btn-on-primary:hover{background:var(--surface-1)}
+/* ---------- hero ---------- */
+.hero{position:relative;background:var(--hero-canvas);color:var(--hero-ink);min-height:100svh;padding:calc(var(--nav-h) + 88px) 0 64px;overflow:hidden;display:flex;align-items:flex-end}
+.hero__art{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.hero__art svg{width:100%;height:100%}
+.line{fill:none;stroke:var(--hero-ink);stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;opacity:.82}
+.line--soft{stroke-width:1;opacity:.28}
+.draw{stroke-dasharray:1400;stroke-dashoffset:1400;animation:draw 2.8s cubic-bezier(.6,0,.2,1) forwards}
+.draw.d1{animation-delay:.15s}.draw.d2{animation-delay:.45s}.draw.d3{animation-delay:.75s}.draw.d4{animation-delay:1.05s}.draw.d5{animation-delay:1.3s}
+@keyframes draw{to{stroke-dashoffset:0}}
+.sway{transform-box:fill-box;transform-origin:50% 100%;animation:sway 6s ease-in-out infinite}
+.sway.s2{animation-duration:7.5s;animation-delay:-2s}
+.sway.s3{animation-duration:5.4s;animation-delay:-3.5s}
+@keyframes sway{0%,100%{transform:rotate(-1.6deg)}50%{transform:rotate(1.6deg)}}
+.hero__grid{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:48px;align-items:end}
+.hero .pill{border-color:rgba(15,17,21,.3);color:var(--hero-ink);background:rgba(255,255,255,.55)}
+.hero h1{font-size:clamp(46px,7.2vw,104px);font-weight:300;letter-spacing:-.035em;line-height:.98;margin-top:22px;max-width:9ch}
+.hero h1 b{font-weight:500}
+.hero__sub{font-size:18px;color:#3c4048;max-width:44ch;margin-top:22px}
+.hero__cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.hero__cta .btn--ghost{background:rgba(255,255,255,.5)}
+.marks{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:40px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#4d525b}
+.marks span{display:inline-flex;align-items:center;gap:8px}
+.marks span::before{content:"";width:8px;height:8px;border:1.4px solid currentColor;border-radius:2px}
+.hero__side{align-self:end;display:grid;gap:10px;justify-items:end;text-align:right}
+.hero__brand{width:min(360px,100%);background:#fff;border:1px solid rgba(15,17,21,.12);border-radius:var(--r-card);padding:26px 28px 20px;box-shadow:0 30px 60px -40px rgba(15,17,21,.35)}
+.hero__brand svg{width:100%;height:auto}
+.hero__brand p{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#6b7078;margin-top:16px;text-align:left}
+#tower{position:absolute;z-index:1;left:0;top:0;width:100px;height:auto;pointer-events:none}
+.tower-fill{fill:none;stroke:var(--signal);stroke-width:3;stroke-linecap:round}
+.tank-water{animation:tank 5s ease-in-out infinite}
+@keyframes tank{0%,100%{transform:translateY(0)}50%{transform:translateY(3px)}}
 
-/* =========================================================
-   UTILITY BAR + NAV
-   ========================================================= */
-.utility{background:var(--surface-1);border-bottom:1px solid var(--hairline);height:32px;display:flex;align-items:center}
-.utility .container{display:flex;justify-content:space-between;align-items:center;font-size:12px;letter-spacing:.02em;color:var(--ink-muted)}
-.utility a{font-weight:600;color:var(--primary)}
-.utility__right{display:flex;gap:20px}
-@media (max-width:700px){.utility__right span:not(:last-child){display:none}}
+/* ---------- rail ---------- */
+#rail{position:absolute;top:0;left:0;z-index:6;pointer-events:none;overflow:visible}
+.pipe-outer{fill:none;stroke:#6a6e74;stroke-width:14;stroke-linecap:round;stroke-linejoin:round}
+.pipe-inner{fill:none;stroke:#101216;stroke-width:9;stroke-linecap:round;stroke-linejoin:round}
+.pipe-fill{fill:none;stroke:var(--signal);stroke-width:5;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 0 6px rgba(79,127,217,.55))}
+.pipe-shine{fill:none;stroke:var(--signal-soft);stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;opacity:.7;transform:translateX(-1.5px)}
+.station circle.ring{fill:#101216;stroke:#6a6e74;stroke-width:3;transition:stroke .4s}
+.station circle.core{fill:#3a3d43;transition:fill .4s}
+.station circle.pulse{fill:none;stroke:var(--signal-lift);stroke-width:2;opacity:0}
+.station text{font-family:var(--mono);font-size:10px;letter-spacing:.14em;fill:var(--slate);opacity:0;transform:translateX(-6px);transition:opacity .5s,transform .5s}
+.station.lit circle.ring{stroke:var(--signal-lift)}
+.station.lit circle.core{fill:var(--signal-soft)}
+.station.lit circle.pulse{animation:ring 1.6s ease-out infinite}
+.station.lit text{opacity:1;transform:translateX(0)}
+@keyframes ring{0%{r:8;opacity:.8}100%{r:26;opacity:0}}
+.drop{filter:drop-shadow(0 0 8px rgba(143,220,248,.7))}
+.drop .wake{fill:none;stroke:var(--signal-soft);stroke-width:1.5;opacity:.5}
+.faucet path,.faucet rect{transition:fill .4s,stroke .4s}
+.faucet .body{fill:#8a8e94;stroke:#101216;stroke-width:1.5}
+.faucet .handle{fill:#c1c5c8;stroke:#101216;stroke-width:1.5;transform-box:fill-box;transform-origin:50% 100%;transition:transform .8s cubic-bezier(.6,0,.2,1)}
+.faucet .drip{fill:var(--signal-soft);opacity:0;transform-box:fill-box;transform-origin:50% 0}
+.faucet .stream{stroke:var(--signal-lift);stroke-width:4;stroke-linecap:round;opacity:0;transition:opacity .4s}
+.faucet.on .handle{transform:rotate(-70deg)}
+.faucet.on .stream{opacity:.9}
+.faucet.on .drip{animation:drip 1.4s ease-in infinite}
+@keyframes drip{0%{opacity:0;transform:translateY(0) scale(.6)}20%{opacity:1}100%{opacity:0;transform:translateY(60px) scale(1)}}
 
-.nav{position:sticky;top:0;z-index:100;background:var(--canvas);border-bottom:1px solid var(--hairline)}
-.nav__inner{height:56px;display:flex;align-items:center;justify-content:space-between;gap:1rem}
-.brand{display:flex;align-items:center;gap:.6rem}
-.brand svg{width:120px;height:auto}
-.nav__links{display:flex;gap:2rem;list-style:none;margin:0;padding:0}
-.nav__links a{font-size:14px;font-weight:500;color:var(--ink);position:relative;padding:.4rem 0}
-.nav__links a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--primary);transform:scaleX(0);transition:transform .25s var(--ease);transform-origin:left}
-.nav__links a:hover::after{transform:scaleX(1)}
-.nav__right{display:flex;align-items:center;gap:1rem}
-.burger{display:none;width:44px;height:44px;position:relative}
-.burger span{position:absolute;left:10px;width:24px;height:2px;background:var(--ink);transition:transform .3s var(--ease),opacity .2s,top .2s}
-.burger span:nth-child(1){top:15px}.burger span:nth-child(2){top:22px}.burger span:nth-child(3){top:29px}
-.burger.is-open span:nth-child(1){top:22px;transform:rotate(45deg)}
-.burger.is-open span:nth-child(2){opacity:0}
-.burger.is-open span:nth-child(3){top:22px;transform:rotate(-45deg)}
-@media (max-width:880px){
-  .nav__links,.nav__right .btn{display:none}
-  .burger{display:block}
-  .nav.menu-open .nav__links{display:flex;flex-direction:column;position:fixed;inset:56px 0 0 0;background:#fff;padding:2.5rem 1.5rem;gap:.3rem}
-  .nav.menu-open .nav__links a{font-size:2rem;padding:.5rem 0}
+/* ---------- sections ---------- */
+.section{position:relative;padding:128px 0}
+.section + .section{border-top:1px solid var(--border)}
+.sec-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:end}
+.sec-head .lede{margin-top:0}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* features */
+.features{display:grid;gap:96px;margin-top:88px}
+.feature{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center}
+.feature:nth-child(even) .feature__card{order:-1}
+.feature__num{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--slate)}
+.feature h3{font-size:30px;font-weight:300;letter-spacing:-.02em;line-height:1.1;margin-top:12px;color:var(--chalk)}
+.feature p{color:var(--fog);margin-top:16px;max-width:46ch}
+.feature ul{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:8px;color:var(--ash);font-size:14px}
+.feature li{display:flex;gap:10px;align-items:flex-start}
+.feature li::before{content:"";width:14px;height:1px;background:var(--signal-lift);margin-top:10px;flex:none}
+.feature__card{background:#0d0e11;border:1px solid var(--border);border-radius:var(--r-card);aspect-ratio:5/4;position:relative;overflow:hidden}
+.feature__card svg{width:100%;height:100%}
+.feature__card .tag{position:absolute;left:18px;top:16px;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--slate)}
+.dg{fill:none;stroke:#3a3d43;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.dg-b{fill:none;stroke:var(--signal-lift);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.dg-s{fill:none;stroke:var(--slate);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.leak{fill:var(--signal-soft);transform-box:fill-box;transform-origin:50% 0;animation:leak 1.8s ease-in infinite}
+.leak.l2{animation-delay:.6s}.leak.l3{animation-delay:1.2s}
+@keyframes leak{0%{opacity:0;transform:translateY(0) scale(.5)}25%{opacity:1}100%{opacity:0;transform:translateY(70px) scale(1)}}
+.pulse-ring{fill:none;stroke:var(--signal-lift);stroke-width:1.5;transform-box:fill-box;transform-origin:center;animation:pring 2.4s ease-out infinite}
+.pulse-ring.p2{animation-delay:.8s}.pulse-ring.p3{animation-delay:1.6s}
+@keyframes pring{0%{transform:scale(.2);opacity:.9}100%{transform:scale(1.6);opacity:0}}
+.auger{transform-box:fill-box;transform-origin:center;animation:spin 3s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.flow-dash{stroke-dasharray:6 10;animation:flow 1.4s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-32}}
+.needle{transform-box:fill-box;transform-origin:50% 100%;animation:needle 4s ease-in-out infinite}
+@keyframes needle{0%,100%{transform:rotate(-55deg)}50%{transform:rotate(38deg)}}
+.flame{fill:var(--signal-lift);transform-box:fill-box;transform-origin:50% 100%;animation:flame .5s ease-in-out infinite alternate}
+.flame.f2{animation-delay:-.2s}.flame.f3{animation-delay:-.35s}
+@keyframes flame{from{transform:scaleY(.85) scaleX(1.05)}to{transform:scaleY(1.12) scaleX(.94)}}
+.valve{transform-box:fill-box;transform-origin:center;animation:valve 5s cubic-bezier(.6,0,.2,1) infinite}
+@keyframes valve{0%,35%{transform:rotate(0)}55%,80%{transform:rotate(90deg)}100%{transform:rotate(0)}}
+.spray{fill:none;stroke:var(--signal-soft);stroke-width:1.5;stroke-linecap:round;animation:spray 5s ease-in-out infinite}
+@keyframes spray{0%,40%{opacity:0}60%,85%{opacity:.9}100%{opacity:0}}
+
+/* process frame */
+.frame{margin-top:72px;border:1px solid var(--border);border-radius:var(--r-card);background:#0b0c0f;overflow:hidden}
+.frame__bar{display:flex;align-items:center;gap:8px;padding:12px 18px;border-bottom:1px solid var(--border);font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--slate)}
+.frame__bar i{width:9px;height:9px;border-radius:50%;background:#2a2d33}
+.frame__bar i:first-child{background:var(--signal)}
+.frame__bar span{margin-left:auto}
+.frame__body{padding:48px 40px 20px}
+.frame__body svg{width:100%;height:auto}
+.stop{transform-box:fill-box;transform-origin:center}
+.stop .ring{fill:#101216;stroke:#6a6e74;stroke-width:3}
+.stop .core{fill:var(--signal-soft)}
+.stop .halo{fill:none;stroke:var(--signal-lift);stroke-width:1.5;transform-box:fill-box;transform-origin:center;animation:pring 3s ease-out infinite}
+.stop:nth-child(2) .halo{animation-delay:.75s}.stop:nth-child(3) .halo{animation-delay:1.5s}.stop:nth-child(4) .halo{animation-delay:2.25s}
+.travel{fill:var(--signal-soft);filter:drop-shadow(0 0 6px rgba(143,220,248,.8))}
+.frame__legend{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;padding:8px 40px 44px}
+.frame__legend div{border-top:1px solid var(--border);padding-top:16px}
+.frame__legend b{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--signal-lift);font-weight:500}
+.frame__legend h3{font-size:18px;font-weight:500;margin-top:8px;color:var(--chalk)}
+.frame__legend p{font-size:14px;color:var(--fog);margin-top:6px}
+
+/* carousel */
+.carousel{margin-top:64px;position:relative}
+.carousel__head{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}
+.carousel__nav{display:flex;gap:8px}
+.carousel__nav button{width:32px;height:32px;border-radius:50%;border:1px solid var(--graphite);background:var(--carbon);color:var(--chalk);display:grid;place-items:center;cursor:pointer;transition:border-color .2s,background .2s}
+.carousel__nav button:hover{border-color:var(--slate)}
+.carousel__nav button:disabled{opacity:.35;cursor:default}
+.carousel__nav svg{width:14px;height:14px}
+.track-wrap{overflow:hidden}
+.track{display:flex;gap:16px;transition:transform .6s cubic-bezier(.6,0,.2,1);will-change:transform}
+.tcard{flex:0 0 320px;background:#0d0e11;border:1px solid var(--border);border-radius:var(--r-card);padding:26px 24px 24px;min-height:300px;display:flex;flex-direction:column;gap:14px}
+.tcard__ico{width:44px;height:44px;border-radius:14px;border:1px solid var(--border);display:grid;place-items:center;color:var(--signal-lift)}
+.tcard__ico svg{width:22px;height:22px}
+.tcard h3{font-size:20px;font-weight:500;letter-spacing:-.01em;color:var(--chalk)}
+.tcard p{color:var(--fog);font-size:14px;flex:1}
+.tcard .do{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--signal-soft);border-top:1px solid var(--border);padding-top:14px}
+
+/* about */
+.about{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:64px;align-items:center}
+.facts{list-style:none;padding:0;margin:36px 0 0;display:grid;gap:0;border-top:1px solid var(--border)}
+.facts li{display:grid;grid-template-columns:150px 1fr;gap:20px;padding:16px 0;border-bottom:1px solid var(--border);font-size:15px}
+.facts b{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--slate);font-weight:500;padding-top:3px}
+.facts span{color:var(--ash)}
+.about__card{background:#fff;border-radius:var(--r-card);padding:44px 40px;box-shadow:0 40px 80px -50px rgba(79,127,217,.45)}
+.about__card svg{width:100%;height:auto}
+.about__card p{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#6b7078;margin-top:22px;display:flex;justify-content:space-between}
+
+/* cta */
+.cta{position:relative;padding:150px 0 130px;border-top:1px solid var(--border);overflow:hidden}
+.cta::before{content:"";position:absolute;inset:auto -20% -60% -20%;height:80%;background:radial-gradient(ellipse at center,rgba(29,78,166,.35),transparent 60%);pointer-events:none}
+.cta .container{text-align:center;display:grid;justify-items:center}
+.cta h2{font-size:clamp(34px,5vw,64px);font-weight:300;letter-spacing:-.03em;line-height:1.02;margin-top:18px;max-width:16ch}
+.cta .phone{font-size:clamp(40px,7vw,96px);font-weight:300;letter-spacing:-.04em;line-height:1;margin-top:34px;color:#fff;font-variant-numeric:tabular-nums}
+.cta .phone:hover{color:var(--signal-soft)}
+.cta .meta{margin-top:18px;color:var(--fog);font-size:15px}
+.cta .btns{display:flex;gap:10px;margin-top:30px;flex-wrap:wrap;justify-content:center}
+
+/* footer */
+.footer{border-top:1px solid var(--border);padding:44px 0;color:var(--slate);font-size:13px}
+.footer .container{display:grid;grid-template-columns:auto 1fr auto;gap:32px;align-items:center}
+.footer svg{height:34px;width:auto}
+.footer__links{display:flex;gap:20px;justify-content:center;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.footer__links a:hover{color:var(--chalk)}
+.footer small{font-size:12px;text-align:right}
+
+@media (max-width:980px){
+  .hero__grid,.sec-head,.feature,.about{grid-template-columns:100%}
+  .feature:nth-child(even) .feature__card{order:0}
+  .hero__side{justify-items:start;text-align:left}
+  .frame__legend{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .footer .container{grid-template-columns:100%;justify-items:start}
+  .footer small{text-align:left}
+  .facts li{grid-template-columns:120px 1fr}
 }
-
-/* =========================================================
-   REVEALS — calm fades, no overshoot/bounce
-   ========================================================= */
-[data-reveal]{opacity:0;transform:translateY(14px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
-[data-reveal].in{opacity:1;transform:none}
-[data-stagger]>*{opacity:0;transform:translateY(14px);transition:opacity .45s var(--ease),transform .45s var(--ease)}
-[data-stagger].in>*{opacity:1;transform:none}
-[data-stagger].in>*:nth-child(1){transition-delay:0s}
-[data-stagger].in>*:nth-child(2){transition-delay:.06s}
-[data-stagger].in>*:nth-child(3){transition-delay:.12s}
-[data-stagger].in>*:nth-child(4){transition-delay:.18s}
-.reveal-clip{clip-path:inset(0 100% 0 0);transition:clip-path .7s var(--ease)}
-.reveal-clip.in{clip-path:inset(0 0 0 0)}
-
-/* =========================================================
-   HERO
-   ========================================================= */
-.hero{padding:var(--xxl) 0 var(--section)}
-.hero__grid{display:grid;grid-template-columns:1.05fr .95fr;gap:3rem;align-items:center}
-.hero h1{color:var(--ink);margin:var(--md) 0 var(--lg);text-wrap:balance}
-.hero .body-lg{max-width:520px;margin-bottom:var(--xl)}
-.hero__actions{display:flex;flex-wrap:wrap;gap:var(--sm)}
-.hero-card{border:1px solid var(--hairline);padding:var(--xl);position:relative;overflow:hidden}
-@media (max-width:960px){.hero__grid{grid-template-columns:1fr}.hero-card{padding:var(--lg)}}
-
-/* flat line-art plumbing diagram */
-.diagram svg{width:100%;height:auto}
-.flow{stroke-dasharray:10 14}
-.flow.anim{animation:flow 2.4s linear infinite}
-@keyframes flow{to{stroke-dashoffset:-24}}
-.valve-handle{transform-box:fill-box;transform-origin:center}
-.valve-handle.anim{animation:valve 7s var(--ease) infinite}
-@keyframes valve{0%,45%,100%{transform:rotate(0)}60%,90%{transform:rotate(90deg)}}
-.gauge-needle{transform-box:fill-box;transform-origin:50% 88%}
-.gauge-needle.anim{animation:needle 5s var(--ease) infinite}
-@keyframes needle{0%,100%{transform:rotate(-32deg)}50%{transform:rotate(28deg)}}
-.drip{transform-box:fill-box;transform-origin:center;opacity:0}
-.drip.anim{animation:drip 3s cubic-bezier(.5,0,1,.6) infinite}
-.drip.d2.anim{animation-delay:1.5s}
-@keyframes drip{0%{transform:translateY(0) scale(.6);opacity:0}8%{opacity:1;transform:translateY(0) scale(1)}88%{opacity:1}100%{transform:translateY(56px) scale(1);opacity:0}}
-
-/* =========================================================
-   TRUST STRIP
-   ========================================================= */
-.trust{border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
-.trust__row{display:grid;grid-template-columns:repeat(4,1fr)}
-.trust__item{padding:var(--lg) var(--md);border-right:1px solid var(--hairline);text-align:center}
-.trust__item:last-child{border-right:0}
-.trust__item svg{width:24px;height:24px;color:var(--primary);margin:0 auto var(--xs)}
-.trust__item b{display:block;font-size:15px;font-weight:600;color:var(--ink)}
-.trust__item span{display:block;font-size:13px;color:var(--ink-muted);margin-top:2px}
-@media (max-width:760px){.trust__row{grid-template-columns:1fr 1fr}.trust__item{border-bottom:1px solid var(--hairline)}.trust__item:nth-child(2n){border-right:0}}
-
-/* =========================================================
-   SECTIONS
-   ========================================================= */
-.section{padding:var(--section) 0}
-.section__head{max-width:680px;margin-bottom:var(--xl)}
-.section__head h2{margin:var(--sm) 0 var(--md);color:var(--ink)}
-.on-dark{background:var(--inverse-canvas);color:#fff}
-.on-dark h2{color:#fff}
-.on-dark .body-lg{color:var(--inverse-ink-muted)}
-.on-dark .eyebrow{color:#fff}
-.on-dark .eyebrow::before{background:#fff}
-
-/* =========================================================
-   SERVICES — tabbed panels (Carbon "tabs" component)
-   ========================================================= */
-.tabs__list{display:flex;border-bottom:1px solid var(--hairline);overflow-x:auto;gap:0}
-.tab{padding:16px 22px;font-size:15px;font-weight:400;color:var(--ink-muted);white-space:nowrap;position:relative;flex:none;transition:color .2s}
-.tab.is-active{color:var(--ink);font-weight:600}
-.tabs__indicator{position:absolute;bottom:-1px;height:2px;background:var(--primary);transition:transform .35s var(--ease),width .35s var(--ease);left:0;width:0}
-.tabs__list{position:relative}
-.tab-panel{display:none;padding-top:var(--xl)}
-.tab-panel.is-active{display:block}
-.panel__grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--xxl);align-items:start}
-.panel__grid h3{font-size:28px;font-weight:400;margin-bottom:var(--sm)}
-.panel__grid p{color:var(--ink-muted);font-size:16px;margin-bottom:var(--lg);max-width:480px}
-.panel__list{list-style:none;margin:0;padding:0;border-top:1px solid var(--hairline)}
-.panel__list li{display:flex;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid var(--hairline);font-size:15px;font-weight:500}
-.panel__list svg{width:18px;height:18px;color:var(--primary);flex:none}
-.panel__art{border:1px solid var(--hairline);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;padding:var(--lg)}
-.panel__art svg{width:100%;height:100%}
-@media (max-width:860px){.panel__grid{grid-template-columns:1fr}.panel__art{order:-1}}
-
-/* =========================================================
-   JOURNEY — scroll-driven droplet through the pipe
-   (the "marble on a track" idea, translated to plumbing)
-   ========================================================= */
-.journey{position:relative;height:320vh;background:var(--surface-1)}
-.journey__stage{position:sticky;top:0;height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:var(--xxl);overflow:hidden}
-.journey__copy h2{margin:var(--sm) 0 var(--md)}
-.journey__steps{list-style:none;margin:var(--xl) 0 0;padding:0;display:grid;gap:0;border-top:1px solid var(--surface-2)}
-.jstep{display:flex;gap:var(--md);padding:18px 0;border-bottom:1px solid var(--surface-2);opacity:.38;transition:opacity .35s var(--ease)}
-.jstep.reached{opacity:1}
-.jstep .n{width:28px;height:28px;flex:none;display:grid;place-items:center;font-size:12px;font-weight:600;border:1px solid var(--ink);color:var(--ink);transition:background .3s,color .3s,border-color .3s}
-.jstep.reached .n{background:var(--primary);color:#fff;border-color:var(--primary)}
-.jstep b{display:block;font-size:17px;font-weight:600}
-.jstep span{font-size:14px;color:var(--ink-muted)}
-.journey__pipe{height:82vh;display:flex;align-items:center;justify-content:center}
-.journey__pipe svg{height:100%;width:auto;max-width:100%}
-.pipe-fill{stroke-dasharray:1;stroke-dashoffset:1}
-.stop-dot{fill:#fff;stroke:#161616;stroke-width:1.5;transition:fill .3s,stroke .3s}
-.stop-dot.reached{fill:#1d4ea6;stroke:#1d4ea6}
-@media (max-width:860px){
-  .journey{height:auto;background:var(--surface-1)}
-  .journey__stage{position:static;height:auto;grid-template-columns:1fr;padding:var(--section) 0;gap:var(--xl)}
-  .journey__pipe{height:auto}
-  .journey__pipe svg{height:auto;width:100%;max-height:70vh}
+@media (max-width:760px){
+  .container{width:auto;margin:0 20px 0 44px}
+  .nav__links{display:none}
+  .nav__phone{display:none}
+  .section{padding:88px 0}
+  .hero{padding-top:calc(var(--nav-h) + 56px)}
+  .features{gap:64px;margin-top:56px}
+  .feature h3{font-size:26px}
+  .frame__body{padding:32px 18px 8px}
+  .frame__legend{grid-template-columns:100%;padding:8px 18px 32px}
+  .tcard{flex-basis:78vw;min-height:260px}
+  .about__card{padding:30px 24px}
+  .cta{padding:110px 0 90px}
+  #tower{width:84px}
+  .hero__art svg{opacity:.38}
+  .hero__side{justify-items:end}
+  .hero__brand{width:min(280px,100% - 60px);padding:20px 20px 16px}
 }
-
-/* =========================================================
-   FEATURE CARDS
-   ========================================================= */
-.features{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--hairline);border:1px solid var(--hairline)}
-.fcard{background:var(--canvas);padding:var(--lg);display:flex;flex-direction:column;gap:var(--sm)}
-.fcard svg{width:28px;height:28px;color:var(--primary)}
-.fcard h3{font-size:19px;font-weight:600}
-.fcard p{font-size:14px;color:var(--ink-muted)}
-@media (max-width:860px){.features{grid-template-columns:1fr 1fr}}
-@media (max-width:520px){.features{grid-template-columns:1fr}}
-
-/* =========================================================
-   FAQ — flat accordion (Carbon-style, square, hairline rows)
-   ========================================================= */
-.faq{border-top:1px solid var(--hairline)}
-.facc{border-bottom:1px solid var(--hairline)}
-.facc__q{width:100%;display:flex;align-items:center;gap:var(--md);padding:22px 0;text-align:left;font-size:17px;font-weight:500;color:var(--ink)}
-.facc__q .idx{font-size:13px;color:var(--ink-subtle);font-weight:600;width:24px;flex:none}
-.facc__plus{margin-left:auto;width:20px;height:20px;position:relative;flex:none}
-.facc__plus::before,.facc__plus::after{content:"";position:absolute;background:var(--ink);transition:transform .25s var(--ease)}
-.facc__plus::before{left:0;top:9px;width:20px;height:2px}
-.facc__plus::after{left:9px;top:0;width:2px;height:20px}
-.facc.is-open .facc__plus::after{transform:rotate(90deg)}
-.facc__a{max-height:0;overflow:hidden;transition:max-height .4s var(--ease)}
-.facc__a p{padding:0 0 24px 40px;color:var(--ink-muted);font-size:15px;max-width:640px}
-.facc__a strong{color:var(--ink)}
-
-/* =========================================================
-   CTA BANNER
-   ========================================================= */
-.cta{background:var(--primary);color:#fff;text-align:center;padding:var(--section) 0}
-.cta h2{color:#fff;margin-bottom:var(--sm)}
-.cta__phone{display:block;font-family:var(--font-mark);font-size:clamp(2.4rem,7vw,5rem);letter-spacing:.01em;margin:var(--md) 0 var(--lg)}
-.cta .body-lg{color:rgba(255,255,255,.85);max-width:560px;margin:0 auto var(--xl)}
-.cta__actions{display:flex;justify-content:center;flex-wrap:wrap;gap:var(--sm)}
-
-/* =========================================================
-   ABOUT + CONTACT
-   ========================================================= */
-.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:var(--xxl);align-items:start}
-.about-grid .body-lg{margin-bottom:var(--md);max-width:520px}
-.info-list{border-top:1px solid rgba(255,255,255,.2)}
-.info-row{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.2)}
-.info-row svg{width:20px;height:20px;color:#fff;flex:none;margin-top:2px;opacity:.8}
-.info-row b{display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--inverse-ink-muted);margin-bottom:2px}
-.info-row span{font-weight:500}
-.logo-tile{border:1px solid rgba(255,255,255,.2);padding:var(--xl);background:#fff}
-.logo-tile svg{width:100%;height:auto}
-@media (max-width:900px){.about-grid{grid-template-columns:1fr}}
-
-/* =========================================================
-   FOOTER
-   ========================================================= */
-.footer{background:var(--inverse-canvas);color:var(--inverse-ink-muted);padding:var(--xxl) 0 var(--lg);font-size:14px}
-.footer__grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2.5rem;margin-bottom:var(--xxl)}
-.footer h4{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:#fff;margin-bottom:var(--md);font-weight:600}
-.footer ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
-.footer a:hover{color:#fff}
-.footer p.desc{margin-top:var(--md);max-width:320px}
-.footer__bottom{border-top:1px solid rgba(255,255,255,.15);padding-top:var(--md);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:12px}
-@media (max-width:760px){.footer__grid{grid-template-columns:1fr}}
-
-.float-call{position:fixed;right:0;bottom:0;z-index:90;display:none}
-@media (max-width:880px){.float-call{display:block}.float-call .btn{box-shadow:0 -1px 0 var(--hairline)}}
-
 @media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  [data-reveal],[data-stagger]>*{opacity:1;transform:none;transition:none}
-  .reveal-clip{clip-path:inset(0 0 0 0);transition:none}
-  .flow.anim,.valve-handle.anim,.gauge-needle.anim,.drip.anim{animation:none!important}
-  .drip{opacity:0}
+  *,*::before,*::after{animation-duration:.001s!important;animation-iteration-count:1!important;transition-duration:.001s!important}
+  .draw{stroke-dashoffset:0}
+  .reveal{opacity:1;transform:none}
 }
 </style>
 </head>
 <body>
 
-<!-- ============ LOGO + ICON SYMBOLS ============ -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
     <symbol id="hh-logo" viewBox="0 0 1000 560">
@@ -327,7 +296,7 @@ p{margin:0}
       <rect x="40" y="428" width="920" height="16" fill="#8c8c8c"/>
       <text x="500" y="536" text-anchor="middle" font-family="Oswald, 'Arial Narrow', Impact, sans-serif" font-weight="700" font-size="92" fill="#1d4ea6" textLength="918" lengthAdjust="spacingAndGlyphs">PLUMBING &amp; MECHANICAL</text>
     </symbol>
-    <symbol id="hh-logo-white" viewBox="0 0 1000 560">
+    <symbol id="hh-logo-mono" viewBox="0 0 1000 560">
       <g fill="#fff">
         <rect x="52" y="52" width="176" height="34"/><rect x="52" y="364" width="176" height="34"/>
         <rect x="86" y="52" width="108" height="346"/>
@@ -335,7 +304,12 @@ p{margin:0}
         <rect x="334" y="52" width="108" height="346"/>
         <rect x="194" y="186" width="140" height="76"/>
       </g>
-      <text x="510" y="332" text-anchor="middle" font-family="Oswald, 'Arial Narrow', Impact, sans-serif" font-weight="700" font-size="300" fill="#8c8c8c">&amp;</text>
+      <g transform="translate(264,226)">
+        <path d="M0 -92 C 32 -48 66 -12 66 30 A66 66 0 1 1 -66 30 C -66 -12 -32 -48 0 -92 Z" fill="#08090b"/>
+        <path d="M0 -70 C 25 -34 50 -6 50 28 A50 50 0 1 1 -50 28 C -50 -6 -25 -34 0 -70 Z" fill="#4f7fd9"/>
+        <path d="M14 -20 C 32 0 36 18 30 40" fill="none" stroke="#08090b" stroke-width="9" stroke-linecap="round"/>
+      </g>
+      <text x="510" y="332" text-anchor="middle" font-family="Oswald, 'Arial Narrow', Impact, sans-serif" font-weight="700" font-size="300" fill="#89898d">&amp;</text>
       <g fill="#fff">
         <rect x="524" y="52" width="176" height="34"/><rect x="524" y="364" width="176" height="34"/>
         <rect x="558" y="52" width="108" height="346"/>
@@ -343,443 +317,514 @@ p{margin:0}
         <rect x="806" y="52" width="108" height="346"/>
         <rect x="666" y="186" width="140" height="76"/>
       </g>
-      <rect x="40" y="428" width="920" height="16" fill="#8c8c8c"/>
+      <g transform="translate(736,230)">
+        <circle r="84" fill="#08090b"/>
+        <circle r="56" fill="none" stroke="#89898d" stroke-width="22" stroke-dasharray="17 12"/>
+        <circle r="46" fill="#89898d"/>
+        <circle r="28" fill="#08090b"/>
+        <g fill="#89898d">
+          <path d="M-14 -40 h28 v18 l-8 8 v70 h-12 v-70 l-8 -8 z" transform="translate(0,-4)"/>
+          <path d="M-22 -48 a22 22 0 1 1 44 0 l-10 0 v-10 h-24 v10 z" transform="translate(0,4)"/>
+        </g>
+      </g>
+      <rect x="40" y="428" width="920" height="16" fill="#89898d"/>
       <text x="500" y="536" text-anchor="middle" font-family="Oswald, 'Arial Narrow', Impact, sans-serif" font-weight="700" font-size="92" fill="#fff" textLength="918" lengthAdjust="spacingAndGlyphs">PLUMBING &amp; MECHANICAL</text>
     </symbol>
     <symbol id="ico-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.9 2.1z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-    <symbol id="ico-check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-    <symbol id="ico-shield" viewBox="0 0 24 24"><path d="M12 2l7 4v6c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-    <symbol id="ico-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
-    <symbol id="ico-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="3" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
-    <symbol id="ico-building" viewBox="0 0 24 24"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-    <symbol id="ico-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.5 4.6L3 17l4 4 6.1-6.2a4 4 0 0 0 4.6-5.5l-2.6 2.6-2-.6-.6-2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-    <symbol id="ico-drop" viewBox="0 0 24 24"><path d="M12 2c4 5.5 7 9.5 7 13a7 7 0 0 1-14 0c0-3.5 3-7.5 7-13z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-    <symbol id="ico-flame" viewBox="0 0 24 24"><path d="M12 2c1 3 4 4.5 4 8a4 4 0 0 1-8 0c0-1 .3-1.8.8-2.6.4.6.9 1 1.6 1-.2-1.6.3-3.8 1.6-6.4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-    <symbol id="ico-alert" viewBox="0 0 24 24"><path d="M12 9v4M12 17h.01M10.3 3.9L2.4 18a2 2 0 0 0 1.7 3h15.8a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="ico-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="ico-drop" viewBox="0 0 24 24"><path d="M12 3c3 4.5 6 7.6 6 11a6 6 0 0 1-12 0c0-3.4 3-6.5 6-11z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="ico-heat" viewBox="0 0 24 24"><path d="M8 14a4 4 0 1 0 8 0c0-3-4-5-4-9-1 3-4 5-4 9z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M4 21h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="ico-alert" viewBox="0 0 24 24"><path d="M12 3l10 18H2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M12 10v5M12 18h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="ico-wave" viewBox="0 0 24 24"><path d="M2 8c2.5 0 2.5 2 5 2s2.5-2 5-2 2.5 2 5 2 2.5-2 5-2M2 14c2.5 0 2.5 2 5 2s2.5-2 5-2 2.5 2 5 2 2.5-2 5-2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="ico-snow" viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M5 5l14 14M19 5L5 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
   </defs>
 </svg>
 
-<!-- ============ UTILITY BAR ============ -->
-<div class="utility">
-  <div class="container">
-    <span>Amarillo, TX &middot; Licensed Plumbing Contractor</span>
-    <div class="utility__right">
-      <span>Mon&ndash;Fri, 9:00 am&ndash;5:00 pm</span>
-      <a href="tel:+18063532435">(806) 353-2435</a>
-    </div>
-  </div>
-</div>
-
 <!-- ============ NAV ============ -->
 <header class="nav" id="nav">
-  <div class="container nav__inner">
-    <a href="#top" class="brand" aria-label="H&H Plumbing & Mechanical home"><svg viewBox="0 0 1000 560" aria-hidden="true"><use href="#hh-logo"/></svg></a>
-    <nav aria-label="Primary">
-      <ul class="nav__links" id="menu">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#faq">Emergencies</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+  <div class="container">
+    <a href="#top" class="nav__logo" aria-label="H&amp;H Plumbing &amp; Mechanical">
+      <svg class="color" viewBox="0 0 1000 560" height="30" width="54"><use href="#hh-logo"/></svg>
+      <svg class="mono" viewBox="0 0 1000 560" height="30" width="54"><use href="#hh-logo-mono"/></svg>
+    </a>
+    <nav class="nav__links" aria-label="Sections">
+      <a href="#services">Services</a><a href="#process">How it works</a><a href="#emergencies">Emergencies</a><a href="#about">About</a>
     </nav>
-    <div class="nav__right">
-      <a class="btn btn-primary" href="tel:+18063532435"><svg><use href="#ico-phone"/></svg>Call (806) 353-2435</a>
-      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+    <div style="display:flex;align-items:center;gap:14px">
+      <span class="nav__phone">(806) 353-2435</span>
+      <a class="btn btn--ghost" href="tel:+18063532435"><svg><use href="#ico-phone"/></svg>Call now</a>
     </div>
   </div>
 </header>
 
-<main id="top">
-
 <!-- ============ HERO ============ -->
-<section class="hero" id="hero">
-  <div class="container hero__grid">
-    <div>
-      <span class="eyebrow" data-reveal>Amarillo, Texas</span>
-      <h1 class="display-xl" data-reveal>Plumbing repairs, done straight.</h1>
-      <p class="body-lg" data-reveal>H&amp;H Plumbing &amp; Mechanical has fixed Amarillo's water, gas and sewer problems for decades &mdash; licensed by the State of Texas and the City of Amarillo, residential and commercial.</p>
-      <div class="hero__actions" data-reveal>
-        <a class="btn btn-primary" href="tel:+18063532435"><svg><use href="#ico-phone"/></svg>Call (806) 353-2435</a>
-        <a class="btn btn-tertiary" href="#services">What we fix</a>
+<section class="hero" id="top">
+  <div class="hero__art" aria-hidden="true">
+    <svg viewBox="0 0 1440 800" preserveAspectRatio="xMidYMax slice">
+      <!-- ground -->
+      <path class="line draw d1" d="M-20 700 H1460"/>
+      <path class="line line--soft" d="M-20 716 Q 400 706 760 716 T 1460 712"/>
+      <path class="line line--soft" d="M-20 740 Q 300 748 640 738 T 1460 742"/>
+      <!-- sun -->
+      <circle class="line draw d2" cx="1180" cy="200" r="54"/>
+      <path class="line line--soft" d="M1180 116v-20M1180 304v-20M1096 200h-20M1284 200h-20"/>
+      <!-- house -->
+      <g class="draw d3 line">
+        <path d="M760 700V470l150-110 150 110v230"/>
+        <path d="M790 700V520h60v180M880 540h60v60h-60zM990 540h30v60h-30M1010 380v-60h24v78"/>
+        <path d="M760 470l150-110 150 110"/>
+      </g>
+      <!-- garage / shed -->
+      <path class="line draw d4" d="M1090 700V600h130v100M1105 700V620h100v80"/>
+      <!-- trees -->
+      <g class="sway">
+        <path class="line draw d4" d="M700 700V600M700 600c-40-6-70-50-58-100 6 30 30 46 58 50 28-4 52-20 58-50 12 50-18 94-58 100z"/>
+      </g>
+      <g class="sway s2">
+        <path class="line draw d5" d="M1410 700V630M1410 630c-30-4-52-36-44-74 4 22 22 34 44 36 22-2 40-14 44-36 8 38-14 70-44 74z"/>
+      </g>
+      <g class="sway s3">
+        <path class="line draw d5" d="M1300 700V560M1300 560c-52-8-90-66-76-132 8 40 40 60 76 66 36-6 68-26 76-66 14 66-24 124-76 132z"/>
+      </g>
+      <!-- underground main -->
+      <path class="line line--soft" stroke-dasharray="6 8" d="M-20 770 H1460"/>
+      <path class="line line--soft" d="M760 700v70M1160 700v70"/>
+      <circle class="line line--soft" cx="760" cy="770" r="6"/>
+      <circle class="line line--soft" cx="1160" cy="770" r="6"/>
+      <!-- birds -->
+      <path class="line line--soft" d="M960 160q10-10 20 0 10-10 20 0M1010 130q8-8 16 0 8-8 16 0"/>
+    </svg>
+  </div>
+
+  <!-- water tower: the droplet source -->
+  <svg id="tower" viewBox="0 0 150 300" aria-hidden="true">
+    <g class="line">
+      <path class="draw d1" d="M20 296V120M130 296V120M40 296V120M110 296V120"/>
+      <path class="draw d2" d="M20 180h110M20 240h110M40 120l70 60M110 120l-70 60M40 180l70 60M110 180l-70 60"/>
+      <path class="draw d2" d="M8 120h134"/>
+      <path class="draw d3" d="M12 120V70q0-14 14-14h98q14 0 14 14v50"/>
+      <path class="draw d3" d="M12 70l63-42 63 42"/>
+      <path class="draw d4" d="M75 28V12M65 12h20"/>
+      <path class="draw d4" d="M55 296h40"/>
+    </g>
+    <g class="tank-water">
+      <path class="tower-fill" d="M22 108h106" opacity=".9"/>
+      <path class="tower-fill" d="M22 96h106" opacity=".55"/>
+      <path class="tower-fill" d="M22 84h106" opacity=".3"/>
+    </g>
+    <text x="75" y="264" text-anchor="middle" font-family="ui-monospace,Menlo,monospace" font-size="9" letter-spacing="2" fill="#0f1115" opacity=".7">AMARILLO</text>
+  </svg>
+
+  <div class="container">
+    <div class="hero__grid">
+      <div>
+        <span class="pill"><i></i>Licensed &amp; local · Amarillo, TX</span>
+        <h1>Keep the water <b>running.</b></h1>
+        <p class="hero__sub">Plumbing and mechanical work for Amarillo homes and businesses. Licensed by the Texas State Board of Plumbing Examiners and the City of Amarillo.</p>
+        <div class="hero__cta">
+          <a class="btn btn--signal" href="tel:+18063532435"><svg><use href="#ico-phone"/></svg>(806) 353-2435</a>
+          <a class="btn btn--ghost" href="#services">See what we fix<svg><use href="#ico-arrow"/></svg></a>
+        </div>
+        <div class="marks">
+          <span>Repairs</span><span>Drains</span><span>Water heaters</span><span>Fixtures</span><span>Mechanical</span>
+        </div>
+      </div>
+      <div class="hero__side">
+        <div class="hero__brand">
+          <svg viewBox="0 0 1000 560"><use href="#hh-logo"/></svg>
+          <p>117 N Polk St · Mon–Fri 9–5</p>
+        </div>
       </div>
     </div>
-    <div class="hero-card" data-reveal="scale">
-      <div class="diagram">
-        <svg viewBox="0 0 480 380" aria-hidden="true">
-          <g fill="none" stroke="#e0e0e0" stroke-width="16" stroke-linecap="square" stroke-linejoin="miter">
-            <path d="M40 100 H220 V240 H360 V320 H440"/>
-            <path d="M220 240 H120 V320"/>
-            <path d="M360 240 V160 H440"/>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="section" id="services" data-station="Services">
+  <div class="container">
+    <div class="sec-head">
+      <div class="reveal">
+        <p class="eyebrow"><b>01</b> — What we fix</p>
+        <h2 class="h2">Four things that go wrong. One number to call.</h2>
+      </div>
+      <p class="lede reveal">No upsell, no mystery pricing. Tell us what's happening and we'll tell you what it takes to fix it.</p>
+    </div>
+
+    <div class="features">
+      <!-- 1: leaks -->
+      <article class="feature reveal">
+        <div>
+          <p class="feature__num">01 / LEAKS &amp; REPAIRS</p>
+          <h3>Find the leak. Fix the pipe. Leave it dry.</h3>
+          <p>Dripping supply lines, pinholes in copper, slab leaks, running toilets, and the mystery water bill. We trace it to the source instead of patching the symptom.</p>
+          <ul><li>Supply and drain line repair</li><li>Slab and under-floor leaks</li><li>Toilets, valves, shut-offs</li></ul>
+        </div>
+        <div class="feature__card" data-station="Leaks">
+          <span class="tag">Fig. 01 — Leak trace</span>
+          <svg viewBox="0 0 500 400" aria-hidden="true">
+            <path class="dg" d="M40 120h420M40 138h420"/>
+            <path class="dg" d="M120 138v70q0 12 12 12h40M420 138v70q0 12-12 12h-40"/>
+            <path class="dg-b flow-dash" d="M40 129h420"/>
+            <g>
+              <circle class="pulse-ring" cx="250" cy="138" r="18"/>
+              <circle class="pulse-ring p2" cx="250" cy="138" r="18"/>
+              <circle class="pulse-ring p3" cx="250" cy="138" r="18"/>
+            </g>
+            <path class="dg-s" d="M244 138l6 6 6-6"/>
+            <path class="leak" d="M250 148c5 7 8 11 8 16a8 8 0 0 1-16 0c0-5 3-9 8-16z"/>
+            <path class="leak l2" d="M250 148c5 7 8 11 8 16a8 8 0 0 1-16 0c0-5 3-9 8-16z"/>
+            <path class="leak l3" d="M250 148c5 7 8 11 8 16a8 8 0 0 1-16 0c0-5 3-9 8-16z"/>
+            <path class="dg" d="M60 320h380" stroke-dasharray="4 8"/>
+            <path class="dg-s" d="M200 300q50-24 100 0"/>
+            <text x="250" y="352" text-anchor="middle" font-family="ui-monospace,Menlo,monospace" font-size="11" letter-spacing="2" fill="#89898d">PRESSURE DROP LOCATED</text>
+          </svg>
+        </div>
+      </article>
+
+      <!-- 2: drains -->
+      <article class="feature reveal">
+        <div>
+          <p class="feature__num">02 / DRAINS &amp; SEWER</p>
+          <h3>Slow drain today. Backup tomorrow.</h3>
+          <p>Kitchen sinks, tubs, floor drains, and main sewer lines. We clear the line and tell you honestly whether it's a one-time clog or a line that's on its way out.</p>
+          <ul><li>Drain cleaning and augering</li><li>Main line stoppages</li><li>Sewer line repair</li></ul>
+        </div>
+        <div class="feature__card" data-station="Drains">
+          <span class="tag">Fig. 02 — Line clearing</span>
+          <svg viewBox="0 0 500 400" aria-hidden="true">
+            <path class="dg" d="M40 160h300q40 0 40 40v120M40 200h300q0 0 0 0M40 200h280q20 0 20 20v120"/>
+            <path class="dg-b flow-dash" d="M40 180h290q30 0 30 30v110"/>
+            <g class="auger">
+              <circle class="dg-s" cx="120" cy="180" r="26"/>
+              <path class="dg-b" d="M120 154v52M94 180h52" opacity=".8"/>
+              <path class="dg-s" d="M102 162l36 36M138 162l-36 36" opacity=".5"/>
+            </g>
+            <path class="dg" d="M60 300q40 0 40 20t40 20 40-20 40-20" opacity=".5"/>
+            <text x="250" y="352" text-anchor="middle" font-family="ui-monospace,Menlo,monospace" font-size="11" letter-spacing="2" fill="#89898d">CABLE AT 42 FT · FLOW RESTORED</text>
+          </svg>
+        </div>
+      </article>
+
+      <!-- 3: water heaters -->
+      <article class="feature reveal">
+        <div>
+          <p class="feature__num">03 / WATER HEATERS</p>
+          <h3>Hot water, back on. Tank or tankless.</h3>
+          <p>No hot water, lukewarm showers, a heater that's popping, or one that's just past its life. Repair when it's worth it, replace when it isn't, and we'll tell you which.</p>
+          <ul><li>Gas and electric tank heaters</li><li>Tankless service and install</li><li>Thermostat, element, and valve repair</li></ul>
+        </div>
+        <div class="feature__card" data-station="Heaters">
+          <span class="tag">Fig. 03 — Heater service</span>
+          <svg viewBox="0 0 500 400" aria-hidden="true">
+            <rect class="dg" x="180" y="80" width="140" height="240" rx="26"/>
+            <path class="dg" d="M210 80V56M290 80V56M230 320v30M270 320v30"/>
+            <path class="dg-b flow-dash" d="M290 56v-16h120"/>
+            <path class="dg-s" d="M210 56v-16H90"/>
+            <g transform="translate(250,196)">
+              <circle class="dg" r="44"/>
+              <path class="dg-s" d="M-30 18a36 36 0 0 1 60 0" opacity=".6"/>
+              <path class="dg-b" d="M-24 22l4-4M24 22l-4-4M0-32v6" opacity=".8"/>
+              <line class="needle" x1="0" y1="8" x2="0" y2="-30" stroke="#8fdcf8" stroke-width="2.5" stroke-linecap="round"/>
+              <circle r="4" fill="#8fdcf8"/>
+            </g>
+            <g>
+              <path class="flame" d="M236 300c0-10 8-14 8-24 6 6 10 12 10 20a9 9 0 0 1-18 4z"/>
+              <path class="flame f2" d="M250 302c0-12 9-16 9-28 7 7 12 14 12 23a10 10 0 0 1-21 5z"/>
+              <path class="flame f3" d="M266 300c0-10 8-14 8-24 6 6 10 12 10 20a9 9 0 0 1-18 4z"/>
+            </g>
+            <text x="250" y="376" text-anchor="middle" font-family="ui-monospace,Menlo,monospace" font-size="11" letter-spacing="2" fill="#89898d">120°F · BURNER STEADY</text>
+          </svg>
+        </div>
+      </article>
+
+      <!-- 4: fixtures & mechanical -->
+      <article class="feature reveal">
+        <div>
+          <p class="feature__num">04 / FIXTURES &amp; MECHANICAL</p>
+          <h3>Installs and mechanical work, done to code.</h3>
+          <p>Faucets, sinks, toilets, disposals, and shut-off valves. Gas piping and mechanical systems for homes and commercial spaces, permitted and inspected where required.</p>
+          <ul><li>Fixture install and replacement</li><li>Gas lines and mechanical piping</li><li>Commercial service calls</li></ul>
+        </div>
+        <div class="feature__card" data-station="Fixtures">
+          <span class="tag">Fig. 04 — Valve &amp; fixture</span>
+          <svg viewBox="0 0 500 400" aria-hidden="true">
+            <path class="dg" d="M40 200h140M320 200h140"/>
+            <path class="dg-b flow-dash" d="M40 200h140"/>
+            <circle class="dg" cx="250" cy="200" r="50"/>
+            <g class="valve">
+              <circle class="dg-s" cx="250" cy="200" r="34"/>
+              <path class="dg-b" d="M250 166v68M216 200h68"/>
+              <circle cx="250" cy="200" r="6" fill="#4f7fd9"/>
+            </g>
+            <path class="dg" d="M180 200h20M300 200h20"/>
+            <path class="dg" d="M380 200q40 0 40 40v40q0 20-20 20"/>
+            <g>
+              <path class="spray" d="M400 312q-6 14-2 26"/>
+              <path class="spray" d="M400 312q6 14 2 26" style="animation-delay:.2s"/>
+              <path class="spray" d="M400 312v28" style="animation-delay:.1s"/>
+            </g>
+            <text x="250" y="352" text-anchor="middle" font-family="ui-monospace,Menlo,monospace" font-size="11" letter-spacing="2" fill="#89898d">QUARTER-TURN · OPEN</text>
+          </svg>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="section" id="process" data-station="Process">
+  <div class="container">
+    <div class="sec-head">
+      <div class="reveal">
+        <p class="eyebrow"><b>02</b> — How a call goes</p>
+        <h2 class="h2">From your phone to a dry floor in four stops.</h2>
+      </div>
+      <p class="lede reveal">The same path every time, so you always know where the job is.</p>
+    </div>
+    <div class="frame reveal">
+      <div class="frame__bar"><i></i><i></i><i></i><span>hh-plumbing / service-call</span></div>
+      <div class="frame__body">
+        <svg viewBox="0 0 1100 160" aria-hidden="true">
+          <path d="M60 80H1040" stroke="#6a6e74" stroke-width="14" stroke-linecap="round" fill="none"/>
+          <path d="M60 80H1040" stroke="#101216" stroke-width="9" stroke-linecap="round" fill="none"/>
+          <path d="M60 80H1040" stroke="#1d4ea6" stroke-width="5" stroke-linecap="round" fill="none" class="flow-dash" style="stroke-dasharray:10 14;animation-duration:1.8s"/>
+          <g id="stops">
+            <g class="stop"><circle class="halo" cx="60" cy="80" r="14"/><circle class="ring" cx="60" cy="80" r="14"/><circle class="core" cx="60" cy="80" r="5"/></g>
+            <g class="stop"><circle class="halo" cx="386" cy="80" r="14"/><circle class="ring" cx="386" cy="80" r="14"/><circle class="core" cx="386" cy="80" r="5"/></g>
+            <g class="stop"><circle class="halo" cx="713" cy="80" r="14"/><circle class="ring" cx="713" cy="80" r="14"/><circle class="core" cx="713" cy="80" r="5"/></g>
+            <g class="stop"><circle class="halo" cx="1040" cy="80" r="14"/><circle class="ring" cx="1040" cy="80" r="14"/><circle class="core" cx="1040" cy="80" r="5"/></g>
           </g>
-          <g class="flow anim" fill="none" stroke="#1d4ea6" stroke-width="4" stroke-linecap="round">
-            <path d="M40 100 H220 V240 H360 V320 H440"/>
-            <path d="M220 240 H120 V320"/>
-            <path d="M360 240 V160 H440"/>
-          </g>
-          <g stroke="#161616" stroke-width="1.5" fill="#fff">
-            <rect x="204" y="84" width="32" height="32"/>
-            <rect x="204" y="224" width="32" height="32"/>
-            <rect x="344" y="224" width="32" height="32"/>
-            <rect x="344" y="304" width="32" height="32"/>
-            <rect x="344" y="144" width="32" height="32"/>
-            <rect x="104" y="224" width="32" height="32"/>
-          </g>
-          <g transform="translate(120,100)">
-            <rect x="-22" y="-22" width="44" height="44" fill="#fff" stroke="#161616" stroke-width="1.5"/>
-            <g class="valve-handle anim" stroke="#1d4ea6" stroke-width="4" stroke-linecap="round"><path d="M-13 0H13"/><path d="M0 -13V13" opacity=".35"/></g>
-          </g>
-          <g transform="translate(440,160)">
-            <rect x="-36" y="-36" width="72" height="72" fill="#fff" stroke="#161616" stroke-width="1.5"/>
-            <path d="M-20 -12 A24 24 0 0 1 20 -12" fill="none" stroke="#1d4ea6" stroke-width="3"/>
-            <path d="M20 -12 A24 24 0 0 1 22 10" fill="none" stroke="#f1c21b" stroke-width="3"/>
-            <g class="gauge-needle anim"><path d="M0 6 L-3 0 L0 -22 L3 0 Z" fill="#161616"/></g>
-          </g>
-          <g transform="translate(120,320)">
-            <rect x="-24" y="-24" width="48" height="48" fill="#fff" stroke="#161616" stroke-width="1.5"/>
-            <path class="drip anim" d="M0 12 c4 5 6 8 6 12 a6 6 0 0 1 -12 0 c0 -4 2 -7 6 -12z" fill="#1d4ea6"/>
-            <path class="drip d2 anim" d="M0 12 c4 5 6 8 6 12 a6 6 0 0 1 -12 0 c0 -4 2 -7 6 -12z" fill="#1d4ea6" opacity=".4"/>
-          </g>
-          <text x="40" y="360" font-family="IBM Plex Sans, sans-serif" font-size="12" font-weight="600" letter-spacing="1" fill="#8c8c8c">SUPPLY LINE — TESTED &amp; SEALED</text>
+          <path class="travel" d="M0 -10c4 6 7 9 7 13a7 7 0 0 1-14 0c0-4 3-7 7-13z" transform="rotate(-90)">
+            <animateMotion dur="6s" repeatCount="indefinite" path="M60 80H1040" calcMode="spline" keySplines=".4 0 .2 1" keyTimes="0;1" keyPoints="0;1"/>
+          </path>
         </svg>
       </div>
+      <div class="frame__legend">
+        <div><b>01</b><h3>Call</h3><p>A person answers Mon–Fri 9–5. Tell us what's happening and where.</p></div>
+        <div><b>02</b><h3>Look</h3><p>We diagnose on site and show you what we found before anything is touched.</p></div>
+        <div><b>03</b><h3>Price</h3><p>A clear price for the fix. If there's a cheaper option that will hold, you'll hear it.</p></div>
+        <div><b>04</b><h3>Fix</h3><p>Licensed work, tested under pressure before we leave. Cleaned up after.</p></div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ============ TRUST STRIP ============ -->
-<section class="trust" id="trust">
-  <div class="container trust__row" data-stagger>
-    <div class="trust__item"><svg><use href="#ico-shield"/></svg><b>2 Licenses</b><span>State of Texas &amp; City of Amarillo</span></div>
-    <div class="trust__item"><svg><use href="#ico-clock"/></svg><b>Decades</b><span>Serving Amarillo</span></div>
-    <div class="trust__item"><svg><use href="#ico-building"/></svg><b>Two Types</b><span>Residential &amp; commercial</span></div>
-    <div class="trust__item"><svg><use href="#ico-pin"/></svg><b>117 N Polk</b><span>Downtown Amarillo</span></div>
-  </div>
-</section>
-
-<!-- ============ SERVICES — TABS ============ -->
-<section class="section" id="services">
+<!-- ============ EMERGENCIES ============ -->
+<section class="section" id="emergencies" data-station="Emergencies">
   <div class="container">
-    <div class="section__head" data-reveal>
-      <span class="eyebrow">What we fix</span>
-      <h2 class="display-md">Four categories. One crew.</h2>
-      <p class="body-lg">Nearly every call breaks down into one of these. Select one, or just call and describe the problem.</p>
-    </div>
-
-    <div class="tabs__list" id="tabsList" role="tablist">
-      <button class="tab is-active" role="tab" data-tab="0">Repairs</button>
-      <button class="tab" role="tab" data-tab="1">Drains &amp; Sewer</button>
-      <button class="tab" role="tab" data-tab="2">Leak Detection</button>
-      <button class="tab" role="tab" data-tab="3">Water Heaters &amp; Gas</button>
-      <span class="tabs__indicator" id="tabsIndicator"></span>
-    </div>
-
-    <div class="tab-panel is-active" data-panel="0">
-      <div class="panel__grid">
-        <div>
-          <h3>Plumbing Repairs</h3>
-          <p>Dripping faucets, running toilets, busted supply lines, low pressure, a shut-off that won't shut off. The everyday stuff, fixed right the first time.</p>
-          <ul class="panel__list">
-            <li><svg><use href="#ico-check"/></svg>Faucets, toilets &amp; fixtures</li>
-            <li><svg><use href="#ico-check"/></svg>Supply lines, valves &amp; shut-offs</li>
-            <li><svg><use href="#ico-check"/></svg>Pressure &amp; flow problems</li>
-          </ul>
-          <div class="hero__actions" style="margin-top:24px"><a class="btn btn-primary" href="tel:+18063532435"><svg><use href="#ico-phone"/></svg>Call about a repair</a></div>
-        </div>
-        <div class="panel__art"><svg viewBox="0 0 200 160" fill="none"><rect x="20" y="60" width="30" height="70" fill="#fff" stroke="#161616" stroke-width="1.5"/><path d="M35 60 V30" stroke="#161616" stroke-width="1.5"/><circle cx="35" cy="24" r="6" fill="#fff" stroke="#161616" stroke-width="1.5"/><g class="valve-handle anim" stroke="#1d4ea6" stroke-width="3" stroke-linecap="round" style="transform-origin:35px 24px"><path d="M28 24h14"/></g><path d="M35 30 v20" stroke="#1d4ea6" stroke-width="3" class="flow anim"/><rect x="90" y="40" width="90" height="90" fill="#fff" stroke="#161616" stroke-width="1.5"/><circle cx="135" cy="85" r="26" fill="none" stroke="#e0e0e0" stroke-width="10"/><path d="M135 59 A26 26 0 0 1 155 100" fill="none" stroke="#1d4ea6" stroke-width="4" class="flow anim"/></svg></div>
+    <div class="sec-head">
+      <div class="reveal">
+        <p class="eyebrow"><b>03</b> — Before we get there</p>
+        <h2 class="h2">What to do in the first five minutes.</h2>
       </div>
+      <p class="lede reveal">Most damage happens while people look for the phone number. Do these first, then call.</p>
     </div>
-
-    <div class="tab-panel" data-panel="1">
-      <div class="panel__grid">
-        <div>
-          <h3>Drains &amp; Sewer</h3>
-          <p>Kitchen sink backing up, tub that drains like it's thinking about it, or the whole house stopped up. We clear it and tell you what caused it.</p>
-          <ul class="panel__list">
-            <li><svg><use href="#ico-check"/></svg>Sink, tub, shower &amp; floor drains</li>
-            <li><svg><use href="#ico-check"/></svg>Main line stoppages &amp; cleanouts</li>
-            <li><svg><use href="#ico-check"/></svg>Sewer repair &amp; replacement</li>
-          </ul>
-          <div class="hero__actions" style="margin-top:24px"><a class="btn btn-primary" href="tel:+18063532435"><svg><use href="#ico-phone"/></svg>Call about a drain</a></div>
+    <div class="carousel reveal">
+      <div class="carousel__head">
+        <span class="eyebrow">Swipe or use the arrows</span>
+        <div class="carousel__nav">
+          <button id="prev" aria-label="Previous"><svg style="transform:rotate(180deg)"><use href="#ico-arrow"/></svg></button>
+          <button id="next" aria-label="Next"><svg><use href="#ico-arrow"/></svg></button>
         </div>
-        <div class="panel__art"><svg viewBox="0 0 200 160" fill="none"><rect x="10" y="70" width="180" height="30" fill="#fff" stroke="#161616" stroke-width="1.5"/><path class="flow anim" d="M20 85 H180" stroke="#1d4ea6" stroke-width="4"/><g stroke="#161616" stroke-width="3" stroke-linecap="round"><path d="M30 85q8 -10 16 0t16 0t16 0t16 0t16 0t16 0t16 0t16 0"/></g></svg></div>
       </div>
-    </div>
-
-    <div class="tab-panel" data-panel="2">
-      <div class="panel__grid">
-        <div>
-          <h3>Leak Detection</h3>
-          <p>Water bill doubled, a warm spot on the floor, a smell you can't place. We find water, gas and sewer leaks under slabs, in walls and in yards, then fix them.</p>
-          <ul class="panel__list">
-            <li><svg><use href="#ico-check"/></svg>Slab &amp; under-foundation leaks</li>
-            <li><svg><use href="#ico-check"/></svg>Water, gas &amp; sewer leaks</li>
-            <li><svg><use href="#ico-check"/></svg>Yard &amp; service line leaks</li>
-          </ul>
-          <div class="hero__actions" style="margin-top:24px"><a class="btn btn-primary" href="tel:+18063532435"><svg><use href="#ico-phone"/></svg>Call about a leak</a></div>
+      <div class="track-wrap">
+        <div class="track" id="track">
+          <article class="tcard"><div class="tcard__ico"><svg><use href="#ico-drop"/></svg></div><h3>Burst pipe</h3><p>Find the main shut-off, usually near the meter at the street or where the line enters the house. Turn it clockwise until it stops. Open a low faucet to drain the line.</p><span class="do">Shut off main → then call</span></article>
+          <article class="tcard"><div class="tcard__ico"><svg><use href="#ico-heat"/></svg></div><h3>No hot water</h3><p>Check the breaker for electric units or the pilot light for gas. If there's water pooling under the tank, shut off the cold supply valve on top of the heater.</p><span class="do">Check power → shut cold valve</span></article>
+          <article class="tcard"><div class="tcard__ico"><svg><use href="#ico-wave"/></svg></div><h3>Sewer backup</h3><p>Stop running water everywhere in the house. Don't flush. Keep people and pets away from any standing water until the line is cleared.</p><span class="do">Stop all water use</span></article>
+          <article class="tcard"><div class="tcard__ico"><svg><use href="#ico-alert"/></svg></div><h3>Gas smell</h3><p>Don't flip switches or light anything. Leave the building, then call the gas company from outside. Call us once the utility has made it safe.</p><span class="do">Leave first · call from outside</span></article>
+          <article class="tcard"><div class="tcard__ico"><svg><use href="#ico-snow"/></svg></div><h3>Panhandle cold snap</h3><p>When the wind drops it below 20°F, let a faucet on an exterior wall drip and open the cabinet doors under sinks. A frozen line found early is a repair, not a flood.</p><span class="do">Drip · open cabinets · call</span></article>
         </div>
-        <div class="panel__art"><svg viewBox="0 0 200 160" fill="none"><circle cx="100" cy="80" r="34" fill="none" stroke="#e0e0e0" stroke-width="10"/><circle class="flow anim" cx="100" cy="80" r="34" fill="none" stroke="#1d4ea6" stroke-width="3" stroke-dasharray="6 6"/><path d="M100 62c8 10 14 17 14 24a14 14 0 0 1 -28 0c0 -7 6 -14 14 -24z" fill="#1d4ea6"/></svg></div>
-      </div>
-    </div>
-
-    <div class="tab-panel" data-panel="3">
-      <div class="panel__grid">
-        <div>
-          <h3>Water Heaters &amp; Gas</h3>
-          <p>No hot water, water that's too hot, a tank that's rusting out. We repair and replace gas and electric water heaters and run and repair gas lines safely.</p>
-          <ul class="panel__list">
-            <li><svg><use href="#ico-check"/></svg>Water heater repair &amp; replacement</li>
-            <li><svg><use href="#ico-check"/></svg>Gas leak repair &amp; new gas lines</li>
-            <li><svg><use href="#ico-check"/></svg>Appliance hookups</li>
-          </ul>
-          <div class="hero__actions" style="margin-top:24px"><a class="btn btn-primary" href="tel:+18063532435"><svg><use href="#ico-phone"/></svg>Call about hot water</a></div>
-        </div>
-        <div class="panel__art"><svg viewBox="0 0 200 160" fill="none"><rect x="70" y="20" width="60" height="110" fill="#fff" stroke="#161616" stroke-width="1.5"/><rect x="82" y="40" width="36" height="8" fill="#f4f4f4"/><g transform="translate(100,116)" class="valve-handle anim" style="transform-origin:100px 116px"><path d="M0 -12c6 5 8 9 8 13a8 8 0 0 1 -16 0c0 -4 2 -8 8 -13z" fill="#f1c21b"/></g></svg></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ JOURNEY — scroll-driven droplet through the pipe ============ -->
-<section class="journey" id="process">
-  <div class="journey__stage">
-    <div class="container" style="display:contents">
-      <div class="journey__copy">
-        <span class="eyebrow">How it works</span>
-        <h2 class="display-md">From your call to water running right.</h2>
-        <p class="body-lg">Scroll. The droplet follows the job from the first call to the final test &mdash; the same way we do.</p>
-        <ol class="journey__steps" id="journeySteps">
-          <li class="jstep" data-at="0.10"><span class="n">1</span><div><b>Call</b><span>(806) 353-2435. Tell us what's happening and where. We'll tell you what to shut off while you wait.</span></div></li>
-          <li class="jstep" data-at="0.38"><span class="n">2</span><div><b>Diagnose</b><span>We look at the actual problem, not the symptom, and give you a clear price before work starts.</span></div></li>
-          <li class="jstep" data-at="0.66"><span class="n">3</span><div><b>Fix</b><span>Repair or replace, with the parts on the truck for most jobs.</span></div></li>
-          <li class="jstep" data-at="0.94"><span class="n">4</span><div><b>Test &amp; clean up</b><span>Pressure checked, drains run, floor mopped. We leave when it works.</span></div></li>
-        </ol>
-      </div>
-      <div class="journey__pipe" aria-hidden="true">
-        <svg viewBox="0 0 320 720" id="journeySvg">
-          <!-- pipe body -->
-          <path id="pipePath" d="M60 30 H240 V180 H80 V330 H240 V480 H80 V630 H260" fill="none" stroke="#e0e0e0" stroke-width="22" stroke-linecap="square" stroke-linejoin="miter"/>
-          <!-- water fill (drawn as scroll progresses) -->
-          <path id="pipeFill" class="pipe-fill" d="M60 30 H240 V180 H80 V330 H240 V480 H80 V630 H260" fill="none" stroke="#1d4ea6" stroke-width="8" stroke-linecap="butt" pathLength="1"/>
-          <!-- stops along the pipe -->
-          <circle class="stop-dot" data-at="0.10" r="9" cx="150" cy="30"/>
-          <circle class="stop-dot" data-at="0.38" r="9" cx="160" cy="180"/>
-          <circle class="stop-dot" data-at="0.66" r="9" cx="160" cy="330"/>
-          <circle class="stop-dot" data-at="0.94" r="9" cx="170" cy="630"/>
-          <!-- joints -->
-          <g fill="#fff" stroke="#161616" stroke-width="1.5">
-            <rect x="226" y="16" width="28" height="28"/><rect x="66" y="166" width="28" height="28"/>
-            <rect x="226" y="316" width="28" height="28"/><rect x="66" y="466" width="28" height="28"/>
-            <rect x="226" y="466" width="28" height="28"/><rect x="66" y="616" width="28" height="28"/>
-          </g>
-          <!-- the droplet -->
-          <g id="droplet">
-            <path d="M0 -16 c7 9 11 14 11 20 a11 11 0 0 1 -22 0 c0 -6 4 -11 11 -20z" fill="#1d4ea6"/>
-            <path d="M3 -4c4 4 5 8 4 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
-          </g>
-        </svg>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ FEATURE CARDS — why H&H ============ -->
-<section class="section on-dark">
+<!-- ============ ABOUT ============ -->
+<section class="section" id="about" data-station="About">
   <div class="container">
-    <div class="section__head" data-reveal>
-      <span class="eyebrow">Why H&amp;H</span>
-      <h2 class="display-md">What you get when you call.</h2>
-    </div>
-  </div>
-  <div class="container" style="padding:0">
-    <div class="features" data-stagger>
-      <div class="fcard"><svg><use href="#ico-shield"/></svg><h3>Licensed &amp; verifiable</h3><p>State of Texas and City of Amarillo plumbing licenses. Ask for the numbers.</p></div>
-      <div class="fcard"><svg><use href="#ico-building"/></svg><h3>Homes &amp; businesses</h3><p>Same crew, same standards, hall bath or commercial kitchen.</p></div>
-      <div class="fcard"><svg><use href="#ico-wrench"/></svg><h3>Big jobs welcome</h3><p>Sewer replacements, re-pipes, remodels &mdash; the jobs others refer out.</p></div>
-      <div class="fcard"><svg><use href="#ico-check"/></svg><h3>Straight answers</h3><p>What's wrong, what it costs, what happens if you wait. Then you decide.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ FAQ — flat accordion ============ -->
-<section class="section" id="faq">
-  <div class="container">
-    <div class="section__head" data-reveal>
-      <span class="eyebrow">Before we get there</span>
-      <h2 class="display-md">What to do while you wait</h2>
-      <p class="body-lg">A few minutes of the right move can save you a ruined floor. Do this, then call.</p>
-    </div>
-
-    <div class="faq" data-stagger>
-      <div class="facc is-open">
-        <button class="facc__q" data-facc><span class="idx">01</span>Water leak? Shut off the main.<span class="facc__plus"></span></button>
-        <div class="facc__a" style="max-height:160px"><p>In Amarillo it's usually at the meter box near the street or where the line enters the house. <strong>Turn it clockwise until it stops.</strong> Then open a low faucet to drain pressure off the line, and call us.</p></div>
+    <div class="about">
+      <div class="reveal">
+        <p class="eyebrow"><b>04</b> — Who's coming</p>
+        <h2 class="h2">A local shop on Polk Street, not a call center.</h2>
+        <p class="lede">H&amp;H Plumbing &amp; Mechanical has worked on Amarillo homes and businesses for decades. Licensed, local, and reachable by the same number you've always called.</p>
+        <ul class="facts">
+          <li><b>Address</b><span>117 N Polk St, Amarillo, TX 79107</span></li>
+          <li><b>Hours</b><span>Monday – Friday, 9:00 am – 5:00 pm</span></li>
+          <li><b>Licensed</b><span>Texas State Board of Plumbing Examiners · City of Amarillo</span></li>
+          <li><b>Work</b><span>Residential and commercial plumbing &amp; mechanical</span></li>
+          <li><b>Phone</b><span><a href="tel:+18063532435">(806) 353-2435</a></span></li>
+        </ul>
       </div>
-      <div class="facc">
-        <button class="facc__q" data-facc><span class="idx">02</span>Smell gas? Get out first.<span class="facc__plus"></span></button>
-        <div class="facc__a"><p><strong>Leave the building, don't flip switches, don't light anything.</strong> Call your gas utility's emergency line or 911 from outside. Once it's safe, call us to find and repair the leak.</p></div>
-      </div>
-      <div class="facc">
-        <button class="facc__q" data-facc><span class="idx">03</span>Sewer backing up? Stop using water.<span class="facc__plus"></span></button>
-        <div class="facc__a"><p>Every flush and load of laundry comes up the lowest drain in the house. <strong>Stop running water anywhere</strong> and call. If you have an outdoor cleanout, tell us where it is.</p></div>
-      </div>
-      <div class="facc">
-        <button class="facc__q" data-facc><span class="idx">04</span>No hot water? Check the pilot or breaker.<span class="facc__plus"></span></button>
-        <div class="facc__a"><p>Gas units: check if the pilot light is out. Electric units: check the breaker. If either looks fine and there's still no hot water, the tank likely needs service &mdash; tell us gas or electric when you call.</p></div>
+      <div class="about__card reveal" data-station="Shop">
+        <svg viewBox="0 0 1000 560"><use href="#hh-logo"/></svg>
+        <p><span>Amarillo, Texas</span><span>Est. locally</span></p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============ CTA ============ -->
-<section class="cta" id="contact">
-  <div class="container" data-reveal>
-    <span class="eyebrow" style="color:#fff;justify-content:center">Talk to a plumber</span>
-    <h2 class="display-md">Something leaking, stopped up or not heating?</h2>
-    <a class="cta__phone" href="tel:+18063532435">(806) 353-2435</a>
-    <p class="body-lg">Call during business hours and you'll talk to someone who can put you on the schedule. Residential and commercial, all of Amarillo and the surrounding Panhandle.</p>
-    <div class="cta__actions">
-      <a class="btn btn-on-primary" href="tel:+18063532435"><svg><use href="#ico-phone"/></svg>Call now</a>
-      <a class="btn btn-ghost-inverse" href="https://maps.google.com/?q=117+N+Polk+St,+Amarillo,+TX+79107" target="_blank" rel="noopener">Get directions</a>
+<section class="cta" id="contact" data-station="Call" data-station-end>
+  <div class="container">
+    <span class="pill reveal"><i></i>Mon–Fri 9–5 · Amarillo &amp; surrounding</span>
+    <h2 class="reveal">Something dripping, clogged, or cold?</h2>
+    <a class="phone reveal" href="tel:+18063532435">(806) 353-2435</a>
+    <p class="meta reveal">117 N Polk St · Amarillo, TX 79107</p>
+    <div class="btns reveal">
+      <a class="btn btn--inverse" href="tel:+18063532435"><svg><use href="#ico-phone"/></svg>Call H&amp;H</a>
+      <a class="btn" href="https://maps.google.com/?q=117+N+Polk+St+Amarillo+TX+79107" target="_blank" rel="noopener">Get directions<svg><use href="#ico-arrow"/></svg></a>
     </div>
   </div>
 </section>
 
-<!-- ============ ABOUT ============ -->
-<section class="section on-dark" id="about">
-  <div class="container about-grid">
-    <div data-reveal>
-      <span class="eyebrow">About H&amp;H</span>
-      <h2 class="display-md">Amarillo plumbers. Not a franchise.</h2>
-      <p class="body-lg">H&amp;H Plumbing &amp; Mechanical is a local contractor at 117 N Polk St in downtown Amarillo. We hold plumbing licenses with the State of Texas and the City of Amarillo, and we've been working on the Panhandle's water, gas and sewer lines for decades.</p>
-      <p class="body-lg">We handle the little repairs and the big ones, and we're straight with you about which one you've got. If a drain just needs clearing, that's what we'll do. If the sewer line is gone, we'll show you why before you spend a dime on it.</p>
-      <div class="info-list">
-        <div class="info-row"><svg><use href="#ico-pin"/></svg><div><b>Address</b><span>117 N Polk St, Amarillo, TX 79107</span></div></div>
-        <div class="info-row"><svg><use href="#ico-clock"/></svg><div><b>Hours</b><span>Monday&ndash;Friday, 9:00 am&ndash;5:00 pm</span></div></div>
-        <div class="info-row"><svg><use href="#ico-shield"/></svg><div><b>Licensing</b><span>Texas State Board of Plumbing Examiners &amp; City of Amarillo</span></div></div>
-      </div>
-    </div>
-    <div class="logo-tile" data-reveal="scale">
-      <svg viewBox="0 0 1000 560" aria-label="H&H Plumbing & Mechanical logo"><use href="#hh-logo"/></svg>
-    </div>
-  </div>
-</section>
-
-</main>
-
-<!-- ============ FOOTER ============ -->
 <footer class="footer">
   <div class="container">
-    <div class="footer__grid">
-      <div>
-        <svg viewBox="0 0 1000 560" style="width:150px" aria-hidden="true"><use href="#hh-logo-white"/></svg>
-        <p class="desc">Licensed plumbing contractor in Amarillo, Texas. Repairs, drains, leak detection, sewer and water heaters for homes and businesses.</p>
-      </div>
-      <div>
-        <h4>Services</h4>
-        <ul>
-          <li><a href="#services">Plumbing Repairs</a></li>
-          <li><a href="#services">Drains &amp; Sewer</a></li>
-          <li><a href="#services">Leak Detection</a></li>
-          <li><a href="#services">Water Heaters &amp; Gas</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="tel:+18063532435" style="font-family:var(--font-mark);font-size:22px;color:#fff">(806) 353-2435</a></li>
-          <li><a href="https://maps.google.com/?q=117+N+Polk+St,+Amarillo,+TX+79107" target="_blank" rel="noopener">117 N Polk St, Amarillo, TX 79107</a></li>
-          <li>Mon&ndash;Fri, 9:00 am&ndash;5:00 pm</li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer__bottom">
-      <span>&copy; <span id="year">2026</span> H&amp;H Plumbing &amp; Mechanical. All rights reserved.</span>
-      <span>Licensed in Texas &amp; the City of Amarillo</span>
-    </div>
+    <svg viewBox="0 0 1000 560" height="34" width="61"><use href="#hh-logo-mono"/></svg>
+    <nav class="footer__links"><a href="#services">Services</a><a href="#process">Process</a><a href="#emergencies">Emergencies</a><a href="#about">About</a></nav>
+    <small>© <span id="year"></span> H&amp;H Plumbing &amp; Mechanical · Amarillo, TX</small>
   </div>
 </footer>
 
-<div class="float-call"><a class="btn btn-primary" style="width:100vw;justify-content:center" href="tel:+18063532435"><svg><use href="#ico-phone"/></svg>Call (806) 353-2435</a></div>
+<!-- ============ RAIL: pipe + droplet ============ -->
+<svg id="rail" aria-hidden="true">
+  <path class="pipe-outer" id="pipeOuter"/>
+  <path class="pipe-inner" id="pipeInner"/>
+  <path class="pipe-fill" id="pipeFill"/>
+  <path class="pipe-shine" id="pipeShine"/>
+  <g id="stations"></g>
+  <g class="faucet" id="faucet">
+    <rect class="body" x="-9" y="-6" width="18" height="26" rx="4"/>
+    <path class="body" d="M9 8h22a6 6 0 0 1 6 6v14H27v-8H9z"/>
+    <path class="handle" d="M-4 -6v-12a4 4 0 0 1 8 0v12z"/>
+    <line class="stream" x1="32" y1="28" x2="32" y2="44"/>
+    <path class="drip" d="M32 30c4 5 6 8 6 12a6 6 0 0 1-12 0c0-4 2-7 6-12z"/>
+  </g>
+  <g class="drop" id="drop">
+    <ellipse class="wake" cx="0" cy="-14" rx="4" ry="9"/>
+    <path d="M0 -13c6 8 10 13 10 19a10 10 0 0 1-20 0c0-6 4-11 10-19z" fill="#8fdcf8"/>
+    <path d="M3 -2c4 4 5 8 4 12" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" opacity=".8"/>
+  </g>
+</svg>
 
 <script>
 (function(){
-  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const $=(s,c=document)=>c.querySelector(s), $$=(s,c=document)=>[...c.querySelectorAll(s)];
-  $('#year').textContent = new Date().getFullYear();
+  document.getElementById('year').textContent = new Date().getFullYear();
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // mobile menu
-  const nav=$('#nav'), burger=$('#burger');
-  burger.addEventListener('click', ()=>{
-    const open=nav.classList.toggle('menu-open');
-    burger.classList.toggle('is-open',open);
-    burger.setAttribute('aria-expanded',open);
-    document.body.style.overflow=open?'hidden':'';
-  });
-  $$('#menu a').forEach(a=>a.addEventListener('click',()=>{
-    nav.classList.remove('menu-open'); burger.classList.remove('is-open');
-    burger.setAttribute('aria-expanded','false'); document.body.style.overflow='';
-  }));
+  /* nav goes dark once the hero has passed */
+  var nav = document.getElementById('nav'), hero = document.querySelector('.hero');
+  function navState(){ nav.classList.toggle('is-dark', scrollY > hero.offsetHeight - 56); }
+  addEventListener('scroll', navState, {passive:true}); navState();
 
-  // reveals
-  const io=new IntersectionObserver(es=>{
-    es.forEach(e=>{ if(!e.isIntersecting) return; e.target.classList.add('in'); io.unobserve(e.target); });
-  },{threshold:.15, rootMargin:'0px 0px -8% 0px'});
-  $$('[data-reveal],[data-stagger]').forEach(el=>io.observe(el));
+  /* reveals */
+  var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }); }, {threshold:.15, rootMargin:'0px 0px -6% 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
 
-  // hero headline clip reveal + diagram anim start
-  requestAnimationFrame(()=>requestAnimationFrame(()=>{
-    $('.hero h1').classList.add('reveal-clip','in');
-  }));
+  /* carousel */
+  var track = document.getElementById('track'), prev = document.getElementById('prev'), next = document.getElementById('next'), idx = 0;
+  function step(){ var c = track.children[0]; return c.getBoundingClientRect().width + 16; }
+  function maxIdx(){ var wrap = track.parentElement.getBoundingClientRect().width; var visible = Math.max(1, Math.floor((wrap + 16) / step())); return Math.max(0, track.children.length - visible); }
+  function go(i){ idx = Math.max(0, Math.min(maxIdx(), i)); track.style.transform = 'translateX(' + (-idx * step()) + 'px)'; prev.disabled = idx === 0; next.disabled = idx === maxIdx(); }
+  prev.addEventListener('click', function(){ go(idx - 1); }); next.addEventListener('click', function(){ go(idx + 1); });
+  var tx = null; track.addEventListener('touchstart', function(e){ tx = e.touches[0].clientX; }, {passive:true});
+  track.addEventListener('touchend', function(e){ if(tx === null) return; var dx = e.changedTouches[0].clientX - tx; if(Math.abs(dx) > 40) go(idx + (dx < 0 ? 1 : -1)); tx = null; }, {passive:true});
+  addEventListener('resize', function(){ go(idx); }); go(0);
 
-  // tabs
-  const tabs=$$('.tab'), panels=$$('.tab-panel'), indicator=$('#tabsIndicator'), list=$('#tabsList');
-  function moveIndicator(tab){
-    const r=tab.getBoundingClientRect(), lr=list.getBoundingClientRect();
-    indicator.style.width=r.width+'px';
-    indicator.style.transform='translateX('+(r.left-lr.left)+'px)';
-  }
-  function activate(i){
-    tabs.forEach((t,idx)=>t.classList.toggle('is-active',idx===i));
-    panels.forEach((p,idx)=>p.classList.toggle('is-active',idx===i));
-    moveIndicator(tabs[i]);
-  }
-  tabs.forEach((t,i)=>t.addEventListener('click',()=>activate(i)));
-  addEventListener('resize',()=>moveIndicator($('.tab.is-active')));
-  requestAnimationFrame(()=>moveIndicator(tabs[0]));
+  /* ---------- the rail: a pipe from the water tower down the whole page ---------- */
+  var rail = document.getElementById('rail'), outer = document.getElementById('pipeOuter'), inner = document.getElementById('pipeInner'),
+      fill = document.getElementById('pipeFill'), shine = document.getElementById('pipeShine'), stationsG = document.getElementById('stations'),
+      drop = document.getElementById('drop'), faucet = document.getElementById('faucet'), tower = document.getElementById('tower');
+  var pathLen = 0, startY = 0, endY = 0, stations = [], railX = 0, ticking = false;
+  var SVGNS = 'http://www.w3.org/2000/svg';
 
-  // journey: droplet rides the pipe as you scroll
-  const journey=$('#process'), pipePath=$('#pipePath'), pipeFill=$('#pipeFill'), droplet=$('#droplet');
-  const jsteps=$$('.jstep'), stops=$$('.stop-dot');
-  const pipeLen=pipePath.getTotalLength();
-  let jTicking=false;
-  function setJourney(p){
-    p=Math.min(1,Math.max(0,p));
-    pipeFill.style.strokeDashoffset=String(1-p);
-    const pt=pipePath.getPointAtLength(p*pipeLen);
-    droplet.setAttribute('transform','translate('+pt.x.toFixed(1)+' '+pt.y.toFixed(1)+')');
-    jsteps.forEach(s=>s.classList.toggle('reached', p>=+s.dataset.at));
-    stops.forEach(s=>s.classList.toggle('reached', p>=+s.dataset.at));
-  }
-  function onJourneyScroll(){
-    const r=journey.getBoundingClientRect();
-    const total=journey.offsetHeight-innerHeight;
-    const p=total>0 ? (-r.top)/total : 1;
-    setJourney(p); jTicking=false;
-  }
-  if(reduce || matchMedia('(max-width:860px)').matches){ setJourney(1); }
-  else{
-    addEventListener('scroll',()=>{ if(!jTicking){ requestAnimationFrame(onJourneyScroll); jTicking=true; } },{passive:true});
-    onJourneyScroll();
-  }
+  function el(name, attrs){ var n = document.createElementNS(SVGNS, name); for (var k in attrs) n.setAttribute(k, attrs[k]); return n; }
 
-  // faq accordion
-  $$('[data-facc]').forEach(btn=>{
-    btn.addEventListener('click', ()=>{
-      const item=btn.closest('.facc'), answer=item.querySelector('.facc__a'), wasOpen=item.classList.contains('is-open');
-      $$('.facc').forEach(f=>{ f.classList.remove('is-open'); f.querySelector('.facc__a').style.maxHeight=null; });
-      if(!wasOpen){ item.classList.add('is-open'); answer.style.maxHeight=answer.scrollHeight+'px'; }
+  function build(){
+    var docH = document.documentElement.scrollHeight, docW = document.documentElement.clientWidth;
+    rail.setAttribute('width', docW); rail.setAttribute('height', docH);
+    rail.style.width = docW + 'px'; rail.style.height = docH + 'px';
+
+    var mobile = docW <= 760;
+    var cont = document.querySelector('.hero .container').getBoundingClientRect();
+    railX = mobile ? 16 : Math.max(24, cont.left - 52);
+
+    /* place the tower just left of the hero container, standing on the ground line */
+    var heroR = hero.getBoundingClientRect();
+    var heroTop = heroR.top + scrollY, heroH = hero.offsetHeight;
+    var tw = tower.getBoundingClientRect().width, th = tw * 2;
+    var towerX = mobile ? 2 : Math.max(6, railX - tw / 2);
+    var scale = Math.max(docW / 1440, heroH / 800), groundY = heroH - 100 * scale;
+    tower.style.left = towerX + 'px';
+    tower.style.top = (groundY - th + 3) + 'px';
+
+    /* droplet source = bottom centre of tower */
+    var tr = tower.getBoundingClientRect();
+    var sx = tr.left + tr.width / 2, sy = tr.top + scrollY + tr.height - 4;
+
+    /* stations */
+    var nodes = [].slice.call(document.querySelectorAll('[data-station]'));
+    stations = nodes.map(function(n){ var r = n.getBoundingClientRect(); return { y: r.top + scrollY + 64, label: n.getAttribute('data-station'), end: n.hasAttribute('data-station-end') }; });
+    var last = stations[stations.length - 1];
+    endY = mobile ? last.y - 20 : last.y + 120;
+    startY = sy;
+
+    var legY = heroTop + heroH + 40;
+    var hb = legY + 160;
+    var d = 'M' + sx + ' ' + sy + ' L' + sx + ' ' + legY + ' C' + sx + ' ' + (legY + 90) + ',' + railX + ' ' + (legY + 70) + ',' + railX + ' ' + hb + ' L' + railX + ' ' + endY;
+    [outer, inner, fill, shine].forEach(function(p){ p.setAttribute('d', d); });
+    pathLen = fill.getTotalLength();
+    fill.style.strokeDasharray = pathLen; fill.style.strokeDashoffset = pathLen;
+    shine.style.strokeDasharray = pathLen; shine.style.strokeDashoffset = pathLen;
+
+    /* draw stations */
+    stationsG.innerHTML = '';
+    stations.forEach(function(s, i){
+      var g = el('g', {'class':'station', transform:'translate(' + railX + ',' + s.y + ')'});
+      g.appendChild(el('circle', {'class':'pulse', r:8}));
+      g.appendChild(el('circle', {'class':'ring', r:9}));
+      g.appendChild(el('circle', {'class':'core', r:3.5}));
+      var t = el('text', {x:20, y:4}); t.textContent = s.label.toUpperCase(); g.appendChild(t);
+      s.node = g; stationsG.appendChild(g);
     });
-  });
+
+    faucet.setAttribute('transform', 'translate(' + railX + ',' + (endY - 2) + ') scale(' + (mobile ? 1.05 : 1.35) + ')');
+    update(true);
+  }
+
+  function lengthAtY(y){
+    var lo = 0, hi = pathLen, p;
+    for (var i = 0; i < 24; i++){ var mid = (lo + hi) / 2; p = fill.getPointAtLength(mid); if (p.y < y) lo = mid; else hi = mid; }
+    return (lo + hi) / 2;
+  }
+
+  var curY = null;
+  function update(force){
+    var targetY = Math.max(startY, Math.min(endY, scrollY + innerHeight * 0.42));
+    if (!force && curY !== null) targetY = curY + (targetY - curY) * (reduce ? 1 : 0.18);
+    curY = targetY;
+    var L = lengthAtY(targetY), p = fill.getPointAtLength(L), q = fill.getPointAtLength(Math.max(0, L - 6));
+    var ang = Math.atan2(p.y - q.y, p.x - q.x) * 180 / Math.PI;
+    drop.setAttribute('transform', 'translate(' + p.x + ' ' + p.y + ') rotate(' + (ang - 90) + ')');
+    fill.style.strokeDashoffset = pathLen - L;
+    shine.style.strokeDashoffset = pathLen - L;
+    stations.forEach(function(s){ s.node.classList.toggle('lit', targetY >= s.y - 2); });
+    var atEnd = targetY >= endY - 4;
+    faucet.classList.toggle('on', atEnd);
+    drop.style.opacity = atEnd ? 0 : 1;
+    if (!reduce && Math.abs(curY - (scrollY + innerHeight * 0.42)) > 0.5 && curY > startY && curY < endY) requestAnimationFrame(function(){ update(false); });
+    else ticking = false;
+  }
+
+  function onScroll(){ if (!ticking){ ticking = true; requestAnimationFrame(function(){ update(false); }); } }
+  addEventListener('scroll', onScroll, {passive:true});
+
+  var rt; function rebuild(){ clearTimeout(rt); rt = setTimeout(build, 80); }
+  addEventListener('resize', rebuild);
+  if ('ResizeObserver' in window) new ResizeObserver(rebuild).observe(document.body);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(rebuild);
+  addEventListener('load', rebuild);
+  build();
 })();
 </script>
 </body>
