@@ -250,14 +250,128 @@ p{margin:0}
 .float-call{position:fixed;right:16px;bottom:16px;z-index:90;display:none}
 @media (max-width:880px){.float-call{display:block}}
 
+
+/* =========================================================
+   MOTION LAYER
+   ========================================================= */
+:root{--ease-back:cubic-bezier(.34,1.45,.64,1)}
+.progress{position:fixed;top:0;left:0;height:2px;width:100%;z-index:200;transform-origin:left;transform:scaleX(0);background:var(--color-brand-text)}
+
+/* page load */
+.announce>span{opacity:0;transform:translateY(-6px);transition:opacity .6s var(--ease) .5s,transform .6s var(--ease) .5s}
+.is-ready .announce>span{opacity:1;transform:none}
+.nav__inner{opacity:0;transform:translateY(-10px);transition:opacity .7s var(--ease) .2s,transform .7s var(--ease) .2s}
+.is-ready .nav__inner{opacity:1;transform:none}
+.hero h1 .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.1em;margin-bottom:-.1em}
+.hero h1 .wi{display:inline-block;transform:translateY(110%);transition:transform .9s var(--ease)}
+.is-ready .hero h1 .wi{transform:none}
+.hero__tag,.hero .subhead,.hero .body,.hero__actions,.trust>div{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease),transform .8s var(--ease)}
+.is-ready .hero__tag{opacity:1;transform:none;transition-delay:.1s}
+.is-ready .hero .subhead{opacity:1;transform:none;transition-delay:.7s}
+.is-ready .hero .body{opacity:1;transform:none;transition-delay:.85s}
+.is-ready .hero__actions{opacity:1;transform:none;transition-delay:1s}
+.is-ready .trust>div{opacity:1;transform:none}
+.is-ready .trust>div:nth-child(1){transition-delay:1.2s}.is-ready .trust>div:nth-child(2){transition-delay:1.32s}.is-ready .trust>div:nth-child(3){transition-delay:1.44s}
+
+/* lattice packets + hero logo card */
+.packets circle{opacity:.9}
+.lattice{overflow:visible}
+.lattice svg{will-change:transform}
+.hero-card{position:absolute;left:10%;right:10%;top:50%;transform:translateY(-50%) scale(.86);background:#fff;border-radius:var(--radius-cards);padding:28px;opacity:0;transition:transform .9s var(--ease),opacity .6s var(--ease)}
+.lattice.in .hero-card{transform:translateY(-50%) scale(1);opacity:1;transition-delay:.15s}
+.hero-card svg{width:100%;height:auto}
+
+/* logo formation */
+.logo-anim .lp{transform-box:fill-box;transform-origin:center;opacity:0;transition:transform 1s var(--ease),opacity .5s var(--ease)}
+.logo-anim .lp-h1l{transform:translate(-180px,0)}
+.logo-anim .lp-h1r{transform:translate(0,-180px)}
+.logo-anim .lp-h2l{transform:translate(0,180px)}
+.logo-anim .lp-h2r{transform:translate(180px,0)}
+.logo-anim .lp-x{transform:scaleX(0)}
+.logo-anim .lp-drop{transform:translate(0,-320px);transition-timing-function:var(--ease-back)}
+.logo-anim .lp-amp{transform:scale(0) rotate(-90deg);transition-timing-function:var(--ease-back)}
+.logo-anim .lp-gear{transform:scale(0) rotate(-200deg);transition-timing-function:var(--ease-back)}
+.logo-anim .lp-rule{transform:scaleX(0);transform-origin:left center}
+.logo-anim .lp-word{transform:translate(0,36px)}
+.logo-anim.formed .lp{transform:none;opacity:1}
+.logo-anim.formed .lp-h1l{transition-delay:.35s}
+.logo-anim.formed .lp-h1r{transition-delay:.45s}
+.logo-anim.formed .lp-h2l{transition-delay:.55s}
+.logo-anim.formed .lp-h2r{transition-delay:.65s}
+.logo-anim.formed .lp-x1{transition-delay:.9s}
+.logo-anim.formed .lp-x2{transition-delay:1s}
+.logo-anim.formed .lp-drop{transition-delay:1.2s;transition-duration:.9s}
+.logo-anim.formed .lp-amp{transition-delay:1.35s}
+.logo-anim.formed .lp-gear{transition-delay:1.45s;transition-duration:1.1s}
+.logo-anim.formed .lp-rule{transition-delay:1.8s;transition-duration:.8s}
+.logo-anim.formed .lp-word{transition-delay:2s;transition-duration:.8s}
+.gear-ring{transform-box:fill-box;transform-origin:center}
+.logo-anim.formed .gear-ring{animation:spin 26s linear infinite 2.6s}
+.logo-anim.formed .bob{animation:bob 4s ease-in-out infinite 2.6s}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
+
+/* section heads */
+.section__head .eyebrow{letter-spacing:.4em;opacity:0;transition:letter-spacing 1.1s var(--ease),opacity .6s var(--ease)}
+.section__head.in .eyebrow{letter-spacing:.08em;opacity:1}
+.section__head h2{clip-path:inset(0 100% 0 0);transition:clip-path 1s var(--ease) .15s}
+.section__head.in h2{clip-path:inset(0 0 0 0)}
+
+/* category cards */
+.cat-card{position:relative;overflow:hidden;transition:transform .5s var(--ease),border-color .4s}
+.cat-card:hover{transform:translateY(-4px);border-color:#2a3446}
+.cat-card::after{content:"";position:absolute;top:0;bottom:0;width:45%;left:-45%;background:linear-gradient(90deg,transparent,rgba(111,155,255,.14),transparent);pointer-events:none}
+.cat-grid.in .cat-card::after{animation:scan 1.3s var(--ease) forwards}
+.cat-grid.in .cat-card:nth-child(1)::after{animation-delay:.3s}.cat-grid.in .cat-card:nth-child(2)::after{animation-delay:.45s}.cat-grid.in .cat-card:nth-child(3)::after{animation-delay:.6s}.cat-grid.in .cat-card:nth-child(4)::after{animation-delay:.75s}
+@keyframes scan{to{left:120%}}
+.cat-dot{background:var(--dot);color:var(--dot);position:relative}
+.cat-dot::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:1px solid currentColor;opacity:0}
+.cat-card:hover .cat-dot::after{animation:ring 1.3s ease-out infinite}
+@keyframes ring{0%{transform:scale(.6);opacity:.9}100%{transform:scale(1.9);opacity:0}}
+.cat-card .cell{opacity:0;transform:translateY(8px);transition:opacity .5s var(--ease),transform .5s var(--ease),background .25s}
+.cat-grid.in .cell{opacity:1;transform:none}
+.cat-grid.in .cell:nth-child(1){transition-delay:.35s}.cat-grid.in .cell:nth-child(2){transition-delay:.43s}.cat-grid.in .cell:nth-child(3){transition-delay:.51s}.cat-grid.in .cell:nth-child(4){transition-delay:.59s}
+.cell:hover{background:var(--color-obsidian)}
+.cell:hover svg{color:var(--color-brand-text)}
+.cat-card__head a svg{transition:transform .4s var(--ease)}
+.cat-card:hover .cat-card__head a svg{transform:translateX(4px)}
+
+/* process cards */
+.step-card{transition:transform .5s var(--ease)}
+.step-card:hover{transform:translateY(-4px)}
+.step-card__num{transform:scale(0);transition:transform .7s var(--ease-back)}
+.process-grid.in .step-card__num{transform:scale(1)}
+.process-grid.in .step-card:nth-child(1) .step-card__num{transition-delay:.3s}.process-grid.in .step-card:nth-child(2) .step-card__num{transition-delay:.45s}.process-grid.in .step-card:nth-child(3) .step-card__num{transition-delay:.6s}
+.step-card__icon circle{transform:scale(0);transform-box:fill-box;transform-origin:center;transition:transform .5s var(--ease-back)}
+.process-grid.in .step-card__icon circle{transform:scale(1)}
+.step-card:hover .step-card__icon{animation:iconpulse 1.6s ease-in-out infinite}
+@keyframes iconpulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+
+/* about + contact */
+.about-grid .body-copy p{opacity:0;transform:translateY(12px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+[data-reveal].in .body-copy p{opacity:1;transform:none}
+[data-reveal].in .body-copy p:nth-child(1){transition-delay:.25s}[data-reveal].in .body-copy p:nth-child(2){transition-delay:.4s}
+.cta-phone{clip-path:inset(0 100% 0 0);transition:clip-path 1s var(--ease) .4s,opacity .2s}
+[data-reveal].in .cta-phone{clip-path:inset(0 0 0 0)}
+.info-row svg{transition:transform .4s var(--ease)}
+.info-row:hover svg{transform:scale(1.2)}
+
+/* buttons */
+.btn{will-change:transform}
+.btn .arrow{transition:transform .35s var(--ease)}
+.btn:hover .arrow{transform:translateX(4px)}
+
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
-  [data-reveal],[data-stagger]>*{opacity:1;transform:none;transition:none}
-  .node.pulse,.hero__tag i{animation:none}
+  [data-reveal],[data-stagger]>*,.announce>span,.nav__inner,.hero h1 .wi,.hero__tag,.hero .subhead,.hero .body,.hero__actions,.trust>div,.hero-card,.logo-anim .lp,.section__head .eyebrow,.step-card__num,.step-card__icon circle,.about-grid .body-copy p,.cat-card .cell{opacity:1;transform:none;transition:none;clip-path:none}
+  .section__head h2,.cta-phone{clip-path:none;transition:none}
+  .node.pulse,.hero__tag i,.gear-ring,.bob,.cat-card::after,.cat-dot::after,.step-card__icon,.packets{animation:none!important}
+  .packets{display:none}
 }
 </style>
 </head>
 <body>
+<div class="progress" id="progress"></div>
 
 <!-- =========================================================
      SHARED ICON SYMBOLS
@@ -354,7 +468,7 @@ p{margin:0}
       <p class="body">H&amp;H Plumbing &amp; Mechanical has repaired Amarillo's water, gas and sewer lines for decades &mdash; licensed by the State of Texas and the City of Amarillo, residential and commercial.</p>
       <div class="hero__actions">
         <a class="btn btn-solid" href="tel:+18063532435"><svg><use href="#ico-phone"/></svg>Call (806) 353-2435</a>
-        <a class="btn btn-ghost" href="#services">View Services<svg><use href="#ico-arrow"/></svg></a>
+        <a class="btn btn-ghost" href="#services">View Services<svg class="arrow"><use href="#ico-arrow"/></svg></a>
       </div>
       <div class="trust">
         <div><svg><use href="#ico-shield"/></svg>Licensed: Texas &amp; City of Amarillo</div>
@@ -392,7 +506,42 @@ p{margin:0}
         <circle class="node pulse" cx="320" cy="200" r="5" fill="#1d4ea6"/>
         <circle class="node" cx="200" cy="560" r="4" fill="#5b8dff"/>
         <circle class="node pulse" cx="440" cy="520" r="5" fill="#3ab6ea"/>
+        <!-- data packets travelling along lattice edges -->
+        <g class="packets">
+          <circle r="3" fill="#9fc4ff"><animateMotion dur="7s" repeatCount="indefinite" path="M-40 160 L0 200 L40 160 L80 200 L120 160 L160 200 L200 160 L240 200 L280 160 L320 200 L360 160 L400 200 L440 160 L480 200 L520 160 L560 200 L600 160"/></circle>
+          <circle r="3" fill="#5b8dff"><animateMotion dur="9s" repeatCount="indefinite" path="M600 400 L560 440 L520 400 L480 440 L440 400 L400 440 L360 400 L320 440 L280 400 L240 440 L200 400 L160 440 L120 400 L80 440 L40 400 L0 440 L-40 400"/></circle>
+          <circle r="2.5" fill="#fff"><animateMotion dur="6s" repeatCount="indefinite" path="M-40 -40 L640 640"/></circle>
+          <circle r="2.5" fill="#9fc4ff"><animateMotion dur="8s" repeatCount="indefinite" path="M600 -40 L-80 640"/></circle>
+        </g>
       </svg>
+      <div class="hero-card">
+        <svg class="logo-anim" viewBox="0 0 1000 560" aria-label="H&H Plumbing & Mechanical logo">
+          <g class="lp lp-stem lp-h1l" fill="#1d4ea6"><rect x="52" y="52" width="176" height="34"/><rect x="52" y="364" width="176" height="34"/><rect x="86" y="52" width="108" height="346"/></g>
+          <g class="lp lp-stem lp-h1r" fill="#1d4ea6"><rect x="300" y="52" width="176" height="34"/><rect x="300" y="364" width="176" height="34"/><rect x="334" y="52" width="108" height="346"/></g>
+          <g class="lp lp-x lp-x1" fill="#1d4ea6"><rect x="194" y="186" width="140" height="76"/></g>
+          <g class="lp lp-drop"><g class="bob"><g transform="translate(264,226)">
+            <path d="M0 -92 C 32 -48 66 -12 66 30 A66 66 0 1 1 -66 30 C -66 -12 -32 -48 0 -92 Z" fill="#fff"/>
+            <path d="M0 -70 C 25 -34 50 -6 50 28 A50 50 0 1 1 -50 28 C -50 -6 -25 -34 0 -70 Z" fill="#1d4ea6"/>
+            <path d="M14 -20 C 32 0 36 18 30 40" fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round"/>
+          </g></g></g>
+          <g class="lp lp-amp"><text x="510" y="332" text-anchor="middle" font-family="Oswald, 'Arial Narrow', Impact, sans-serif" font-weight="700" font-size="300" fill="#7d8186">&amp;</text></g>
+          <g class="lp lp-stem lp-h2l" fill="#1d4ea6"><rect x="524" y="52" width="176" height="34"/><rect x="524" y="364" width="176" height="34"/><rect x="558" y="52" width="108" height="346"/></g>
+          <g class="lp lp-stem lp-h2r" fill="#1d4ea6"><rect x="772" y="52" width="176" height="34"/><rect x="772" y="364" width="176" height="34"/><rect x="806" y="52" width="108" height="346"/></g>
+          <g class="lp lp-x lp-x2" fill="#1d4ea6"><rect x="666" y="186" width="140" height="76"/></g>
+          <g class="lp lp-gear"><g transform="translate(736,230)">
+            <circle r="84" fill="#fff"/>
+            <g class="gear-ring"><circle r="56" fill="none" stroke="#7d8186" stroke-width="22" stroke-dasharray="17 12"/></g>
+            <circle r="46" fill="#7d8186"/>
+            <circle r="28" fill="#fff"/>
+            <g fill="#7d8186">
+              <path d="M-14 -40 h28 v18 l-8 8 v70 h-12 v-70 l-8 -8 z" transform="translate(0,-4)"/>
+              <path d="M-22 -48 a22 22 0 1 1 44 0 l-10 0 v-10 h-24 v10 z" transform="translate(0,4)"/>
+            </g>
+          </g></g>
+          <g class="lp lp-rule"><rect x="40" y="428" width="920" height="16" fill="#7d8186"/></g>
+          <g class="lp lp-word"><text x="500" y="536" text-anchor="middle" font-family="Oswald, 'Arial Narrow', Impact, sans-serif" font-weight="700" font-size="92" fill="#1d4ea6" textLength="918" lengthAdjust="spacingAndGlyphs">PLUMBING &amp; MECHANICAL</text></g>
+        </svg>
+      </div>
     </div>
   </div>
 </section>
@@ -412,7 +561,7 @@ p{margin:0}
 
       <div class="cat-card">
         <div class="cat-card__head">
-          <span class="cat-dot" style="background:#5b8dff"></span>
+          <span class="cat-dot" style="--dot:#5b8dff"></span>
           <span>Repairs</span>
           <a href="tel:+18063532435" aria-label="Call about repairs"><svg><use href="#ico-arrow"/></svg></a>
         </div>
@@ -426,7 +575,7 @@ p{margin:0}
 
       <div class="cat-card">
         <div class="cat-card__head">
-          <span class="cat-dot" style="background:#9fc4ff"></span>
+          <span class="cat-dot" style="--dot:#9fc4ff"></span>
           <span>Drains &amp; Sewer</span>
           <a href="tel:+18063532435" aria-label="Call about drains and sewer"><svg><use href="#ico-arrow"/></svg></a>
         </div>
@@ -440,7 +589,7 @@ p{margin:0}
 
       <div class="cat-card">
         <div class="cat-card__head">
-          <span class="cat-dot" style="background:#3ab6ea"></span>
+          <span class="cat-dot" style="--dot:#3ab6ea"></span>
           <span>Leak Detection</span>
           <a href="tel:+18063532435" aria-label="Call about leak detection"><svg><use href="#ico-arrow"/></svg></a>
         </div>
@@ -454,7 +603,7 @@ p{margin:0}
 
       <div class="cat-card">
         <div class="cat-card__head">
-          <span class="cat-dot" style="background:#7d8186"></span>
+          <span class="cat-dot" style="--dot:#7d8186"></span>
           <span>Water Heaters &amp; Gas</span>
           <a href="tel:+18063532435" aria-label="Call about water heaters and gas"><svg><use href="#ico-arrow"/></svg></a>
         </div>
@@ -531,22 +680,49 @@ p{margin:0}
 <section class="section" id="about">
   <div class="container about-grid">
     <div data-reveal>
-      <span class="eyebrow">About H&amp;H</span>
-      <h2 style="margin-bottom:var(--spacing-24)">Amarillo plumbers. Not a franchise.</h2>
+      <div class="section__head" style="margin-bottom:var(--spacing-24)">
+        <span class="eyebrow">About H&amp;H</span>
+        <h2>Amarillo plumbers. Not a franchise.</h2>
+      </div>
       <div class="body-copy">
         <p>H&amp;H Plumbing &amp; Mechanical is a local contractor at 117 N Polk St in downtown Amarillo. We hold plumbing licenses with the State of Texas and the City of Amarillo, and we've been working on the Panhandle's water, gas and sewer lines for decades.</p>
         <p>We handle the little repairs and the big ones, and we're straight with you about which one you've got. If a drain just needs clearing, that's what we'll do. If the sewer line is gone, we'll show you why before you spend a dime on it.</p>
       </div>
       <div class="hero__actions" style="margin-top:var(--spacing-24)" id="contact">
         <a class="btn btn-solid" href="tel:+18063532435"><svg><use href="#ico-phone"/></svg>Call Now</a>
-        <a class="btn btn-ghost" href="https://maps.google.com/?q=117+N+Polk+St,+Amarillo,+TX+79107" target="_blank" rel="noopener">Get Directions<svg><use href="#ico-arrow"/></svg></a>
+        <a class="btn btn-ghost" href="https://maps.google.com/?q=117+N+Polk+St,+Amarillo,+TX+79107" target="_blank" rel="noopener">Get Directions<svg class="arrow"><use href="#ico-arrow"/></svg></a>
       </div>
     </div>
 
     <div data-reveal="scale">
-      <div class="logo-card"><svg viewBox="0 0 1000 560" aria-label="H&H Plumbing & Mechanical logo"><use href="#hh-logo"/></svg></div>
+      <div class="logo-card"><svg class="logo-anim" viewBox="0 0 1000 560" aria-label="H&H Plumbing & Mechanical logo">
+        <g class="lp lp-stem lp-h1l" fill="#1d4ea6"><rect x="52" y="52" width="176" height="34"/><rect x="52" y="364" width="176" height="34"/><rect x="86" y="52" width="108" height="346"/></g>
+        <g class="lp lp-stem lp-h1r" fill="#1d4ea6"><rect x="300" y="52" width="176" height="34"/><rect x="300" y="364" width="176" height="34"/><rect x="334" y="52" width="108" height="346"/></g>
+        <g class="lp lp-x lp-x1" fill="#1d4ea6"><rect x="194" y="186" width="140" height="76"/></g>
+        <g class="lp lp-drop"><g class="bob"><g transform="translate(264,226)">
+          <path d="M0 -92 C 32 -48 66 -12 66 30 A66 66 0 1 1 -66 30 C -66 -12 -32 -48 0 -92 Z" fill="#fff"/>
+          <path d="M0 -70 C 25 -34 50 -6 50 28 A50 50 0 1 1 -50 28 C -50 -6 -25 -34 0 -70 Z" fill="#1d4ea6"/>
+          <path d="M14 -20 C 32 0 36 18 30 40" fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round"/>
+        </g></g></g>
+        <g class="lp lp-amp"><text x="510" y="332" text-anchor="middle" font-family="Oswald, 'Arial Narrow', Impact, sans-serif" font-weight="700" font-size="300" fill="#7d8186">&amp;</text></g>
+        <g class="lp lp-stem lp-h2l" fill="#1d4ea6"><rect x="524" y="52" width="176" height="34"/><rect x="524" y="364" width="176" height="34"/><rect x="558" y="52" width="108" height="346"/></g>
+        <g class="lp lp-stem lp-h2r" fill="#1d4ea6"><rect x="772" y="52" width="176" height="34"/><rect x="772" y="364" width="176" height="34"/><rect x="806" y="52" width="108" height="346"/></g>
+        <g class="lp lp-x lp-x2" fill="#1d4ea6"><rect x="666" y="186" width="140" height="76"/></g>
+        <g class="lp lp-gear"><g transform="translate(736,230)">
+          <circle r="84" fill="#fff"/>
+          <g class="gear-ring"><circle r="56" fill="none" stroke="#7d8186" stroke-width="22" stroke-dasharray="17 12"/></g>
+          <circle r="46" fill="#7d8186"/>
+          <circle r="28" fill="#fff"/>
+          <g fill="#7d8186">
+            <path d="M-14 -40 h28 v18 l-8 8 v70 h-12 v-70 l-8 -8 z" transform="translate(0,-4)"/>
+            <path d="M-22 -48 a22 22 0 1 1 44 0 l-10 0 v-10 h-24 v10 z" transform="translate(0,4)"/>
+          </g>
+        </g></g>
+        <g class="lp lp-rule"><rect x="40" y="428" width="920" height="16" fill="#7d8186"/></g>
+        <g class="lp lp-word"><text x="500" y="536" text-anchor="middle" font-family="Oswald, 'Arial Narrow', Impact, sans-serif" font-weight="700" font-size="92" fill="#1d4ea6" textLength="918" lengthAdjust="spacingAndGlyphs">PLUMBING &amp; MECHANICAL</text></g>
+        </svg></div>
       <a class="cta-phone" href="tel:+18063532435">(806) 353-2435</a>
-      <div class="info-card">
+      <div class="info-card" data-stagger>
         <div class="info-row"><svg><use href="#ico-pin"/></svg><div><b>Address</b><span>117 N Polk St, Amarillo, TX 79107</span></div></div>
         <div class="info-row"><svg><use href="#ico-clock"/></svg><div><b>Hours</b><span>Monday&ndash;Friday, 9:00 am&ndash;5:00 pm</span></div></div>
         <div class="info-row"><svg><use href="#ico-shield"/></svg><div><b>Licensing</b><span>Texas State Board of Plumbing Examiners &amp; City of Amarillo</span></div></div>
@@ -619,11 +795,51 @@ p{margin:0}
     burger.setAttribute('aria-expanded','false'); document.body.style.overflow='';
   }));
 
+  // page-load sequence + headline word split
+  const h1=$('.hero h1');
+  h1.innerHTML=h1.textContent.trim().split(/\s+/).map((w,i)=>'<span class="w"><span class="wi" style="transition-delay:'+(0.25+i*0.08)+'s">'+w+'</span></span>').join(' ');
+  requestAnimationFrame(()=>requestAnimationFrame(()=>document.body.classList.add('is-ready')));
+
+  // scroll progress
+  const progress=$('#progress');
+  const onProgress=()=>{ const h=document.documentElement.scrollHeight-innerHeight; progress.style.transform='scaleX('+(h>0?scrollY/h:0)+')'; };
+  addEventListener('scroll', onProgress, {passive:true}); onProgress();
+
   // reveal on scroll
   const io=new IntersectionObserver(es=>{
     es.forEach(e=>{ if(!e.isIntersecting) return; e.target.classList.add('in'); io.unobserve(e.target); });
   }, {threshold:.15, rootMargin:'0px 0px -8% 0px'});
-  $$('[data-reveal],[data-stagger]').forEach(el=>io.observe(el));
+  $$('[data-reveal],[data-stagger],.section__head').forEach(el=>io.observe(el));
+
+  // logo formation: hero card + about card
+  const lio=new IntersectionObserver(es=>{
+    es.forEach(e=>{ if(!e.isIntersecting) return;
+      e.target.classList.add('in');
+      e.target.querySelectorAll('.logo-anim').forEach(l=>l.classList.add('formed'));
+      lio.unobserve(e.target);
+    });
+  }, {threshold:.35});
+  $$('.lattice,.logo-card').forEach(el=>lio.observe(el));
+
+  // dot-matrix icons draw in dot by dot
+  $$('.step-card').forEach((card,ci)=>{
+    card.querySelectorAll('.step-card__icon circle').forEach((c,i)=>{ c.style.transitionDelay=(0.5+ci*0.15+i*0.05)+'s'; });
+  });
+
+  // pointer-only: magnetic buttons + lattice parallax
+  if(!reduce && matchMedia('(hover:hover)').matches){
+    $$('.btn').forEach(btn=>{
+      btn.addEventListener('mousemove',e=>{ const r=btn.getBoundingClientRect(); const x=e.clientX-r.left-r.width/2, y=e.clientY-r.top-r.height/2; btn.style.transform='translate('+x*.14+'px,'+y*.2+'px)'; });
+      btn.addEventListener('mouseleave',()=>{ btn.style.transform=''; });
+    });
+    const lat=$('.lattice svg'), card=$('.hero-card'), hero=$('#hero');
+    hero.addEventListener('mousemove',e=>{
+      const x=(e.clientX/innerWidth-.5), y=(e.clientY/innerHeight-.5);
+      lat.style.transform='translate('+(x*-14)+'px,'+(y*-14)+'px)';
+      card.style.transform='translateY(-50%) translate('+(x*10)+'px,'+(y*10)+'px)';
+    });
+    hero.addEventListener('mouseleave',()=>{ lat.style.transform=''; card.style.transform=''; });
+  }
 })();
 </script>
 </body>
