@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Belmar Laundry — Amarillo, TX</title>
+<meta name="description" content="Belmar Laundry. Self-service washers and dryers, drop-off wash & fold, free Wi-Fi and parking. 5711 SW 34th Ave A, Amarillo, TX. Call (806) 351-0070.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --teal:#0e7c86;--teal-deep:#0a5a62;--teal-ink:#083b41;--aqua:#e6f4f5;--aqua-2:#cfe9eb;
+  --sun:#f6b73c;--sun-deep:#e39a12;--cream:#fbf9f4;--white:#fff;--ink:#12242a;--muted:#5b6b70;--line:#dfe8ea;
+  --r:22px;--r-sm:14px;--shadow:0 20px 50px -30px rgba(8,59,65,.35);
+  --ease:cubic-bezier(.7,0,.2,1);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;font-size:16px;line-height:1.55;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+h1,h2,h3,h4,p,ul{margin:0}
+.wrap{width:min(1180px,calc(100% - 40px));margin:0 auto}
+.display{font-family:"Bricolage Grotesque",Inter,sans-serif;font-weight:800;letter-spacing:-.02em;line-height:1.02}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--teal)}
+.kicker::before{content:"";width:22px;height:2px;background:var(--sun);border-radius:2px}
+.h2{font-size:clamp(32px,4.4vw,50px);margin-top:14px;max-width:16ch}
+.lede{color:var(--muted);font-size:18px;max-width:56ch;margin-top:16px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:999px;font-weight:600;font-size:15px;border:2px solid transparent;cursor:pointer;transition:transform .25s var(--ease),box-shadow .25s,background .25s,color .25s;white-space:nowrap;position:relative;overflow:hidden}
+.btn svg{width:18px;height:18px;flex:none}
+.btn--teal{background:var(--teal);color:#fff;box-shadow:0 12px 30px -14px rgba(14,124,134,.8)}
+.btn--teal:hover{background:var(--teal-deep);transform:translateY(-2px)}
+.btn--sun{background:var(--sun);color:var(--ink);box-shadow:0 12px 30px -14px rgba(246,183,60,.9)}
+.btn--sun:hover{background:var(--sun-deep);transform:translateY(-2px)}
+.btn--line{border-color:var(--teal);color:var(--teal);background:transparent}
+.btn--line:hover{background:var(--aqua);transform:translateY(-2px)}
+.btn--white{background:#fff;color:var(--teal-ink)}
+.btn--white:hover{transform:translateY(-2px)}
+
+/* ---------- top bar + nav ---------- */
+.topbar{background:var(--teal-ink);color:#cfe9eb;font-size:13px;padding:8px 0}
+.topbar .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.topbar b{color:#fff;font-weight:600}
+.topbar .status{display:inline-flex;align-items:center;gap:8px}
+.topbar .status i{width:8px;height:8px;border-radius:50%;background:#43d17c;box-shadow:0 0 0 0 rgba(67,209,124,.7);animation:ping 2s infinite}
+.topbar .status.closed i{background:#f08a5d;animation:none}
+@keyframes ping{to{box-shadow:0 0 0 9px rgba(67,209,124,0)}}
+.nav{position:sticky;top:0;z-index:40;background:rgba(251,249,244,.86);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:74px;gap:20px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo svg{width:46px;height:46px}
+.logo .name{font-family:"Bricolage Grotesque",Inter,sans-serif;font-weight:800;font-size:22px;letter-spacing:-.02em;line-height:1;color:var(--teal-ink)}
+.logo .sub{display:block;font-family:Inter,sans-serif;font-weight:600;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-top:4px}
+.menu{display:flex;gap:6px;list-style:none;padding:0}
+.menu a{display:block;padding:9px 14px;border-radius:999px;font-weight:600;font-size:14px;color:var(--ink);transition:background .2s,color .2s}
+.menu a:hover{background:var(--aqua)}
+.menu a.active{background:var(--teal-ink);color:#fff}
+.nav .btn{padding:11px 18px;font-size:14px}
+.burger{display:none;width:44px;height:44px;border-radius:12px;border:1px solid var(--line);background:#fff;cursor:pointer;place-items:center}
+.burger span{display:block;width:20px;height:2px;background:var(--ink);margin:3px 0;transition:transform .3s,opacity .3s}
+.burger.open span:nth-child(1){transform:translateY(5px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-5px) rotate(-45deg)}
+
+/* ---------- page system ---------- */
+.page{display:none}
+.page.active{display:block;animation:pageIn .7s var(--ease) both}
+@keyframes pageIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.stagger > *{opacity:0;transform:translateY(16px);animation:pageIn .7s var(--ease) forwards}
+.stagger > :nth-child(1){animation-delay:.05s}.stagger > :nth-child(2){animation-delay:.14s}.stagger > :nth-child(3){animation-delay:.23s}.stagger > :nth-child(4){animation-delay:.32s}.stagger > :nth-child(5){animation-delay:.41s}.stagger > :nth-child(6){animation-delay:.5s}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+
+/* wipe transition */
+.wipe{position:fixed;inset:0;z-index:100;pointer-events:none}
+.wipe i{position:absolute;inset:0;transform:translateX(-101%);will-change:transform}
+.wipe i:nth-child(1){background:var(--sun);transition:transform .55s var(--ease)}
+.wipe i:nth-child(2){background:var(--teal);transition:transform .55s var(--ease) .07s}
+.wipe i:nth-child(3){background:var(--teal-ink);transition:transform .55s var(--ease) .14s;display:grid;place-items:center}
+.wipe.in i{transform:translateX(0)}
+.wipe.out i{transform:translateX(101%)}
+.wipe.in{pointer-events:auto}
+.wipe .bubble{position:absolute;border-radius:50%;border:2px solid rgba(255,255,255,.55);background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.6),rgba(255,255,255,.05));opacity:0;transform:scale(.3)}
+.wipe.in .bubble{animation:pop .9s var(--ease) forwards}
+@keyframes pop{0%{opacity:0;transform:scale(.3) translateY(20px)}40%{opacity:1}100%{opacity:0;transform:scale(1.1) translateY(-40px)}}
+.wipe .wm{color:#fff;font-family:"Bricolage Grotesque",Inter,sans-serif;font-weight:800;font-size:clamp(28px,5vw,56px);letter-spacing:-.02em;opacity:0;transform:translateY(12px);transition:opacity .3s .25s,transform .3s .25s}
+.wipe.in .wm{opacity:1;transform:none}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#eef7f8 0%,var(--cream) 100%)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:40px;align-items:center;min-height:calc(100vh - 74px - 37px);padding:60px 0 70px}
+.hero h1{font-size:clamp(44px,6.4vw,84px);margin-top:18px;max-width:11ch}
+.hero h1 em{font-style:normal;color:var(--teal);position:relative;display:inline-block}
+.hero h1 em::after{content:"";position:absolute;left:0;right:0;bottom:.06em;height:.16em;background:var(--sun);border-radius:4px;z-index:-1;transform:scaleX(0);transform-origin:left;animation:underline 1s var(--ease) .8s forwards}
+@keyframes underline{to{transform:scaleX(1)}}
+.hero .lede{font-size:19px}
+.hero__cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.hero__facts{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:34px;color:var(--muted);font-size:14px;font-weight:500}
+.hero__facts span{display:inline-flex;align-items:center;gap:8px}
+.hero__facts svg{width:18px;height:18px;color:var(--teal)}
+.hero__art{position:relative}
+.hero__art > svg{width:100%;height:auto;filter:drop-shadow(0 30px 40px rgba(8,59,65,.18))}
+.hero__badge{position:absolute;right:-6px;top:6%;background:#fff;border-radius:18px;padding:12px 16px;box-shadow:var(--shadow);display:flex;gap:12px;align-items:center;animation:float 5s ease-in-out infinite}
+.hero__badge b{display:block;font-family:"Bricolage Grotesque",Inter,sans-serif;font-size:22px;font-weight:800;color:var(--teal-ink);line-height:1}
+.hero__badge small{color:var(--muted);font-size:12px;font-weight:500}
+.hero__badge .n{width:40px;height:40px;border-radius:12px;background:var(--sun);display:grid;place-items:center}
+.hero__badge .n svg{width:22px;height:22px}
+.hero__badge.b2{right:auto;left:-6px;top:auto;bottom:10%;animation-delay:-2.5s}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.bubbles{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.bubbles i{position:absolute;bottom:-60px;border-radius:50%;border:2px solid rgba(14,124,134,.18);background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.8),rgba(207,233,235,.15));animation:rise linear infinite}
+@keyframes rise{0%{transform:translateY(0) translateX(0);opacity:0}10%{opacity:1}100%{transform:translateY(-110vh) translateX(30px);opacity:0}}
+/* washer animation */
+.drum{transform-box:fill-box;transform-origin:center;animation:drum 6s cubic-bezier(.4,0,.2,1) infinite}
+@keyframes drum{0%{transform:rotate(0)}40%{transform:rotate(720deg)}55%{transform:rotate(700deg)}100%{transform:rotate(1440deg)}}
+.water{animation:slosh 2.2s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes slosh{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(4deg)}}
+.led{animation:blink 1.6s steps(2) infinite}
+@keyframes blink{50%{opacity:.25}}
+.foam{transform-box:fill-box;transform-origin:50% 100%;animation:foam 3s ease-in-out infinite}
+.foam.f2{animation-delay:-1s}.foam.f3{animation-delay:-2s}
+@keyframes foam{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
+
+/* ---------- strip ---------- */
+.strip{background:var(--teal-ink);color:#fff}
+.strip .wrap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0}
+.strip div{padding:26px 22px;border-left:1px solid rgba(255,255,255,.12)}
+.strip div:first-child{border-left:0;padding-left:0}
+.strip b{display:block;font-family:"Bricolage Grotesque",Inter,sans-serif;font-size:30px;font-weight:800;letter-spacing:-.02em;color:var(--sun)}
+.strip span{font-size:14px;color:#cfe9eb}
+
+/* ---------- sections ---------- */
+.sec{padding:100px 0}
+.sec--aqua{background:var(--aqua)}
+.sec--white{background:#fff}
+.grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:48px}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:30px 28px;transition:transform .35s var(--ease),box-shadow .35s;position:relative;overflow:hidden}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.card__ico{width:60px;height:60px;border-radius:18px;background:var(--aqua);display:grid;place-items:center;color:var(--teal);margin-bottom:22px}
+.card__ico svg{width:30px;height:30px}
+.card h3{font-family:"Bricolage Grotesque",Inter,sans-serif;font-weight:700;font-size:23px;letter-spacing:-.01em}
+.card p{color:var(--muted);margin-top:10px;font-size:15px}
+.card .more{display:inline-flex;align-items:center;gap:8px;margin-top:20px;color:var(--teal);font-weight:600;font-size:14px}
+.card .more svg{width:16px;height:16px;transition:transform .25s}
+.card:hover .more svg{transform:translateX(4px)}
+.card--sun{background:var(--sun);border-color:var(--sun)}
+.card--sun .card__ico{background:rgba(255,255,255,.55);color:var(--teal-ink)}
+.card--sun p{color:#5a4310}
+.card--sun .more{color:var(--teal-ink)}
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:center}
+.split.flip > :first-child{order:2}
+.checks{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:14px}
+.checks li{display:flex;gap:14px;align-items:flex-start;font-size:16px}
+.checks li b{display:block;font-weight:600}
+.checks li span{color:var(--muted);font-size:15px}
+.checks .tick{flex:none;width:28px;height:28px;border-radius:50%;background:var(--teal);color:#fff;display:grid;place-items:center;margin-top:2px}
+.checks .tick svg{width:14px;height:14px}
+.figure{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:28px;box-shadow:var(--shadow)}
+.figure svg{width:100%;height:auto}
+.figure figcaption{font-size:13px;color:var(--muted);margin-top:16px;display:flex;justify-content:space-between;font-weight:500}
+
+/* hours */
+.hours{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:start}
+.hours table{width:100%;border-collapse:collapse;margin-top:26px;font-size:16px}
+.hours td{padding:14px 0;border-bottom:1px solid var(--line)}
+.hours td:last-child{text-align:right;font-weight:600;font-variant-numeric:tabular-nums}
+.hours tr.today td{color:var(--teal);font-weight:600}
+.hours tr.today td:first-child::after{content:"Today";margin-left:10px;font-size:11px;background:var(--sun);color:var(--ink);padding:3px 8px;border-radius:999px;letter-spacing:.06em;text-transform:uppercase}
+.map{border-radius:var(--r);overflow:hidden;border:1px solid var(--line);background:#fff;box-shadow:var(--shadow)}
+.map svg{width:100%;height:auto}
+.map .addr{padding:22px 24px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.map .addr b{display:block;font-size:17px}
+.map .addr span{color:var(--muted);font-size:14px}
+.pin{transform-box:fill-box;transform-origin:50% 100%;animation:pin 2s ease-in-out infinite}
+@keyframes pin{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.pinring{transform-box:fill-box;transform-origin:center;animation:pring 2s ease-out infinite}
+@keyframes pring{0%{transform:scale(.4);opacity:.8}100%{transform:scale(1.6);opacity:0}}
+
+/* pricing */
+.price-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:24px;margin-top:48px}
+.price{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:36px}
+.price--hero{background:var(--teal-ink);color:#fff;border-color:var(--teal-ink);position:relative;overflow:hidden}
+.price--hero::after{content:"";position:absolute;right:-80px;top:-80px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(246,183,60,.35),transparent 70%)}
+.price .big{font-family:"Bricolage Grotesque",Inter,sans-serif;font-weight:800;font-size:clamp(52px,7vw,84px);letter-spacing:-.03em;line-height:1;margin-top:18px}
+.price .big small{font-size:.32em;font-weight:600;letter-spacing:0;color:var(--sun);margin-left:6px}
+.price h3{font-family:"Bricolage Grotesque",Inter,sans-serif;font-weight:700;font-size:24px}
+.price p{margin-top:10px;font-size:15px;opacity:.85}
+.price ul{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:10px;font-size:15px}
+.price li{display:flex;gap:10px;align-items:center}
+.price li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--sun);flex:none}
+.price .btn{margin-top:26px}
+.machines{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:26px}
+.machines div{border:1px solid var(--line);border-radius:var(--r-sm);padding:18px 16px;text-align:center}
+.machines b{display:block;font-family:"Bricolage Grotesque",Inter,sans-serif;font-size:20px;font-weight:800;color:var(--teal-ink)}
+.machines span{font-size:12px;color:var(--muted)}
+.note{margin-top:18px;font-size:13px;color:var(--muted);padding:14px 16px;background:var(--aqua);border-radius:var(--r-sm)}
+
+/* faq */
+.faq{margin-top:40px;display:grid;gap:10px;max-width:820px}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:var(--r-sm);padding:0 22px;transition:box-shadow .3s}
+.faq details[open]{box-shadow:var(--shadow)}
+.faq summary{cursor:pointer;list-style:none;padding:18px 0;font-weight:600;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";width:28px;height:28px;border-radius:50%;background:var(--aqua);color:var(--teal);display:grid;place-items:center;font-weight:600;transition:transform .3s;flex:none}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq p{color:var(--muted);padding:0 0 20px;font-size:15px}
+
+/* contact */
+.contact{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:48px}
+.contact a.card{display:block}
+.contact .card b{display:block;font-family:"Bricolage Grotesque",Inter,sans-serif;font-size:22px;font-weight:800;color:var(--teal-ink);margin-top:6px}
+
+/* cta band */
+.band{background:linear-gradient(120deg,var(--teal) 0%,var(--teal-deep) 100%);color:#fff;position:relative;overflow:hidden}
+.band .wrap{padding:80px 0;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px;align-items:center}
+.band h2{font-size:clamp(30px,4vw,46px)}
+.band p{opacity:.85;margin-top:10px}
+.band .btns{display:flex;gap:12px;flex-wrap:wrap}
+.band::before{content:"";position:absolute;left:-100px;bottom:-140px;width:360px;height:360px;border-radius:50%;border:60px solid rgba(255,255,255,.06)}
+.band::after{content:"";position:absolute;right:10%;top:-120px;width:240px;height:240px;border-radius:50%;background:rgba(246,183,60,.18)}
+
+/* page headers */
+.phead{background:linear-gradient(180deg,#eef7f8,var(--cream));padding:70px 0 50px;border-bottom:1px solid var(--line)}
+.phead h1{font-size:clamp(38px,5.6vw,68px);margin-top:14px;max-width:14ch}
+.crumbs{font-size:13px;color:var(--muted);display:flex;gap:8px;margin-bottom:10px}
+.crumbs a{color:var(--teal);font-weight:600}
+
+/* footer */
+.footer{background:var(--teal-ink);color:#b9d7da;padding:64px 0 28px}
+.footer .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+.footer .logo .name{color:#fff}.footer .logo .sub{color:var(--sun)}
+.footer p{font-size:14px;margin-top:16px;max-width:36ch}
+.footer h4{color:#fff;font-size:13px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px}
+.footer ul{list-style:none;padding:0;display:grid;gap:10px;font-size:14px}
+.footer ul a:hover{color:#fff}
+.footer .bottom{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);padding-top:22px;margin-top:20px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px}
+
+@media (max-width:980px){
+  .hero .wrap,.split,.hours,.price-grid,.band .wrap{grid-template-columns:100%}
+  .split.flip > :first-child{order:0}
+  .grid-3,.contact{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .strip .wrap{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .strip div:nth-child(odd){border-left:0;padding-left:0}
+  .footer .wrap{grid-template-columns:1fr 1fr}
+  .hero .wrap{min-height:0;padding:44px 0 60px}
+  .hero__art{max-width:520px;margin:0 auto;width:100%}
+}
+@media (max-width:720px){
+  .menu{position:fixed;inset:74px 0 auto 0;background:#fff;flex-direction:column;padding:12px 20px 20px;border-bottom:1px solid var(--line);transform:translateY(-12px);opacity:0;pointer-events:none;transition:transform .3s var(--ease),opacity .3s;z-index:39;box-shadow:var(--shadow)}
+  .menu.open{transform:none;opacity:1;pointer-events:auto}
+  .menu a{padding:14px 16px;font-size:16px}
+  .burger{display:grid}
+  .nav .btn{display:none}
+  .grid-3,.contact{grid-template-columns:100%}
+  .sec{padding:70px 0}
+  .machines{grid-template-columns:100%}
+  .footer .wrap{grid-template-columns:100%}
+  .topbar .wrap{justify-content:center;text-align:center}
+  .topbar .hide-m{display:none}
+  .hero__badge{padding:10px 12px}
+  .hero__badge b{font-size:18px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001s!important;animation-iteration-count:1!important;transition-duration:.001s!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="bl-mark" viewBox="0 0 64 64">
+    <rect x="4" y="4" width="56" height="56" rx="16" fill="#0e7c86"/>
+    <circle cx="32" cy="34" r="17" fill="#083b41"/>
+    <circle cx="32" cy="34" r="13" fill="#0e7c86"/>
+    <path d="M20 37c4-5 8-5 12 0s8 5 12 0v6a13 13 0 0 1-24 0z" fill="#cfe9eb"/>
+    <circle cx="40" cy="24" r="3.2" fill="#fff" opacity=".9"/>
+    <circle cx="45" cy="30" r="1.8" fill="#fff" opacity=".8"/>
+    <rect x="12" y="10" width="40" height="6" rx="3" fill="#f6b73c"/>
+    <circle cx="16" cy="13" r="1.6" fill="#083b41"/><circle cx="21" cy="13" r="1.6" fill="#083b41"/>
+  </symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.9 2.1z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="10" r="3" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-wifi" viewBox="0 0 24 24"><path d="M2 9a16 16 0 0 1 20 0M5.5 12.5a11 11 0 0 1 13 0M9 16a6 6 0 0 1 6 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="19.5" r="1.5" fill="currentColor"/></symbol>
+  <symbol id="i-car" viewBox="0 0 24 24"><path d="M5 16l1.5-6a2 2 0 0 1 2-1.5h7a2 2 0 0 1 2 1.5L19 16M3 16h18v3H3zM7 16v3M17 16v3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-washer" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="13" r="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 6h.01M11 6h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-basket" viewBox="0 0 24 24"><path d="M4 9h16l-1.5 11h-13zM8 9V7a4 4 0 0 1 8 0v2" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 13v3M12 13v3M15 13v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-hanger" viewBox="0 0 24 24"><path d="M12 8a2.5 2.5 0 1 0-2.5-2.5M12 8v2l9 6H3l9-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-coin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v10M9.5 9.5h3.5a2 2 0 0 1 0 4h-2a2 2 0 0 0 0 4h4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-person" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 21a8 8 0 0 1 16 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-access" viewBox="0 0 24 24"><circle cx="12" cy="4.5" r="2" fill="currentColor"/><path d="M10 9h6l3 6M10 9v6h5l2 5M6 14a5 5 0 1 0 8 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-truck" viewBox="0 0 24 24"><path d="M3 6h11v10H3zM14 10h4l3 3v3h-7z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="7" cy="18" r="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17" cy="18" r="2" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+</defs></svg>
+
+<div class="wipe" id="wipe" aria-hidden="true"><i></i><i></i><i><span class="wm" id="wipeLabel">Belmar</span></i></div>
+
+<div class="topbar">
+  <div class="wrap">
+    <span class="status" id="status"><i></i><b>Open now</b><span class="hide-m">· until 10:00 PM</span></span>
+    <span class="hide-m">5711 SW 34th Ave A, Amarillo, TX 79109</span>
+    <a href="tel:+18063510070"><b>(806) 351-0070</b></a>
+  </div>
+</div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#home" data-page="home">
+      <svg><use href="#bl-mark"/></svg>
+      <span><span class="name">Belmar Laundry</span><span class="sub">Amarillo · Since 1997</span></span>
+    </a>
+    <ul class="menu" id="menu">
+      <li><a href="#home" data-page="home">Home</a></li>
+      <li><a href="#services" data-page="services">Services</a></li>
+      <li><a href="#pricing" data-page="pricing">Pricing</a></li>
+      <li><a href="#hours" data-page="hours">Hours &amp; Location</a></li>
+      <li><a href="#contact" data-page="contact">Contact</a></li>
+    </ul>
+    <a class="btn btn--teal" href="tel:+18063510070"><svg><use href="#i-phone"/></svg>Call us</a>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ HOME ============ -->
+<section class="page" data-page="home" id="page-home">
+  <div class="hero">
+    <div class="bubbles" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="stagger">
+        <span class="kicker">Southwest Amarillo's neighborhood laundromat</span>
+        <h1 class="display">Laundry day, the <em>easy</em> way.</h1>
+        <p class="lede">Clean, well-kept washers and dryers, an attendant on site, and a drop-off service that hands your basket back folded. Belmar has been doing laundry for Amarillo since 1997.</p>
+        <div class="hero__cta">
+          <a class="btn btn--teal" href="https://www.google.com/maps/dir/?api=1&destination=Belmar+Laundry%2C+5711+SW+34th+Ave+A%2C+Amarillo%2C+TX+79109" target="_blank" rel="noopener"><svg><use href="#i-pin"/></svg>Get directions</a>
+          <a class="btn btn--line" href="#services" data-page="services">See services<svg><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="hero__facts">
+          <span><svg><use href="#i-clock"/></svg>Open 7 days a week</span>
+          <span><svg><use href="#i-wifi"/></svg>Free Wi-Fi</span>
+          <span><svg><use href="#i-car"/></svg>Free parking</span>
+          <span><svg><use href="#i-person"/></svg>Attendant on site</span>
+        </div>
+      </div>
+      <div class="hero__art">
+        <svg viewBox="0 0 520 520" aria-hidden="true">
+          <defs>
+            <linearGradient id="gBody" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#eef3f4"/></linearGradient>
+            <radialGradient id="gGlass" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#ffffff" stop-opacity=".9"/><stop offset=".5" stop-color="#cfe9eb" stop-opacity=".35"/><stop offset="1" stop-color="#083b41" stop-opacity=".25"/></radialGradient>
+            <clipPath id="cDrum"><circle cx="260" cy="300" r="118"/></clipPath>
+          </defs>
+          <!-- backdrop blob -->
+          <circle cx="270" cy="280" r="230" fill="#cfe9eb" opacity=".55"/>
+          <circle cx="90" cy="120" r="34" fill="#f6b73c" opacity=".9"/>
+          <!-- shelf -->
+          <rect x="60" y="470" width="400" height="10" rx="5" fill="#0a5a62" opacity=".2"/>
+          <!-- washer body -->
+          <rect x="120" y="80" width="280" height="390" rx="26" fill="url(#gBody)" stroke="#dfe8ea" stroke-width="2"/>
+          <rect x="120" y="80" width="280" height="76" rx="26" fill="#fff" stroke="#dfe8ea" stroke-width="2"/>
+          <rect x="120" y="140" width="280" height="4" fill="#dfe8ea"/>
+          <!-- panel -->
+          <circle cx="352" cy="118" r="22" fill="#083b41"/>
+          <circle cx="352" cy="118" r="14" fill="#0e7c86"/>
+          <rect x="350" y="100" width="4" height="12" rx="2" fill="#fff"/>
+          <rect x="150" y="104" width="120" height="28" rx="8" fill="#e6f4f5"/>
+          <text x="162" y="123" font-family="Inter,sans-serif" font-size="13" font-weight="600" fill="#0e7c86">WASH · 32 MIN</text>
+          <circle class="led" cx="296" cy="118" r="5" fill="#43d17c"/>
+          <circle cx="314" cy="118" r="5" fill="#f6b73c"/>
+          <!-- door -->
+          <circle cx="260" cy="300" r="150" fill="#e6f4f5" stroke="#dfe8ea" stroke-width="2"/>
+          <circle cx="260" cy="300" r="132" fill="#083b41"/>
+          <g clip-path="url(#cDrum)">
+            <circle cx="260" cy="300" r="118" fill="#0a5a62"/>
+            <g class="drum">
+              <circle cx="260" cy="300" r="118" fill="none" stroke="#0e7c86" stroke-width="3" stroke-dasharray="6 14"/>
+              <g fill="#0e7c86">
+                <rect x="256" y="190" width="8" height="40" rx="4"/><rect x="256" y="370" width="8" height="40" rx="4"/>
+                <rect x="150" y="296" width="40" height="8" rx="4"/><rect x="330" y="296" width="40" height="8" rx="4"/>
+                <g transform="rotate(45 260 300)"><rect x="256" y="190" width="8" height="40" rx="4"/><rect x="256" y="370" width="8" height="40" rx="4"/><rect x="150" y="296" width="40" height="8" rx="4"/><rect x="330" y="296" width="40" height="8" rx="4"/></g>
+              </g>
+              <!-- clothes -->
+              <path d="M230 260c20-18 44-12 56 6s4 44-18 50-52-8-50-30c1-10 4-20 12-26z" fill="#f6b73c"/>
+              <path d="M300 320c14 4 24 18 16 34s-30 14-40 4-2-30 8-36 10-4 16-2z" fill="#f08a5d"/>
+              <path d="M200 330c10-10 30-6 34 8s-8 30-22 26-22-24-12-34z" fill="#cfe9eb"/>
+            </g>
+            <g class="water">
+              <path d="M120 350c40-16 80-16 120 0s80 16 120 0v90H120z" fill="#0e7c86" opacity=".75"/>
+              <path d="M120 366c40-16 80-16 120 0s80 16 120 0v70H120z" fill="#4fb3bc" opacity=".55"/>
+            </g>
+            <g fill="#fff">
+              <circle class="foam" cx="180" cy="342" r="10" opacity=".9"/><circle class="foam f2" cx="205" cy="336" r="14" opacity=".85"/><circle class="foam f3" cx="330" cy="340" r="12" opacity=".9"/><circle class="foam f2" cx="300" cy="350" r="8" opacity=".8"/>
+            </g>
+          </g>
+          <circle cx="260" cy="300" r="118" fill="url(#gGlass)"/>
+          <circle cx="260" cy="300" r="132" fill="none" stroke="#0e7c86" stroke-width="6"/>
+          <circle cx="260" cy="300" r="150" fill="none" stroke="#fff" stroke-width="10" opacity=".8"/>
+          <!-- handle -->
+          <rect x="396" y="270" width="14" height="60" rx="7" fill="#0e7c86"/>
+          <!-- feet -->
+          <rect x="140" y="470" width="30" height="14" rx="6" fill="#083b41"/><rect x="350" y="470" width="30" height="14" rx="6" fill="#083b41"/>
+          <!-- basket -->
+          <path d="M380 420h90l-8 50h-74z" fill="#f6b73c"/>
+          <path d="M386 428h78" stroke="#e39a12" stroke-width="3"/>
+          <path d="M392 418c10-14 60-14 70 0" fill="none" stroke="#fff" stroke-width="6"/>
+          <path d="M400 418c8-10 50-10 58 0" fill="none" stroke="#cfe9eb" stroke-width="6"/>
+        </svg>
+        <div class="hero__badge"><div class="n"><svg><use href="#i-basket"/></svg></div><div><b>$0.95<span style="font-size:13px">/lb</span></b><small>Drop-off wash &amp; fold</small></div></div>
+        <div class="hero__badge b2"><div class="n"><svg><use href="#i-clock"/></svg></div><div><b>1 day</b><small>Typical turnaround</small></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="strip">
+    <div class="wrap">
+      <div class="reveal"><b>1997</b><span>Serving Amarillo since</span></div>
+      <div class="reveal"><b>7 days</b><span>Open every day of the week</span></div>
+      <div class="reveal"><b>$0.95/lb</b><span>Drop-off wash, dry &amp; fold</span></div>
+      <div class="reveal"><b>Free</b><span>Wi-Fi, parking &amp; RV parking</span></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="wrap">
+      <div class="reveal">
+        <span class="kicker">Two ways to do laundry</span>
+        <h2 class="h2 display">Do it yourself, or let us do it.</h2>
+        <p class="lede">Bring your own detergent and run your loads on our machines, or drop your basket at the counter and pick it up clean and folded.</p>
+      </div>
+      <div class="grid-3">
+        <a class="card reveal" href="#services" data-page="services">
+          <div class="card__ico"><svg><use href="#i-washer"/></svg></div>
+          <h3>Self-service</h3>
+          <p>Washers and dryers in a range of sizes, from everyday loads to comforters and blankets. Coin changer on site, attendant on hand.</p>
+          <span class="more">How it works<svg><use href="#i-arrow"/></svg></span>
+        </a>
+        <a class="card card--sun reveal" href="#pricing" data-page="pricing">
+          <div class="card__ico"><svg><use href="#i-basket"/></svg></div>
+          <h3>Drop-off wash &amp; fold</h3>
+          <p>We separate darks and whites, wash, dry, and fold. $0.95 per pound, usually ready to pick up in one day.</p>
+          <span class="more">See pricing<svg><use href="#i-arrow"/></svg></span>
+        </a>
+        <a class="card reveal" href="#services" data-page="services">
+          <div class="card__ico"><svg><use href="#i-hanger"/></svg></div>
+          <h3>Dry cleaning &amp; delivery</h3>
+          <p>Ask the attendant about dry-cleaning items and pickup-and-delivery options. Availability varies, so call ahead.</p>
+          <span class="more">Ask about it<svg><use href="#i-arrow"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec sec--aqua">
+    <div class="wrap split">
+      <div class="reveal">
+        <span class="kicker">Why Belmar</span>
+        <h2 class="h2 display">A laundromat that's actually pleasant to sit in.</h2>
+        <ul class="checks">
+          <li><span class="tick"><svg><use href="#i-check"/></svg></span><div><b>Attendant on site</b><span>Someone is there to help with the machines, make change, and keep the place clean.</span></div></li>
+          <li><span class="tick"><svg><use href="#i-check"/></svg></span><div><b>Free Wi-Fi and free parking</b><span>Get some work done while the dryer runs. Room to park an RV too.</span></div></li>
+          <li><span class="tick"><svg><use href="#i-check"/></svg></span><div><b>Wheelchair accessible</b><span>Step-free entry and room to move between the machines.</span></div></li>
+          <li><span class="tick"><svg><use href="#i-check"/></svg></span><div><b>Cash and coin</b><span>Coin changer on site, so a bill is all you need to bring.</span></div></li>
+        </ul>
+      </div>
+      <figure class="figure reveal">
+        <svg viewBox="0 0 560 360" aria-hidden="true">
+          <rect width="560" height="360" rx="18" fill="#e6f4f5"/>
+          <!-- row of washers -->
+          <g id="row">
+            <g transform="translate(40,90)">
+              <rect width="110" height="150" rx="14" fill="#fff" stroke="#dfe8ea" stroke-width="2"/>
+              <rect x="0" y="0" width="110" height="34" rx="14" fill="#fff"/><rect x="0" y="30" width="110" height="3" fill="#dfe8ea"/>
+              <circle cx="55" cy="95" r="38" fill="#083b41"/><circle cx="55" cy="95" r="30" fill="#0e7c86"/>
+              <circle class="drum" cx="55" cy="95" r="22" fill="none" stroke="#cfe9eb" stroke-width="3" stroke-dasharray="5 9"/>
+              <circle class="led" cx="90" cy="16" r="4" fill="#43d17c"/>
+            </g>
+            <g transform="translate(170,90)">
+              <rect width="110" height="150" rx="14" fill="#fff" stroke="#dfe8ea" stroke-width="2"/>
+              <rect x="0" y="30" width="110" height="3" fill="#dfe8ea"/>
+              <circle cx="55" cy="95" r="38" fill="#083b41"/><circle cx="55" cy="95" r="30" fill="#0e7c86"/>
+              <circle class="drum" style="animation-delay:-2s" cx="55" cy="95" r="22" fill="none" stroke="#cfe9eb" stroke-width="3" stroke-dasharray="5 9"/>
+              <circle class="led" style="animation-delay:-.5s" cx="90" cy="16" r="4" fill="#43d17c"/>
+            </g>
+            <g transform="translate(300,90)">
+              <rect width="110" height="150" rx="14" fill="#fff" stroke="#dfe8ea" stroke-width="2"/>
+              <rect x="0" y="30" width="110" height="3" fill="#dfe8ea"/>
+              <circle cx="55" cy="95" r="38" fill="#083b41"/><circle cx="55" cy="95" r="30" fill="#0e7c86"/>
+              <circle class="drum" style="animation-delay:-4s" cx="55" cy="95" r="22" fill="none" stroke="#cfe9eb" stroke-width="3" stroke-dasharray="5 9"/>
+              <circle cx="90" cy="16" r="4" fill="#f6b73c"/>
+            </g>
+            <g transform="translate(430,90)">
+              <rect width="90" height="150" rx="14" fill="#fff" stroke="#dfe8ea" stroke-width="2"/>
+              <rect x="0" y="30" width="90" height="3" fill="#dfe8ea"/>
+              <circle cx="45" cy="95" r="32" fill="#083b41"/><circle cx="45" cy="95" r="25" fill="#0e7c86"/>
+              <circle class="drum" style="animation-delay:-1s" cx="45" cy="95" r="18" fill="none" stroke="#cfe9eb" stroke-width="3" stroke-dasharray="5 9"/>
+              <circle class="led" style="animation-delay:-1s" cx="72" cy="16" r="4" fill="#43d17c"/>
+            </g>
+          </g>
+          <!-- floor -->
+          <rect x="0" y="250" width="560" height="110" rx="18" fill="#cfe9eb"/>
+          <rect x="0" y="250" width="560" height="4" fill="#0e7c86" opacity=".3"/>
+          <!-- bench + wifi -->
+          <rect x="60" y="290" width="200" height="14" rx="7" fill="#0e7c86"/>
+          <rect x="70" y="304" width="10" height="34" rx="3" fill="#0a5a62"/><rect x="240" y="304" width="10" height="34" rx="3" fill="#0a5a62"/>
+          <g transform="translate(470,290)" fill="none" stroke="#0e7c86" stroke-width="3" stroke-linecap="round">
+            <path d="M-22 6a30 30 0 0 1 44 0"/><path d="M-13 15a17 17 0 0 1 26 0"/><circle cx="0" cy="24" r="3" fill="#0e7c86"/>
+          </g>
+          <!-- basket on floor -->
+          <path d="M320 300h70l-6 38h-58z" fill="#f6b73c"/><path d="M330 298c8-10 42-10 50 0" fill="none" stroke="#fff" stroke-width="6"/>
+          <!-- sign -->
+          <rect x="40" y="30" width="180" height="34" rx="8" fill="#083b41"/>
+          <text x="130" y="53" text-anchor="middle" font-family="Inter,sans-serif" font-size="14" font-weight="600" fill="#f6b73c" letter-spacing="2">FREE WI-FI</text>
+        </svg>
+        <figcaption><span>Self-service floor</span><span>Attendant on duty</span></figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="sec sec--white">
+    <div class="wrap hours">
+      <div class="reveal">
+        <span class="kicker">Hours &amp; location</span>
+        <h2 class="h2 display">Open early, open late, open every day.</h2>
+        <table id="hoursTable"></table>
+        <p class="note">Hours can change on holidays. If you're driving across town, a quick call to (806) 351-0070 is worth it.</p>
+      </div>
+      <div class="map reveal">
+        <svg viewBox="0 0 560 320" aria-hidden="true">
+          <rect width="560" height="320" fill="#eef3f4"/>
+          <g stroke="#fff" stroke-width="14" stroke-linecap="round">
+            <path d="M0 170H560"/><path d="M120 0V320"/><path d="M330 0V320"/><path d="M460 0V320"/>
+            <path d="M0 60H560" stroke-width="8"/><path d="M0 260H560" stroke-width="8"/>
+          </g>
+          <g stroke="#dfe8ea" stroke-width="2" fill="#fff">
+            <rect x="140" y="80" width="70" height="60" rx="6"/><rect x="230" y="90" width="80" height="50" rx="6"/><rect x="350" y="70" width="90" height="70" rx="6"/>
+            <rect x="140" y="200" width="60" height="40" rx="6"/><rect x="230" y="190" width="80" height="60" rx="6"/><rect x="350" y="200" width="90" height="40" rx="6"/>
+            <rect x="20" y="80" width="80" height="60" rx="6"/><rect x="20" y="190" width="80" height="50" rx="6"/><rect x="480" y="80" width="70" height="60" rx="6"/>
+          </g>
+          <text x="180" y="164" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#5b6b70" letter-spacing="1.5">SW 34TH AVE</text>
+          <text x="126" y="40" font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="#5b6b70" letter-spacing="1.5" transform="rotate(90 126 40)">BELL ST</text>
+          <text x="466" y="40" font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="#5b6b70" letter-spacing="1.5" transform="rotate(90 466 40)">COULTER ST</text>
+          <rect x="230" y="190" width="80" height="60" rx="6" fill="#f6b73c" stroke="#e39a12" stroke-width="2"/>
+          <circle class="pinring" cx="270" cy="192" r="22" fill="none" stroke="#0e7c86" stroke-width="3"/>
+          <g class="pin">
+            <path d="M270 200c-18-22-26-32-26-46a26 26 0 0 1 52 0c0 14-8 24-26 46z" fill="#0e7c86" stroke="#fff" stroke-width="3"/>
+            <circle cx="270" cy="154" r="10" fill="#fff"/>
+          </g>
+        </svg>
+        <div class="addr">
+          <div><b>5711 SW 34th Ave A</b><span>Amarillo, TX 79109 · Free parking out front</span></div>
+          <a class="btn btn--teal" href="https://www.google.com/maps/dir/?api=1&destination=Belmar+Laundry%2C+5711+SW+34th+Ave+A%2C+Amarillo%2C+TX+79109" target="_blank" rel="noopener">Directions<svg><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="wrap">
+      <div class="reveal">
+        <span class="kicker">Good to know</span>
+        <h2 class="h2 display">Questions we get at the counter.</h2>
+      </div>
+      <div class="faq reveal">
+        <details open><summary>How does drop-off work?</summary><p>Bring your laundry in, we weigh it at the counter, and you pay by the pound. We separate darks and whites, wash, dry, and fold. Most orders are ready the next day.</p></details>
+        <details><summary>Do I need to bring quarters?</summary><p>No. There's a coin changer on site, so bring bills and the attendant or the changer can break them for you.</p></details>
+        <details><summary>Can I wash comforters and blankets?</summary><p>Yes. The larger washers handle comforters, blankets, and other bulky items that don't fit in a home machine.</p></details>
+        <details><summary>Is there somewhere to sit and wait?</summary><p>Yes. Seating, free Wi-Fi, and an attendant on site. Plenty of people work or study while their loads run.</p></details>
+        <details><summary>Do you do dry cleaning or pickup and delivery?</summary><p>Ask the attendant or call ahead. Some listings show these options, and availability can vary.</p></details>
+      </div>
+    </div>
+  </div>
+
+  <div class="band">
+    <div class="wrap">
+      <div><h2 class="display">Basket full? Come on by.</h2><p>5711 SW 34th Ave A · Open today until <span data-close>10:00 PM</span></p></div>
+      <div class="btns"><a class="btn btn--sun" href="tel:+18063510070"><svg><use href="#i-phone"/></svg>(806) 351-0070</a><a class="btn btn--white" href="#hours" data-page="hours">Hours &amp; map</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="page" data-page="services" id="page-services">
+  <div class="phead"><div class="wrap stagger">
+    <div class="crumbs"><a href="#home" data-page="home">Home</a><span>/</span><span>Services</span></div>
+    <span class="kicker">Services</span>
+    <h1 class="display">Everything a laundry day needs.</h1>
+    <p class="lede">Self-service machines, a drop-off counter, and staff who keep things running.</p>
+  </div></div>
+
+  <div class="sec">
+    <div class="wrap split">
+      <div class="reveal">
+        <span class="kicker">Self-service</span>
+        <h2 class="h2 display">Your detergent, our machines.</h2>
+        <p class="lede">Load up, pick a cycle, and settle in with the Wi-Fi. Washers come in several sizes so a week of family laundry or a single comforter both have a home.</p>
+        <ul class="checks">
+          <li><span class="tick"><svg><use href="#i-check"/></svg></span><div><b>Multiple washer sizes</b><span>Standard loads through large-capacity machines for bedding and bulky items.</span></div></li>
+          <li><span class="tick"><svg><use href="#i-check"/></svg></span><div><b>Plenty of dryers</b><span>So you're not waiting on a machine when the wash finishes.</span></div></li>
+          <li><span class="tick"><svg><use href="#i-check"/></svg></span><div><b>Cash and coin, changer on site</b><span>Bring bills and get quarters right here.</span></div></li>
+        </ul>
+      </div>
+      <figure class="figure reveal">
+        <svg viewBox="0 0 560 360" aria-hidden="true">
+          <rect width="560" height="360" rx="18" fill="#e6f4f5"/>
+          <g transform="translate(60,60)">
+            <rect width="200" height="250" rx="20" fill="#fff" stroke="#dfe8ea" stroke-width="2"/>
+            <rect x="0" y="48" width="200" height="4" fill="#dfe8ea"/>
+            <rect x="18" y="16" width="90" height="20" rx="6" fill="#e6f4f5"/>
+            <circle class="led" cx="170" cy="26" r="6" fill="#43d17c"/>
+            <circle cx="100" cy="160" r="72" fill="#083b41"/><circle cx="100" cy="160" r="58" fill="#0e7c86"/>
+            <g class="drum"><circle cx="100" cy="160" r="46" fill="none" stroke="#cfe9eb" stroke-width="4" stroke-dasharray="8 12"/><path d="M80 150c10-10 30-8 36 4s-4 28-18 26-26-20-18-30z" fill="#f6b73c"/></g>
+            <circle cx="100" cy="160" r="72" fill="none" stroke="#fff" stroke-width="6"/>
+          </g>
+          <g transform="translate(300,110)">
+            <rect width="140" height="200" rx="18" fill="#fff" stroke="#dfe8ea" stroke-width="2"/>
+            <rect x="0" y="40" width="140" height="4" fill="#dfe8ea"/>
+            <circle class="led" style="animation-delay:-.7s" cx="118" cy="22" r="5" fill="#43d17c"/>
+            <circle cx="70" cy="125" r="50" fill="#083b41"/><circle cx="70" cy="125" r="40" fill="#0e7c86"/>
+            <g class="drum" style="animation-delay:-3s"><circle cx="70" cy="125" r="32" fill="none" stroke="#cfe9eb" stroke-width="4" stroke-dasharray="8 12"/></g>
+            <circle cx="70" cy="125" r="50" fill="none" stroke="#fff" stroke-width="6"/>
+          </g>
+          <text x="160" y="345" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#5b6b70" letter-spacing="2">LARGE CAPACITY</text>
+          <text x="370" y="345" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#5b6b70" letter-spacing="2">STANDARD</text>
+          <g transform="translate(470,40)"><circle r="26" fill="#f6b73c"/><text y="6" text-anchor="middle" font-family="Inter,sans-serif" font-size="16" font-weight="700" fill="#083b41">25¢</text></g>
+        </svg>
+        <figcaption><span>Pick the size that fits the load</span><span>Coin changer on site</span></figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="sec sec--aqua">
+    <div class="wrap split flip">
+      <div class="reveal">
+        <span class="kicker">Drop-off wash &amp; fold</span>
+        <h2 class="h2 display">Hand us the basket. Get it back folded.</h2>
+        <p class="lede">The easiest version of laundry day. We weigh it, wash it, dry it, and fold it, and you pick it up ready for the drawer.</p>
+        <ul class="checks">
+          <li><span class="tick"><svg><use href="#i-check"/></svg></span><div><b>$0.95 per pound</b><span>Weighed at the counter when you drop it off.</span></div></li>
+          <li><span class="tick"><svg><use href="#i-check"/></svg></span><div><b>Darks and whites separated</b><span>Washed and dried the way you'd do it at home.</span></div></li>
+          <li><span class="tick"><svg><use href="#i-check"/></svg></span><div><b>Usually ready in one day</b><span>Drop off today, pick up tomorrow in most cases.</span></div></li>
+        </ul>
+        <div style="margin-top:28px"><a class="btn btn--teal" href="#pricing" data-page="pricing">See drop-off pricing<svg><use href="#i-arrow"/></svg></a></div>
+      </div>
+      <figure class="figure reveal">
+        <svg viewBox="0 0 560 360" aria-hidden="true">
+          <rect width="560" height="360" rx="18" fill="#fff"/>
+          <!-- counter -->
+          <rect x="40" y="230" width="480" height="90" rx="14" fill="#0e7c86"/>
+          <rect x="40" y="230" width="480" height="14" rx="7" fill="#0a5a62"/>
+          <!-- scale -->
+          <rect x="90" y="190" width="120" height="40" rx="8" fill="#083b41"/>
+          <rect x="105" y="200" width="60" height="20" rx="4" fill="#e6f4f5"/>
+          <text x="135" y="215" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#0e7c86" id="scaleNum">18.4 lb</text>
+          <!-- basket on scale -->
+          <path d="M100 130h100l-8 60h-84z" fill="#f6b73c"/><path d="M112 128c10-14 66-14 76 0" fill="none" stroke="#fff" stroke-width="7"/><path d="M120 128c8-10 52-10 60 0" fill="none" stroke="#cfe9eb" stroke-width="7"/>
+          <!-- folded stack -->
+          <g transform="translate(300,110)">
+            <rect x="0" y="90" width="150" height="30" rx="8" fill="#cfe9eb"/>
+            <rect x="6" y="62" width="138" height="30" rx="8" fill="#f6b73c"/>
+            <rect x="12" y="34" width="126" height="30" rx="8" fill="#0e7c86"/>
+            <rect x="18" y="6" width="114" height="30" rx="8" fill="#f08a5d"/>
+            <path d="M0 105h150M6 77h138M12 49h126M18 21h114" stroke="#fff" stroke-width="2" opacity=".5"/>
+          </g>
+          <!-- tag -->
+          <g transform="translate(420,60)"><rect width="90" height="36" rx="8" fill="#083b41"/><text x="45" y="23" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#f6b73c" letter-spacing="1">READY</text></g>
+          <text x="280" y="300" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="600" fill="#cfe9eb" letter-spacing="2">DROP-OFF COUNTER</text>
+        </svg>
+        <figcaption><span>Weighed at drop-off</span><span>Folded at pickup</span></figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="wrap">
+      <div class="reveal"><span class="kicker">Also here</span><h2 class="h2 display">The small things that make it easy.</h2></div>
+      <div class="grid-3">
+        <div class="card reveal"><div class="card__ico"><svg><use href="#i-person"/></svg></div><h3>Attendant on site</h3><p>Help with machines, change, and questions during open hours.</p></div>
+        <div class="card reveal"><div class="card__ico"><svg><use href="#i-coin"/></svg></div><h3>Coin changer</h3><p>Bills in, quarters out. Cash and coin accepted on the machines.</p></div>
+        <div class="card reveal"><div class="card__ico"><svg><use href="#i-wifi"/></svg></div><h3>Free Wi-Fi</h3><p>Work, study, or stream while the cycle runs.</p></div>
+        <div class="card reveal"><div class="card__ico"><svg><use href="#i-car"/></svg></div><h3>Free parking &amp; RV parking</h3><p>Pull up right out front. Room for larger vehicles too.</p></div>
+        <div class="card reveal"><div class="card__ico"><svg><use href="#i-access"/></svg></div><h3>Wheelchair accessible</h3><p>Step-free entry and space to move between the rows.</p></div>
+        <div class="card reveal"><div class="card__ico"><svg><use href="#i-truck"/></svg></div><h3>Dry cleaning &amp; delivery</h3><p>Ask the attendant. Availability varies, so call before you count on it.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="band"><div class="wrap">
+    <div><h2 class="display">Not sure which to pick?</h2><p>Call and the attendant will point you the right way.</p></div>
+    <div class="btns"><a class="btn btn--sun" href="tel:+18063510070"><svg><use href="#i-phone"/></svg>(806) 351-0070</a><a class="btn btn--white" href="#pricing" data-page="pricing">Pricing</a></div>
+  </div></div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section class="page" data-page="pricing" id="page-pricing">
+  <div class="phead"><div class="wrap stagger">
+    <div class="crumbs"><a href="#home" data-page="home">Home</a><span>/</span><span>Pricing</span></div>
+    <span class="kicker">Pricing</span>
+    <h1 class="display">Simple prices, posted where you can see them.</h1>
+    <p class="lede">Drop-off is priced by the pound. Self-service is priced per machine, right on the machine.</p>
+  </div></div>
+  <div class="sec">
+    <div class="wrap">
+      <div class="price-grid">
+        <div class="price price--hero reveal">
+          <span class="kicker" style="color:var(--sun)">Drop-off wash &amp; fold</span>
+          <div class="big">$0.95<small>per pound</small></div>
+          <p>Weighed at the counter. Separated, washed, dried, and folded by our staff.</p>
+          <ul>
+            <li>Usually ready to pick up in one day</li>
+            <li>Darks and whites washed separately</li>
+            <li>Folded and bagged for pickup</li>
+            <li>Ask about bulky items and special care</li>
+          </ul>
+          <a class="btn btn--sun" href="tel:+18063510070"><svg><use href="#i-phone"/></svg>Call to ask a question</a>
+        </div>
+        <div class="price reveal">
+          <span class="kicker">Self-service</span>
+          <h3 style="margin-top:14px">Priced per machine</h3>
+          <p style="color:var(--muted)">Machine prices depend on the size you choose and are posted on each washer and dryer. Cash and coin accepted, with a changer on site.</p>
+          <div class="machines">
+            <div><b>Standard</b><span>Everyday loads</span></div>
+            <div><b>Large</b><span>Big family loads</span></div>
+            <div><b>Extra large</b><span>Comforters &amp; blankets</span></div>
+          </div>
+          <div class="note">Prices shown in store are current. If you want a number before you come in, call (806) 351-0070 and ask.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="sec sec--aqua">
+    <div class="wrap">
+      <div class="reveal"><span class="kicker">Before you come in</span><h2 class="h2 display">A few tips that save a trip.</h2></div>
+      <div class="grid-3">
+        <div class="card reveal"><div class="card__ico"><svg><use href="#i-basket"/></svg></div><h3>Empty the pockets</h3><p>Pens, receipts, and lip balm cause more ruined loads than anything else.</p></div>
+        <div class="card reveal"><div class="card__ico"><svg><use href="#i-coin"/></svg></div><h3>Bring bills</h3><p>The changer handles the quarters. You don't need to raid the coin jar.</p></div>
+        <div class="card reveal"><div class="card__ico"><svg><use href="#i-clock"/></svg></div><h3>Mornings are quietest</h3><p>Doors open at 7 AM. Early loads mean short waits for dryers.</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="band"><div class="wrap">
+    <div><h2 class="display">Drop it off on the way to work.</h2><p>Pick it up folded on the way home.</p></div>
+    <div class="btns"><a class="btn btn--sun" href="#hours" data-page="hours">Hours &amp; directions<svg><use href="#i-arrow"/></svg></a></div>
+  </div></div>
+</section>
+
+<!-- ============ HOURS ============ -->
+<section class="page" data-page="hours" id="page-hours">
+  <div class="phead"><div class="wrap stagger">
+    <div class="crumbs"><a href="#home" data-page="home">Home</a><span>/</span><span>Hours &amp; Location</span></div>
+    <span class="kicker">Hours &amp; location</span>
+    <h1 class="display">On SW 34th, just west of Bell.</h1>
+    <p class="lede">Free parking out front, RV parking available, and a step-free entrance.</p>
+  </div></div>
+  <div class="sec">
+    <div class="wrap hours">
+      <div class="reveal">
+        <span class="kicker">Hours</span>
+        <h2 class="h2 display">Every day of the week.</h2>
+        <table class="hoursTable"></table>
+        <p class="note">Holiday hours can differ. Call (806) 351-0070 if you're making a special trip.</p>
+      </div>
+      <div class="map reveal">
+        <svg viewBox="0 0 560 320" aria-hidden="true">
+          <rect width="560" height="320" fill="#eef3f4"/>
+          <g stroke="#fff" stroke-width="14" stroke-linecap="round">
+            <path d="M0 170H560"/><path d="M120 0V320"/><path d="M330 0V320"/><path d="M460 0V320"/>
+            <path d="M0 60H560" stroke-width="8"/><path d="M0 260H560" stroke-width="8"/>
+          </g>
+          <g stroke="#dfe8ea" stroke-width="2" fill="#fff">
+            <rect x="140" y="80" width="70" height="60" rx="6"/><rect x="230" y="90" width="80" height="50" rx="6"/><rect x="350" y="70" width="90" height="70" rx="6"/>
+            <rect x="140" y="200" width="60" height="40" rx="6"/><rect x="230" y="190" width="80" height="60" rx="6"/><rect x="350" y="200" width="90" height="40" rx="6"/>
+            <rect x="20" y="80" width="80" height="60" rx="6"/><rect x="20" y="190" width="80" height="50" rx="6"/><rect x="480" y="80" width="70" height="60" rx="6"/>
+          </g>
+          <text x="180" y="164" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#5b6b70" letter-spacing="1.5">SW 34TH AVE</text>
+          <text x="126" y="40" font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="#5b6b70" letter-spacing="1.5" transform="rotate(90 126 40)">BELL ST</text>
+          <text x="466" y="40" font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="#5b6b70" letter-spacing="1.5" transform="rotate(90 466 40)">COULTER ST</text>
+          <rect x="230" y="190" width="80" height="60" rx="6" fill="#f6b73c" stroke="#e39a12" stroke-width="2"/>
+          <circle class="pinring" cx="270" cy="192" r="22" fill="none" stroke="#0e7c86" stroke-width="3"/>
+          <g class="pin"><path d="M270 200c-18-22-26-32-26-46a26 26 0 0 1 52 0c0 14-8 24-26 46z" fill="#0e7c86" stroke="#fff" stroke-width="3"/><circle cx="270" cy="154" r="10" fill="#fff"/></g>
+        </svg>
+        <div class="addr">
+          <div><b>5711 SW 34th Ave A</b><span>Amarillo, TX 79109</span></div>
+          <a class="btn btn--teal" href="https://www.google.com/maps/dir/?api=1&destination=Belmar+Laundry%2C+5711+SW+34th+Ave+A%2C+Amarillo%2C+TX+79109" target="_blank" rel="noopener">Open in Maps<svg><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="sec sec--aqua">
+    <div class="wrap">
+      <div class="reveal"><span class="kicker">Getting here</span><h2 class="h2 display">Parking, access, and what's nearby.</h2></div>
+      <div class="grid-3">
+        <div class="card reveal"><div class="card__ico"><svg><use href="#i-car"/></svg></div><h3>Free parking</h3><p>Spaces right out front, plus room for an RV or trailer.</p></div>
+        <div class="card reveal"><div class="card__ico"><svg><use href="#i-access"/></svg></div><h3>Wheelchair accessible</h3><p>Step-free entrance and wide aisles between machines.</p></div>
+        <div class="card reveal"><div class="card__ico"><svg><use href="#i-pin"/></svg></div><h3>Suite A on SW 34th</h3><p>Between Bell and Coulter on the south side of 34th Avenue.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="page" data-page="contact" id="page-contact">
+  <div class="phead"><div class="wrap stagger">
+    <div class="crumbs"><a href="#home" data-page="home">Home</a><span>/</span><span>Contact</span></div>
+    <span class="kicker">Contact</span>
+    <h1 class="display">A real person answers the phone.</h1>
+    <p class="lede">Questions about drop-off, big items, or whether we're busy right now. Call during open hours.</p>
+  </div></div>
+  <div class="sec">
+    <div class="wrap">
+      <div class="contact">
+        <a class="card reveal" href="tel:+18063510070"><div class="card__ico"><svg><use href="#i-phone"/></svg></div><span class="kicker">Phone</span><b>(806) 351-0070</b><p>Tap to call from your phone.</p></a>
+        <a class="card reveal" href="https://www.google.com/maps/dir/?api=1&destination=Belmar+Laundry%2C+5711+SW+34th+Ave+A%2C+Amarillo%2C+TX+79109" target="_blank" rel="noopener"><div class="card__ico"><svg><use href="#i-pin"/></svg></div><span class="kicker">Address</span><b>5711 SW 34th Ave A</b><p>Amarillo, TX 79109. Tap for directions.</p></a>
+        <a class="card reveal" href="#hours" data-page="hours"><div class="card__ico"><svg><use href="#i-clock"/></svg></div><span class="kicker">Hours</span><b id="todayHours">Open today</b><p>Seven days a week. See the full schedule.</p></a>
+      </div>
+    </div>
+  </div>
+  <div class="band"><div class="wrap">
+    <div><h2 class="display">Belmar Laundry</h2><p>Coin laundry, drop-off wash &amp; fold, and a friendly attendant. Amarillo since 1997.</p></div>
+    <div class="btns"><a class="btn btn--sun" href="tel:+18063510070"><svg><use href="#i-phone"/></svg>(806) 351-0070</a></div>
+  </div></div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div>
+      <a class="logo" href="#home" data-page="home"><svg><use href="#bl-mark"/></svg><span><span class="name">Belmar Laundry</span><span class="sub">Amarillo · Since 1997</span></span></a>
+      <p>Self-service washers and dryers and drop-off wash &amp; fold in southwest Amarillo. Free Wi-Fi, free parking, attendant on site.</p>
+    </div>
+    <div><h4>Pages</h4><ul><li><a href="#home" data-page="home">Home</a></li><li><a href="#services" data-page="services">Services</a></li><li><a href="#pricing" data-page="pricing">Pricing</a></li><li><a href="#hours" data-page="hours">Hours &amp; Location</a></li><li><a href="#contact" data-page="contact">Contact</a></li></ul></div>
+    <div><h4>Visit</h4><ul><li>5711 SW 34th Ave A</li><li>Amarillo, TX 79109</li><li><a href="tel:+18063510070">(806) 351-0070</a></li></ul></div>
+    <div><h4>Hours</h4><ul><li>Mon – Thu: 7 AM – 9 PM</li><li>Fri – Sun: 7 AM – 10 PM</li><li>Open 7 days a week</li></ul></div>
+    <div class="bottom"><span>© <span id="year"></span> Belmar Laundry Inc. · Amarillo, Texas</span><span>Wheelchair accessible · Free parking · Cash &amp; coin</span></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  document.getElementById('year').textContent = new Date().getFullYear();
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- hours ---------- */
+  var HOURS = [ // 0 = Sunday
+    {d:'Sunday', o:7, c:22}, {d:'Monday', o:7, c:21}, {d:'Tuesday', o:7, c:21}, {d:'Wednesday', o:7, c:21},
+    {d:'Thursday', o:7, c:21}, {d:'Friday', o:7, c:22}, {d:'Saturday', o:7, c:22}
+  ];
+  function fmt(h){ var s = h % 12 || 12; return s + ':00 ' + (h >= 12 ? 'PM' : 'AM'); }
+  var now = new Date(), day = now.getDay(), today = HOURS[day];
+  var openNow = now.getHours() >= today.o && now.getHours() < today.c;
+  var order = [1,2,3,4,5,6,0];
+  var rows = order.map(function(i){ var h = HOURS[i]; return '<tr' + (i === day ? ' class="today"' : '') + '><td>' + h.d + '</td><td>' + fmt(h.o) + ' – ' + fmt(h.c) + '</td></tr>'; }).join('');
+  document.querySelectorAll('#hoursTable, .hoursTable').forEach(function(t){ t.innerHTML = rows; });
+  var st = document.getElementById('status');
+  st.innerHTML = '<i></i><b>' + (openNow ? 'Open now' : 'Closed now') + '</b><span class="hide-m">· ' + (openNow ? 'until ' + fmt(today.c) : 'opens ' + fmt(today.o)) + '</span>';
+  st.classList.toggle('closed', !openNow);
+  document.querySelectorAll('[data-close]').forEach(function(e){ e.textContent = fmt(today.c); });
+  var th = document.getElementById('todayHours'); if (th) th.textContent = fmt(today.o) + ' – ' + fmt(today.c);
+
+  /* ---------- bubbles in hero ---------- */
+  var bub = document.querySelector('.bubbles');
+  for (var i = 0; i < 14; i++){
+    var b = document.createElement('i'), s = 10 + Math.random() * 34;
+    b.style.cssText = 'left:' + (Math.random() * 100) + '%;width:' + s + 'px;height:' + s + 'px;animation-duration:' + (9 + Math.random() * 12) + 's;animation-delay:' + (-Math.random() * 20) + 's';
+    bub.appendChild(b);
+  }
+
+  /* ---------- reveals ---------- */
+  var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); }, {threshold:.12, rootMargin:'0px 0px -6% 0px'});
+  function observe(root){ root.querySelectorAll('.reveal:not(.in)').forEach(function(el){ io.observe(el); }); }
+
+  /* ---------- page transitions ---------- */
+  var pages = {}, wipe = document.getElementById('wipe'), wipeLabel = document.getElementById('wipeLabel'), busy = false, current = null;
+  var LABELS = {home:'Belmar Laundry', services:'Services', pricing:'Pricing', hours:'Hours & Location', contact:'Contact'};
+  document.querySelectorAll('.page').forEach(function(p){ pages[p.getAttribute('data-page')] = p; });
+  var menu = document.getElementById('menu'), burger = document.getElementById('burger');
+  function setActive(id){ document.querySelectorAll('.menu a').forEach(function(a){ a.classList.toggle('active', a.getAttribute('data-page') === id); }); }
+  function bubblesOnWipe(){
+    var panel = wipe.children[2]; panel.querySelectorAll('.bubble').forEach(function(b){ b.remove(); });
+    for (var i = 0; i < 10; i++){
+      var b = document.createElement('span'); b.className = 'bubble'; var s = 16 + Math.random() * 60;
+      b.style.cssText = 'left:' + (Math.random() * 100) + '%;top:' + (30 + Math.random() * 60) + '%;width:' + s + 'px;height:' + s + 'px;animation-delay:' + (Math.random() * .3) + 's';
+      panel.appendChild(b);
+    }
+  }
+  function activate(id){
+    Object.keys(pages).forEach(function(k){ pages[k].classList.toggle('active', k === id); });
+    current = id; setActive(id); observe(pages[id]);
+    /* restart stagger animations */
+    pages[id].querySelectorAll('.stagger').forEach(function(s){ s.style.animation = 'none'; void s.offsetWidth; s.style.animation = ''; [].forEach.call(s.children, function(c){ c.style.animation = 'none'; void c.offsetWidth; c.style.animation = ''; }); });
+  }
+  function go(id, push){
+    if (!pages[id]) id = 'home';
+    menu.classList.remove('open'); burger.classList.remove('open'); burger.setAttribute('aria-expanded', 'false');
+    if (id === current){ window.scrollTo({top:0, behavior:'smooth'}); return; }
+    if (busy) return;
+    if (push !== false) history.pushState({page:id}, '', '#' + id);
+    if (reduce){ activate(id); window.scrollTo(0,0); return; }
+    busy = true; wipeLabel.textContent = LABELS[id] || 'Belmar'; bubblesOnWipe();
+    wipe.classList.remove('out'); wipe.classList.add('in');
+    setTimeout(function(){
+      activate(id); window.scrollTo(0,0);
+      setTimeout(function(){
+        wipe.classList.remove('in'); wipe.classList.add('out');
+        setTimeout(function(){ wipe.classList.remove('out'); busy = false; }, 720);
+      }, 260);
+    }, 760);
+  }
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('a[data-page]'); if (!a) return;
+    e.preventDefault(); go(a.getAttribute('data-page'));
+  });
+  addEventListener('popstate', function(e){ go((e.state && e.state.page) || (location.hash || '#home').slice(1), false); });
+  burger.addEventListener('click', function(){ var open = menu.classList.toggle('open'); burger.classList.toggle('open', open); burger.setAttribute('aria-expanded', open); });
+
+  var first = (location.hash || '#home').slice(1);
+  activate(pages[first] ? first : 'home');
+  history.replaceState({page:current}, '', '#' + current);
+})();
+</script>
+</body>
+</html>
