@@ -5,31 +5,35 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>H&amp;H Plumbing &amp; Mechanical | Amarillo, TX — (806) 353-2435</title>
 <meta name="description" content="H&H Plumbing & Mechanical: licensed Amarillo plumbers. Repairs, drains, leak detection, sewer and water heaters, residential and commercial. Call (806) 353-2435.">
-<meta name="theme-color" content="#04070a">
+<meta name="theme-color" content="#05080f">
 <meta property="og:title" content="H&H Plumbing & Mechanical — Amarillo, TX">
 <meta property="og:description" content="Licensed Amarillo plumbers. Repairs, drains, leaks, sewer, water heaters. Call (806) 353-2435.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%2304070a'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='Arial' font-weight='700' font-size='30' fill='%23ff6314'%3EH%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%231d4ea6'/%3E%3Cpath d='M32 12c7 10 13 17 13 25a13 13 0 0 1-26 0c0-8 6-15 13-25z' fill='%23fff'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&family=Inter:wght@400;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&family=Inter:wght@400;600&family=DM+Mono:wght@400;500&family=Oswald:wght@700&display=swap" rel="stylesheet">
 <style>
 /* =========================================================
-   TOKENS — lifted from the Axelar style reference (refero.design)
+   TOKENS — layout/system from the Axelar style reference (refero.design),
+   palette swapped to H&H brand blue + grey
    Clashgrotesk substituted with Space Grotesk per the reference's
    own documented fallback list (Space Grotesk, Geist, Satoshi).
    ========================================================= */
 :root{
-  --color-signal-orange:#ff6314;
-  --color-node-green:#33ffac;
-  --color-node-violet:#5b76ff;
-  --color-node-magenta:#ff2ad4;
-  --color-node-cyan:#16c4ff;
-  --color-abyss:#04070a;
+  /* H&H brand: logo blue + logo grey, mapped onto the reference's roles */
+  --color-brand:#1d4ea6;          /* replaces Signal Orange: buttons, product cards, active states */
+  --color-brand-text:#6f9bff;     /* brand blue lifted for text on dark surfaces (contrast) */
+  --color-brand-deep:#163d85;     /* hover */
+  --color-node-a:#1d4ea6;
+  --color-node-b:#5b8dff;
+  --color-node-c:#9fc4ff;
+  --color-node-d:#7d8186;         /* logo grey */
+  --color-abyss:#05080f;
   --color-void:#000000;
-  --color-obsidian:#0f1214;
-  --color-charcoal:#1a1d1f;
-  --color-carbon:#090c0f;
-  --color-steel:#676f7a;
+  --color-obsidian:#0f1520;
+  --color-charcoal:#1b2230;
+  --color-carbon:#0a0f18;
+  --color-steel:#7d8186;
   --color-cloud:#c6ced7;
   --color-mist:#e1e6eb;
   --color-snow:#f0f5fa;
@@ -65,8 +69,8 @@ a{color:inherit;text-decoration:none}
 button{font:inherit;cursor:pointer;background:none;border:0;color:inherit}
 h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;line-height:1.15;margin:0}
 p{margin:0}
-::selection{background:var(--color-signal-orange);color:#fff}
-:focus-visible{outline:2px solid var(--color-signal-orange);outline-offset:3px;border-radius:4px}
+::selection{background:var(--color-brand);color:#fff}
+:focus-visible{outline:2px solid var(--color-brand);outline-offset:3px;border-radius:4px}
 .container{width:min(var(--page-max-width),calc(100% - 2.5rem));margin-inline:auto}
 .mono{font-family:var(--font-mono)}
 .display{font-family:var(--font-display);text-transform:uppercase;letter-spacing:var(--tracking-display)}
@@ -78,8 +82,8 @@ p{margin:0}
 .btn{display:inline-flex;align-items:center;gap:.6rem;padding:12px 24px;border-radius:var(--radius-buttons);font-family:var(--font-display);font-weight:500;font-size:14px;letter-spacing:var(--tracking-display);text-transform:uppercase;transition:background .25s var(--ease),border-color .25s var(--ease),transform .25s var(--ease)}
 .btn svg{width:16px;height:16px;flex:none}
 .btn:active{transform:scale(.97)}
-.btn-solid{background:var(--color-signal-orange);color:#fff}
-.btn-solid:hover{background:#e0570f}
+.btn-solid{background:var(--color-brand);color:#fff}
+.btn-solid:hover{background:var(--color-brand-deep)}
 .btn-ghost{background:transparent;color:#fff;border:1px solid #fff}
 .btn-ghost:hover{background:rgba(255,255,255,.08)}
 .btn-ghost.on-light{color:var(--color-abyss);border-color:var(--color-abyss)}
@@ -88,7 +92,7 @@ p{margin:0}
 /* =========================================================
    ANNOUNCEMENT BAR
    ========================================================= */
-.announce{background:var(--color-node-green);color:var(--color-abyss);min-height:40px;display:flex;align-items:center;justify-content:center;padding:8px 3rem 8px 1rem;position:relative;font-family:var(--font-display);font-weight:500;font-size:14px;text-transform:uppercase;letter-spacing:var(--tracking-display);text-align:center;transition:max-height .4s var(--ease),padding .4s var(--ease),opacity .3s;overflow:hidden}
+.announce{background:var(--color-cloud);color:var(--color-abyss);min-height:40px;display:flex;align-items:center;justify-content:center;padding:8px 3rem 8px 1rem;position:relative;font-family:var(--font-display);font-weight:500;font-size:14px;text-transform:uppercase;letter-spacing:var(--tracking-display);text-align:center;transition:max-height .4s var(--ease),padding .4s var(--ease),opacity .3s;overflow:hidden}
 .announce.is-hidden{max-height:0;min-height:0;padding-top:0;padding-bottom:0;opacity:0}
 .announce a{text-decoration:underline;text-underline-offset:2px}
 .announce__close{position:absolute;right:14px;top:50%;transform:translateY(-50%);width:22px;height:22px;display:grid;place-items:center;border-radius:50%}
@@ -101,11 +105,10 @@ p{margin:0}
 .nav{position:sticky;top:0;z-index:100;background:var(--color-obsidian);border-bottom:1px solid transparent;transition:border-color .3s}
 .nav.is-scrolled{border-color:var(--color-charcoal)}
 .nav__inner{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;height:60px}
-.brand{display:flex;align-items:baseline;gap:.55rem;color:#fff}
-.brand b{font-family:var(--font-display);font-weight:600;font-size:21px;letter-spacing:var(--tracking-display);text-transform:uppercase}
-.brand b em{font-style:normal;color:var(--color-signal-orange)}
-.brand span{font-family:var(--font-mono);font-size:11px;color:var(--color-steel);letter-spacing:.08em;text-transform:uppercase;display:none}
-@media (min-width:560px){.brand span{display:inline}}
+.brand{display:inline-flex;align-items:center;background:#fff;border-radius:var(--radius-small);padding:5px 9px}
+.brand svg{width:96px;height:auto}
+.logo-card{background:#fff;border-radius:var(--radius-cards);padding:var(--card-padding);margin-bottom:var(--spacing-24)}
+.logo-card svg{width:100%;height:auto}
 .nav__links{display:flex;gap:2rem;list-style:none;margin:0;padding:0}
 .nav__links a{font-family:var(--font-display);font-weight:500;font-size:14px;letter-spacing:var(--tracking-display);text-transform:uppercase;color:var(--color-snow);transition:color .2s}
 .nav__links a:hover{color:#fff}
@@ -155,7 +158,7 @@ p{margin:0}
 .hero{background:var(--color-abyss);padding:72px 0 var(--spacing-48)}
 .hero__grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
 .hero__tag{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--color-steel);border:1px solid var(--color-charcoal);border-radius:var(--radius-badges);padding:6px 14px;margin-bottom:var(--spacing-24)}
-.hero__tag i{width:6px;height:6px;border-radius:50%;background:var(--color-node-green);animation:dotpulse 2.2s var(--ease) infinite}
+.hero__tag i{width:6px;height:6px;border-radius:50%;background:var(--color-node-b);animation:dotpulse 2.2s var(--ease) infinite}
 .hero h1{font-size:clamp(2.6rem,4.6vw,56px);color:#fff;letter-spacing:var(--tracking-display);text-transform:uppercase;margin-bottom:var(--spacing-20);text-wrap:balance}
 .hero .subhead{font-family:var(--font-display);font-weight:500;font-size:clamp(19px,2vw,21px);letter-spacing:var(--tracking-display);text-transform:uppercase;color:var(--color-snow);margin-bottom:var(--spacing-16)}
 .hero .body{font-family:var(--font-body);font-size:19px;color:var(--color-snow);opacity:.72;max-width:520px;margin-bottom:var(--spacing-32)}
@@ -208,8 +211,8 @@ p{margin:0}
    ORANGE PRODUCT CARD → process steps
    ========================================================= */
 .process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--spacing-24)}
-.step-card{background:var(--color-signal-orange);border-radius:var(--radius-cards);padding:var(--card-padding);color:#fff;display:flex;flex-direction:column;min-height:280px}
-.step-card__num{width:40px;height:40px;border-radius:50%;background:#fff;color:var(--color-signal-orange);font-family:var(--font-display);font-weight:600;font-size:16px;display:grid;place-items:center;margin-bottom:var(--spacing-24)}
+.step-card{background:var(--color-brand);border-radius:var(--radius-cards);padding:var(--card-padding);color:#fff;display:flex;flex-direction:column;min-height:280px}
+.step-card__num{width:40px;height:40px;border-radius:50%;background:#fff;color:var(--color-brand);font-family:var(--font-display);font-weight:600;font-size:16px;display:grid;place-items:center;margin-bottom:var(--spacing-24)}
 .step-card__icon{margin:0 auto var(--spacing-24);width:64px;height:64px}
 .step-card__tag{font-family:var(--font-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.75);margin-bottom:8px}
 .step-card h3{font-size:19px;letter-spacing:var(--tracking-display);text-transform:uppercase;margin-bottom:8px}
@@ -224,10 +227,10 @@ p{margin:0}
 .about-grid .body-copy p{font-family:var(--font-body);font-size:16px;color:var(--color-snow);opacity:.72;margin-bottom:var(--spacing-16);max-width:520px}
 .info-card{background:var(--color-carbon);border:1px solid var(--color-charcoal);border-radius:var(--radius-cards);padding:var(--card-padding);display:grid;gap:var(--spacing-20)}
 .info-row{display:flex;gap:14px;align-items:flex-start}
-.info-row svg{width:18px;height:18px;color:var(--color-signal-orange);flex:none;margin-top:2px}
+.info-row svg{width:18px;height:18px;color:var(--color-brand-text);flex:none;margin-top:2px}
 .info-row b{display:block;font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--color-steel);margin-bottom:4px}
 .info-row span{font-family:var(--font-body);font-weight:600;font-size:15px;color:#fff}
-.cta-phone{display:inline-block;font-family:var(--font-display);font-weight:600;font-size:clamp(2rem,5vw,42px);letter-spacing:var(--tracking-display);color:var(--color-signal-orange);margin:var(--spacing-16) 0;transition:opacity .2s}
+.cta-phone{display:inline-block;font-family:var(--font-display);font-weight:600;font-size:clamp(2rem,5vw,42px);letter-spacing:var(--tracking-display);color:var(--color-brand-text);margin:var(--spacing-16) 0;transition:opacity .2s}
 .cta-phone:hover{opacity:.85}
 @media (max-width:900px){.about-grid{grid-template-columns:1fr}}
 
@@ -239,7 +242,7 @@ p{margin:0}
 .footer h4{font-family:var(--font-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--color-steel);margin-bottom:var(--spacing-16)}
 .footer ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
 .footer ul a{font-family:var(--font-body);font-size:14px;color:var(--color-snow);transition:color .2s}
-.footer ul a:hover{color:var(--color-signal-orange)}
+.footer ul a:hover{color:var(--color-brand-text)}
 .footer p.desc{font-family:var(--font-body);font-size:14px;color:var(--color-steel);max-width:320px;margin-top:var(--spacing-16)}
 .footer__bottom{border-top:1px solid var(--color-charcoal);padding-top:var(--spacing-20);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-family:var(--font-mono);font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--color-steel)}
 @media (max-width:760px){.footer__grid{grid-template-columns:1fr}}
@@ -261,6 +264,40 @@ p{margin:0}
      ========================================================= -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
+    <symbol id="hh-logo" viewBox="0 0 1000 560">
+      <g fill="#1d4ea6">
+        <rect x="52" y="52" width="176" height="34"/><rect x="52" y="364" width="176" height="34"/>
+        <rect x="86" y="52" width="108" height="346"/>
+        <rect x="300" y="52" width="176" height="34"/><rect x="300" y="364" width="176" height="34"/>
+        <rect x="334" y="52" width="108" height="346"/>
+        <rect x="194" y="186" width="140" height="76"/>
+      </g>
+      <g transform="translate(264,226)">
+        <path d="M0 -92 C 32 -48 66 -12 66 30 A66 66 0 1 1 -66 30 C -66 -12 -32 -48 0 -92 Z" fill="#fff"/>
+        <path d="M0 -70 C 25 -34 50 -6 50 28 A50 50 0 1 1 -50 28 C -50 -6 -25 -34 0 -70 Z" fill="#1d4ea6"/>
+        <path d="M14 -20 C 32 0 36 18 30 40" fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round"/>
+      </g>
+      <text x="510" y="332" text-anchor="middle" font-family="Oswald, 'Arial Narrow', Impact, sans-serif" font-weight="700" font-size="300" fill="#7d8186">&amp;</text>
+      <g fill="#1d4ea6">
+        <rect x="524" y="52" width="176" height="34"/><rect x="524" y="364" width="176" height="34"/>
+        <rect x="558" y="52" width="108" height="346"/>
+        <rect x="772" y="52" width="176" height="34"/><rect x="772" y="364" width="176" height="34"/>
+        <rect x="806" y="52" width="108" height="346"/>
+        <rect x="666" y="186" width="140" height="76"/>
+      </g>
+      <g transform="translate(736,230)">
+        <circle r="84" fill="#fff"/>
+        <circle r="56" fill="none" stroke="#7d8186" stroke-width="22" stroke-dasharray="17 12"/>
+        <circle r="46" fill="#7d8186"/>
+        <circle r="28" fill="#fff"/>
+        <g fill="#7d8186">
+          <path d="M-14 -40 h28 v18 l-8 8 v70 h-12 v-70 l-8 -8 z" transform="translate(0,-4)"/>
+          <path d="M-22 -48 a22 22 0 1 1 44 0 l-10 0 v-10 h-24 v10 z" transform="translate(0,4)"/>
+        </g>
+      </g>
+      <rect x="40" y="428" width="920" height="16" fill="#7d8186"/>
+      <text x="500" y="536" text-anchor="middle" font-family="Oswald, 'Arial Narrow', Impact, sans-serif" font-weight="700" font-size="92" fill="#1d4ea6" textLength="918" lengthAdjust="spacingAndGlyphs">PLUMBING &amp; MECHANICAL</text>
+    </symbol>
     <symbol id="ico-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.9 2.1z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="ico-check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="ico-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
@@ -285,7 +322,7 @@ p{margin:0}
      ========================================================= -->
 <header class="nav" id="nav">
   <div class="container nav__inner">
-    <a href="#top" class="brand"><b>H<em>&amp;</em>H</b><span>Plumbing &amp; Mechanical</span></a>
+    <a href="#top" class="brand" aria-label="H&H Plumbing & Mechanical home"><svg viewBox="0 0 1000 560" aria-hidden="true"><use href="#hh-logo"/></svg></a>
     <nav aria-label="Primary">
       <ul class="nav__links" id="menu">
         <li><a href="#services">Services</a></li>
@@ -330,31 +367,31 @@ p{margin:0}
       <svg viewBox="0 0 560 600">
         <defs>
           <pattern id="diamondTile" width="80" height="80" patternUnits="userSpaceOnUse" patternTransform="translate(-40,0)">
-            <path d="M40 0 L80 40 L40 80 L0 40 Z" fill="none" stroke="#1a1d1f" stroke-width="1.5"/>
+            <path d="M40 0 L80 40 L40 80 L0 40 Z" fill="none" stroke="#1b2230" stroke-width="1.5"/>
           </pattern>
           <radialGradient id="glow" cx=".5" cy=".5" r=".5">
-            <stop offset="0" stop-color="#ff2ad4" stop-opacity=".9"/>
-            <stop offset="1" stop-color="#ff2ad4" stop-opacity="0"/>
+            <stop offset="0" stop-color="#5b8dff" stop-opacity=".85"/>
+            <stop offset="1" stop-color="#5b8dff" stop-opacity="0"/>
           </radialGradient>
         </defs>
         <rect width="560" height="600" fill="url(#diamondTile)"/>
         <!-- glowing node diamond -->
         <circle cx="280" cy="480" r="90" fill="url(#glow)"/>
-        <path d="M280 440 L320 480 L280 520 L240 480 Z" fill="#ff2ad4" opacity=".18"/>
+        <path d="M280 440 L320 480 L280 520 L240 480 Z" fill="#5b8dff" opacity=".22"/>
         <!-- scattered network nodes -->
-        <circle class="node pulse" cx="120" cy="120" r="5" fill="#33ffac"/>
-        <circle class="node" cx="200" cy="40" r="4" fill="#ff6314"/>
-        <circle class="node pulse" cx="360" cy="80" r="5" fill="#5b76ff"/>
-        <circle class="node" cx="440" cy="160" r="4" fill="#16c4ff"/>
-        <circle class="node pulse" cx="80" cy="280" r="5" fill="#ff6314"/>
-        <circle class="node" cx="240" cy="240" r="4" fill="#5b76ff"/>
-        <circle class="node pulse" cx="400" cy="320" r="6" fill="#33ffac"/>
-        <circle class="node" cx="480" cy="400" r="4" fill="#ff2ad4"/>
-        <circle class="node pulse" cx="160" cy="400" r="5" fill="#16c4ff"/>
-        <circle class="node" cx="40" cy="480" r="4" fill="#5b76ff"/>
-        <circle class="node pulse" cx="320" cy="200" r="5" fill="#ff6314"/>
-        <circle class="node" cx="200" cy="560" r="4" fill="#33ffac"/>
-        <circle class="node pulse" cx="440" cy="520" r="5" fill="#16c4ff"/>
+        <circle class="node pulse" cx="120" cy="120" r="5" fill="#5b8dff"/>
+        <circle class="node" cx="200" cy="40" r="4" fill="#1d4ea6"/>
+        <circle class="node pulse" cx="360" cy="80" r="5" fill="#9fc4ff"/>
+        <circle class="node" cx="440" cy="160" r="4" fill="#3ab6ea"/>
+        <circle class="node pulse" cx="80" cy="280" r="5" fill="#1d4ea6"/>
+        <circle class="node" cx="240" cy="240" r="4" fill="#9fc4ff"/>
+        <circle class="node pulse" cx="400" cy="320" r="6" fill="#5b8dff"/>
+        <circle class="node" cx="480" cy="400" r="4" fill="#7d8186"/>
+        <circle class="node pulse" cx="160" cy="400" r="5" fill="#3ab6ea"/>
+        <circle class="node" cx="40" cy="480" r="4" fill="#9fc4ff"/>
+        <circle class="node pulse" cx="320" cy="200" r="5" fill="#1d4ea6"/>
+        <circle class="node" cx="200" cy="560" r="4" fill="#5b8dff"/>
+        <circle class="node pulse" cx="440" cy="520" r="5" fill="#3ab6ea"/>
       </svg>
     </div>
   </div>
@@ -375,7 +412,7 @@ p{margin:0}
 
       <div class="cat-card">
         <div class="cat-card__head">
-          <span class="cat-dot" style="background:#33ffac"></span>
+          <span class="cat-dot" style="background:#5b8dff"></span>
           <span>Repairs</span>
           <a href="tel:+18063532435" aria-label="Call about repairs"><svg><use href="#ico-arrow"/></svg></a>
         </div>
@@ -389,7 +426,7 @@ p{margin:0}
 
       <div class="cat-card">
         <div class="cat-card__head">
-          <span class="cat-dot" style="background:#5b76ff"></span>
+          <span class="cat-dot" style="background:#9fc4ff"></span>
           <span>Drains &amp; Sewer</span>
           <a href="tel:+18063532435" aria-label="Call about drains and sewer"><svg><use href="#ico-arrow"/></svg></a>
         </div>
@@ -403,7 +440,7 @@ p{margin:0}
 
       <div class="cat-card">
         <div class="cat-card__head">
-          <span class="cat-dot" style="background:#ff2ad4"></span>
+          <span class="cat-dot" style="background:#3ab6ea"></span>
           <span>Leak Detection</span>
           <a href="tel:+18063532435" aria-label="Call about leak detection"><svg><use href="#ico-arrow"/></svg></a>
         </div>
@@ -417,7 +454,7 @@ p{margin:0}
 
       <div class="cat-card">
         <div class="cat-card__head">
-          <span class="cat-dot" style="background:#16c4ff"></span>
+          <span class="cat-dot" style="background:#7d8186"></span>
           <span>Water Heaters &amp; Gas</span>
           <a href="tel:+18063532435" aria-label="Call about water heaters and gas"><svg><use href="#ico-arrow"/></svg></a>
         </div>
@@ -507,6 +544,7 @@ p{margin:0}
     </div>
 
     <div data-reveal="scale">
+      <div class="logo-card"><svg viewBox="0 0 1000 560" aria-label="H&H Plumbing & Mechanical logo"><use href="#hh-logo"/></svg></div>
       <a class="cta-phone" href="tel:+18063532435">(806) 353-2435</a>
       <div class="info-card">
         <div class="info-row"><svg><use href="#ico-pin"/></svg><div><b>Address</b><span>117 N Polk St, Amarillo, TX 79107</span></div></div>
@@ -527,7 +565,7 @@ p{margin:0}
   <div class="container">
     <div class="footer__grid">
       <div>
-        <a href="#top" class="brand"><b>H<em>&amp;</em>H</b></a>
+        <a href="#top" class="brand" aria-label="H&H Plumbing & Mechanical"><svg viewBox="0 0 1000 560" aria-hidden="true"><use href="#hh-logo"/></svg></a>
         <p class="desc">Licensed plumbing contractor in Amarillo, Texas. Repairs, drains, leak detection, sewer and water heaters for homes and businesses.</p>
       </div>
       <div>
@@ -542,7 +580,7 @@ p{margin:0}
       <div>
         <h4>Contact</h4>
         <ul>
-          <li><a href="tel:+18063532435" class="mono" style="font-size:19px;color:var(--color-signal-orange)">(806) 353-2435</a></li>
+          <li><a href="tel:+18063532435" class="mono" style="font-size:19px;color:var(--color-brand-text)">(806) 353-2435</a></li>
           <li><a href="https://maps.google.com/?q=117+N+Polk+St,+Amarillo,+TX+79107" target="_blank" rel="noopener">117 N Polk St, Amarillo, TX 79107</a></li>
           <li>Mon&ndash;Fri, 9:00 am&ndash;5:00 pm</li>
         </ul>
