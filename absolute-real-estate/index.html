@@ -5,435 +5,446 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Absolute Real Estate — Amarillo, TX</title>
 <meta name="description" content="Absolute Real Estate. Deborah Kelly, Broker-Owner. 27 years serving the Texas Panhandle. 6002 Hampton Drive, Amarillo, TX. Call (806) 359-0468.">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%231c2230'/%3E%3Ccircle cx='32' cy='32' r='19' fill='none' stroke='%23c99b3f' stroke-width='3'/%3E%3Cpath d='M32 18v28M18 32h28' stroke='%23c99b3f' stroke-width='3'/%3E%3Ccircle cx='32' cy='32' r='5' fill='%23c99b3f'/%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23f1e8d4'/%3E%3Crect x='8' y='8' width='48' height='48' fill='none' stroke='%231f3a5f' stroke-width='3'/%3E%3Cpath d='M32 8v48M8 32h48' stroke='%231f3a5f' stroke-width='1.5'/%3E%3Ccircle cx='32' cy='32' r='6' fill='%23a13d2e'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#1c2230;--ink-2:#262d3d;--paper:#f6f0e3;--paper-2:#efe4cc;
-  --gold:#c99b3f;--gold-2:#e3bd6c;--rust:#b5623a;
-  --line:rgba(28,34,48,.14);--line-dark:rgba(246,240,227,.16);
-  --muted:#6b6455;--steel:#9aa1ad;
-  --serif:'Newsreader',Georgia,serif;--sans:'Inter',system-ui,-apple-system,sans-serif;
+  --parchment:#f1e8d4;--parchment-2:#e6d8b4;--parchment-3:#eaddc0;
+  --ink:#1f3a5f;--ink-2:#16283f;--ink-3:#2c4b74;
+  --stamp:#a13d2e;--stamp-2:#c25a44;
+  --line:rgba(31,58,95,.24);--line-soft:rgba(31,58,95,.13);
+  --muted:#6a6350;--paper-text:#241f16;
+  --display:'Zilla Slab',Georgia,serif;--sans:'Public Sans',system-ui,-apple-system,sans-serif;--mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
   --ease:cubic-bezier(.65,0,.15,1);
-  --rail-x:46px;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--ink-2);color:var(--paper-text);font-family:var(--sans);font-size:16px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 svg{display:block;max-width:100%}
 h1,h2,h3,p{margin:0}
-.wrap{width:min(1140px,calc(100% - 48px));margin:0 auto;position:relative}
-.serif{font-family:var(--serif)}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--rust)}
-.eyebrow::before{content:"";width:24px;height:1px;background:var(--gold)}
-.h2{font-family:var(--serif);font-weight:500;font-size:clamp(28px,4vw,44px);letter-spacing:-.01em;line-height:1.12;margin-top:14px;max-width:15ch}
-.lede{color:var(--muted);font-size:17px;max-width:52ch;margin-top:16px}
-.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 24px;border-radius:2px;font-weight:600;font-size:14px;letter-spacing:.02em;border:1px solid var(--ink);cursor:pointer;transition:background .3s,color .3s,transform .3s var(--ease)}
+.wrap{width:min(1080px,calc(100% - 48px));margin:0 auto;position:relative}
+.display{font-family:var(--display)}
+.mono{font-family:var(--mono)}
+.tag{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--stamp)}
+.tag::before{content:"§";font-size:13px}
+.h2{font-family:var(--display);font-weight:600;font-size:clamp(28px,3.8vw,44px);letter-spacing:-.01em;line-height:1.14;margin-top:12px;max-width:16ch}
+.lede{color:var(--muted);font-size:16.5px;max-width:50ch;margin-top:14px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 24px;font-weight:600;font-size:14px;letter-spacing:.01em;border:1.5px solid var(--ink);cursor:pointer;transition:background .3s,color .3s,transform .25s var(--ease);background:transparent;color:var(--ink)}
 .btn svg{width:16px;height:16px}
-.btn--fill{background:var(--ink);color:var(--paper)}
-.btn--fill:hover{background:var(--rust);border-color:var(--rust);transform:translateY(-2px)}
-.btn--line{background:transparent;color:var(--ink)}
-.btn--line:hover{background:var(--ink);color:var(--paper);transform:translateY(-2px)}
-.btn--onDark{border-color:var(--paper);color:var(--paper)}
-.btn--onDark.btn--fill{background:var(--paper);color:var(--ink)}
-.btn--onDark.btn--fill:hover{background:var(--gold-2);border-color:var(--gold-2);color:var(--ink)}
-
-/* ---------- reveals ---------- */
-.reveal{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.btn--fill{background:var(--ink);color:var(--parchment);border-color:var(--ink)}
+.btn--fill:hover{background:var(--stamp);border-color:var(--stamp);transform:translateY(-2px)}
+.btn--line:hover{background:var(--ink);color:var(--parchment);transform:translateY(-2px)}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
 .reveal.in{opacity:1;transform:none}
 
-/* ================= RAIL (replaces navbar) ================= */
-#rail{position:fixed;top:0;left:0;height:100%;z-index:50;pointer-events:none}
-.rail__line{position:absolute;top:0;left:var(--rail-x);width:2px;height:100%;background:linear-gradient(180deg,var(--rust) 0%,var(--gold) 30%,var(--gold) 55%,#5b6b8c 80%,var(--ink) 100%);opacity:.55}
-.rail__sun{position:absolute;left:var(--rail-x);top:0;width:15px;height:15px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff8e6,var(--gold) 55%,var(--rust) 100%);box-shadow:0 0 14px 3px rgba(201,155,63,.55);transform:translate(-50%,-50%);transition:top .05s linear}
-.rail__ways{position:absolute;top:0;left:0;width:100%;height:100%}
-.way{position:absolute;left:var(--rail-x);display:flex;align-items:center;gap:14px;transform:translate(-50%,-50%);pointer-events:auto}
-.way__dot{width:9px;height:9px;border-radius:50%;background:var(--paper);border:1.5px solid var(--steel);transition:background .4s,border-color .4s,transform .4s}
-.way a{display:flex;align-items:center;gap:14px}
-.way__label{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--steel);opacity:0;transform:translateX(-6px);transition:opacity .4s,transform .4s,color .4s;white-space:nowrap}
-.way.lit .way__dot{background:var(--gold);border-color:var(--gold);transform:scale(1.3)}
-.way.lit .way__label{opacity:1;transform:none;color:var(--ink)}
-#rail.on-dark .way__label{color:var(--line-dark)}
-#rail.on-dark .way.lit .way__label{color:var(--paper)}
-@media (max-width:900px){
-  #rail{display:none}
+/* ================= THE PLAT (fixed zoom background — the spine of the site) ================= */
+#platWrap{position:fixed;inset:0;z-index:0;overflow:hidden;background:var(--ink-2)}
+#plat{position:absolute;top:50%;left:50%;width:2000px;height:1500px;margin:-750px 0 0 -1000px;will-change:transform}
+#plat svg{width:100%;height:100%;display:block}
+.veil{position:fixed;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(22,40,63,.55) 0%,rgba(22,40,63,.15) 14%,rgba(22,40,63,.08) 50%,rgba(22,40,63,.35) 86%,rgba(22,40,63,.6) 100%)}
+
+.parcel{fill:none;stroke:#8ba3c2;stroke-width:1.4;transition:fill 1s var(--ease),stroke 1s var(--ease)}
+.parcel.lit{fill:rgba(161,61,46,.28);stroke:var(--stamp-2)}
+.parcel.home{stroke:var(--stamp);stroke-width:2.2}
+
+/* ================= persistent UI (call chip + compass nav) — replaces navbar/rail ================= */
+.callchip{position:fixed;top:20px;left:20px;z-index:40;display:flex;align-items:center;gap:9px;padding:11px 16px 11px 12px;background:var(--parchment);border:1.5px solid var(--ink);font-family:var(--mono);font-weight:600;font-size:12.5px;color:var(--ink);transition:transform .25s var(--ease)}
+.callchip svg{width:15px;height:15px}
+.callchip:hover{transform:translateY(-2px)}
+
+.field{position:fixed;bottom:20px;right:20px;z-index:40;display:flex;align-items:center;gap:0}
+.field__card{background:var(--parchment);border:1.5px solid var(--ink);padding:14px 16px 14px 14px;display:flex;align-items:center;gap:16px;max-width:min(78vw,340px)}
+.compass{width:46px;height:46px;flex:none}
+.compass svg{width:100%;height:100%}
+.compass__needle{transform-box:fill-box;transform-origin:center;transition:transform .5s var(--ease)}
+.field__list{list-style:none;margin:0;padding:0;display:grid;gap:5px}
+.field__list a{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);transition:color .3s}
+.field__list a::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--line);transition:background .3s,transform .3s;flex:none}
+.field__list a.lit{color:var(--ink)}
+.field__list a.lit::before{background:var(--stamp);transform:scale(1.4)}
+.field__toggle{display:none}
+@media (max-width:760px){
+  .field__card{display:none}
+  .field__toggle{display:flex;width:52px;height:52px;border-radius:50%;background:var(--parchment);border:1.5px solid var(--ink);align-items:center;justify-content:center}
+  .field__toggle svg{width:26px;height:26px}
+  .field.open .field__card{display:flex;position:absolute;bottom:64px;right:0;flex-direction:column;align-items:flex-start;gap:12px}
+  .field.open .compass{align-self:center}
+  .callchip span{display:none}
+  .callchip{padding:12px;border-radius:50%}
 }
 
-/* ---------- mobile top bar ---------- */
-.mobar{display:none;position:fixed;top:0;left:0;right:0;z-index:55;align-items:center;justify-content:space-between;padding:14px 18px;background:rgba(246,240,227,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.mobar .mark{display:flex;align-items:center;gap:9px;font-family:var(--serif);font-weight:500;font-size:16px}
-.mobar .mark svg{width:26px;height:26px}
-.mobar .call{display:flex;align-items:center;gap:7px;padding:9px 14px;background:var(--ink);color:var(--paper);border-radius:2px;font-size:12.5px;font-weight:700}
-.mobar .call svg{width:14px;height:14px}
-@media (max-width:900px){ .mobar{display:flex} }
+/* ================= content sits above the plat ================= */
+main{position:relative;z-index:2}
+.sec{padding:118px 0}
+.panel{background:rgba(241,232,212,.94);border:1.5px solid var(--ink);padding:44px 46px;backdrop-filter:blur(2px)}
+@media (max-width:640px){ .panel{padding:30px 24px} }
 
-.page{padding-left:calc(var(--rail-x) + 70px)}
-@media (max-width:900px){ .page{padding-left:0;padding-top:64px} }
+/* ---------- OPEN (hero) ---------- */
+.open{min-height:100vh;display:flex;align-items:flex-end;padding-bottom:90px}
+.open .wrap{width:min(560px,calc(100% - 48px));margin:0 0 0 auto}
+@media (max-width:760px){ .open .wrap{margin:0 auto} }
+.open .panel{position:relative}
+.open .stampmark{position:absolute;top:-20px;right:28px;width:96px;height:96px;transform:rotate(8deg)}
+@media (max-width:480px){ .open .stampmark{width:58px;height:58px;top:-12px;right:14px} }
+.open .stampmark svg{width:100%;height:100%}
+.open h1{font-family:var(--display);font-weight:700;font-size:clamp(34px,5vw,54px);line-height:1.06;letter-spacing:-.01em;color:var(--ink);margin-top:14px}
+.open p.lede{margin-top:16px;color:var(--muted)}
+.open .cta{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap}
+.scrolltip{position:absolute;left:0;bottom:36px;font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#c9d3e0}
+.scrolltip .wrap{margin:0}
 
-/* ================= HERO ================= */
-.hero{position:relative;min-height:118vh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;color:var(--paper)}
-.hero__sky{position:absolute;inset:0;background:linear-gradient(180deg,#232c46 0%,#3f4d72 20%,#7d7291 40%,#c2825f 58%,#dba869 72%,#eecb8c 86%,#f4dba3 100%);background-size:100% 180%;animation:drift 30s ease-in-out infinite alternate}
-@keyframes drift{0%{background-position:0 0}100%{background-position:0 60%}}
-.hero__sun{position:absolute;left:14%;top:32%;width:120px;height:120px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff6e0,var(--gold-2) 45%,var(--rust) 100%);box-shadow:0 0 120px 40px rgba(227,189,108,.35);animation:rise 8s var(--ease) both}
-@keyframes rise{from{transform:translateY(60px);opacity:0}to{transform:translateY(0);opacity:1}}
-.hero__ground{position:absolute;left:0;right:0;bottom:0;height:30%}
-.hero__ground svg{width:100%;height:100%}
-.hero .wrap{position:relative;z-index:3;padding-bottom:64px}
-.hero__mark{display:flex;align-items:center;gap:12px;margin-bottom:26px}
-.hero__mark svg{width:38px;height:38px}
-.hero__mark span{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase}
-.hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(38px,6.4vw,80px);letter-spacing:-.01em;line-height:1.06;max-width:14ch;text-shadow:0 2px 30px rgba(0,0,0,.25)}
-.hero h1 em{font-style:italic;color:var(--gold-2)}
-.hero__sub{font-size:18px;max-width:46ch;margin-top:22px;color:#ece3d2}
-.hero__cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
-.hero__scroll{position:absolute;right:0;bottom:0;display:flex;flex-direction:column;align-items:flex-end;gap:8px;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#ece3d2;opacity:.8}
-@media (max-width:900px){ .hero__scroll{display:none} .hero__sun{width:70px;height:70px;left:10%} }
+/* ---------- DEBORAH: surveyor's certificate ---------- */
+.cert{max-width:760px;margin:0 auto;position:relative}
+.cert__head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;border-bottom:2px solid var(--ink);padding-bottom:18px}
+.cert__head h2{font-family:var(--display);font-weight:700;font-size:clamp(26px,3.6vw,36px);color:var(--ink)}
+.cert__head .role{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--stamp);margin-top:6px}
+.cert__no{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:right}
+.cert__body{margin-top:22px;color:var(--paper-text);font-size:16px;max-width:56ch}
+.cert__fields{margin-top:28px;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.cfield{padding:18px 20px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.cfield b{display:block;font-family:var(--display);font-weight:700;font-size:30px;color:var(--ink)}
+.cfield span{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.cert__sig{margin-top:28px;display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
+.cert__sig .name{font-family:var(--display);font-style:italic;font-size:24px;border-bottom:1px solid var(--ink);padding-bottom:6px}
+@media (max-width:640px){ .cert__fields{grid-template-columns:1fr 1fr} }
 
-/* ================= sections ================= */
-.sec{padding:104px 0}
-.sec + .sec{border-top:1px solid var(--line)}
-.sec--dark{background:var(--ink);color:var(--paper)}
-.sec--dark .eyebrow{color:var(--gold-2)}
-.sec--dark .eyebrow::before{background:var(--gold-2)}
-.sec--dark .lede{color:#b7bccb}
-.sec-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:end}
+/* ---------- SPECIALTIES: recorded easements ---------- */
+.easements{margin-top:54px;display:grid;gap:0}
+.easement{display:grid;grid-template-columns:64px minmax(0,1fr);gap:22px;padding:26px 0;border-top:1px solid var(--line)}
+.easements .easement:last-child{border-bottom:1px solid var(--line)}
+.easement__tag{font-family:var(--mono);font-weight:700;font-size:13px;color:var(--stamp);border:1.5px solid var(--stamp);width:40px;height:40px;display:flex;align-items:center;justify-content:center}
+.easement h3{font-family:var(--display);font-weight:600;font-size:22px;color:var(--ink)}
+.easement p{color:var(--muted);margin-top:6px;font-size:15px;max-width:48ch}
 
-/* deed rows (specialties) */
-.deeds{margin-top:60px;border-top:1px solid var(--line)}
-.deed{display:grid;grid-template-columns:70px minmax(0,1fr) minmax(0,1.3fr);gap:28px;align-items:center;padding:36px 0;border-bottom:1px solid var(--line)}
-.deed__no{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--rust)}
-.deed__seal{width:56px;height:56px}
-.deed h3{font-family:var(--serif);font-weight:500;font-size:26px}
-.deed p{color:var(--muted);margin-top:8px;font-size:15px;max-width:44ch}
-@media (max-width:760px){ .deed{grid-template-columns:1fr;gap:14px;text-align:left} .deed__no{display:none} }
+/* ---------- TERRITORY ---------- */
+.territory .h2{color:var(--parchment)}
+.territory .lede{color:#c9d3e0}
+.territory .tag{color:var(--stamp-2)}
+.territory .panel{background:rgba(22,40,63,.88);border-color:#3b5476}
+.terrscore{display:flex;gap:44px;margin-top:34px;flex-wrap:wrap}
+.terrscore b{display:block;font-family:var(--display);font-weight:700;font-size:52px;color:var(--parchment)}
+.terrscore span{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#8ba3c2}
+.terrnote{margin-top:24px;font-family:var(--mono);font-size:12px;color:#8ba3c2;letter-spacing:.02em}
 
-/* counties grid */
-.counties{margin-top:56px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
-.county-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
-.tile{aspect-ratio:1;border:1px solid var(--line-dark);position:relative;overflow:hidden}
-.tile::after{content:"";position:absolute;inset:0;background:var(--gold);transform:scale(0);transition:transform .5s var(--ease)}
-.tile.in::after{transform:scale(1)}
-.tile span{position:absolute;bottom:6px;right:8px;font-family:var(--sans);font-size:10px;color:var(--line-dark);font-weight:600;z-index:2}
-.county-num{font-family:var(--serif);font-weight:500;font-size:clamp(64px,9vw,120px);line-height:1;color:var(--paper)}
-.county-num small{display:block;font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-2);margin-top:10px}
-@media (max-width:760px){ .counties{grid-template-columns:1fr;gap:34px} }
+/* ---------- RECORDS (listings — honest redirect, ledger style) ---------- */
+.ledger{max-width:760px;margin:54px auto 0}
+.ledger__row{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:20px 0;border-bottom:1px dashed var(--line)}
+.ledger__row:first-child{border-top:1px dashed var(--line)}
+.ledger__row .k{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.04em}
+.ledger__row .v{font-family:var(--display);font-size:17px;color:var(--ink);text-align:right}
+.recorded{display:inline-flex;align-items:center;gap:8px;margin-top:24px;padding:8px 14px;border:2px solid var(--stamp);color:var(--stamp);font-family:var(--mono);font-weight:700;font-size:11px;letter-spacing:.12em;transform:rotate(-2deg)}
 
-/* Deborah section */
-.deborah{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:64px;align-items:center}
-.seal{width:100%;max-width:280px}
-.seal svg{width:100%;height:auto}
-.deborah .stats{display:flex;gap:34px;margin-top:30px;flex-wrap:wrap}
-.deborah .stat b{display:block;font-family:var(--serif);font-size:38px;font-weight:500}
-.deborah .stat span{font-size:12px;letter-spacing:.06em;color:var(--muted);text-transform:uppercase}
-.deborah .specialties{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:9px;font-size:14.5px}
-.deborah .specialties li{display:flex;gap:10px;align-items:baseline}
-.deborah .specialties li::before{content:"—";color:var(--rust)}
-@media (max-width:900px){ .deborah{grid-template-columns:1fr} .seal{margin:0 auto} }
+/* ---------- CONTACT ---------- */
+.contact-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.8fr);gap:0}
+.contact-grid .panel:first-child{border-right:none}
+.crow{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15px;flex-wrap:wrap}
+.crow:first-child{border-top:1px solid var(--line);margin-top:20px}
+.crow span:first-child{font-family:var(--mono);font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.contact-grid .coords{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:10px}
+.contact-grid .coords .mono{font-size:12px;color:var(--muted);letter-spacing:.04em}
+@media (max-width:760px){ .contact-grid{grid-template-columns:1fr} .contact-grid .panel:first-child{border-right:1.5px solid var(--ink);border-bottom:none} }
 
-/* listings CTA */
-.listing-card{margin-top:52px;border:1px solid var(--line);padding:44px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:28px;align-items:center;position:relative;background:var(--paper-2)}
-.listing-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--gold)}
-.listing-card h3{font-family:var(--serif);font-weight:500;font-size:26px}
-.listing-card p{color:var(--muted);margin-top:8px;max-width:48ch;font-size:15px}
-@media (max-width:760px){ .listing-card{grid-template-columns:1fr} }
-
-/* contact */
-.contact{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center}
-.contact__rows{margin-top:28px;border-top:1px solid var(--line-dark)}
-.crow{display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-bottom:1px solid var(--line-dark);font-size:15px;flex-wrap:wrap}
-.crow span:first-child{color:#9aa1ad}
-.crow a:hover{color:var(--gold-2)}
-.marker{aspect-ratio:1;max-width:340px}
-.marker svg{width:100%;height:auto}
-.pin{transform-box:fill-box;transform-origin:50% 100%;animation:pinbob 2.4s ease-in-out infinite}
-@keyframes pinbob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-
-/* footer */
-.footer{padding:34px 0;background:var(--ink);color:#9aa1ad;font-size:12.5px}
-.footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
-.footer a:hover{color:var(--paper)}
+.footer{position:relative;z-index:2;padding:30px 0 40px;text-align:center;font-family:var(--mono);font-size:11.5px;color:#8ba3c2}
 
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.001s!important;animation-iteration-count:1!important;transition-duration:.001s!important}
   .reveal{opacity:1;transform:none}
+  #plat{transform:none!important}
 }
 </style>
 </head>
 <body>
 
-<!-- ================= RAIL: replaces the navbar ================= -->
-<div id="rail" aria-hidden="false">
-  <div class="rail__line"></div>
-  <div class="rail__sun" id="railSun"></div>
-  <nav class="rail__ways" id="rail-ways" aria-label="Sections">
-    <div class="way" data-way="home"><a href="#home"><span class="way__dot"></span><span class="way__label">Home</span></a></div>
-    <div class="way" data-way="specialties"><a href="#specialties"><span class="way__dot"></span><span class="way__label">What She Does</span></a></div>
-    <div class="way" data-way="counties"><a href="#counties"><span class="way__dot"></span><span class="way__label">Service Area</span></a></div>
-    <div class="way" data-way="deborah"><a href="#deborah"><span class="way__dot"></span><span class="way__label">Deborah Kelly</span></a></div>
-    <div class="way" data-way="listings"><a href="#listings"><span class="way__dot"></span><span class="way__label">Current Listings</span></a></div>
-    <div class="way" data-way="visit"><a href="#visit"><span class="way__dot"></span><span class="way__label">Contact</span></a></div>
-  </nav>
-</div>
-
-<!-- mobile top bar -->
-<div class="mobar">
-  <a class="mark" href="#home"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="19" fill="none" stroke="#c99b3f" stroke-width="3"/><path d="M32 18v28M18 32h28" stroke="#c99b3f" stroke-width="3"/><circle cx="32" cy="32" r="5" fill="#c99b3f"/></svg>Absolute</a>
-  <a class="call" href="tel:+18063590468"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.9 2.1z"/></svg>Call</a>
-</div>
-
-<div class="page">
-
-<!-- ================= HERO ================= -->
-<section class="hero" id="home" data-way="home">
-  <div class="hero__sky" aria-hidden="true"></div>
-  <div class="hero__sun" aria-hidden="true"></div>
-  <div class="hero__ground" aria-hidden="true">
-    <svg viewBox="0 0 1400 500" preserveAspectRatio="xMidYMax slice">
-      <path d="M0 340 Q350 300 700 330 T1400 320 V500 H0Z" fill="#1c2230" opacity=".92"/>
-      <path d="M0 300h1400" stroke="#1c2230" stroke-width="1" opacity=".3"/>
-      <!-- grain elevator -->
-      <g fill="#151a26">
-        <rect x="150" y="150" width="46" height="170"/>
-        <rect x="138" y="130" width="70" height="24"/>
-        <rect x="160" y="90" width="10" height="42"/>
-        <rect x="205" y="200" width="26" height="120"/>
+<!-- ================= THE PLAT: one continuous zoom, the spine of the whole site ================= -->
+<div id="platWrap" aria-hidden="true">
+  <div id="plat">
+    <svg viewBox="0 0 2000 1500">
+      <rect width="2000" height="1500" fill="#16283f"/>
+      <g stroke="#2c4b74" stroke-width="1" opacity=".5">
+        <path d="M0 0h2000M0 1500h2000"/>
       </g>
-      <!-- wind turbine -->
-      <g stroke="#151a26" stroke-width="3" fill="none" stroke-linecap="round">
-        <path d="M1080 320V150"/>
-        <g class="turbine" style="transform-origin:1080px 150px">
-          <path d="M1080 150 L1080 95"/>
-          <path d="M1080 150 L1128 172"/>
-          <path d="M1080 150 L1040 185"/>
+      <!-- compass rose, top corner of the document -->
+      <g transform="translate(1780,140)" stroke="#3b5476" fill="none">
+        <circle r="70" stroke-width="1"/>
+        <circle r="46" stroke-width="1"/>
+        <path d="M0 -70V70M-70 0H70" stroke-width="1"/>
+        <path d="M0 -80 L10 -60 L0 -66 L-10 -60Z" fill="#8ba3c2"/>
+        <text y="-88" text-anchor="middle" font-family="IBM Plex Mono" font-size="14" fill="#8ba3c2">N</text>
+      </g>
+      <text x="120" y="90" font-family="IBM Plex Mono" font-size="15" letter-spacing="2" fill="#5b7396">PLAT OF SURVEY — TEXAS PANHANDLE — 12 SECTIONS RECORDED</text>
+
+      <!-- 12 parcels, 4x3 grid -->
+      <g id="parcels" transform="translate(150,220)">
+        <!-- generated tick/bearing texture -->
+        <g stroke="#2c4b74" stroke-width="1" opacity=".55" font-family="IBM Plex Mono" font-size="11" fill="#5b7396">
+          <text x="0" y="-30">N 00°00' — BASE LINE</text>
+          <text x="0" y="1080">MERIDIAN RECORDED — VOL. 12</text>
         </g>
+        <!-- row/col template applied 12x via explicit rects for reliability -->
+        <g id="parcelGrid"></g>
       </g>
-      <!-- fence line -->
-      <g stroke="#151a26" stroke-width="2" opacity=".55">
-        <path d="M600 320 L1400 300"/>
-        <path d="M650 260v64M760 254v66M870 248v68M980 244v70M1090 240v72M1200 238v74M1310 236v76"/>
-      </g>
-      <!-- lone tree -->
-      <g fill="#151a26"><path d="M420 320v-40M420 280c-18-4-30-24-22-46 6 16 16 24 22 26 6-2 16-10 22-26 8 22-4 42-22 46z"/></g>
     </svg>
   </div>
-  <div class="wrap">
-    <div class="hero__mark reveal in">
-      <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="19" fill="none" stroke="#e3bd6c" stroke-width="3"/><path d="M32 18v28M18 32h28" stroke="#e3bd6c" stroke-width="3"/><circle cx="32" cy="32" r="5" fill="#e3bd6c"/></svg>
-      <span>Absolute Real Estate</span>
-    </div>
-    <h1 class="reveal in">Twenty-seven years <em>on this land.</em></h1>
-    <p class="hero__sub reveal in">Deborah Kelly, Broker-Owner — buying, listing, and foreclosure representation across the Texas Panhandle, from an office on Hampton Drive in Amarillo.</p>
-    <div class="hero__cta reveal in">
-      <a class="btn btn--fill btn--onDark" href="tel:+18063590468"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.9 2.1z"/></svg>(806) 359-0468</a>
-      <a class="btn btn--line btn--onDark" href="#listings">See current listings</a>
-    </div>
-  </div>
-  <div class="hero__scroll wrap"><span>Follow the line</span></div>
-</section>
+</div>
+<div class="veil"></div>
 
-<!-- ================= SPECIALTIES ("deed" rows) ================= -->
-<section class="sec" id="specialties" data-way="specialties">
+<!-- ================= persistent UI ================= -->
+<a class="callchip" href="tel:+18063590468">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.9 2.1z"/></svg>
+  <span>(806) 359-0468</span>
+</a>
+
+<div class="field" id="field">
+  <button class="field__toggle" id="fieldToggle" aria-label="Open section menu" aria-expanded="false">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#1f3a5f" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/><path d="M12 4l1.6 3.4L17 9l-3.4 1.6L12 14l-1.6-3.4L7 9l3.4-1.6z" fill="#a13d2e" stroke="none"/></svg>
+  </button>
+  <div class="field__card">
+    <div class="compass">
+      <svg viewBox="0 0 60 60">
+        <circle cx="30" cy="30" r="27" fill="none" stroke="#1f3a5f" stroke-width="1.5"/>
+        <circle cx="30" cy="30" r="27" fill="none" stroke="#1f3a5f" stroke-width="1" opacity=".4" stroke-dasharray="1 6"/>
+        <g class="compass__needle" id="needle">
+          <path d="M30 8 L35 30 L30 26 L25 30 Z" fill="#a13d2e"/>
+          <path d="M30 52 L25 30 L30 34 L35 30 Z" fill="#1f3a5f"/>
+        </g>
+        <circle cx="30" cy="30" r="3" fill="#1f3a5f"/>
+      </svg>
+    </div>
+    <ul class="field__list" id="fieldList">
+      <li><a href="#open" data-sec="open">Open</a></li>
+      <li><a href="#deborah" data-sec="deborah">Deborah Kelly</a></li>
+      <li><a href="#specialties" data-sec="specialties">Specialties</a></li>
+      <li><a href="#territory" data-sec="territory">Territory</a></li>
+      <li><a href="#records" data-sec="records">Records</a></li>
+      <li><a href="#contact" data-sec="contact">Contact</a></li>
+    </ul>
+  </div>
+</div>
+
+<main>
+
+<!-- ================= OPEN ================= -->
+<section class="open sec" id="open" data-sec="open">
+  <div class="scrolltip"><div class="wrap">Scroll to survey the territory ↓</div></div>
   <div class="wrap">
-    <div class="sec-head reveal">
-      <div>
-        <span class="eyebrow">Verified specialties</span>
-        <h2 class="h2">What she's licensed and known to do.</h2>
+    <div class="panel reveal in">
+      <div class="stampmark">
+        <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="none" stroke="#a13d2e" stroke-width="2.4"/><circle cx="50" cy="50" r="36" fill="none" stroke="#a13d2e" stroke-width="1"/><text x="50" y="40" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#a13d2e" letter-spacing="1">VERIFIED</text><text x="50" y="58" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#a13d2e" letter-spacing="1">RECORD</text></svg>
       </div>
-      <p class="lede">No invented packages — these are the three areas Deborah Kelly's public agent profile lists.</p>
-    </div>
-    <div class="deeds reveal">
-      <article class="deed">
-        <span class="deed__no">I.</span>
-        <svg class="deed__seal" viewBox="0 0 56 56"><circle cx="28" cy="28" r="26" fill="none" stroke="#b5623a" stroke-width="1.4"/><circle cx="28" cy="28" r="19" fill="none" stroke="#b5623a" stroke-width="1"/><path d="M18 32l7-14 7 14M20 28h10" stroke="#b5623a" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
-        <div><h3>Buyer's Agent</h3><p>Representing buyers through the search, the offer, and the closing table.</p></div>
-        <div></div>
-      </article>
-      <article class="deed">
-        <span class="deed__no">II.</span>
-        <svg class="deed__seal" viewBox="0 0 56 56"><circle cx="28" cy="28" r="26" fill="none" stroke="#b5623a" stroke-width="1.4"/><circle cx="28" cy="28" r="19" fill="none" stroke="#b5623a" stroke-width="1"/><path d="M18 22h20M18 28h20M18 34h13" stroke="#b5623a" stroke-width="1.6" stroke-linecap="round"/></svg>
-        <div><h3>Listing Agent</h3><p>Bringing a property to market and representing the seller's side of the sale.</p></div>
-        <div></div>
-      </article>
-      <article class="deed">
-        <span class="deed__no">III.</span>
-        <svg class="deed__seal" viewBox="0 0 56 56"><circle cx="28" cy="28" r="26" fill="none" stroke="#b5623a" stroke-width="1.4"/><circle cx="28" cy="28" r="19" fill="none" stroke="#b5623a" stroke-width="1"/><path d="M28 16v10l7 5" stroke="#b5623a" stroke-width="1.6" fill="none" stroke-linecap="round"/><circle cx="28" cy="28" r="12" fill="none" stroke="#b5623a" stroke-width="1"/></svg>
-        <div><h3>Foreclosure &amp; REO</h3><p>Experience with bank-owned and foreclosure property transactions.</p></div>
-        <div></div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ================= COUNTIES ================= -->
-<section class="sec sec--dark" id="counties" data-way="counties">
-  <div class="wrap">
-    <div class="reveal">
-      <span class="eyebrow">Service area</span>
-      <h2 class="h2">Twelve counties. One office in Amarillo.</h2>
-      <p class="lede">Absolute Real Estate's public profile lists service across the Texas Panhandle region — twelve counties, worked from a single Hampton Drive office.</p>
-    </div>
-    <div class="counties reveal">
-      <div class="county-num">12<small>Panhandle counties served</small></div>
-      <div class="county-grid" id="countyGrid" aria-hidden="true"></div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= DEBORAH KELLY ================= -->
-<section class="sec" id="deborah" data-way="deborah">
-  <div class="wrap">
-    <div class="deborah">
-      <div class="seal reveal">
-        <svg viewBox="0 0 240 240">
-          <circle cx="120" cy="120" r="112" fill="none" stroke="#1c2230" stroke-width="1.2"/>
-          <circle cx="120" cy="120" r="96" fill="none" stroke="#c99b3f" stroke-width="1.6"/>
-          <path id="sealring" d="M120,24 a96,96 0 1,1 -0.1,0" fill="none"/>
-          <text font-family="Inter,sans-serif" font-size="11.5" font-weight="600" letter-spacing="3" fill="#1c2230">
-            <textPath href="#sealring" startOffset="2%">BROKER · OWNER · AMARILLO, TEXAS · SINCE VERIFIED · </textPath>
-          </text>
-          <circle cx="120" cy="120" r="60" fill="none" stroke="#1c2230" stroke-width="1"/>
-          <path d="M120 78v34l24 16" stroke="#b5623a" stroke-width="2" fill="none" stroke-linecap="round"/>
-          <text x="120" y="150" text-anchor="middle" font-family="Newsreader,serif" font-style="italic" font-size="17" fill="#1c2230">D. Kelly</text>
-        </svg>
+      <span class="tag">Absolute Real Estate — Amarillo, TX</span>
+      <h1>She's surveyed this <em style="font-style:italic;color:var(--stamp)">whole territory.</em></h1>
+      <p class="lede">Deborah Kelly, Broker-Owner — 27 years buying, listing, and handling foreclosure sales across the Texas Panhandle, from an office on Hampton Drive.</p>
+      <div class="cta">
+        <a class="btn btn--fill" href="tel:+18063590468">Call (806) 359-0468</a>
+        <a class="btn btn--line" href="#territory">See the territory</a>
       </div>
-      <div class="reveal">
-        <span class="eyebrow">Broker-Owner</span>
-        <h2 class="h2">Deborah Kelly</h2>
-        <p class="lede">Broker-owner of Absolute Real Estate, based at 6002 Hampton Drive in Amarillo. Her public profile lists 27 years of experience and service across 12 counties of the Texas Panhandle.</p>
-        <div class="stats">
-          <div class="stat"><b>27</b><span>Years of experience</span></div>
-          <div class="stat"><b>12</b><span>Counties served</span></div>
-          <div class="stat"><b>3</b><span>Areas of specialty</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DEBORAH: surveyor's certificate ================= -->
+<section class="sec" id="deborah" data-sec="deborah">
+  <div class="wrap">
+    <div class="panel cert reveal">
+      <div class="cert__head">
+        <div>
+          <span class="tag">Certificate of record</span>
+          <h2>Deborah Kelly</h2>
+          <div class="role">Broker-Owner · Absolute Real Estate</div>
         </div>
-        <ul class="specialties">
-          <li>Buyer's Agent</li>
-          <li>Listing Agent</li>
-          <li>Foreclosure / REO properties</li>
-        </ul>
-        <div style="margin-top:30px"><a class="btn btn--fill" href="tel:+18064333277"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.9 2.1z"/></svg>Call Deborah directly — (806) 433-3277</a></div>
+        <div class="cert__no">FILE NO.<br>AARTX·KED</div>
+      </div>
+      <p class="cert__body">Broker-owner of Absolute Real Estate, based at 6002 Hampton Drive in Amarillo. Her public agent profile lists 27 years of experience and service across 12 counties of the Texas Panhandle — verified here, not exaggerated.</p>
+      <div class="cert__fields">
+        <div class="cfield"><b>27</b><span>Years of experience</span></div>
+        <div class="cfield"><b>12</b><span>Counties served</span></div>
+        <div class="cfield"><b>3</b><span>Recorded specialties</span></div>
+      </div>
+      <div class="cert__sig">
+        <div><div class="name">D. Kelly</div><div class="mono" style="font-size:11px;color:var(--muted);margin-top:6px">BROKER-OWNER, ON FILE</div></div>
+        <a class="btn btn--fill" href="tel:+18064333277">Call Deborah — (806) 433-3277</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ================= LISTINGS (honest redirect, no fabricated cards) ================= -->
-<section class="sec sec--dark" id="listings" data-way="listings">
+<!-- ================= SPECIALTIES: recorded easements ================= -->
+<section class="sec" id="specialties" data-sec="specialties">
   <div class="wrap">
     <div class="reveal">
-      <span class="eyebrow">Current inventory</span>
-      <h2 class="h2">Listings change daily. We won't guess at them here.</h2>
-      <p class="lede">Rather than show property cards that could be stale by the time you read them, here's where to see what's active right now — and a direct line if you'd rather just ask.</p>
+      <span class="tag">Recorded specialties</span>
+      <h2 class="h2" style="color:var(--parchment)">What's on file, nothing invented.</h2>
+      <p class="lede" style="color:#c9d3e0">Three areas from Deborah Kelly's verified public profile — no packages built on top of them.</p>
     </div>
-    <div class="listing-card reveal" style="background:#232b40;border-color:var(--line-dark)">
-      <div>
-        <h3 style="color:var(--paper)">View Deborah Kelly's current listings</h3>
-        <p style="color:#b7bccb">Her public HAR.com profile lists active properties for sale across the Amarillo area, updated as the market moves.</p>
+    <div class="panel easements reveal">
+      <article class="easement"><span class="easement__tag">A</span><div><h3>Buyer's Agent</h3><p>Representing buyers through the search, the offer, and the closing table.</p></div></article>
+      <article class="easement"><span class="easement__tag">B</span><div><h3>Listing Agent</h3><p>Bringing a property to market and representing the seller's side of the sale.</p></div></article>
+      <article class="easement"><span class="easement__tag">C</span><div><h3>Foreclosure &amp; REO</h3><p>Experience with bank-owned and foreclosure property transactions.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TERRITORY ================= -->
+<section class="sec territory" id="territory" data-sec="territory">
+  <div class="wrap">
+    <div class="panel reveal">
+      <span class="tag">Service area</span>
+      <h2 class="h2">Twelve sections. One surveyor.</h2>
+      <p class="lede">The plat behind this page is drawn from Absolute Real Estate's verified service area — twelve Texas Panhandle counties, worked from a single Amarillo office. Watch the grid behind the page as you've scrolled: that's the territory, not a stock map.</p>
+      <div class="terrscore">
+        <div><b>12</b><span>Counties on record</span></div>
+        <div><b>1</b><span>Amarillo office</span></div>
+        <div><b>27</b><span>Years surveying it</span></div>
       </div>
-      <a class="btn btn--fill btn--onDark" href="https://www.har.com/realestatepro/forsale-by-agent/aartx-ked" target="_blank" rel="noopener">View listings on HAR.com<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+      <div class="terrnote">— county names are not published here; only the verified count is shown.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= RECORDS (listings, honest redirect) ================= -->
+<section class="sec" id="records" data-sec="records">
+  <div class="wrap">
+    <div class="panel reveal">
+      <span class="tag">Current inventory</span>
+      <h2 class="h2">Listings change daily. This page can't.</h2>
+      <p class="lede">Rather than print property facts that could be wrong by the time you read them, here's the actual record — and a direct line if you'd rather just ask.</p>
+      <div class="ledger">
+        <div class="ledger__row"><span class="k">SOURCE</span><span class="v">HAR.com — Deborah Kelly, Agent</span></div>
+        <div class="ledger__row"><span class="k">STATUS</span><span class="v">Updates as the market moves</span></div>
+        <div class="ledger__row"><span class="k">ACTION</span><span class="v"><a class="btn btn--fill" href="https://www.har.com/realestatepro/forsale-by-agent/aartx-ked" target="_blank" rel="noopener">View current listings</a></span></div>
+      </div>
+      <span class="recorded">Recorded — verified source only</span>
     </div>
   </div>
 </section>
 
 <!-- ================= CONTACT ================= -->
-<section class="sec" id="visit" data-way="visit">
+<section class="sec" id="contact" data-sec="contact">
   <div class="wrap">
-    <div class="contact">
-      <div class="reveal">
-        <span class="eyebrow">Visit or call</span>
-        <h2 class="h2">6002 Hampton Drive, Amarillo.</h2>
-        <div class="contact__rows">
-          <div class="crow"><span>Address</span><span>6002 Hampton Drive, Amarillo, TX 79109</span></div>
-          <div class="crow"><span>Office</span><a href="tel:+18063590468">(806) 359-0468</a></div>
-          <div class="crow"><span>Deborah Kelly, direct</span><a href="tel:+18064333277">(806) 433-3277</a></div>
-          <div class="crow"><span>Broker</span><span>Deborah Kelly, Broker-Owner</span></div>
-        </div>
-        <div class="hero__cta" style="margin-top:30px">
+    <div class="contact-grid reveal">
+      <div class="panel">
+        <span class="tag">Visit or call</span>
+        <h2 class="h2">6002 Hampton Drive.</h2>
+        <div class="crow"><span>Address</span><span>6002 Hampton Drive, Amarillo, TX 79109</span></div>
+        <div class="crow"><span>Office</span><a href="tel:+18063590468">(806) 359-0468</a></div>
+        <div class="crow"><span>Deborah, direct</span><a href="tel:+18064333277">(806) 433-3277</a></div>
+        <div class="crow"><span>Broker</span><span>Deborah Kelly, Broker-Owner</span></div>
+        <div class="cta">
           <a class="btn btn--fill" href="tel:+18063590468">Call (806) 359-0468</a>
           <a class="btn btn--line" href="https://www.google.com/maps/dir/?api=1&destination=Absolute+Real+Estate%2C+6002+Hampton+Drive%2C+Amarillo%2C+TX+79109" target="_blank" rel="noopener">Get directions</a>
         </div>
       </div>
-      <div class="marker reveal">
-        <svg viewBox="0 0 300 300" aria-hidden="true">
-          <rect width="300" height="300" fill="#efe4cc"/>
-          <g stroke="#e2d5b7" stroke-width="10"><path d="M0 150h300"/><path d="M150 0v300"/></g>
-          <g stroke="#e2d5b7" stroke-width="1"><path d="M0 75h300M0 225h300M75 0v300M225 0v300"/></g>
-          <circle class="pin" cx="150" cy="150" r="0" fill="none"/>
-          <g class="pin">
-            <path d="M150 165c-16-20-24-30-24-42a24 24 0 0 1 48 0c0 12-8 22-24 42z" fill="#1c2230" stroke="#f6f0e3" stroke-width="3"/>
-            <circle cx="150" cy="121" r="9" fill="#f6f0e3"/>
-          </g>
-          <text x="150" y="230" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" font-weight="600" letter-spacing="2" fill="#8b8367">HAMPTON DRIVE, AMARILLO</text>
-        </svg>
+      <div class="panel coords">
+        <svg viewBox="0 0 120 120" width="90" height="90" aria-hidden="true"><circle cx="60" cy="60" r="52" fill="none" stroke="#1f3a5f" stroke-width="1.4"/><path d="M60 92c-16-18-24-28-24-40a24 24 0 0 1 48 0c0 12-8 22-24 40z" fill="none" stroke="#a13d2e" stroke-width="2.4"/><circle cx="60" cy="52" r="7" fill="#a13d2e"/></svg>
+        <span class="mono">35.19° N, 101.90° W<br>AMARILLO, TEXAS</span>
       </div>
     </div>
   </div>
 </section>
 
-</div>
+</main>
 
-<footer class="footer">
-  <div class="wrap">
-    <span>© <span id="year"></span> Absolute Real Estate · Deborah Kelly, Broker-Owner</span>
-    <span><a href="tel:+18063590468">(806) 359-0468</a> · 6002 Hampton Drive, Amarillo, TX 79109</span>
-  </div>
-</footer>
+<footer class="footer">© <span id="year"></span> Absolute Real Estate · Deborah Kelly, Broker-Owner · Amarillo, TX</footer>
 
 <script>
 (function(){
   document.getElementById('year').textContent = new Date().getFullYear();
   var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* county grid tiles */
-  var grid = document.getElementById('countyGrid');
-  for (var i = 0; i < 12; i++){ var t = document.createElement('div'); t.className = 'tile'; grid.appendChild(t); }
-  new IntersectionObserver(function(es){
-    es.forEach(function(e){ if (e.isIntersecting){ var tiles = grid.children; for (var j = 0; j < tiles.length; j++){ (function(j){ setTimeout(function(){ tiles[j].classList.add('in'); }, j * 70); })(j); } } });
-  }, {threshold:.4}).observe(grid);
+  /* ---------- build the 12-parcel grid + mark the home parcel ---------- */
+  var g = document.getElementById('parcelGrid');
+  var cols = 4, rows = 3, cw = 400, ch = 340, gap = 26;
+  var parcels = [];
+  for (var r = 0; r < rows; r++){
+    for (var c = 0; c < cols; c++){
+      var x = c * (cw + gap), y = r * (ch + gap);
+      var rect = document.createElementNS('http://www.w3.org/2000/svg','rect');
+      rect.setAttribute('x', x); rect.setAttribute('y', y);
+      rect.setAttribute('width', cw); rect.setAttribute('height', ch);
+      rect.setAttribute('class', 'parcel');
+      var idx = r * cols + c;
+      if (idx === 0){ rect.classList.add('home'); }
+      g.appendChild(rect);
+      var label = document.createElementNS('http://www.w3.org/2000/svg','text');
+      label.setAttribute('x', x + 14); label.setAttribute('y', y + 26);
+      label.setAttribute('font-family', 'IBM Plex Mono'); label.setAttribute('font-size', '13'); label.setAttribute('fill', '#5b7396');
+      label.textContent = 'SEC. ' + (idx + 1);
+      g.appendChild(label);
+      parcels.push(rect);
+    }
+  }
+  /* home marker on parcel 0 */
+  var home = document.createElementNS('http://www.w3.org/2000/svg','g');
+  home.setAttribute('transform', 'translate(' + (cw * 0.5) + ',' + (ch * 0.55) + ')');
+  home.innerHTML = '<path d="M0 36c-13-15-19-23-19-32a19 19 0 0 1 38 0c0 9-6 17-19 32z" fill="#a13d2e" stroke="#f1e8d4" stroke-width="2"/><circle cy="4" r="6" fill="#f1e8d4"/>';
+  g.appendChild(home);
 
-  /* reveals */
+  /* ---------- the zoom: one continuous transform tied to scroll ---------- */
+  var plat = document.getElementById('plat');
+  var docEl = document.documentElement;
+  var Z_START = 7.5, Z_END = 1.05;
+  var ORIGIN_X = '30%', ORIGIN_Y = '34%'; /* screen-space anchor = the home parcel's on-screen position at full zoom */
+  plat.style.transformOrigin = ORIGIN_X + ' ' + ORIGIN_Y;
+
+  function scrollProgress(){
+    var max = docEl.scrollHeight - innerHeight;
+    return max > 0 ? Math.max(0, Math.min(1, scrollY / max)) : 0;
+  }
+  function ease(t){ return 1 - Math.pow(1 - t, 2); }
+
+  var ticking = false;
+  function render(){
+    var t = ease(scrollProgress());
+    var z = Z_START + (Z_END - Z_START) * t;
+    if (!reduce) plat.style.transform = 'translate(0,0) scale(' + z + ')';
+    ticking = false;
+  }
+  addEventListener('scroll', function(){ if (!ticking){ ticking = true; requestAnimationFrame(render); } }, {passive:true});
+  addEventListener('resize', render);
+  render();
+
+  /* ---------- light up parcels while the Territory section is in view ---------- */
+  var territory = document.getElementById('territory');
+  new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if (e.isIntersecting){
+        parcels.forEach(function(p, i){ setTimeout(function(){ p.classList.add('lit'); }, i * 90); });
+      } else if (e.boundingClientRect.top > 0) {
+        parcels.forEach(function(p){ p.classList.remove('lit'); });
+      }
+    });
+  }, {threshold:.35}).observe(territory);
+
+  /* ---------- reveals ---------- */
   var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting) e.target.classList.add('in'); }); }, {threshold:.18, rootMargin:'0px 0px -6% 0px'});
   document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
 
-  /* ---------- rail: waypoint positions + scroll-driven sun + on-dark contrast ---------- */
-  var railEl = document.getElementById('rail'), sun = document.getElementById('railSun'), ways = [].slice.call(document.querySelectorAll('.way'));
-  var sections = ways.map(function(w){ return { way: w, el: document.querySelector('[data-way="' + w.dataset.way + '"]') }; });
-  var darkSections = [].slice.call(document.querySelectorAll('.sec--dark, .hero'));
-  var positions = [];
+  /* ---------- field / compass nav: current-section detection + needle rotation ---------- */
+  var sections = [].slice.call(document.querySelectorAll('[data-sec]')).filter(function(s){ return s.tagName === 'SECTION'; });
+  var links = [].slice.call(document.querySelectorAll('.field__list a'));
+  var needle = document.getElementById('needle');
+  var ANGLES = {open:0, deborah:60, specialties:120, territory:180, records:240, contact:300};
 
-  function measure(){
-    positions = sections.map(function(s){
-      var r = s.el.getBoundingClientRect();
-      return { way: s.way, y: r.top + scrollY + r.height * 0.35 };
-    });
-    var docH = document.documentElement.scrollHeight;
-    positions.forEach(function(p){ p.pct = (p.y / docH) * 100; p.way.style.top = p.pct + '%'; });
+  function updateNav(){
+    var y = scrollY + innerHeight * 0.4;
+    var current = sections[0];
+    sections.forEach(function(s){ if (s.offsetTop <= y) current = s; });
+    var name = current.dataset.sec;
+    links.forEach(function(a){ a.classList.toggle('lit', a.dataset.sec === name); });
+    needle.style.transform = 'rotate(' + (ANGLES[name] || 0) + 'deg)';
   }
+  addEventListener('scroll', function(){ requestAnimationFrame(updateNav); }, {passive:true});
+  updateNav();
 
-  function update(){
-    var y = scrollY + innerHeight * 0.32;
-    var docH = document.documentElement.scrollHeight;
-    var minY = positions[0] ? positions[0].y : 0, maxY = positions[positions.length - 1] ? positions[positions.length - 1].y : docH;
-    var clampY = Math.max(minY, Math.min(maxY, y));
-    sun.style.top = (clampY / docH * 100) + '%';
-
-    var current = positions[0];
-    positions.forEach(function(p){ if (y >= p.y) current = p; });
-    positions.forEach(function(p){ p.way.classList.toggle('lit', p === current); });
-
-    var onDark = darkSections.some(function(s){
-      var r = s.getBoundingClientRect();
-      return r.top < innerHeight * 0.4 && r.bottom > innerHeight * 0.4;
-    });
-    railEl.classList.toggle('on-dark', onDark);
-  }
-
-  addEventListener('scroll', function(){ requestAnimationFrame(update); }, {passive:true});
-  addEventListener('resize', function(){ measure(); update(); });
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function(){ measure(); update(); });
-  measure(); update();
+  var fieldToggle = document.getElementById('fieldToggle'), field = document.getElementById('field');
+  fieldToggle.addEventListener('click', function(){
+    var open = field.classList.toggle('open');
+    fieldToggle.setAttribute('aria-expanded', open);
+  });
+  document.querySelectorAll('.field__list a').forEach(function(a){ a.addEventListener('click', function(){ field.classList.remove('open'); }); });
 })();
 </script>
 </body>
