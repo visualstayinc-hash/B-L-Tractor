@@ -33,6 +33,7 @@ h1,h2,h3,p{margin:0}
 .btn--fill{background:var(--ink);color:var(--news)}
 .btn--fill:hover{background:var(--press);border-color:var(--press);transform:translateY(-2px)}
 .btn--line:hover{background:var(--ink);color:var(--news);transform:translateY(-2px)}
+.btn:active{transform:scale(.96)!important;transition:transform .1s}
 
 /* ---------- ink-wipe reveal (the one motion language, reused everywhere) ---------- */
 .ink{position:relative;overflow:hidden}
@@ -43,10 +44,12 @@ h1,h2,h3,p{margin:0}
 
 /* ================= masthead strip: persistent, functional nav + call ================= */
 .strip{position:sticky;top:0;z-index:50;background:var(--news);border-bottom:1.5px solid var(--ink)}
+.strip__progress{position:absolute;left:0;bottom:-1.5px;height:1.5px;background:var(--press);width:0%;transition:width .1s linear}
 .strip .wrap{display:flex;align-items:center;justify-content:space-between;height:54px;gap:16px}
 .strip__sections{display:flex;gap:22px;overflow-x:auto;scrollbar-width:none}
 .strip__sections::-webkit-scrollbar{display:none}
 .strip__sections a{font-family:var(--type);font-size:11px;letter-spacing:.04em;white-space:nowrap;color:var(--muted);padding-bottom:4px;border-bottom:2px solid transparent;transition:color .3s,border-color .3s}
+.strip__sections a:hover{color:var(--ink)}
 .strip__sections a.lit{color:var(--ink);border-color:var(--press)}
 .strip__call{display:flex;align-items:center;gap:8px;font-family:var(--type);font-size:12px;color:var(--ink);white-space:nowrap;flex:none}
 .strip__call svg{width:13px;height:13px}
@@ -55,7 +58,7 @@ h1,h2,h3,p{margin:0}
 .front{padding:64px 0 0;border-bottom:3px double var(--ink)}
 .front__meta{display:flex;justify-content:space-between;font-family:var(--type);font-size:11px;letter-spacing:.04em;color:var(--muted);padding-bottom:16px;border-bottom:1px solid var(--ink)}
 .nameplate{padding:22px 0 10px;overflow:hidden}
-.nameplate h1{font-family:var(--display);font-weight:900;font-size:clamp(64px,15vw,190px);letter-spacing:-.02em;line-height:.82;text-align:right;white-space:nowrap}
+.nameplate h1{font-family:var(--display);font-weight:900;font-size:clamp(64px,15vw,190px);letter-spacing:-.02em;line-height:.82;text-align:right;white-space:nowrap;will-change:transform,letter-spacing;transition:transform .1s linear}
 .nameplate .sub{display:flex;justify-content:space-between;align-items:baseline;margin-top:4px;border-top:2px solid var(--ink);padding-top:10px}
 .nameplate .sub b{font-family:var(--display);font-style:italic;font-weight:600;font-size:clamp(18px,3vw,28px)}
 .nameplate .sub span{font-family:var(--type);font-size:10.5px;color:var(--muted);letter-spacing:.04em}
@@ -78,6 +81,9 @@ h1,h2,h3,p{margin:0}
 /* ---------- PROFILE ---------- */
 .profile{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:60px}
 .profile__head h2{font-family:var(--display);font-weight:700;font-style:italic;font-size:clamp(30px,4vw,46px);line-height:1.14}
+.profile__head h2 mark{background:none;color:inherit;position:relative}
+.profile__head h2 mark::after{content:"";position:absolute;left:-2%;right:-2%;bottom:.02em;height:.42em;background:rgba(58,93,160,.22);z-index:-1;transform:scaleX(0);transform-origin:left;transition:transform 1.1s var(--ease) .3s}
+.profile__head.in h2 mark::after{transform:scaleX(1)}
 .profile__head .byline{margin-top:18px;font-family:var(--type);font-size:11.5px;color:var(--muted);letter-spacing:.03em}
 .profile__body{column-count:1;font-size:17.5px;color:var(--ink-soft)}
 .profile__body p + p{margin-top:18px}
@@ -101,7 +107,12 @@ h1,h2,h3,p{margin:0}
 .record h2{font-family:var(--display);font-weight:700;font-size:clamp(28px,3.6vw,40px);line-height:1.14}
 .record p.lede{margin-top:16px;color:var(--muted);font-size:15.5px}
 .entries{display:grid}
-.entry{display:grid;grid-template-columns:56px minmax(0,1fr);gap:20px;padding:24px 0;border-top:1px solid var(--line)}
+.entry{display:grid;grid-template-columns:56px minmax(0,1fr);gap:20px;padding:24px 0;border-top:1px solid var(--line);position:relative;transition:padding-left .35s var(--ease)}
+.entry::before{content:"";position:absolute;left:-16px;top:0;bottom:0;width:3px;background:var(--press);transform:scaleY(0);transition:transform .35s var(--ease)}
+.entry:hover{padding-left:16px}
+.entry:hover::before{transform:scaleY(1)}
+.entry .no{transition:color .35s,transform .35s}
+.entry:hover .no{color:var(--press);transform:scale(1.15)}
 .entries .entry:last-child{border-bottom:1px solid var(--line)}
 .entry .no{font-family:var(--type);font-size:12px;color:var(--press)}
 .entry h3{font-family:var(--display);font-weight:700;font-size:21px}
@@ -137,6 +148,9 @@ h1,h2,h3,p{margin:0}
 .backpage .btn:hover{background:var(--news);color:var(--press)}
 
 .footer{padding:26px 0;text-align:center;font-family:var(--type);font-size:10.5px;color:var(--muted);background:var(--news)}
+.grain{position:fixed;inset:0;z-index:60;pointer-events:none;opacity:.05;mix-blend-mode:multiply}
+.territory,.backpage{position:relative}
+.territory::before,.backpage::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;background-image:radial-gradient(rgba(240,234,217,.14) 1px,transparent 1.4px);background-size:5px 5px}
 
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.001s!important;animation-iteration-count:1!important;transition-duration:.001s!important}
@@ -148,6 +162,7 @@ h1,h2,h3,p{margin:0}
 <body>
 
 <div class="strip">
+  <div class="strip__progress" id="progress"></div>
   <div class="wrap">
     <nav class="strip__sections" id="stripNav">
       <a href="#front" data-sec="front">Front Page</a>
@@ -201,8 +216,8 @@ h1,h2,h3,p{margin:0}
   <div class="wrap">
     <div class="sec__label"><span class="kicker">Section One — Profile</span><span class="no">Est. facts, no embellishment</span></div>
     <div class="profile">
-      <div class="profile__head fade">
-        <h2>&ldquo;Broker-owner&rdquo; undersells what 27 years actually looks like.</h2>
+      <div class="profile__head fade" id="profileHead">
+        <h2>&ldquo;Broker-owner&rdquo; undersells what <mark>27 years</mark> actually looks like.</h2>
         <div class="byline">REPORTED FROM 6002 HAMPTON DRIVE, AMARILLO</div>
       </div>
       <div>
@@ -292,6 +307,7 @@ h1,h2,h3,p{margin:0}
 
 </main>
 
+<canvas class="grain" id="grainCanvas" aria-hidden="true"></canvas>
 <footer class="footer">Absolute Real Estate · Deborah Kelly, Broker-Owner · Amarillo, TX · <span id="year"></span></footer>
 
 <script>
@@ -299,6 +315,39 @@ h1,h2,h3,p{margin:0}
   document.getElementById('year').textContent = new Date().getFullYear();
   document.getElementById('dateline').textContent = 'AMARILLO, TEXAS · ' + new Date().toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'}).toUpperCase();
   var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- reading-progress bar ---------- */
+  var progress = document.getElementById('progress');
+  function updateProgress(){
+    var h = document.documentElement;
+    var p = h.scrollTop / (h.scrollHeight - h.clientHeight);
+    progress.style.width = Math.max(0, Math.min(1, p)) * 100 + '%';
+  }
+
+  /* ---------- nameplate kinetic type: a second, continuous motion beyond the one-shot wipe ---------- */
+  var nameplate = document.querySelector('.nameplate h1'), front = document.querySelector('.front');
+  function updateNameplate(){
+    if (reduce || !nameplate) return;
+    var t = Math.max(0, Math.min(1, scrollY / (front.offsetHeight * 0.9)));
+    nameplate.style.transform = 'translateX(' + (t * -14) + 'px)';
+    nameplate.style.letterSpacing = (-.02 + t * .01) + 'em';
+  }
+
+  addEventListener('scroll', function(){ requestAnimationFrame(function(){ updateProgress(); updateNameplate(); }); }, {passive:true});
+  updateProgress(); updateNameplate();
+
+  /* ---------- paper grain ---------- */
+  var canvas = document.getElementById('grainCanvas'), gtx = canvas.getContext('2d');
+  function sizeGrain(){ canvas.width = innerWidth; canvas.height = innerHeight; }
+  function drawGrain(){
+    sizeGrain();
+    var w = canvas.width, h = canvas.height;
+    var img = gtx.createImageData(w, h), d = img.data;
+    for (var i = 0; i < d.length; i += 4){ var v = 255 * Math.random(); d[i] = d[i+1] = d[i+2] = v; d[i+3] = 22; }
+    gtx.putImageData(img, 0, 0);
+  }
+  if (!reduce){ drawGrain(); var gt; addEventListener('resize', function(){ clearTimeout(gt); gt = setTimeout(drawGrain, 200); }); setInterval(drawGrain, 1100); }
+  else { canvas.style.display = 'none'; }
 
   /* ---------- ink-wipe hero + section reveals ---------- */
   var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting) e.target.classList.add('in'); }); }, {threshold:.2, rootMargin:'0px 0px -8% 0px'});
