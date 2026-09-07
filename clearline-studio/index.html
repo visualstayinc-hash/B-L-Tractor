@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clearline Studio</title>
+<meta name="description" content="Clearline Studio — a design and interaction studio. One line, drawn, scrubbed, and resolved into identity, interface, and space.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23f4f2ed'/%3E%3Cline x1='10' y1='44' x2='54' y2='20' stroke='%23e8492a' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f4f2ed;--paper-2:#ece8dd;--paper-3:#e2ddcf;
+  --ink:#16140f;--ink-2:#232019;
+  --line:rgba(22,20,15,.2);--line-soft:rgba(22,20,15,.11);
+  --line-onDark:rgba(244,242,237,.22);
+  --red:#e8492a;--red-2:#c93c20;
+  --muted:#6b6558;--muted-onDark:#a49c8a;
+  --display:'Instrument Sans',system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--display);font-size:17px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+svg{display:block;max-width:100%;overflow:visible}
+h1,h2,h3,p{margin:0}
+button{font:inherit;color:inherit;background:none;border:none;padding:0;cursor:pointer}
+.wrap{width:min(1240px,calc(100% - 56px));margin:0 auto;position:relative}
+.mono{font-family:var(--mono)}
+.eyebrow{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:22px;height:1.5px;background:var(--red)}
+.lede{color:var(--muted);font-size:17.5px;max-width:52ch;margin-top:18px}
+
+/* line-drawn buttons — no boxes, no pills: the underline IS the button */
+.btn{position:relative;display:inline-flex;align-items:center;gap:9px;padding-bottom:6px;font-family:var(--mono);font-size:13px;font-weight:500;letter-spacing:.03em;cursor:pointer}
+.btn::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:1.5px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
+.btn:hover::after,.btn--primary::after{transform:scaleX(1)}
+.btn--primary{color:var(--red)}
+.btn svg{width:14px;height:14px;transition:transform .4s var(--ease)}
+.btn:hover svg{transform:translate(3px,-3px)}
+.btn:active{opacity:.6;transition:opacity .1s}
+
+/* crosshair cursor language — only over interactive zones that carry a coordinate readout */
+.crosshair{cursor:crosshair}
+
+section{position:relative;padding:150px 0}
+.section-onDark{background:var(--ink);color:var(--paper)}
+.section-onDark .lede{color:var(--muted-onDark)}
+.section-onDark .eyebrow{color:#ff7452}
+
+/* draw-on: the one motion rule. stroke-dashoffset, never opacity/translateY fade-up */
+.draw{transition:stroke-dashoffset 1.1s var(--ease)}
+@media (prefers-reduced-motion:reduce){ .draw{transition:none!important} }
+
+/* ================= HOME ================= */
+#home{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding-top:120px;padding-bottom:100px}
+.mark{width:min(720px,86vw)}
+.mark-line{fill:none;stroke:var(--ink);stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.home-thesis{margin-top:34px;font-size:clamp(20px,2.6vw,28px);line-height:1.35;max-width:26ch;font-weight:400}
+.home-thesis b{font-weight:600;color:var(--red)}
+.home-hint{margin-top:56px;display:flex;align-items:center;gap:11px;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.home-hint i{width:28px;height:1px;background:var(--muted)}
+
+/* ================= WORK / PLOTS ================= */
+.work-intro{max-width:60ch}
+.plot{padding:110px 0;border-top:1px solid var(--line-soft)}
+.plot__grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:64px;align-items:center}
+/* alternating layout — breaks the repetitive-rhythm pattern six identical
+   text-left/diagram-right rows would otherwise create (found in Pass 3
+   review: every diagram was different, but the wrapper layout was identical
+   six times in a row, which reads as monotonous regardless) */
+.plot--rev .plot__grid{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}
+.plot--rev .plot__stage{order:-1;margin-left:0;margin-right:auto}
+.plot__num{font-family:var(--mono);font-size:12px;color:var(--red);letter-spacing:.06em}
+.plot__medium{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-top:6px}
+.plot__title{font-size:clamp(30px,3.6vw,46px);font-weight:600;margin-top:16px;line-height:1.05;max-width:14ch}
+.plot__desc{margin-top:18px;color:var(--muted);max-width:42ch}
+.plot__stage{aspect-ratio:1/1;max-width:420px;margin-left:auto;border:1px solid var(--line-soft);position:relative}
+.plot__stage svg{width:100%;height:100%;padding:14%}
+.plot__coord{position:absolute;top:10px;left:12px;font-family:var(--mono);font-size:10px;color:var(--red);pointer-events:none;opacity:0;transition:opacity .2s}
+.plot__coord--on{opacity:1}
+@media (max-width:880px){ .plot__grid,.plot--rev .plot__grid{grid-template-columns:1fr} .plot__stage{margin:0 auto;max-width:320px} .plot--rev .plot__stage{margin:0 auto} }
+
+/* ================= PROCESS ================= */
+.process{padding-top:150px;padding-bottom:170px}
+.process-diagram{margin-top:80px;position:relative}
+.process-line{stroke:var(--line-onDark);stroke-width:1}
+.process-line--red{stroke:var(--red);stroke-width:1.5}
+.process-stages{display:grid;grid-template-columns:repeat(5,1fr);margin-top:26px}
+.process-stage{padding-right:20px}
+.process-stage b{display:block;font-family:var(--mono);font-size:11px;color:var(--red);letter-spacing:.06em}
+.process-stage span{display:block;margin-top:10px;font-size:14px;color:var(--muted-onDark);line-height:1.5}
+.process-stage h4{font-size:17px;font-weight:600;margin-top:6px}
+@media (max-width:880px){ .process-stages{grid-template-columns:1fr 1fr;gap:28px 20px} }
+@media (max-width:520px){ .process-stages{grid-template-columns:1fr} }
+
+/* ================= CONTACT ================= */
+.contact-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.85fr);gap:70px;align-items:start}
+.draw-canvas-wrap{border:1px solid var(--line);aspect-ratio:4/3;position:relative;background:var(--paper-2)}
+#drawCanvas{width:100%;height:100%;touch-action:none;cursor:crosshair}
+.draw-canvas-cap{margin-top:14px;font-family:var(--mono);font-size:11.5px;color:var(--muted);display:flex;justify-content:space-between}
+.draw-canvas-cap button{text-decoration:underline;text-underline-offset:3px}
+.contact-field{margin-top:26px}
+.contact-field label{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.contact-field input,.contact-field textarea{width:100%;margin-top:8px;padding:10px 0;border:none;border-bottom:1px solid var(--line);background:transparent;color:var(--ink);font:inherit;font-size:16px}
+.contact-field input:focus,.contact-field textarea:focus{outline:none;border-color:var(--red)}
+.contact-submit{margin-top:34px}
+.contact-direct{margin-top:44px;padding-top:24px;border-top:1px solid var(--line-soft);font-family:var(--mono);font-size:13px;color:var(--muted);overflow-wrap:break-word}
+.contact-direct a{color:var(--ink);border-bottom:1px solid var(--line)}
+
+footer{padding:34px 0;text-align:center;font-family:var(--mono);font-size:10.5px;color:var(--muted-onDark);background:var(--ink)}
+
+/* ================= SPINE — persistent line-scrub navigation ================= */
+#spine{position:fixed;left:0;right:0;bottom:0;z-index:60;height:64px;background:rgba(244,242,237,.9);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-top:1px solid var(--line-soft)}
+#spine.onDark{background:rgba(22,20,15,.9);border-color:var(--line-onDark)}
+.spine__row{width:min(1240px,calc(100% - 32px));margin:0 auto;height:100%;display:flex;align-items:stretch}
+.spine__inner{flex:1;position:relative;touch-action:none;min-width:0}
+.spine__contact{flex-shrink:0;display:flex;align-items:center;gap:8px;padding-left:22px;font-family:var(--mono);font-size:12.5px;font-weight:500;color:var(--red);white-space:nowrap;border-left:1px solid var(--line-soft);margin-left:16px}
+#spine.onDark .spine__contact{border-color:var(--line-onDark)}
+.spine__contact svg{width:13px;height:13px}
+.spine__svg{width:100%;height:100%;overflow:visible}
+.spine__track{stroke:var(--line);stroke-width:1}
+#spine.onDark .spine__track{stroke:var(--line-onDark)}
+.spine__fill{stroke:var(--red);stroke-width:1.5}
+.spine__tick{stroke:var(--muted);stroke-width:1.5;transition:stroke .3s}
+#spine.onDark .spine__tick{stroke:var(--muted-onDark)}
+.spine__tick--active{stroke:var(--red)}
+.spine__handle{fill:var(--paper);stroke:var(--red);stroke-width:2;cursor:grab}
+#spine.onDark .spine__handle{fill:var(--ink)}
+.spine__handle:active{cursor:grabbing}
+.spine__label{font-family:var(--mono);font-size:10px;letter-spacing:.05em;fill:var(--muted);pointer-events:none;opacity:0;transition:opacity .3s}
+#spine.onDark .spine__label{fill:var(--muted-onDark)}
+.spine__label--active{opacity:1;fill:var(--ink)}
+#spine.onDark .spine__label--active{fill:var(--paper)}
+@media (max-width:640px){ #spine{height:54px} .spine__label{display:none} .spine__contact span{display:none} .spine__contact{padding-left:14px;margin-left:10px} }
+
+.page{padding-bottom:64px}
+@media (max-width:640px){ .page{padding-bottom:54px} }
+</style>
+</head>
+<body>
+
+<div class="page">
+<main>
+
+<!-- ================= HOME ================= -->
+<section id="home" data-sec="home">
+  <div class="wrap">
+    <svg class="mark" viewBox="0 0 720 220" aria-label="Clearline">
+      <path class="mark-line draw" id="markPath" d="M20 170 L120 60 L180 140 L260 40 L340 150 L420 55 L520 145 L600 50 L700 120"/>
+    </svg>
+    <p class="home-thesis">One line — drawn, scrubbed, resolved. <b>Clearline</b> is a studio that turns the precision of a drafting line into working identity, interface, and space.</p>
+    <div class="home-hint"><i></i>Drag the line below, or scroll</div>
+  </div>
+</section>
+
+<!-- ================= WORK ================= -->
+<section id="work" data-sec="work">
+  <div class="wrap work-intro">
+    <span class="eyebrow">Work</span>
+    <h2 class="plot__title" style="margin-top:16px;max-width:20ch">Six resolutions of the same line.</h2>
+    <p class="lede">Concept studies, not client photography — each plot shows the same drafting line resolved into a different medium. Drag the spine to move between them, or scroll.</p>
+  </div>
+
+  <div class="plot" id="plot-1" data-sec="plot-1">
+    <div class="wrap plot__grid">
+      <div>
+        <div class="plot__num">PLOT 01 / 06</div>
+        <div class="plot__medium">Brand identity</div>
+        <h3 class="plot__title">A mark built from one continuous stroke.</h3>
+        <p class="plot__desc">The identity system resolves from a single unbroken line — a mark, a grid, a rule for how the line behaves at every size down to a favicon.</p>
+      </div>
+      <div class="plot__stage crosshair" data-coordtarget><span class="plot__coord" data-coordlabel></span>
+        <svg viewBox="0 0 300 300"><path class="draw plotdraw" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M60 220 L60 90 L150 200 L150 70 L240 210 L240 80"/></svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="plot plot--rev" id="plot-2" data-sec="plot-2">
+    <div class="wrap plot__grid">
+      <div>
+        <div class="plot__num">PLOT 02 / 06</div>
+        <div class="plot__medium">Interactive site</div>
+        <h3 class="plot__title">Wireframe as the finished frame, not a draft of it.</h3>
+        <p class="plot__desc">A structural grid that stays visible in the final product — the schematic isn't hidden once the site ships, it becomes the layout language.</p>
+      </div>
+      <div class="plot__stage crosshair" data-coordtarget><span class="plot__coord" data-coordlabel></span>
+        <svg viewBox="0 0 300 300"><g fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" class="plotdraw-group">
+          <rect class="draw plotdraw" x="40" y="40" width="220" height="220"/>
+          <line class="draw plotdraw" x1="40" y1="100" x2="260" y2="100"/>
+          <line class="draw plotdraw" x1="130" y1="100" x2="130" y2="260"/>
+        </g></svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="plot" id="plot-3" data-sec="plot-3">
+    <div class="wrap plot__grid">
+      <div>
+        <div class="plot__num">PLOT 03 / 06</div>
+        <div class="plot__medium">Spatial installation</div>
+        <h3 class="plot__title">A line that describes a room before it exists.</h3>
+        <p class="plot__desc">Axonometric drawing carried straight into a built installation — the same projection used to pitch it is the projection visitors walk through.</p>
+      </div>
+      <div class="plot__stage crosshair" data-coordtarget><span class="plot__coord" data-coordlabel></span>
+        <svg viewBox="0 0 300 300"><g fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path class="draw plotdraw" d="M150 40 L250 95 L250 205 L150 260 L50 205 L50 95 Z"/>
+          <path class="draw plotdraw" d="M150 40 L150 150 L250 205"/>
+          <path class="draw plotdraw" d="M150 150 L50 205"/>
+        </g></svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="plot plot--rev" id="plot-4" data-sec="plot-4">
+    <div class="wrap plot__grid">
+      <div>
+        <div class="plot__num">PLOT 04 / 06</div>
+        <div class="plot__medium">Editorial system</div>
+        <h3 class="plot__title">A grid measured like a drawing, not eyeballed.</h3>
+        <p class="plot__desc">Column rules and baselines treated as dimension lines — every measurement on the page is deliberate and re-usable across issues.</p>
+      </div>
+      <div class="plot__stage crosshair" data-coordtarget><span class="plot__coord" data-coordlabel></span>
+        <svg viewBox="0 0 300 300"><g fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <line class="draw plotdraw" x1="40" y1="70" x2="260" y2="70"/>
+          <line class="draw plotdraw" x1="40" y1="110" x2="220" y2="110"/>
+          <line class="draw plotdraw" x1="40" y1="150" x2="260" y2="150"/>
+          <line class="draw plotdraw" x1="40" y1="190" x2="180" y2="190"/>
+          <line class="draw plotdraw" x1="40" y1="230" x2="240" y2="230"/>
+          <line class="draw plotdraw" x1="40" y1="55" x2="40" y2="245"/>
+        </g></svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="plot" id="plot-5" data-sec="plot-5">
+    <div class="wrap plot__grid">
+      <div>
+        <div class="plot__num">PLOT 05 / 06</div>
+        <div class="plot__medium">Product interface</div>
+        <h3 class="plot__title">An outline first. Fills only where they earn it.</h3>
+        <p class="plot__desc">Interface components stay as strokes until state demands weight — hierarchy comes from line and space, not stacks of rounded cards.</p>
+      </div>
+      <div class="plot__stage crosshair" data-coordtarget><span class="plot__coord" data-coordlabel></span>
+        <svg viewBox="0 0 300 300"><g fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <rect class="draw plotdraw" x="55" y="45" width="190" height="210"/>
+          <line class="draw plotdraw" x1="55" y1="90" x2="245" y2="90"/>
+          <line class="draw plotdraw" x1="80" y1="130" x2="220" y2="130"/>
+          <line class="draw plotdraw" x1="80" y1="160" x2="220" y2="160"/>
+          <line class="draw plotdraw" x1="80" y1="190" x2="180" y2="190"/>
+        </g></svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="plot plot--rev" id="plot-6" data-sec="plot-6">
+    <div class="wrap plot__grid">
+      <div>
+        <div class="plot__num">PLOT 06 / 06</div>
+        <div class="plot__medium">Motion / title sequence</div>
+        <h3 class="plot__title">Speed drawn as line weight, not a stock transition.</h3>
+        <p class="plot__desc">Type and mark accelerate the same way a pencil line does under pressure — thin when slow, heavy when fast.</p>
+      </div>
+      <div class="plot__stage crosshair" data-coordtarget><span class="plot__coord" data-coordlabel></span>
+        <svg viewBox="0 0 300 300"><g fill="none" stroke="currentColor" stroke-linecap="round">
+          <line class="draw plotdraw" stroke-width="1.5" x1="40" y1="230" x2="120" y2="150"/>
+          <line class="draw plotdraw" stroke-width="2.5" x1="60" y1="210" x2="160" y2="110"/>
+          <line class="draw plotdraw" stroke-width="3.5" x1="80" y1="190" x2="200" y2="70"/>
+          <line class="draw plotdraw" stroke-width="5" x1="100" y1="170" x2="240" y2="30"/>
+        </g></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROCESS ================= -->
+<section id="process" data-sec="process" class="section-onDark process">
+  <div class="wrap">
+    <span class="eyebrow">Process</span>
+    <h2 class="plot__title" style="margin-top:16px;max-width:20ch">Measured, not improvised.</h2>
+    <p class="lede">Five stages, dimensioned like a drawing — each one has a defined exit condition before the next begins.</p>
+
+    <div class="process-diagram">
+      <svg viewBox="0 0 1000 40" width="100%" height="40" preserveAspectRatio="none" aria-hidden="true">
+        <line class="process-line draw" id="processLine" x1="0" y1="20" x2="1000" y2="20"/>
+        <circle class="process-line--red" cx="0" cy="20" r="4" fill="var(--red)" stroke="none"/>
+        <circle class="process-line--red" cx="200" cy="20" r="4" fill="var(--red)" stroke="none"/>
+        <circle class="process-line--red" cx="400" cy="20" r="4" fill="var(--red)" stroke="none"/>
+        <circle class="process-line--red" cx="600" cy="20" r="4" fill="var(--red)" stroke="none"/>
+        <circle class="process-line--red" cx="800" cy="20" r="4" fill="var(--red)" stroke="none"/>
+        <circle class="process-line--red" cx="1000" cy="20" r="4" fill="var(--red)" stroke="none"/>
+      </svg>
+      <div class="process-stages">
+        <div class="process-stage"><b>01</b><h4>Draft</h4><span>The line, on paper — the idea stated once, plainly, before software touches it.</span></div>
+        <div class="process-stage"><b>02</b><h4>Structure</h4><span>The line becomes a system: grid, type scale, the rules it has to obey everywhere.</span></div>
+        <div class="process-stage"><b>03</b><h4>Surface</h4><span>Interaction and motion are added only where they carry information.</span></div>
+        <div class="process-stage"><b>04</b><h4>Test</h4><span>Run it. Screenshot it. Attack it. A weak moment gets rebuilt, not defended.</span></div>
+        <div class="process-stage"><b>05</b><h4>Release</h4><span>Shipped with the line still visible in the seams — the method stays legible in the result.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" data-sec="contact">
+  <div class="wrap">
+    <span class="eyebrow">Start a line</span>
+    <h2 class="plot__title" style="margin-top:16px;max-width:16ch">Draw the first mark.</h2>
+    <div class="contact-grid" style="margin-top:48px">
+      <div>
+        <div class="draw-canvas-wrap"><canvas id="drawCanvas" aria-label="Draw a line to begin"></canvas></div>
+        <div class="draw-canvas-cap"><span>Draw here — your mark, not sent anywhere, just the first gesture.</span><button id="clearCanvas" type="button">Clear</button></div>
+      </div>
+      <form id="contactForm" onsubmit="return false">
+        <div class="contact-field"><label for="cf-name">Name</label><input id="cf-name" type="text" required autocomplete="name"></div>
+        <div class="contact-field"><label for="cf-email">Email</label><input id="cf-email" type="email" required autocomplete="email"></div>
+        <div class="contact-field"><label for="cf-msg">What are you starting?</label><textarea id="cf-msg" rows="3" required></textarea></div>
+        <a class="btn btn--primary contact-submit" id="cf-submit" href="mailto:studio@clearline.example"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Send</a>
+        <div class="contact-direct">studio@clearline.example — direct, no form required.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+</div>
+
+<footer>Clearline Studio — concept build, 2026</footer>
+
+<!-- ================= SPINE ================= -->
+<nav id="spine" aria-label="Sections">
+  <div class="spine__row">
+    <div class="spine__inner" id="spineInner">
+      <svg class="spine__svg" id="spineSvg">
+        <line class="spine__track" id="spineTrackLine" x1="0" y1="32" x2="100%" y2="32"/>
+        <line class="spine__fill" id="spineFillLine" x1="0" y1="32" x2="0" y2="32"/>
+        <g id="spineTicks"></g>
+        <circle class="spine__handle" id="spineHandle" cx="0" cy="32" r="7"/>
+      </svg>
+    </div>
+    <a class="spine__contact" id="spineContact" href="#contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span>Start a line</span></a>
+  </div>
+</nav>
+
+<script>
+(function(){
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- draw-on: stroke-dashoffset, triggered once per element as it enters view.
+     Never observe a clipped element directly (Chromium IO+clip-path bug) — none of
+     these elements carry clip-path, so direct observation is safe here. ---------- */
+  function armDraw(el){
+    var len = el.getTotalLength();
+    el.style.strokeDasharray = len;
+    el.style.strokeDashoffset = reduce ? 0 : len;
+  }
+  function fireDraw(el){ el.style.strokeDashoffset = 0; }
+
+  var drawEls = [].slice.call(document.querySelectorAll('.draw'));
+  drawEls.forEach(armDraw);
+
+  var dio = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if (e.isIntersecting){ fireDraw(e.target); dio.unobserve(e.target); } });
+  }, {threshold:.35, rootMargin:'0px 0px -10% 0px'});
+  drawEls.forEach(function(el){ dio.observe(el); });
+
+  // hero mark draws immediately, no scroll needed
+  fireDraw(document.getElementById('markPath'));
+
+  /* ---------- SPINE: line-scrub navigation ---------- */
+  var spine = document.getElementById('spine');
+  var spineInner = document.getElementById('spineInner');
+  var svg = document.getElementById('spineSvg');
+  var trackLine = document.getElementById('spineTrackLine');
+  var fillLine = document.getElementById('spineFillLine');
+  var handle = document.getElementById('spineHandle');
+  var ticksG = document.getElementById('spineTicks');
+
+  var sections = [].slice.call(document.querySelectorAll('[data-sec]'));
+  var darkSections = [].slice.call(document.querySelectorAll('.section-onDark'));
+  var darkOffsets = []; // cached {top,bottom} document offsets, rebuilt alongside ticks — avoids a getBoundingClientRect() read on every scroll frame
+
+  // offsetTop is relative to the nearest *positioned* ancestor, not the
+  // document — and section{position:relative} (set globally, so descendant
+  // .plot elements can host their own absolutely-positioned children) means
+  // plot-1..6's offsetTop is relative to #work, not comparable to the
+  // top-level sections' offsetTop. Found via direct measurement during Pass 3
+  // (visually: tick marks clustered oddly near the start of the spine).
+  // getBoundingClientRect().top + scrollY is always document-relative
+  // regardless of any ancestor's position, so it's used everywhere instead.
+  function docTop(el){ return el.getBoundingClientRect().top + scrollY; }
+
+  // build ticks proportionally to each section's document position
+  var ticks = [];
+  function buildTicks(){
+    ticksG.innerHTML = '';
+    ticks = [];
+    var maxScroll = Math.max(1, document.documentElement.scrollHeight - innerHeight);
+    sections.forEach(function(s){
+      var top = docTop(s);
+      var frac = Math.min(1, top / maxScroll);
+      var tick = document.createElementNS('http://www.w3.org/2000/svg','line');
+      tick.setAttribute('class','spine__tick');
+      tick.setAttribute('y1', 26); tick.setAttribute('y2', 38);
+      ticksG.appendChild(tick);
+      var label = document.createElementNS('http://www.w3.org/2000/svg','text');
+      label.setAttribute('class','spine__label');
+      label.setAttribute('y', 18);
+      label.textContent = s.dataset.sec.replace('plot-','P').toUpperCase();
+      ticksG.appendChild(label);
+      ticks.push({sec:s, frac:frac, el:tick, label:label, offsetTop:top});
+    });
+    darkOffsets = darkSections.map(function(s){ var top = docTop(s); return { top: top, bottom: top + s.offsetHeight }; });
+    positionTicks();
+  }
+  function positionTicks(){
+    var w = spineInner.clientWidth;
+    ticks.forEach(function(t){
+      var x = t.frac * w;
+      t.el.setAttribute('x1', x); t.el.setAttribute('x2', x);
+      t.label.setAttribute('x', Math.min(w - 10, Math.max(10, x)));
+      t.label.setAttribute('text-anchor', x < 30 ? 'start' : (x > w - 30 ? 'end' : 'middle'));
+    });
+  }
+
+  var dragging = false;
+  function fracFromScroll(){
+    var maxScroll = Math.max(1, document.documentElement.scrollHeight - innerHeight);
+    return Math.max(0, Math.min(1, scrollY / maxScroll));
+  }
+  // reads first, writes second — offsetTop is cached in ticks[].offsetTop at
+  // buildTicks() time (and darkSections' offsets below), so this function never
+  // re-reads geometry after a write in the same frame, avoiding forced
+  // synchronous layout ("layout thrashing") on every scroll event.
+  function render(frac){
+    var w = spineInner.clientWidth; // read
+    var x = frac * w;
+
+    var y = scrollY + innerHeight * 0.4, current = sections[0]; // read (window props, no layout)
+    ticks.forEach(function(t){ if (t.offsetTop <= y) current = t.sec; });
+
+    var onDark = darkOffsets.some(function(o){ var top = o.top - scrollY, bottom = o.bottom - scrollY; return top < 60 && bottom > 60; });
+
+    // writes
+    handle.setAttribute('cx', x);
+    fillLine.setAttribute('x2', x);
+    ticks.forEach(function(t){
+      var active = t.sec === current;
+      t.el.classList.toggle('spine__tick--active', active);
+      t.label.classList.toggle('spine__label--active', active);
+    });
+    spine.classList.toggle('onDark', onDark);
+  }
+
+  function updateFromScroll(){ if (!dragging) render(fracFromScroll()); }
+  addEventListener('scroll', function(){ requestAnimationFrame(updateFromScroll); }, {passive:true});
+
+  // spring-settle: eased custom scroll animation with slight overshoot, used on release
+  function springScrollTo(target){
+    if (reduce){ scrollTo(0, target); return; }
+    var start = scrollY, dist = target - start, dur = 620, t0 = performance.now();
+    function step(now){
+      var p = Math.min(1, (now - t0) / dur);
+      // overshoot-then-settle easing (back-out)
+      var c = 1.7;
+      var e = 1 + c * Math.pow(p - 1, 3) + c * Math.pow(p - 1, 2);
+      scrollTo(0, start + dist * e);
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  function nearestSectionScrollTop(frac){
+    var w = spineInner.clientWidth;
+    var x = frac * w;
+    var best = ticks[0], bestD = Infinity;
+    ticks.forEach(function(t){
+      var tx = t.frac * w;
+      var d = Math.abs(tx - x);
+      if (d < bestD){ bestD = d; best = t; }
+    });
+    return best.offsetTop;
+  }
+
+  function fracFromPointer(clientX){
+    var r = spineInner.getBoundingClientRect();
+    return Math.max(0, Math.min(1, (clientX - r.left) / r.width));
+  }
+
+  spineInner.addEventListener('pointerdown', function(e){
+    dragging = true;
+    spineInner.setPointerCapture(e.pointerId);
+    var frac = fracFromPointer(e.clientX);
+    var maxScroll = Math.max(1, document.documentElement.scrollHeight - innerHeight);
+    scrollTo(0, frac * maxScroll);
+    render(frac);
+  });
+  spineInner.addEventListener('pointermove', function(e){
+    if (!dragging) return;
+    var frac = fracFromPointer(e.clientX);
+    var maxScroll = Math.max(1, document.documentElement.scrollHeight - innerHeight);
+    scrollTo(0, frac * maxScroll);
+    render(frac);
+  });
+  function endDrag(e){
+    if (!dragging) return;
+    dragging = false;
+    var frac = fracFromPointer(e.clientX);
+    springScrollTo(nearestSectionScrollTop(frac));
+  }
+  spineInner.addEventListener('pointerup', endDrag);
+  spineInner.addEventListener('pointercancel', endDrag);
+
+  buildTicks();
+  render(fracFromScroll());
+  var rt;
+  addEventListener('resize', function(){ clearTimeout(rt); rt = setTimeout(function(){ buildTicks(); render(fracFromScroll()); }, 200); });
+  // section heights can change after fonts/layout settle — rebuild ticks once more shortly after load
+  setTimeout(function(){ buildTicks(); render(fracFromScroll()); }, 900);
+
+  // persistent contact affordance (closes the "how to contact, from anywhere" gap
+  // found during Pass 1 review) — uses the same spring-settle as the spine itself
+  // rather than a plain instant anchor jump, so it stays consistent with the
+  // site's one motion language.
+  document.getElementById('spineContact').addEventListener('click', function(e){
+    e.preventDefault();
+    springScrollTo(docTop(document.getElementById('contact')));
+  });
+
+  /* ---------- process dimension-line draw ---------- */
+  var pLine = document.getElementById('processLine');
+  var pLen = pLine.getTotalLength ? pLine.getTotalLength() : 1000;
+  pLine.style.strokeDasharray = pLen;
+  pLine.style.strokeDashoffset = reduce ? 0 : pLen;
+  new IntersectionObserver(function(es){
+    es.forEach(function(e){ if (e.isIntersecting){ pLine.style.strokeDashoffset = 0; } });
+  }, {threshold:.3}).observe(document.getElementById('process'));
+
+  /* ---------- plot stage coordinate readout: the crosshair hover language
+     CONCEPT.md promises ("a fine crosshair with a live coordinate readout")
+     — implemented for real rather than left as unused CSS. ---------- */
+  document.querySelectorAll('[data-coordtarget]').forEach(function(stage){
+    var label = stage.querySelector('[data-coordlabel]');
+    stage.addEventListener('pointermove', function(e){
+      var r = stage.getBoundingClientRect();
+      var x = Math.round(((e.clientX - r.left) / r.width) * 300);
+      var y = Math.round(((e.clientY - r.top) / r.height) * 300);
+      label.textContent = 'X ' + x + ' · Y ' + y;
+      label.classList.add('plot__coord--on');
+    });
+    stage.addEventListener('pointerleave', function(){ label.classList.remove('plot__coord--on'); });
+  });
+
+  /* ---------- "start a line" draw canvas ---------- */
+  var canvas = document.getElementById('drawCanvas'), ctx = canvas.getContext('2d');
+  function sizeCanvas(){
+    var r = canvas.getBoundingClientRect();
+    canvas.width = r.width * devicePixelRatio; canvas.height = r.height * devicePixelRatio;
+    ctx.scale(devicePixelRatio, devicePixelRatio);
+    ctx.strokeStyle = getComputedStyle(document.documentElement).getPropertyValue('--red');
+    ctx.lineWidth = 2.5; ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+  }
+  sizeCanvas();
+  addEventListener('resize', function(){
+    var data = canvas.toDataURL();
+    sizeCanvas();
+    var img = new Image(); img.onload = function(){ ctx.drawImage(img, 0, 0, canvas.width/devicePixelRatio, canvas.height/devicePixelRatio); }; img.src = data;
+  });
+  var drawing = false, lx = 0, ly = 0;
+  function canvasPoint(e){
+    var r = canvas.getBoundingClientRect();
+    return { x: e.clientX - r.left, y: e.clientY - r.top };
+  }
+  canvas.addEventListener('pointerdown', function(e){ drawing = true; canvas.setPointerCapture(e.pointerId); var p = canvasPoint(e); lx = p.x; ly = p.y; ctx.beginPath(); ctx.moveTo(lx,ly); ctx.lineTo(lx+0.1,ly+0.1); ctx.stroke(); });
+  canvas.addEventListener('pointermove', function(e){ if (!drawing) return; var p = canvasPoint(e); ctx.beginPath(); ctx.moveTo(lx,ly); ctx.lineTo(p.x,p.y); ctx.stroke(); lx = p.x; ly = p.y; });
+  canvas.addEventListener('pointerup', function(){ drawing = false; });
+  canvas.addEventListener('pointercancel', function(){ drawing = false; });
+  document.getElementById('clearCanvas').addEventListener('click', function(){ ctx.clearRect(0,0,canvas.width,canvas.height); });
+})();
+</script>
+</body>
+</html>
