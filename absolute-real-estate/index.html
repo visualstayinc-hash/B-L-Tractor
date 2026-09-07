@@ -5,343 +5,305 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Absolute Real Estate — Amarillo, TX</title>
 <meta name="description" content="Absolute Real Estate. Deborah Kelly, Broker-Owner. 27 years serving the Texas Panhandle. 6002 Hampton Drive, Amarillo, TX. Call (806) 359-0468.">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23f1e8d4'/%3E%3Crect x='8' y='8' width='48' height='48' fill='none' stroke='%231f3a5f' stroke-width='3'/%3E%3Cpath d='M32 8v48M8 32h48' stroke='%231f3a5f' stroke-width='1.5'/%3E%3Ccircle cx='32' cy='32' r='6' fill='%23a13d2e'/%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23fbf7ee'/%3E%3Crect x='6' y='14' width='52' height='30' fill='%232f4a3c'/%3E%3Crect x='11' y='19' width='42' height='20' fill='%23fbf7ee'/%3E%3Crect x='30' y='44' width='4' height='16' fill='%232f4a3c'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Work+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --parchment:#f1e8d4;--parchment-2:#e6d8b4;--parchment-3:#eaddc0;
-  --ink:#1f3a5f;--ink-2:#16283f;--ink-3:#2c4b74;
-  --stamp:#a13d2e;--stamp-2:#c25a44;
-  --line:rgba(31,58,95,.24);--line-soft:rgba(31,58,95,.13);
-  --muted:#6a6350;--paper-text:#241f16;
-  --display:'Zilla Slab',Georgia,serif;--sans:'Public Sans',system-ui,-apple-system,sans-serif;--mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
-  --ease:cubic-bezier(.65,0,.15,1);
+  --sky:#eee6d3;--ground:#dcd0ac;--ground-2:#cfc194;
+  --post:#2f4a3c;--post-2:#20342a;--face:#fbf7ee;
+  --ink:#1c1f1c;--muted:#5c5a4e;--accent:#c8452e;--accent-2:#e07257;
+  --line:rgba(28,31,28,.16);
+  --display:'Archivo Black',Impact,sans-serif;--sans:'Work Sans',system-ui,-apple-system,sans-serif;--mono:'Space Mono',ui-monospace,monospace;
+  --ease:cubic-bezier(.34,1.3,.4,1);--ease2:cubic-bezier(.65,0,.15,1);
 }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--ink-2);color:var(--paper-text);font-family:var(--sans);font-size:16px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--sky);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 svg{display:block;max-width:100%}
 h1,h2,h3,p{margin:0}
 .wrap{width:min(1080px,calc(100% - 48px));margin:0 auto;position:relative}
+button{font:inherit;border:none;background:none;cursor:pointer;padding:0;color:inherit}
 .display{font-family:var(--display)}
 .mono{font-family:var(--mono)}
-.tag{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--stamp)}
-.tag::before{content:"§";font-size:13px}
-.h2{font-family:var(--display);font-weight:600;font-size:clamp(28px,3.8vw,44px);letter-spacing:-.01em;line-height:1.14;margin-top:12px;max-width:16ch}
-.lede{color:var(--muted);font-size:16.5px;max-width:50ch;margin-top:14px}
-.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 24px;font-weight:600;font-size:14px;letter-spacing:.01em;border:1.5px solid var(--ink);cursor:pointer;transition:background .3s,color .3s,transform .25s var(--ease);background:transparent;color:var(--ink)}
-.btn svg{width:16px;height:16px}
-.btn--fill{background:var(--ink);color:var(--parchment);border-color:var(--ink)}
-.btn--fill:hover{background:var(--stamp);border-color:var(--stamp);transform:translateY(-2px)}
-.btn--line:hover{background:var(--ink);color:var(--parchment);transform:translateY(-2px)}
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
-.reveal.in{opacity:1;transform:none}
+.eyebrow{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.h2{font-family:var(--display);font-weight:400;font-size:clamp(30px,4.6vw,52px);letter-spacing:-.01em;line-height:1.04;margin-top:14px;max-width:14ch;text-transform:uppercase}
+.lede{color:var(--muted);font-size:17px;max-width:50ch;margin-top:16px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 26px;font-family:var(--mono);font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;border:2px solid var(--ink);cursor:pointer;transition:transform .3s var(--ease),background .3s,color .3s}
+.btn svg{width:15px;height:15px}
+.btn--fill{background:var(--ink);color:var(--face)}
+.btn--fill:hover{background:var(--accent);border-color:var(--accent);transform:translateY(-3px)}
+.btn--line:hover{background:var(--ink);color:var(--face);transform:translateY(-3px)}
+.settle{opacity:0;transform:translateY(30px) rotate(-1deg);transition:opacity .8s var(--ease2),transform .8s var(--ease)}
+.settle.in{opacity:1;transform:none}
 
-/* ================= THE PLAT (fixed zoom background — the spine of the site) ================= */
-#platWrap{position:fixed;inset:0;z-index:0;overflow:hidden;background:var(--ink-2)}
-#plat{position:absolute;top:50%;left:50%;width:2000px;height:1500px;margin:-750px 0 0 -1000px;will-change:transform}
-#plat svg{width:100%;height:100%;display:block}
-.veil{position:fixed;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(22,40,63,.55) 0%,rgba(22,40,63,.15) 14%,rgba(22,40,63,.08) 50%,rgba(22,40,63,.35) 86%,rgba(22,40,63,.6) 100%)}
+/* ================= HERO: the sign itself ================= */
+.hero{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;padding:100px 20px 40px;background:linear-gradient(180deg,var(--sky) 0%,var(--sky) 68%,var(--ground) 68%,var(--ground-2) 100%)}
+.hero__intro{text-align:center;max-width:520px;margin-bottom:10px}
+.hero__intro .eyebrow{display:inline-block}
+.hero__intro p{color:var(--muted);margin-top:10px;font-size:15.5px}
+#heroSign{transform-origin:50% 0%;animation:install 1.1s var(--ease) both;will-change:transform}
+@keyframes install{0%{transform:rotate(-10deg) translateY(-30px);opacity:0}60%{opacity:1}100%{transform:rotate(0) translateY(0);opacity:1}}
+.sign-sway{animation:sway 7s ease-in-out infinite}
+@keyframes sway{0%,100%{transform:rotate(-.6deg)}50%{transform:rotate(.6deg)}}
+.sign{width:min(92vw,460px)}
+.sign svg{width:100%;height:auto;overflow:visible}
+.rider{cursor:pointer}
+.rider rect{transition:fill .3s}
+.rider:hover rect{fill:var(--ground-2)}
+.rider text{font-family:'Space Mono',monospace;font-weight:700}
+.hero__scroll{margin-top:26px;font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:6px}
+.hero__scroll i{width:1px;height:24px;background:var(--ink);opacity:.35}
 
-.parcel{fill:none;stroke:#8ba3c2;stroke-width:1.4;transition:fill 1s var(--ease),stroke 1s var(--ease)}
-.parcel.lit{fill:rgba(161,61,46,.28);stroke:var(--stamp-2)}
-.parcel.home{stroke:var(--stamp);stroke-width:2.2}
-
-/* ================= persistent UI (call chip + compass nav) — replaces navbar/rail ================= */
-.callchip{position:fixed;top:20px;left:20px;z-index:40;display:flex;align-items:center;gap:9px;padding:11px 16px 11px 12px;background:var(--parchment);border:1.5px solid var(--ink);font-family:var(--mono);font-weight:600;font-size:12.5px;color:var(--ink);transition:transform .25s var(--ease)}
+/* ================= docked mini-sign (nav, appears after hero) ================= */
+.dock{position:fixed;z-index:40;top:20px;right:20px;display:flex;align-items:center;gap:12px;opacity:0;transform:translateY(-10px);pointer-events:none;transition:opacity .4s,transform .4s}
+.dock.show{opacity:1;transform:none;pointer-events:auto}
+.dock__sign{width:52px;flex:none}
+.dock__sign svg{width:100%;height:auto}
+.dock__list{list-style:none;margin:0;padding:12px 16px;display:none;gap:6px;grid-auto-flow:row;background:var(--face);border:2px solid var(--ink);font-family:var(--mono)}
+.dock.open .dock__list{display:grid}
+.dock__list a{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:8px;padding:4px 0}
+.dock__list a::before{content:"";width:6px;height:6px;background:var(--line);flex:none}
+.dock__list a.lit{color:var(--ink)}
+.dock__list a.lit::before{background:var(--accent)}
+.callchip{position:fixed;z-index:40;bottom:20px;left:20px;display:flex;align-items:center;gap:9px;padding:12px 18px 12px 14px;background:var(--ink);color:var(--face);font-family:var(--mono);font-weight:700;font-size:12.5px;transition:transform .25s var(--ease)}
 .callchip svg{width:15px;height:15px}
-.callchip:hover{transform:translateY(-2px)}
+.callchip:hover{transform:translateY(-3px)}
 
-.field{position:fixed;bottom:20px;right:20px;z-index:40;display:flex;align-items:center;gap:0}
-.field__card{background:var(--parchment);border:1.5px solid var(--ink);padding:14px 16px 14px 14px;display:flex;align-items:center;gap:16px;max-width:min(78vw,340px)}
-.compass{width:46px;height:46px;flex:none}
-.compass svg{width:100%;height:100%}
-.compass__needle{transform-box:fill-box;transform-origin:center;transition:transform .5s var(--ease)}
-.field__list{list-style:none;margin:0;padding:0;display:grid;gap:5px}
-.field__list a{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);transition:color .3s}
-.field__list a::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--line);transition:background .3s,transform .3s;flex:none}
-.field__list a.lit{color:var(--ink)}
-.field__list a.lit::before{background:var(--stamp);transform:scale(1.4)}
-.field__toggle{display:none}
-@media (max-width:760px){
-  .field__card{display:none}
-  .field__toggle{display:flex;width:52px;height:52px;border-radius:50%;background:var(--parchment);border:1.5px solid var(--ink);align-items:center;justify-content:center}
-  .field__toggle svg{width:26px;height:26px}
-  .field.open .field__card{display:flex;position:absolute;bottom:64px;right:0;flex-direction:column;align-items:flex-start;gap:12px}
-  .field.open .compass{align-self:center}
-  .callchip span{display:none}
-  .callchip{padding:12px;border-radius:50%}
-}
+/* ================= sections ================= */
+main{position:relative;background:var(--sky)}
+.sec{padding:110px 0}
+.sec + .sec{border-top:2px solid var(--ink)}
+.sec-head{max-width:640px}
 
-/* ================= content sits above the plat ================= */
-main{position:relative;z-index:2}
-.sec{padding:118px 0}
-.panel{background:rgba(241,232,212,.94);border:1.5px solid var(--ink);padding:44px 46px;backdrop-filter:blur(2px)}
-@media (max-width:640px){ .panel{padding:30px 24px} }
+/* ---------- specialties: a horizontal placard rack ---------- */
+.rack{margin-top:56px;display:flex;gap:20px;overflow-x:auto;padding-bottom:14px;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch}
+.rack::-webkit-scrollbar{height:6px}
+.rack::-webkit-scrollbar-thumb{background:var(--line)}
+.placard{scroll-snap-align:start;flex:0 0 min(78vw,320px);background:var(--face);border:2px solid var(--ink);padding:28px 26px;position:relative}
+.placard::before{content:"";position:absolute;top:-11px;left:24px;width:22px;height:22px;border-radius:50%;background:var(--ink)}
+.placard .letter{font-family:var(--mono);font-weight:700;color:var(--accent);font-size:12px}
+.placard h3{font-family:var(--display);font-weight:400;font-size:22px;text-transform:uppercase;margin-top:10px}
+.placard p{color:var(--muted);margin-top:10px;font-size:14.5px}
+.rackhint{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:14px}
 
-/* ---------- OPEN (hero) ---------- */
-.open{min-height:100vh;display:flex;align-items:flex-end;padding-bottom:90px}
-.open .wrap{width:min(560px,calc(100% - 48px));margin:0 0 0 auto}
-@media (max-width:760px){ .open .wrap{margin:0 auto} }
-.open .panel{position:relative}
-.open .stampmark{position:absolute;top:-20px;right:28px;width:96px;height:96px;transform:rotate(8deg)}
-@media (max-width:480px){ .open .stampmark{width:58px;height:58px;top:-12px;right:14px} }
-.open .stampmark svg{width:100%;height:100%}
-.open h1{font-family:var(--display);font-weight:700;font-size:clamp(34px,5vw,54px);line-height:1.06;letter-spacing:-.01em;color:var(--ink);margin-top:14px}
-.open p.lede{margin-top:16px;color:var(--muted)}
-.open .cta{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap}
-.scrolltip{position:absolute;left:0;bottom:36px;font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#c9d3e0}
-.scrolltip .wrap{margin:0}
+/* ---------- Deborah: the sign flips around ---------- */
+.flipzone{background:var(--post);color:var(--face)}
+.flipzone .eyebrow{color:var(--accent-2)}
+.flipzone .lede{color:#c9d3c6}
+.flip-grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:56px;align-items:center;margin-top:20px}
+.stage3d{perspective:1600px}
+.card3d{position:relative;width:100%;aspect-ratio:5/6;transform-style:preserve-3d;transition:transform 1.1s var(--ease2)}
+.card3d.flipped{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border:3px solid var(--face);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px}
+.face--front{background:var(--post-2)}
+.face--front svg{width:70%}
+.face--back{transform:rotateY(180deg);background:var(--face);color:var(--ink);gap:10px}
+.face--back .tag{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--accent);text-transform:uppercase}
+.face--back h3{font-family:var(--display);font-weight:400;font-size:26px;text-transform:uppercase;margin-top:8px}
+.face--back .role{font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:4px}
+.face--back .screws{position:absolute;width:10px;height:10px;border-radius:50%;background:#c9c2ae;box-shadow:inset 0 1px 2px rgba(0,0,0,.4)}
+.s1{top:12px;left:12px}.s2{top:12px;right:12px}.s3{bottom:12px;left:12px}.s4{bottom:12px;right:12px}
+.flipnote{margin-top:16px;font-family:var(--mono);font-size:10.5px;color:var(--muted);letter-spacing:.04em}
+.stats{display:flex;gap:0;margin-top:8px;border-top:1px solid rgba(255,255,255,.25)}
+.stat{flex:1;padding:20px 4px 0;border-right:1px solid rgba(255,255,255,.25)}
+.stat:last-child{border-right:none}
+.stat b{display:block;font-family:var(--display);font-size:34px}
+.stat span{font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:#c9d3c6}
+.speclist{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:8px;font-size:14.5px}
+.speclist li{display:flex;gap:10px}
+.speclist li::before{content:"—";color:var(--accent-2)}
+@media (max-width:800px){ .flip-grid{grid-template-columns:1fr} .stage3d{width:100%;max-width:320px;margin:0 auto} }
 
-/* ---------- DEBORAH: surveyor's certificate ---------- */
-.cert{max-width:760px;margin:0 auto;position:relative}
-.cert__head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;border-bottom:2px solid var(--ink);padding-bottom:18px}
-.cert__head h2{font-family:var(--display);font-weight:700;font-size:clamp(26px,3.6vw,36px);color:var(--ink)}
-.cert__head .role{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--stamp);margin-top:6px}
-.cert__no{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:right}
-.cert__body{margin-top:22px;color:var(--paper-text);font-size:16px;max-width:56ch}
-.cert__fields{margin-top:28px;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
-.cfield{padding:18px 20px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
-.cfield b{display:block;font-family:var(--display);font-weight:700;font-size:30px;color:var(--ink)}
-.cfield span{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
-.cert__sig{margin-top:28px;display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
-.cert__sig .name{font-family:var(--display);font-style:italic;font-size:24px;border-bottom:1px solid var(--ink);padding-bottom:6px}
-@media (max-width:640px){ .cert__fields{grid-template-columns:1fr 1fr} }
+/* ---------- listings: take-one flyer box ---------- */
+.flyerbox{margin-top:52px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:30px;align-items:center;border:2px solid var(--ink);padding:34px;background:var(--face)}
+.flyerbox__icon{width:74px;flex:none}
+.flyerbox h3{font-family:var(--display);font-weight:400;font-size:24px;text-transform:uppercase}
+.flyerbox p{color:var(--muted);margin-top:8px;font-size:15px;max-width:52ch}
+.flyerbox .btn{margin-top:16px}
+@media (max-width:640px){ .flyerbox{grid-template-columns:1fr;text-align:center;justify-items:center} }
 
-/* ---------- SPECIALTIES: recorded easements ---------- */
-.easements{margin-top:54px;display:grid;gap:0}
-.easement{display:grid;grid-template-columns:64px minmax(0,1fr);gap:22px;padding:26px 0;border-top:1px solid var(--line)}
-.easements .easement:last-child{border-bottom:1px solid var(--line)}
-.easement__tag{font-family:var(--mono);font-weight:700;font-size:13px;color:var(--stamp);border:1.5px solid var(--stamp);width:40px;height:40px;display:flex;align-items:center;justify-content:center}
-.easement h3{font-family:var(--display);font-weight:600;font-size:22px;color:var(--ink)}
-.easement p{color:var(--muted);margin-top:6px;font-size:15px;max-width:48ch}
+/* ---------- final CTA ---------- */
+.cta{background:var(--ink);color:var(--face);text-align:center}
+.cta .eyebrow{color:var(--accent-2)}
+.cta h2{color:var(--face);margin-left:auto;margin-right:auto}
+.cta .phonebtn{margin-top:30px;display:inline-flex;align-items:center;gap:16px;padding:22px 40px;background:var(--accent);color:var(--face);font-family:var(--display);font-size:clamp(22px,4vw,34px);animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(200,69,46,.55)}50%{box-shadow:0 0 0 16px rgba(200,69,46,0)}}
+.cta .addr{margin-top:22px;font-family:var(--mono);font-size:12.5px;color:#a8a99f}
 
-/* ---------- TERRITORY ---------- */
-.territory .h2{color:var(--parchment)}
-.territory .lede{color:#c9d3e0}
-.territory .tag{color:var(--stamp-2)}
-.territory .panel{background:rgba(22,40,63,.88);border-color:#3b5476}
-.terrscore{display:flex;gap:44px;margin-top:34px;flex-wrap:wrap}
-.terrscore b{display:block;font-family:var(--display);font-weight:700;font-size:52px;color:var(--parchment)}
-.terrscore span{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#8ba3c2}
-.terrnote{margin-top:24px;font-family:var(--mono);font-size:12px;color:#8ba3c2;letter-spacing:.02em}
-
-/* ---------- RECORDS (listings — honest redirect, ledger style) ---------- */
-.ledger{max-width:760px;margin:54px auto 0}
-.ledger__row{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:20px 0;border-bottom:1px dashed var(--line)}
-.ledger__row:first-child{border-top:1px dashed var(--line)}
-.ledger__row .k{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.04em}
-.ledger__row .v{font-family:var(--display);font-size:17px;color:var(--ink);text-align:right}
-.recorded{display:inline-flex;align-items:center;gap:8px;margin-top:24px;padding:8px 14px;border:2px solid var(--stamp);color:var(--stamp);font-family:var(--mono);font-weight:700;font-size:11px;letter-spacing:.12em;transform:rotate(-2deg)}
-
-/* ---------- CONTACT ---------- */
-.contact-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.8fr);gap:0}
-.contact-grid .panel:first-child{border-right:none}
-.crow{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15px;flex-wrap:wrap}
-.crow:first-child{border-top:1px solid var(--line);margin-top:20px}
-.crow span:first-child{font-family:var(--mono);font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
-.contact-grid .coords{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:10px}
-.contact-grid .coords .mono{font-size:12px;color:var(--muted);letter-spacing:.04em}
-@media (max-width:760px){ .contact-grid{grid-template-columns:1fr} .contact-grid .panel:first-child{border-right:1.5px solid var(--ink);border-bottom:none} }
-
-.footer{position:relative;z-index:2;padding:30px 0 40px;text-align:center;font-family:var(--mono);font-size:11.5px;color:#8ba3c2}
+.footer{padding:26px 0;text-align:center;font-family:var(--mono);font-size:11px;color:var(--muted);background:var(--sky)}
 
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.001s!important;animation-iteration-count:1!important;transition-duration:.001s!important}
-  .reveal{opacity:1;transform:none}
-  #plat{transform:none!important}
+  .settle{opacity:1;transform:none}
 }
 </style>
 </head>
 <body>
 
-<!-- ================= THE PLAT: one continuous zoom, the spine of the whole site ================= -->
-<div id="platWrap" aria-hidden="true">
-  <div id="plat">
-    <svg viewBox="0 0 2000 1500">
-      <rect width="2000" height="1500" fill="#16283f"/>
-      <g stroke="#2c4b74" stroke-width="1" opacity=".5">
-        <path d="M0 0h2000M0 1500h2000"/>
-      </g>
-      <!-- compass rose, top corner of the document -->
-      <g transform="translate(1780,140)" stroke="#3b5476" fill="none">
-        <circle r="70" stroke-width="1"/>
-        <circle r="46" stroke-width="1"/>
-        <path d="M0 -70V70M-70 0H70" stroke-width="1"/>
-        <path d="M0 -80 L10 -60 L0 -66 L-10 -60Z" fill="#8ba3c2"/>
-        <text y="-88" text-anchor="middle" font-family="IBM Plex Mono" font-size="14" fill="#8ba3c2">N</text>
-      </g>
-      <text x="120" y="90" font-family="IBM Plex Mono" font-size="15" letter-spacing="2" fill="#5b7396">PLAT OF SURVEY — TEXAS PANHANDLE — 12 SECTIONS RECORDED</text>
+<!-- ================= HERO: the sign ================= -->
+<section class="hero" id="home" data-sec="home">
+  <div class="hero__intro">
+    <span class="eyebrow">Amarillo, Texas</span>
+    <p>Absolute Real Estate — the sign you'd actually see in the yard, working as the whole website. Tap a rider below.</p>
+  </div>
+  <div class="sign sign-sway" id="heroSign">
+    <svg viewBox="0 0 460 380" aria-hidden="false" role="img">
+      <!-- posts -->
+      <rect x="70" y="150" width="14" height="210" fill="var(--post)"/>
+      <rect x="376" y="150" width="14" height="210" fill="var(--post)"/>
+      <!-- main plank -->
+      <rect x="20" y="20" width="420" height="150" fill="var(--post)"/>
+      <rect x="34" y="34" width="392" height="122" fill="var(--face)" stroke="var(--post)" stroke-width="2"/>
+      <text x="230" y="80" text-anchor="middle" font-family="Archivo Black" font-size="34" fill="var(--ink)">ABSOLUTE</text>
+      <text x="230" y="116" text-anchor="middle" font-family="Archivo Black" font-size="22" fill="var(--post)" letter-spacing="2">REAL ESTATE</text>
+      <text x="230" y="144" text-anchor="middle" font-family="Space Mono" font-weight="700" font-size="14" fill="var(--accent)">DEBORAH KELLY · BROKER-OWNER</text>
 
-      <!-- 12 parcels, 4x3 grid -->
-      <g id="parcels" transform="translate(150,220)">
-        <!-- generated tick/bearing texture -->
-        <g stroke="#2c4b74" stroke-width="1" opacity=".55" font-family="IBM Plex Mono" font-size="11" fill="#5b7396">
-          <text x="0" y="-30">N 00°00' — BASE LINE</text>
-          <text x="0" y="1080">MERIDIAN RECORDED — VOL. 12</text>
-        </g>
-        <!-- row/col template applied 12x via explicit rects for reliability -->
-        <g id="parcelGrid"></g>
+      <!-- hanging riders (nav) -->
+      <g class="rider" data-target="deborah">
+        <line x1="90" y1="170" x2="90" y2="190" stroke="var(--post)" stroke-width="2"/>
+        <line x1="150" y1="170" x2="150" y2="190" stroke="var(--post)" stroke-width="2"/>
+        <rect x="70" y="188" width="100" height="42" fill="var(--face)" stroke="var(--post)" stroke-width="2"/>
+        <text x="120" y="214" text-anchor="middle" font-size="15" fill="var(--ink)">27 YEARS</text>
+      </g>
+      <g class="rider" data-target="territory">
+        <line x1="230" y1="170" x2="230" y2="196" stroke="var(--post)" stroke-width="2"/>
+        <line x1="290" y1="170" x2="290" y2="196" stroke="var(--post)" stroke-width="2"/>
+        <rect x="200" y="194" width="120" height="42" fill="var(--face)" stroke="var(--post)" stroke-width="2"/>
+        <text x="260" y="220" text-anchor="middle" font-size="15" fill="var(--ink)">12 COUNTIES</text>
+      </g>
+      <g class="rider" data-target="contact">
+        <line x1="350" y1="170" x2="350" y2="188" stroke="var(--post)" stroke-width="2"/>
+        <line x1="400" y1="170" x2="400" y2="188" stroke="var(--post)" stroke-width="2"/>
+        <rect x="335" y="186" width="90" height="42" fill="var(--accent)" stroke="var(--post)" stroke-width="2"/>
+        <text x="380" y="212" text-anchor="middle" font-size="13.5" fill="var(--face)">CALL NOW</text>
       </g>
     </svg>
   </div>
-</div>
-<div class="veil"></div>
+  <div class="hero__scroll"><span>Scroll</span><i></i></div>
+</section>
 
-<!-- ================= persistent UI ================= -->
+<div class="dock" id="dock">
+  <button class="dock__sign" id="dockToggle" aria-label="Open navigation" aria-expanded="false">
+    <svg viewBox="0 0 100 90"><rect x="4" y="6" width="92" height="42" fill="#2f4a3c"/><rect x="12" y="14" width="76" height="26" fill="#fbf7ee"/><rect x="46" y="48" width="8" height="34" fill="#2f4a3c"/></svg>
+  </button>
+  <ul class="dock__list" id="dockList">
+    <li><a href="#home" data-sec="home">Home</a></li>
+    <li><a href="#specialties" data-sec="specialties">Specialties</a></li>
+    <li><a href="#deborah" data-sec="deborah">Deborah</a></li>
+    <li><a href="#territory" data-sec="territory">Territory</a></li>
+    <li><a href="#listings" data-sec="listings">Listings</a></li>
+    <li><a href="#contact" data-sec="contact">Contact</a></li>
+  </ul>
+</div>
 <a class="callchip" href="tel:+18063590468">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.9 2.1z"/></svg>
-  <span>(806) 359-0468</span>
+  (806) 359-0468
 </a>
-
-<div class="field" id="field">
-  <button class="field__toggle" id="fieldToggle" aria-label="Open section menu" aria-expanded="false">
-    <svg viewBox="0 0 24 24" fill="none" stroke="#1f3a5f" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/><path d="M12 4l1.6 3.4L17 9l-3.4 1.6L12 14l-1.6-3.4L7 9l3.4-1.6z" fill="#a13d2e" stroke="none"/></svg>
-  </button>
-  <div class="field__card">
-    <div class="compass">
-      <svg viewBox="0 0 60 60">
-        <circle cx="30" cy="30" r="27" fill="none" stroke="#1f3a5f" stroke-width="1.5"/>
-        <circle cx="30" cy="30" r="27" fill="none" stroke="#1f3a5f" stroke-width="1" opacity=".4" stroke-dasharray="1 6"/>
-        <g class="compass__needle" id="needle">
-          <path d="M30 8 L35 30 L30 26 L25 30 Z" fill="#a13d2e"/>
-          <path d="M30 52 L25 30 L30 34 L35 30 Z" fill="#1f3a5f"/>
-        </g>
-        <circle cx="30" cy="30" r="3" fill="#1f3a5f"/>
-      </svg>
-    </div>
-    <ul class="field__list" id="fieldList">
-      <li><a href="#open" data-sec="open">Open</a></li>
-      <li><a href="#deborah" data-sec="deborah">Deborah Kelly</a></li>
-      <li><a href="#specialties" data-sec="specialties">Specialties</a></li>
-      <li><a href="#territory" data-sec="territory">Territory</a></li>
-      <li><a href="#records" data-sec="records">Records</a></li>
-      <li><a href="#contact" data-sec="contact">Contact</a></li>
-    </ul>
-  </div>
-</div>
 
 <main>
 
-<!-- ================= OPEN ================= -->
-<section class="open sec" id="open" data-sec="open">
-  <div class="scrolltip"><div class="wrap">Scroll to survey the territory ↓</div></div>
-  <div class="wrap">
-    <div class="panel reveal in">
-      <div class="stampmark">
-        <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="none" stroke="#a13d2e" stroke-width="2.4"/><circle cx="50" cy="50" r="36" fill="none" stroke="#a13d2e" stroke-width="1"/><text x="50" y="40" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#a13d2e" letter-spacing="1">VERIFIED</text><text x="50" y="58" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#a13d2e" letter-spacing="1">RECORD</text></svg>
-      </div>
-      <span class="tag">Absolute Real Estate — Amarillo, TX</span>
-      <h1>She's surveyed this <em style="font-style:italic;color:var(--stamp)">whole territory.</em></h1>
-      <p class="lede">Deborah Kelly, Broker-Owner — 27 years buying, listing, and handling foreclosure sales across the Texas Panhandle, from an office on Hampton Drive.</p>
-      <div class="cta">
-        <a class="btn btn--fill" href="tel:+18063590468">Call (806) 359-0468</a>
-        <a class="btn btn--line" href="#territory">See the territory</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= DEBORAH: surveyor's certificate ================= -->
-<section class="sec" id="deborah" data-sec="deborah">
-  <div class="wrap">
-    <div class="panel cert reveal">
-      <div class="cert__head">
-        <div>
-          <span class="tag">Certificate of record</span>
-          <h2>Deborah Kelly</h2>
-          <div class="role">Broker-Owner · Absolute Real Estate</div>
-        </div>
-        <div class="cert__no">FILE NO.<br>AARTX·KED</div>
-      </div>
-      <p class="cert__body">Broker-owner of Absolute Real Estate, based at 6002 Hampton Drive in Amarillo. Her public agent profile lists 27 years of experience and service across 12 counties of the Texas Panhandle — verified here, not exaggerated.</p>
-      <div class="cert__fields">
-        <div class="cfield"><b>27</b><span>Years of experience</span></div>
-        <div class="cfield"><b>12</b><span>Counties served</span></div>
-        <div class="cfield"><b>3</b><span>Recorded specialties</span></div>
-      </div>
-      <div class="cert__sig">
-        <div><div class="name">D. Kelly</div><div class="mono" style="font-size:11px;color:var(--muted);margin-top:6px">BROKER-OWNER, ON FILE</div></div>
-        <a class="btn btn--fill" href="tel:+18064333277">Call Deborah — (806) 433-3277</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= SPECIALTIES: recorded easements ================= -->
+<!-- ================= SPECIALTIES: the rider rack ================= -->
 <section class="sec" id="specialties" data-sec="specialties">
   <div class="wrap">
-    <div class="reveal">
-      <span class="tag">Recorded specialties</span>
-      <h2 class="h2" style="color:var(--parchment)">What's on file, nothing invented.</h2>
-      <p class="lede" style="color:#c9d3e0">Three areas from Deborah Kelly's verified public profile — no packages built on top of them.</p>
+    <div class="sec-head settle">
+      <span class="eyebrow">What's on the sign, verified</span>
+      <h2 class="h2">Three riders. Nothing extra.</h2>
+      <p class="lede">No invented packages — these are the three specialties from Deborah Kelly's public agent profile. Drag to see all three.</p>
     </div>
-    <div class="panel easements reveal">
-      <article class="easement"><span class="easement__tag">A</span><div><h3>Buyer's Agent</h3><p>Representing buyers through the search, the offer, and the closing table.</p></div></article>
-      <article class="easement"><span class="easement__tag">B</span><div><h3>Listing Agent</h3><p>Bringing a property to market and representing the seller's side of the sale.</p></div></article>
-      <article class="easement"><span class="easement__tag">C</span><div><h3>Foreclosure &amp; REO</h3><p>Experience with bank-owned and foreclosure property transactions.</p></div></article>
+    <div class="rack settle">
+      <article class="placard"><span class="letter">01</span><h3>Buyer's Agent</h3><p>Representing buyers through the search, the offer, and the closing table.</p></article>
+      <article class="placard"><span class="letter">02</span><h3>Listing Agent</h3><p>Bringing a property to market and representing the seller's side of the sale.</p></article>
+      <article class="placard"><span class="letter">03</span><h3>Foreclosure &amp; REO</h3><p>Experience with bank-owned and foreclosure property transactions.</p></article>
+    </div>
+    <div class="rackhint settle">← drag →</div>
+  </div>
+</section>
+
+<!-- ================= DEBORAH: flip the sign around ================= -->
+<section class="sec flipzone" id="deborah" data-sec="deborah">
+  <div class="wrap">
+    <div class="flip-grid">
+      <div class="stage3d settle">
+        <div class="card3d" id="card3d">
+          <div class="face face--front">
+            <svg viewBox="0 0 200 200" aria-hidden="true"><rect x="10" y="10" width="180" height="180" fill="none" stroke="#fbf7ee" stroke-width="3"/><path d="M60 100h80M100 60v80" stroke="#fbf7ee" stroke-width="3"/></svg>
+          </div>
+          <div class="face face--back">
+            <span class="screws s1"></span><span class="screws s2"></span><span class="screws s3"></span><span class="screws s4"></span>
+            <span class="tag">Who's behind the sign</span>
+            <h3>Deborah Kelly</h3>
+            <div class="role">BROKER-OWNER · ABSOLUTE REAL ESTATE</div>
+          </div>
+        </div>
+      </div>
+      <div class="settle">
+        <span class="eyebrow">Every sign has a name on it</span>
+        <h2 class="h2">This one's Deborah Kelly's.</h2>
+        <p class="lede">Broker-owner of Absolute Real Estate, based at 6002 Hampton Drive in Amarillo. Her public profile lists 27 years of experience and service across 12 counties of the Texas Panhandle.</p>
+        <div class="stats">
+          <div class="stat"><b>27</b><span>Years experience</span></div>
+          <div class="stat"><b>12</b><span>Counties served</span></div>
+          <div class="stat"><b>3</b><span>Specialties</span></div>
+        </div>
+        <ul class="speclist">
+          <li>Buyer's Agent</li>
+          <li>Listing Agent</li>
+          <li>Foreclosure / REO properties</li>
+        </ul>
+        <div style="margin-top:26px"><a class="btn btn--fill" href="tel:+18064333277">Call Deborah — (806) 433-3277</a></div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ================= TERRITORY ================= -->
-<section class="sec territory" id="territory" data-sec="territory">
+<section class="sec" id="territory" data-sec="territory">
   <div class="wrap">
-    <div class="panel reveal">
-      <span class="tag">Service area</span>
-      <h2 class="h2">Twelve sections. One surveyor.</h2>
-      <p class="lede">The plat behind this page is drawn from Absolute Real Estate's verified service area — twelve Texas Panhandle counties, worked from a single Amarillo office. Watch the grid behind the page as you've scrolled: that's the territory, not a stock map.</p>
-      <div class="terrscore">
-        <div><b>12</b><span>Counties on record</span></div>
-        <div><b>1</b><span>Amarillo office</span></div>
-        <div><b>27</b><span>Years surveying it</span></div>
-      </div>
-      <div class="terrnote">— county names are not published here; only the verified count is shown.</div>
+    <div class="sec-head settle">
+      <span class="eyebrow">Service area</span>
+      <h2 class="h2">Twelve counties. One yard sign at a time.</h2>
+      <p class="lede">Absolute Real Estate's verified service area covers twelve counties across the Texas Panhandle, worked from a single Amarillo office — one sign, one address, one broker who's put in the miles.</p>
+    </div>
+    <div class="settle" style="margin-top:44px;display:flex;gap:6px;flex-wrap:wrap">
+      <!-- 12 small "post" flags, planted -->
+      <div id="flags" style="display:flex;gap:6px;flex-wrap:wrap"></div>
     </div>
   </div>
 </section>
 
-<!-- ================= RECORDS (listings, honest redirect) ================= -->
-<section class="sec" id="records" data-sec="records">
+<!-- ================= LISTINGS: take-one flyer box ================= -->
+<section class="sec" id="listings" data-sec="listings">
   <div class="wrap">
-    <div class="panel reveal">
-      <span class="tag">Current inventory</span>
-      <h2 class="h2">Listings change daily. This page can't.</h2>
-      <p class="lede">Rather than print property facts that could be wrong by the time you read them, here's the actual record — and a direct line if you'd rather just ask.</p>
-      <div class="ledger">
-        <div class="ledger__row"><span class="k">SOURCE</span><span class="v">HAR.com — Deborah Kelly, Agent</span></div>
-        <div class="ledger__row"><span class="k">STATUS</span><span class="v">Updates as the market moves</span></div>
-        <div class="ledger__row"><span class="k">ACTION</span><span class="v"><a class="btn btn--fill" href="https://www.har.com/realestatepro/forsale-by-agent/aartx-ked" target="_blank" rel="noopener">View current listings</a></span></div>
+    <div class="sec-head settle">
+      <span class="eyebrow">Current inventory</span>
+      <h2 class="h2">Take one. It's more current than this page.</h2>
+      <p class="lede">Listings change daily — rather than print property facts that could be stale, here's the actual source, and a direct line if you'd rather just ask.</p>
+    </div>
+    <div class="flyerbox settle">
+      <svg class="flyerbox__icon" viewBox="0 0 80 90" aria-hidden="true"><rect x="4" y="20" width="72" height="60" fill="#fbf7ee" stroke="#1c1f1c" stroke-width="2"/><rect x="14" y="30" width="52" height="4" fill="#1c1f1c" opacity=".5"/><rect x="14" y="40" width="52" height="4" fill="#1c1f1c" opacity=".3"/><rect x="14" y="50" width="30" height="4" fill="#1c1f1c" opacity=".3"/><rect x="0" y="8" width="80" height="14" fill="#2f4a3c"/></svg>
+      <div>
+        <h3>View Deborah Kelly's current listings</h3>
+        <p>Her public HAR.com profile lists active properties for sale, updated as the market moves.</p>
+        <a class="btn btn--fill" href="https://www.har.com/realestatepro/forsale-by-agent/aartx-ked" target="_blank" rel="noopener">Take one — view listings</a>
       </div>
-      <span class="recorded">Recorded — verified source only</span>
     </div>
   </div>
 </section>
 
-<!-- ================= CONTACT ================= -->
-<section class="sec" id="contact" data-sec="contact">
+<!-- ================= CONTACT / FINAL CTA ================= -->
+<section class="sec cta" id="contact" data-sec="contact">
   <div class="wrap">
-    <div class="contact-grid reveal">
-      <div class="panel">
-        <span class="tag">Visit or call</span>
-        <h2 class="h2">6002 Hampton Drive.</h2>
-        <div class="crow"><span>Address</span><span>6002 Hampton Drive, Amarillo, TX 79109</span></div>
-        <div class="crow"><span>Office</span><a href="tel:+18063590468">(806) 359-0468</a></div>
-        <div class="crow"><span>Deborah, direct</span><a href="tel:+18064333277">(806) 433-3277</a></div>
-        <div class="crow"><span>Broker</span><span>Deborah Kelly, Broker-Owner</span></div>
-        <div class="cta">
-          <a class="btn btn--fill" href="tel:+18063590468">Call (806) 359-0468</a>
-          <a class="btn btn--line" href="https://www.google.com/maps/dir/?api=1&destination=Absolute+Real+Estate%2C+6002+Hampton+Drive%2C+Amarillo%2C+TX+79109" target="_blank" rel="noopener">Get directions</a>
-        </div>
-      </div>
-      <div class="panel coords">
-        <svg viewBox="0 0 120 120" width="90" height="90" aria-hidden="true"><circle cx="60" cy="60" r="52" fill="none" stroke="#1f3a5f" stroke-width="1.4"/><path d="M60 92c-16-18-24-28-24-40a24 24 0 0 1 48 0c0 12-8 22-24 40z" fill="none" stroke="#a13d2e" stroke-width="2.4"/><circle cx="60" cy="52" r="7" fill="#a13d2e"/></svg>
-        <span class="mono">35.19° N, 101.90° W<br>AMARILLO, TEXAS</span>
-      </div>
-    </div>
+    <span class="eyebrow settle">Ready when you are</span>
+    <h2 class="h2 settle">Call the number on the sign.</h2>
+    <a class="phonebtn settle" href="tel:+18063590468">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.9 2.1z"/></svg>
+      (806) 359-0468
+    </a>
+    <div class="addr settle">6002 Hampton Drive, Amarillo, TX 79109 · Deborah direct (806) 433-3277</div>
+    <div class="settle" style="margin-top:22px"><a class="btn btn--line" style="border-color:var(--face)" href="https://www.google.com/maps/dir/?api=1&destination=Absolute+Real+Estate%2C+6002+Hampton+Drive%2C+Amarillo%2C+TX+79109" target="_blank" rel="noopener">Get directions</a></div>
   </div>
 </section>
 
@@ -354,97 +316,49 @@ main{position:relative;z-index:2}
   document.getElementById('year').textContent = new Date().getFullYear();
   var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ---------- build the 12-parcel grid + mark the home parcel ---------- */
-  var g = document.getElementById('parcelGrid');
-  var cols = 4, rows = 3, cw = 400, ch = 340, gap = 26;
-  var parcels = [];
-  for (var r = 0; r < rows; r++){
-    for (var c = 0; c < cols; c++){
-      var x = c * (cw + gap), y = r * (ch + gap);
-      var rect = document.createElementNS('http://www.w3.org/2000/svg','rect');
-      rect.setAttribute('x', x); rect.setAttribute('y', y);
-      rect.setAttribute('width', cw); rect.setAttribute('height', ch);
-      rect.setAttribute('class', 'parcel');
-      var idx = r * cols + c;
-      if (idx === 0){ rect.classList.add('home'); }
-      g.appendChild(rect);
-      var label = document.createElementNS('http://www.w3.org/2000/svg','text');
-      label.setAttribute('x', x + 14); label.setAttribute('y', y + 26);
-      label.setAttribute('font-family', 'IBM Plex Mono'); label.setAttribute('font-size', '13'); label.setAttribute('fill', '#5b7396');
-      label.textContent = 'SEC. ' + (idx + 1);
-      g.appendChild(label);
-      parcels.push(rect);
-    }
+  /* ---------- 12 territory flags ---------- */
+  var flags = document.getElementById('flags');
+  for (var i = 0; i < 12; i++){
+    var f = document.createElement('div');
+    f.style.cssText = 'width:26px;height:40px;position:relative';
+    f.innerHTML = '<svg viewBox="0 0 26 40" width="26" height="40"><rect x="12" y="10" width="2" height="30" fill="#2f4a3c"/><path d="M14 10 L26 15 L14 20 Z" fill="#c8452e"/></svg>';
+    f.style.opacity = '0'; f.style.transform = 'translateY(10px)'; f.style.transition = 'opacity .5s ' + (i*.05) + 's, transform .5s ' + (i*.05) + 's';
+    flags.appendChild(f);
   }
-  /* home marker on parcel 0 */
-  var home = document.createElementNS('http://www.w3.org/2000/svg','g');
-  home.setAttribute('transform', 'translate(' + (cw * 0.5) + ',' + (ch * 0.55) + ')');
-  home.innerHTML = '<path d="M0 36c-13-15-19-23-19-32a19 19 0 0 1 38 0c0 9-6 17-19 32z" fill="#a13d2e" stroke="#f1e8d4" stroke-width="2"/><circle cy="4" r="6" fill="#f1e8d4"/>';
-  g.appendChild(home);
+  new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting){ [].forEach.call(flags.children, function(f){ f.style.opacity = 1; f.style.transform = 'none'; }); } }); }, {threshold:.4}).observe(flags);
 
-  /* ---------- the zoom: one continuous transform tied to scroll ---------- */
-  var plat = document.getElementById('plat');
-  var docEl = document.documentElement;
-  var Z_START = 7.5, Z_END = 1.05;
-  var ORIGIN_X = '30%', ORIGIN_Y = '34%'; /* screen-space anchor = the home parcel's on-screen position at full zoom */
-  plat.style.transformOrigin = ORIGIN_X + ' ' + ORIGIN_Y;
-
-  function scrollProgress(){
-    var max = docEl.scrollHeight - innerHeight;
-    return max > 0 ? Math.max(0, Math.min(1, scrollY / max)) : 0;
-  }
-  function ease(t){ return 1 - Math.pow(1 - t, 2); }
-
-  var ticking = false;
-  function render(){
-    var t = ease(scrollProgress());
-    var z = Z_START + (Z_END - Z_START) * t;
-    if (!reduce) plat.style.transform = 'translate(0,0) scale(' + z + ')';
-    ticking = false;
-  }
-  addEventListener('scroll', function(){ if (!ticking){ ticking = true; requestAnimationFrame(render); } }, {passive:true});
-  addEventListener('resize', render);
-  render();
-
-  /* ---------- light up parcels while the Territory section is in view ---------- */
-  var territory = document.getElementById('territory');
-  new IntersectionObserver(function(es){
-    es.forEach(function(e){
-      if (e.isIntersecting){
-        parcels.forEach(function(p, i){ setTimeout(function(){ p.classList.add('lit'); }, i * 90); });
-      } else if (e.boundingClientRect.top > 0) {
-        parcels.forEach(function(p){ p.classList.remove('lit'); });
-      }
-    });
-  }, {threshold:.35}).observe(territory);
-
-  /* ---------- reveals ---------- */
+  /* ---------- settle reveals ---------- */
   var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting) e.target.classList.add('in'); }); }, {threshold:.18, rootMargin:'0px 0px -6% 0px'});
-  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  document.querySelectorAll('.settle').forEach(function(el){ io.observe(el); });
 
-  /* ---------- field / compass nav: current-section detection + needle rotation ---------- */
-  var sections = [].slice.call(document.querySelectorAll('[data-sec]')).filter(function(s){ return s.tagName === 'SECTION'; });
-  var links = [].slice.call(document.querySelectorAll('.field__list a'));
-  var needle = document.getElementById('needle');
-  var ANGLES = {open:0, deborah:60, specialties:120, territory:180, records:240, contact:300};
+  /* ---------- sign flip ---------- */
+  var card = document.getElementById('card3d');
+  new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting) card.classList.add('flipped'); }); }, {threshold:.5}).observe(document.getElementById('deborah'));
 
-  function updateNav(){
-    var y = scrollY + innerHeight * 0.4;
-    var current = sections[0];
-    sections.forEach(function(s){ if (s.offsetTop <= y) current = s; });
-    var name = current.dataset.sec;
-    links.forEach(function(a){ a.classList.toggle('lit', a.dataset.sec === name); });
-    needle.style.transform = 'rotate(' + (ANGLES[name] || 0) + 'deg)';
-  }
-  addEventListener('scroll', function(){ requestAnimationFrame(updateNav); }, {passive:true});
-  updateNav();
-
-  var fieldToggle = document.getElementById('fieldToggle'), field = document.getElementById('field');
-  fieldToggle.addEventListener('click', function(){
-    var open = field.classList.toggle('open');
-    fieldToggle.setAttribute('aria-expanded', open);
+  /* ---------- hero rider clicks (nav) ---------- */
+  document.querySelectorAll('.rider').forEach(function(r){
+    r.addEventListener('click', function(){
+      var t = document.getElementById(r.dataset.target);
+      if (t) t.scrollIntoView({behavior: reduce ? 'auto' : 'smooth'});
+    });
   });
-  document.querySelectorAll('.field__list a').forEach(function(a){ a.addEventListener('click', function(){ field.classList.remove('open'); }); });
+
+  /* ---------- docked mini-sign nav ---------- */
+  var dock = document.getElementById('dock'), dockToggle = document.getElementById('dockToggle'), hero = document.getElementById('home');
+  var links = [].slice.call(document.querySelectorAll('.dock__list a'));
+  var sections = [].slice.call(document.querySelectorAll('[data-sec]')).filter(function(s){ return s.tagName === 'SECTION'; });
+
+  function onScroll(){
+    dock.classList.toggle('show', scrollY > hero.offsetHeight * 0.8);
+    var y = scrollY + innerHeight * 0.4, current = sections[0];
+    sections.forEach(function(s){ if (s.offsetTop <= y) current = s; });
+    links.forEach(function(a){ a.classList.toggle('lit', a.dataset.sec === current.dataset.sec); });
+  }
+  addEventListener('scroll', function(){ requestAnimationFrame(onScroll); }, {passive:true});
+  onScroll();
+
+  dockToggle.addEventListener('click', function(){ var open = dock.classList.toggle('open'); dockToggle.setAttribute('aria-expanded', open); });
+  links.forEach(function(a){ a.addEventListener('click', function(){ dock.classList.remove('open'); }); });
 })();
 </script>
 </body>
