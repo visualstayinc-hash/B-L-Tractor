@@ -111,7 +111,9 @@ section{position:relative;padding:150px 0}
 .contact-direct a{align-self:flex-start;max-width:100%;color:var(--ink);border-bottom:1px solid var(--line)}
 .contact-direct__phone{color:var(--muted)!important;border-bottom-color:var(--line-soft)!important}
 .contact-direct__phone:hover{color:var(--ink)!important}
-.contact-direct__addr{color:var(--muted)}
+.contact-direct__addr{color:var(--muted)!important;border-bottom:1px solid transparent!important;transition:border-color .3s,color .3s}
+.contact-direct__addr:hover,.contact-direct__addr:focus{color:var(--ink)!important;border-bottom-color:var(--line-soft)!important}
+.contact-submit-cap{margin-top:12px;font-family:var(--mono);font-size:11.5px;color:var(--muted)}
 
 footer{padding:34px 0;text-align:center;font-family:var(--mono);font-size:10.5px;color:var(--muted-onDark);background:var(--ink)}
 
@@ -321,10 +323,11 @@ footer{padding:34px 0;text-align:center;font-family:var(--mono);font-size:10.5px
         <div class="contact-field"><label for="cf-email">Email</label><input id="cf-email" type="email" required autocomplete="email"></div>
         <div class="contact-field"><label for="cf-msg">What are you starting?</label><textarea id="cf-msg" rows="3" required></textarea></div>
         <a class="btn btn--primary contact-submit" id="cf-submit" href="mailto:clear.line.studio.creative@gmail.com" aria-label="Email Clearline Studio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Send</a>
+        <div class="contact-submit-cap">Opens your email client — nothing is sent from this page.</div>
         <div class="contact-direct">
           <a href="mailto:clear.line.studio.creative@gmail.com" aria-label="Email Clearline Studio">clear.line.studio.creative@gmail.com</a>
           <a class="contact-direct__phone" href="tel:+18067319998" aria-label="Call Clearline Studio">806-731-9998</a>
-          <span class="contact-direct__addr">3312 Ault Dr</span>
+          <a class="contact-direct__addr" href="https://www.google.com/maps/search/?api=1&query=3312+Ault+Dr%2C+Amarillo%2C+TX+79121" target="_blank" rel="noopener" aria-label="Open Clearline Studio location in Maps">3312 Ault Dr, Amarillo, TX 79121</a>
         </div>
       </form>
     </div>
