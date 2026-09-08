@@ -107,8 +107,11 @@ section{position:relative;padding:150px 0}
 .contact-field input,.contact-field textarea{width:100%;margin-top:8px;padding:10px 0;border:none;border-bottom:1px solid var(--line);background:transparent;color:var(--ink);font:inherit;font-size:16px}
 .contact-field input:focus,.contact-field textarea:focus{outline:none;border-color:var(--red)}
 .contact-submit{margin-top:34px}
-.contact-direct{margin-top:44px;padding-top:24px;border-top:1px solid var(--line-soft);font-family:var(--mono);font-size:13px;color:var(--muted);overflow-wrap:break-word}
-.contact-direct a{color:var(--ink);border-bottom:1px solid var(--line)}
+.contact-direct{margin-top:44px;padding-top:24px;border-top:1px solid var(--line-soft);display:flex;flex-direction:column;gap:10px;font-family:var(--mono);font-size:13px;color:var(--muted);overflow-wrap:break-word}
+.contact-direct a{align-self:flex-start;max-width:100%;color:var(--ink);border-bottom:1px solid var(--line)}
+.contact-direct__phone{color:var(--muted)!important;border-bottom-color:var(--line-soft)!important}
+.contact-direct__phone:hover{color:var(--ink)!important}
+.contact-direct__addr{color:var(--muted)}
 
 footer{padding:34px 0;text-align:center;font-family:var(--mono);font-size:10.5px;color:var(--muted-onDark);background:var(--ink)}
 
@@ -317,8 +320,12 @@ footer{padding:34px 0;text-align:center;font-family:var(--mono);font-size:10.5px
         <div class="contact-field"><label for="cf-name">Name</label><input id="cf-name" type="text" required autocomplete="name"></div>
         <div class="contact-field"><label for="cf-email">Email</label><input id="cf-email" type="email" required autocomplete="email"></div>
         <div class="contact-field"><label for="cf-msg">What are you starting?</label><textarea id="cf-msg" rows="3" required></textarea></div>
-        <a class="btn btn--primary contact-submit" id="cf-submit" href="mailto:studio@clearline.example"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Send</a>
-        <div class="contact-direct">studio@clearline.example — direct, no form required.</div>
+        <a class="btn btn--primary contact-submit" id="cf-submit" href="mailto:clear.line.studio.creative@gmail.com" aria-label="Email Clearline Studio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Send</a>
+        <div class="contact-direct">
+          <a href="mailto:clear.line.studio.creative@gmail.com" aria-label="Email Clearline Studio">clear.line.studio.creative@gmail.com</a>
+          <a class="contact-direct__phone" href="tel:+18067319998" aria-label="Call Clearline Studio">806-731-9998</a>
+          <span class="contact-direct__addr">3312 Ault Dr</span>
+        </div>
       </form>
     </div>
   </div>
@@ -551,6 +558,20 @@ footer{padding:34px 0;text-align:center;font-family:var(--mono);font-size:10.5px
       label.classList.add('plot__coord--on');
     });
     stage.addEventListener('pointerleave', function(){ label.classList.remove('plot__coord--on'); });
+  });
+
+  /* ---------- contact: "Send" opens the visitor's mail client with whatever
+     they actually typed pre-filled, rather than a blank compose window —
+     this doesn't pretend the form has a backend (there isn't one), it just
+     makes the existing mailto link honestly reflect the form's contents. ---------- */
+  document.getElementById('cf-submit').addEventListener('click', function(){
+    var name = document.getElementById('cf-name').value.trim();
+    var email = document.getElementById('cf-email').value.trim();
+    var msg = document.getElementById('cf-msg').value.trim();
+    if (!name && !email && !msg) return; // nothing typed — leave the plain mailto: as-is
+    var subject = 'New line from ' + (name || 'the Clearline site');
+    var body = msg + (email ? '\n\nReply to: ' + email : '');
+    this.href = 'mailto:clear.line.studio.creative@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
   });
 
   /* ---------- "start a line" draw canvas ---------- */
