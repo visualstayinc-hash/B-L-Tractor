@@ -107,13 +107,18 @@ section{position:relative;padding:150px 0}
 .contact-field input,.contact-field textarea{width:100%;margin-top:8px;padding:10px 0;border:none;border-bottom:1px solid var(--line);background:transparent;color:var(--ink);font:inherit;font-size:16px}
 .contact-field input:focus,.contact-field textarea:focus{outline:none;border-color:var(--red)}
 .contact-submit{margin-top:34px}
+.contact-submit[disabled]{opacity:.5;cursor:default;pointer-events:none}
+.cf-honeypot{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
 .contact-direct{margin-top:44px;padding-top:24px;border-top:1px solid var(--line-soft);display:flex;flex-direction:column;gap:10px;font-family:var(--mono);font-size:13px;color:var(--muted);overflow-wrap:break-word}
 .contact-direct a{align-self:flex-start;max-width:100%;color:var(--ink);border-bottom:1px solid var(--line)}
 .contact-direct__phone{color:var(--muted)!important;border-bottom-color:var(--line-soft)!important}
 .contact-direct__phone:hover{color:var(--ink)!important}
 .contact-direct__addr{color:var(--muted)!important;border-bottom:1px solid transparent!important;transition:border-color .3s,color .3s}
 .contact-direct__addr:hover,.contact-direct__addr:focus{color:var(--ink)!important;border-bottom-color:var(--line-soft)!important}
-.contact-submit-cap{margin-top:12px;font-family:var(--mono);font-size:11.5px;color:var(--muted)}
+.contact-submit-cap{margin-top:12px;font-family:var(--mono);font-size:11.5px;color:var(--muted);transition:color .3s;overflow-wrap:break-word}
+.contact-submit-cap--error{color:var(--red)}
+.contact-submit-cap--success{color:var(--ink);font-weight:500}
+.contact-submit-cap a{color:inherit;border-bottom:1px solid currentColor}
 
 footer{padding:34px 0;text-align:center;font-family:var(--mono);font-size:10.5px;color:var(--muted-onDark);background:var(--ink)}
 
@@ -318,12 +323,13 @@ footer{padding:34px 0;text-align:center;font-family:var(--mono);font-size:10.5px
         <div class="draw-canvas-wrap"><canvas id="drawCanvas" aria-label="Draw a line to begin"></canvas></div>
         <div class="draw-canvas-cap"><span>Draw here — your mark, not sent anywhere, just the first gesture.</span><button id="clearCanvas" type="button">Clear</button></div>
       </div>
-      <form id="contactForm" onsubmit="return false">
-        <div class="contact-field"><label for="cf-name">Name</label><input id="cf-name" type="text" required autocomplete="name"></div>
-        <div class="contact-field"><label for="cf-email">Email</label><input id="cf-email" type="email" required autocomplete="email"></div>
-        <div class="contact-field"><label for="cf-msg">What are you starting?</label><textarea id="cf-msg" rows="3" required></textarea></div>
-        <a class="btn btn--primary contact-submit" id="cf-submit" href="mailto:clear.line.studio.creative@gmail.com" aria-label="Email Clearline Studio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Send</a>
-        <div class="contact-submit-cap">Opens your email client — nothing is sent from this page.</div>
+      <form id="contactForm" novalidate>
+        <div class="contact-field"><label for="cf-name">Name</label><input id="cf-name" name="name" type="text" required autocomplete="name"></div>
+        <div class="contact-field"><label for="cf-email">Email</label><input id="cf-email" name="email" type="email" required autocomplete="email"></div>
+        <div class="contact-field"><label for="cf-msg">What are you starting?</label><textarea id="cf-msg" name="message" rows="3" required></textarea></div>
+        <div class="cf-honeypot" aria-hidden="true"><label for="cf-hp">Leave this field empty</label><input id="cf-hp" name="cf-hp" type="text" tabindex="-1" autocomplete="off"></div>
+        <button class="btn btn--primary contact-submit" id="cf-submit" type="submit" aria-label="Send message to Clearline Studio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span class="cf-submit-label">Send</span></button>
+        <div class="contact-submit-cap" id="formStatus" role="status" aria-live="polite">Sent straight to Clearline — no email client required.</div>
         <div class="contact-direct">
           <a href="mailto:clear.line.studio.creative@gmail.com" aria-label="Email Clearline Studio">clear.line.studio.creative@gmail.com</a>
           <a class="contact-direct__phone" href="tel:+18067319998" aria-label="Call Clearline Studio">806-731-9998</a>
@@ -563,18 +569,88 @@ footer{padding:34px 0;text-align:center;font-family:var(--mono);font-size:10.5px
     stage.addEventListener('pointerleave', function(){ label.classList.remove('plot__coord--on'); });
   });
 
-  /* ---------- contact: "Send" opens the visitor's mail client with whatever
-     they actually typed pre-filled, rather than a blank compose window —
-     this doesn't pretend the form has a backend (there isn't one), it just
-     makes the existing mailto link honestly reflect the form's contents. ---------- */
-  document.getElementById('cf-submit').addEventListener('click', function(){
+  /* ---------- contact: real submission, no mailto ----------
+     Static single-file site, no server of its own, so delivery goes through
+     Web3Forms (a no-backend form-delivery service: a POST straight from the
+     browser, tied to a destination inbox via an access key). This key is NOT
+     a traditional secret like an SMTP password or an OAuth token — Web3Forms'
+     own model is a client-side-embedded key that identifies WHERE a
+     submission is delivered, with spam filtering handled on their end. That
+     is different from, and not a substitute for, exposing something like a
+     SendGrid API key that would grant broad sending capability.
+     REQUIRED SETUP (not done by this code — cannot be done without access to
+     the destination inbox): go to https://web3forms.com, enter
+     clear.line.studio.creative@gmail.com, and paste the access key you're
+     emailed into WEB3FORMS_ACCESS_KEY below. Until that happens, this
+     honestly reports "not configured" instead of pretending to work. ---------- */
+  var WEB3FORMS_ACCESS_KEY = 'REPLACE_WITH_YOUR_WEB3FORMS_ACCESS_KEY'; // see setup note above
+  var WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
+
+  var form = document.getElementById('contactForm');
+  var statusEl = document.getElementById('formStatus');
+  var submitBtn = document.getElementById('cf-submit');
+  var submitLabel = submitBtn.querySelector('.cf-submit-label');
+  var STATUS_DEFAULT = 'Sent straight to Clearline — no email client required.';
+
+  function setStatus(text, variant){
+    statusEl.textContent = text;
+    statusEl.className = 'contact-submit-cap' + (variant ? ' contact-submit-cap--' + variant : '');
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    // honeypot: real visitors never fill a visually-hidden field. If it's
+    // filled, this is very likely a bot — drop it client-side, no network
+    // call, no fake success shown to train the bot that it worked.
+    if (document.getElementById('cf-hp').value) return;
+
+    if (!form.checkValidity()){
+      form.reportValidity();
+      return;
+    }
+
+    if (WEB3FORMS_ACCESS_KEY === 'REPLACE_WITH_YOUR_WEB3FORMS_ACCESS_KEY'){
+      setStatus('Delivery isn’t configured yet — email clear.line.studio.creative@gmail.com or call 806-731-9998 directly for now.', 'error');
+      return;
+    }
+
     var name = document.getElementById('cf-name').value.trim();
     var email = document.getElementById('cf-email').value.trim();
-    var msg = document.getElementById('cf-msg').value.trim();
-    if (!name && !email && !msg) return; // nothing typed — leave the plain mailto: as-is
-    var subject = 'New line from ' + (name || 'the Clearline site');
-    var body = msg + (email ? '\n\nReply to: ' + email : '');
-    this.href = 'mailto:clear.line.studio.creative@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    var message = document.getElementById('cf-msg').value.trim();
+
+    submitBtn.disabled = true;
+    submitLabel.textContent = 'Sending…';
+    setStatus('Sending…');
+
+    fetch(WEB3FORMS_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({
+        access_key: WEB3FORMS_ACCESS_KEY,
+        subject: 'New line from ' + name + ' — Clearline Studio website',
+        from_name: 'Clearline Studio website',
+        name: name,
+        email: email,
+        message: message
+      })
+    })
+    .then(function(r){ return r.json().then(function(data){ return { ok: r.ok, data: data }; }); })
+    .then(function(result){
+      if (result.ok && result.data && result.data.success){
+        setStatus('Message received. Clearline will reply to ' + email + '.', 'success');
+        form.reset();
+      } else {
+        throw new Error((result.data && result.data.message) || 'Delivery failed');
+      }
+    })
+    .catch(function(){
+      setStatus('That didn’t go through — try again, or email clear.line.studio.creative@gmail.com / call 806-731-9998 directly.', 'error');
+    })
+    .finally(function(){
+      submitBtn.disabled = false;
+      submitLabel.textContent = 'Send';
+    });
   });
 
   /* ---------- "start a line" draw canvas ---------- */
