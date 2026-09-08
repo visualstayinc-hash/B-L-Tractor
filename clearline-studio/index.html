@@ -106,10 +106,22 @@ section{position:relative;padding:150px 0}
 
 /* ================= CONTACT ================= */
 .contact-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.85fr);gap:70px;align-items:start}
-.draw-canvas-wrap{border:1px solid var(--line);aspect-ratio:4/3;position:relative;background:var(--paper-2)}
-#drawCanvas{width:100%;height:100%;touch-action:none;cursor:crosshair}
-.draw-canvas-cap{margin-top:14px;font-family:var(--mono);font-size:11.5px;color:var(--muted);display:flex;justify-content:space-between}
-.draw-canvas-cap button{text-decoration:underline;text-underline-offset:3px}
+@media (max-width:880px){
+  .contact-grid{grid-template-columns:1fr;gap:44px}
+  .contact-progress{max-width:none}
+}
+.contact-intro{max-width:420px}
+.contact-progress{margin-top:36px;width:100%;max-width:220px}
+.contact-progress svg{width:100%;height:4px;overflow:visible}
+.contact-progress path{fill:none;stroke:var(--ink);stroke-width:1.5;stroke-linecap:butt;transition:stroke-dashoffset .5s var(--ease)}
+.contact-methods{margin-top:8px}
+.contact-method{display:flex;flex-direction:column;gap:5px;padding:18px 0;border-top:1px solid var(--line-soft);overflow-wrap:break-word}
+.contact-method:last-child{border-bottom:1px solid var(--line-soft)}
+.contact-method b{font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);transition:color .25s}
+.contact-method span{font-size:16px;color:var(--ink);max-width:100%}
+.contact-method:hover b,.contact-method:focus b{color:var(--ink)}
+.contact-method--phone span,.contact-method--addr span{color:var(--muted);transition:color .25s}
+.contact-method--phone:hover span,.contact-method--addr:hover span,.contact-method--phone:focus span,.contact-method--addr:focus span{color:var(--ink)}
 .contact-field{margin-top:26px}
 .contact-field label{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
 .contact-field input,.contact-field textarea{width:100%;margin-top:8px;padding:10px 0;border:none;border-bottom:1px solid var(--line);background:transparent;color:var(--ink);font:inherit;font-size:16px}
@@ -117,12 +129,6 @@ section{position:relative;padding:150px 0}
 .contact-submit{margin-top:34px}
 .contact-submit[disabled]{opacity:.5;cursor:default;pointer-events:none}
 .cf-honeypot{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
-.contact-direct{margin-top:44px;padding-top:24px;border-top:1px solid var(--line-soft);display:flex;flex-direction:column;gap:10px;font-family:var(--mono);font-size:13px;color:var(--muted);overflow-wrap:break-word}
-.contact-direct a{align-self:flex-start;max-width:100%;color:var(--ink);border-bottom:1px solid var(--line)}
-.contact-direct__phone{color:var(--muted)!important;border-bottom-color:var(--line-soft)!important}
-.contact-direct__phone:hover{color:var(--ink)!important}
-.contact-direct__addr{color:var(--muted)!important;border-bottom:1px solid transparent!important;transition:border-color .3s,color .3s}
-.contact-direct__addr:hover,.contact-direct__addr:focus{color:var(--ink)!important;border-bottom-color:var(--line-soft)!important}
 .contact-submit-cap{margin-top:12px;font-family:var(--mono);font-size:11.5px;color:var(--muted);transition:color .3s;overflow-wrap:break-word}
 .contact-submit-cap--error{color:var(--ink);font-weight:600}
 .contact-submit-cap--success{color:var(--ink);font-weight:500}
@@ -334,13 +340,9 @@ footer{padding:34px 0;text-align:center;font-family:var(--mono);font-size:10.5px
 <!-- ================= CONTACT ================= -->
 <section id="contact" data-sec="contact">
   <div class="wrap">
-    <span class="eyebrow">Start a line</span>
-    <h2 class="plot__title" style="margin-top:16px;max-width:16ch">Draw the first mark.</h2>
+    <span class="eyebrow">Start a project</span>
+    <h2 class="plot__title" style="margin-top:16px;max-width:14ch">Start the project.</h2>
     <div class="contact-grid" style="margin-top:48px">
-      <div>
-        <div class="draw-canvas-wrap"><canvas id="drawCanvas" aria-label="Draw a line to begin"></canvas></div>
-        <div class="draw-canvas-cap"><span>Draw here — your mark, not sent anywhere, just the first gesture.</span><button id="clearCanvas" type="button">Clear</button></div>
-      </div>
       <form id="contactForm" novalidate>
         <div class="contact-field"><label for="cf-name">Name</label><input id="cf-name" name="name" type="text" required autocomplete="name"></div>
         <div class="contact-field"><label for="cf-email">Email</label><input id="cf-email" name="email" type="email" required autocomplete="email"></div>
@@ -348,12 +350,18 @@ footer{padding:34px 0;text-align:center;font-family:var(--mono);font-size:10.5px
         <div class="cf-honeypot" aria-hidden="true"><label for="cf-hp">Leave this field empty</label><input id="cf-hp" name="cf-hp" type="text" tabindex="-1" autocomplete="off"></div>
         <button class="btn btn--primary contact-submit" id="cf-submit" type="submit" aria-label="Send message to Clearline Studio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span class="cf-submit-label">Send</span></button>
         <div class="contact-submit-cap" id="formStatus" role="status" aria-live="polite">Sent straight to Clearline — no email client required.</div>
-        <div class="contact-direct">
-          <a href="mailto:clear.line.studio.creative@gmail.com" aria-label="Email Clearline Studio">clear.line.studio.creative@gmail.com</a>
-          <a class="contact-direct__phone" href="tel:+18067319998" aria-label="Call Clearline Studio">806-731-9998</a>
-          <a class="contact-direct__addr" href="https://www.google.com/maps/search/?api=1&query=3312+Ault+Dr%2C+Amarillo%2C+TX+79121" target="_blank" rel="noopener" aria-label="Open Clearline Studio location in Maps">3312 Ault Dr, Amarillo, TX 79121</a>
-        </div>
       </form>
+      <div class="contact-intro">
+        <p class="lede">Evan Greene, Clearline Studio — website design and development for businesses across the Texas Panhandle.</p>
+        <div class="contact-progress" aria-hidden="true">
+          <svg viewBox="0 0 200 4"><path id="contactProgressPath" d="M2 2 L198 2"/></svg>
+        </div>
+        <div class="contact-methods">
+          <a class="contact-method contact-method--email" href="mailto:clear.line.studio.creative@gmail.com" aria-label="Email Clearline Studio"><b>Email</b><span>clear.line.studio.creative@gmail.com</span></a>
+          <a class="contact-method contact-method--phone" href="tel:+18067319998" aria-label="Call Clearline Studio"><b>Call</b><span>806-731-9998</span></a>
+          <a class="contact-method contact-method--addr" href="https://www.google.com/maps/search/?api=1&query=3312+Ault+Dr%2C+Amarillo%2C+TX+79121" target="_blank" rel="noopener" aria-label="Open Clearline Studio location in Maps"><b>Visit</b><span>3312 Ault Dr, Amarillo, TX 79121</span></a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -374,7 +382,7 @@ footer{padding:34px 0;text-align:center;font-family:var(--mono);font-size:10.5px
         <circle class="spine__handle" id="spineHandle" cx="0" cy="32" r="7"/>
       </svg>
     </div>
-    <a class="spine__contact" id="spineContact" href="#contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span>Start a line</span></a>
+    <a class="spine__contact" id="spineContact" href="#contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span>Start a project</span></a>
   </div>
 </nav>
 
@@ -673,31 +681,27 @@ footer{padding:34px 0;text-align:center;font-family:var(--mono);font-size:10.5px
     });
   });
 
-  /* ---------- "start a line" draw canvas ---------- */
-  var canvas = document.getElementById('drawCanvas'), ctx = canvas.getContext('2d');
-  function sizeCanvas(){
-    var r = canvas.getBoundingClientRect();
-    canvas.width = r.width * devicePixelRatio; canvas.height = r.height * devicePixelRatio;
-    ctx.scale(devicePixelRatio, devicePixelRatio);
-    ctx.strokeStyle = getComputedStyle(document.documentElement).getPropertyValue('--ink');
-    ctx.lineWidth = 2.5; ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+  /* ---------- contact progress line: replaces the old draw canvas.
+     Resolves as the visitor completes each required field — a real
+     state change tied to form progress, not a decorative animation. ---------- */
+  var progressPath = document.getElementById('contactProgressPath');
+  if (progressPath){
+    var progressLen = progressPath.getTotalLength();
+    // dash, then a gap much longer than the path itself — a bare single-value
+    // dasharray repeats every 2x the path length, so any offset near the path's
+    // own length wraps into the *next* dash cycle and paints a stray sliver at
+    // the tail; a huge second value guarantees only one dash ever exists
+    progressPath.style.strokeDasharray = progressLen + ' 999';
+    progressPath.style.strokeDashoffset = progressLen;
+    var progressFields = [document.getElementById('cf-name'), document.getElementById('cf-email'), document.getElementById('cf-msg')];
+    function updateProgress(){
+      var filled = progressFields.filter(function(f){ return f.value.trim().length > 0; }).length;
+      progressPath.style.strokeDashoffset = progressLen * (1 - filled / progressFields.length);
+    }
+    progressFields.forEach(function(f){ f.addEventListener('input', updateProgress); });
+    form.addEventListener('reset', updateProgress);
+    updateProgress();
   }
-  sizeCanvas();
-  addEventListener('resize', function(){
-    var data = canvas.toDataURL();
-    sizeCanvas();
-    var img = new Image(); img.onload = function(){ ctx.drawImage(img, 0, 0, canvas.width/devicePixelRatio, canvas.height/devicePixelRatio); }; img.src = data;
-  });
-  var drawing = false, lx = 0, ly = 0;
-  function canvasPoint(e){
-    var r = canvas.getBoundingClientRect();
-    return { x: e.clientX - r.left, y: e.clientY - r.top };
-  }
-  canvas.addEventListener('pointerdown', function(e){ drawing = true; canvas.setPointerCapture(e.pointerId); var p = canvasPoint(e); lx = p.x; ly = p.y; ctx.beginPath(); ctx.moveTo(lx,ly); ctx.lineTo(lx+0.1,ly+0.1); ctx.stroke(); });
-  canvas.addEventListener('pointermove', function(e){ if (!drawing) return; var p = canvasPoint(e); ctx.beginPath(); ctx.moveTo(lx,ly); ctx.lineTo(p.x,p.y); ctx.stroke(); lx = p.x; ly = p.y; });
-  canvas.addEventListener('pointerup', function(){ drawing = false; });
-  canvas.addEventListener('pointercancel', function(){ drawing = false; });
-  document.getElementById('clearCanvas').addEventListener('click', function(){ ctx.clearRect(0,0,canvas.width,canvas.height); });
 })();
 </script>
 </body>

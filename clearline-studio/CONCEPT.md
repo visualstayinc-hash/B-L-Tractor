@@ -41,7 +41,7 @@ The moment before a shape exists — when there is only a line describing intent
 4. **Understanding** — opening a plot redraws the spine into that project's key diagram — a sketch-to-resolution animation that shows process, not a static screenshot.
 5. **Trust** — an process section is presented as an annotated technical cross-section (how Clearline works), not a generic "our values" block with icons.
 6. **Desire** — six visibly distinct resolutions of the same line (identity, interactive site, spatial installation, editorial system, product interface, title sequence) demonstrate range without needing borrowed photography.
-7. **Action** — contact is framed as "start a line": the visitor draws their own first mark on a small canvas as the inquiry gesture, alongside direct contact fields. Conversion is native to the concept, not a bolted-on form.
+7. **Action** — contact is framed as "start the project": a direct identity/contact-methods panel beside the form, where a thin line draws in as the visitor completes each required field — feedback, not a gesture. Conversion is native to the concept, not a bolted-on form. (Superseded from an earlier free-draw canvas gesture — see CONVERSION STRATEGY below.)
 
 ## SIGNATURE INTERACTION
 
@@ -69,4 +69,4 @@ Six plots, each a different medium the line resolves into: brand identity, inter
 
 ## CONVERSION STRATEGY
 
-"Start a line": a small drawing canvas where the visitor's own cursor stroke is their first gesture toward working with Clearline, paired with direct, undisguised contact info. One conversion moment, integrated into the concept — not a repeated "GET A QUOTE" pattern.
+**Superseded — see PROGRESS.md "contact experience replacement."** The original strategy was "Start a line": a small drawing canvas where the visitor's own cursor stroke was their first gesture toward working with Clearline. This was replaced on request: the canvas was decorative rather than conversion-oriented, and testing surfaced no way for a visitor to tell what the gesture *meant*. The current mechanism is "Start the project": a direct identity + tiered contact-methods panel (email/call/visit) beside the form, with the line device still present but repurposed as feedback rather than a gesture — a thin line draws in as the visitor completes each of the form's three required fields, resolving fully only once the form is ready to send. This keeps the line functional (per CREATIVE_THESIS, it must do a job, not just imply precision) while making the conversion moment legible rather than ambiguous. Direct, undisguised contact info (email primary, phone secondary, address tertiary) is unchanged from the original strategy.
