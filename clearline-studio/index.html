@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Clearline Studio</title>
 <meta name="description" content="Clearline Studio is Evan Greene's independent studio for websites and digital products — designed and built with the same precision as a single drawn line.">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23f4f2ed'/%3E%3Cline x1='10' y1='44' x2='54' y2='20' stroke='%23e8492a' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23f4f2ed'/%3E%3Cline x1='18' y1='50' x2='46' y2='14' stroke='%2316140f' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -15,7 +15,6 @@
   --ink:#16140f;--ink-2:#232019;
   --line:rgba(22,20,15,.2);--line-soft:rgba(22,20,15,.11);
   --line-onDark:rgba(244,242,237,.22);
-  --red:#e8492a;--red-2:#c93c20;
   --muted:#6b6558;--muted-onDark:#a49c8a;
   --display:'Instrument Sans',system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;
   --ease:cubic-bezier(.22,1,.36,1);
@@ -29,15 +28,15 @@ h1,h2,h3,p{margin:0}
 button{font:inherit;color:inherit;background:none;border:none;padding:0;cursor:pointer}
 .wrap{width:min(1240px,calc(100% - 56px));margin:0 auto;position:relative}
 .mono{font-family:var(--mono)}
-.eyebrow{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:10px}
-.eyebrow::before{content:"";width:22px;height:1.5px;background:var(--red)}
+.eyebrow{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:22px;height:1.5px;background:var(--ink)}
 .lede{color:var(--muted);font-size:17.5px;max-width:52ch;margin-top:18px}
 
 /* line-drawn buttons — no boxes, no pills: the underline IS the button */
 .btn{position:relative;display:inline-flex;align-items:center;gap:9px;padding-bottom:6px;font-family:var(--mono);font-size:13px;font-weight:500;letter-spacing:.03em;cursor:pointer}
 .btn::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:1.5px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
 .btn:hover::after,.btn--primary::after{transform:scaleX(1)}
-.btn--primary{color:var(--red)}
+.btn--primary{color:var(--ink)}
 .btn svg{width:14px;height:14px;transition:transform .4s var(--ease)}
 .btn:hover svg{transform:translate(3px,-3px)}
 .btn:active{opacity:.6;transition:opacity .1s}
@@ -48,7 +47,8 @@ button{font:inherit;color:inherit;background:none;border:none;padding:0;cursor:p
 section{position:relative;padding:150px 0}
 .section-onDark{background:var(--ink);color:var(--paper)}
 .section-onDark .lede{color:var(--muted-onDark)}
-.section-onDark .eyebrow{color:#ff7452}
+.section-onDark .eyebrow{color:var(--paper)}
+.section-onDark .eyebrow::before{background:var(--paper)}
 
 /* draw-on: the one motion rule. stroke-dashoffset, never opacity/translateY fade-up */
 .draw{transition:stroke-dashoffset 1.1s var(--ease)}
@@ -77,13 +77,13 @@ section{position:relative;padding:150px 0}
    six times in a row, which reads as monotonous regardless) */
 .plot--rev .plot__grid{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}
 .plot--rev .plot__stage{order:-1;margin-left:0;margin-right:auto}
-.plot__num{font-family:var(--mono);font-size:12px;color:var(--red);letter-spacing:.06em}
+.plot__num{font-family:var(--mono);font-size:12px;color:var(--ink);letter-spacing:.06em}
 .plot__medium{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-top:6px}
 .plot__title{font-size:clamp(30px,3.6vw,46px);font-weight:600;margin-top:16px;line-height:1.05;max-width:14ch}
 .plot__desc{margin-top:18px;color:var(--muted);max-width:42ch}
 .plot__stage{aspect-ratio:1/1;max-width:420px;margin-left:auto;border:1px solid var(--line-soft);position:relative}
 .plot__stage svg{width:100%;height:100%;padding:14%}
-.plot__coord{position:absolute;top:10px;left:12px;font-family:var(--mono);font-size:10px;color:var(--red);pointer-events:none;opacity:0;transition:opacity .2s}
+.plot__coord{position:absolute;top:10px;left:12px;font-family:var(--mono);font-size:10px;color:var(--ink);pointer-events:none;opacity:0;transition:opacity .2s}
 .plot__coord--on{opacity:1}
 @media (max-width:880px){ .plot__grid,.plot--rev .plot__grid{grid-template-columns:1fr} .plot__stage{margin:0 auto;max-width:320px} .plot--rev .plot__stage{margin:0 auto} }
 
@@ -91,17 +91,17 @@ section{position:relative;padding:150px 0}
 .process{padding-top:150px;padding-bottom:170px}
 .process-diagram{margin-top:80px;position:relative}
 .process-line{stroke:var(--line-onDark);stroke-width:1}
-.process-line--red{stroke:var(--red);stroke-width:1.5}
+.process-line--mark{stroke:var(--paper);stroke-width:1.5}
 .process-stages{display:grid;grid-template-columns:repeat(5,1fr);margin-top:26px}
 .process-stage{padding-right:20px}
-.process-stage b{display:block;font-family:var(--mono);font-size:11px;color:var(--red);letter-spacing:.06em}
+.process-stage b{display:block;font-family:var(--mono);font-size:11px;color:var(--paper);letter-spacing:.06em}
 .process-stage span{display:block;margin-top:10px;font-size:14px;color:var(--muted-onDark);line-height:1.5}
 .process-stage h4{font-size:17px;font-weight:600;margin-top:6px}
 @media (max-width:880px){ .process-stages{grid-template-columns:1fr 1fr;gap:28px 20px} }
 @media (max-width:520px){ .process-stages{grid-template-columns:1fr} }
 .signoff{margin-top:70px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
 .signoff__mark{width:110px;height:13px;flex-shrink:0;overflow:visible}
-.signoff__mark path{fill:none;stroke:var(--red);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.signoff__mark path{fill:none;stroke:var(--paper);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .signoff__name{font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--muted-onDark)}
 
 /* ================= CONTACT ================= */
@@ -113,7 +113,7 @@ section{position:relative;padding:150px 0}
 .contact-field{margin-top:26px}
 .contact-field label{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
 .contact-field input,.contact-field textarea{width:100%;margin-top:8px;padding:10px 0;border:none;border-bottom:1px solid var(--line);background:transparent;color:var(--ink);font:inherit;font-size:16px}
-.contact-field input:focus,.contact-field textarea:focus{outline:none;border-color:var(--red)}
+.contact-field input:focus,.contact-field textarea:focus{outline:none;border-color:var(--ink)}
 .contact-submit{margin-top:34px}
 .contact-submit[disabled]{opacity:.5;cursor:default;pointer-events:none}
 .cf-honeypot{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
@@ -124,7 +124,7 @@ section{position:relative;padding:150px 0}
 .contact-direct__addr{color:var(--muted)!important;border-bottom:1px solid transparent!important;transition:border-color .3s,color .3s}
 .contact-direct__addr:hover,.contact-direct__addr:focus{color:var(--ink)!important;border-bottom-color:var(--line-soft)!important}
 .contact-submit-cap{margin-top:12px;font-family:var(--mono);font-size:11.5px;color:var(--muted);transition:color .3s;overflow-wrap:break-word}
-.contact-submit-cap--error{color:var(--red)}
+.contact-submit-cap--error{color:var(--ink);font-weight:600}
 .contact-submit-cap--success{color:var(--ink);font-weight:500}
 .contact-submit-cap a{color:inherit;border-bottom:1px solid currentColor}
 
@@ -135,18 +135,20 @@ footer{padding:34px 0;text-align:center;font-family:var(--mono);font-size:10.5px
 #spine.onDark{background:rgba(22,20,15,.9);border-color:var(--line-onDark)}
 .spine__row{width:min(1240px,calc(100% - 32px));margin:0 auto;height:100%;display:flex;align-items:stretch}
 .spine__inner{flex:1;position:relative;touch-action:none;min-width:0}
-.spine__contact{flex-shrink:0;display:flex;align-items:center;gap:8px;padding-left:22px;font-family:var(--mono);font-size:12.5px;font-weight:500;color:var(--red);white-space:nowrap;border-left:1px solid var(--line-soft);margin-left:16px}
-#spine.onDark .spine__contact{border-color:var(--line-onDark)}
+.spine__contact{flex-shrink:0;display:flex;align-items:center;gap:8px;padding-left:22px;font-family:var(--mono);font-size:12.5px;font-weight:500;color:var(--ink);white-space:nowrap;border-left:1px solid var(--line-soft);margin-left:16px}
+#spine.onDark .spine__contact{border-color:var(--line-onDark);color:var(--paper)}
 .spine__contact svg{width:13px;height:13px}
 .spine__svg{width:100%;height:100%;overflow:visible}
 .spine__track{stroke:var(--line);stroke-width:1}
 #spine.onDark .spine__track{stroke:var(--line-onDark)}
-.spine__fill{stroke:var(--red);stroke-width:1.5}
+.spine__fill{stroke:var(--ink);stroke-width:1.5}
+#spine.onDark .spine__fill{stroke:var(--paper)}
 .spine__tick{stroke:var(--muted);stroke-width:1.5;transition:stroke .3s}
 #spine.onDark .spine__tick{stroke:var(--muted-onDark)}
-.spine__tick--active{stroke:var(--red)}
-.spine__handle{fill:var(--paper);stroke:var(--red);stroke-width:2;cursor:grab}
-#spine.onDark .spine__handle{fill:var(--ink)}
+.spine__tick--active{stroke:var(--ink)}
+#spine.onDark .spine__tick--active{stroke:var(--paper)}
+.spine__handle{fill:var(--paper);stroke:var(--ink);stroke-width:2;cursor:grab}
+#spine.onDark .spine__handle{fill:var(--ink);stroke:var(--paper)}
 .spine__handle:active{cursor:grabbing}
 .spine__label{font-family:var(--mono);font-size:10px;letter-spacing:.05em;fill:var(--muted);pointer-events:none;opacity:0;transition:opacity .3s}
 #spine.onDark .spine__label{fill:var(--muted-onDark)}
@@ -167,7 +169,7 @@ footer{padding:34px 0;text-align:center;font-family:var(--mono);font-size:10.5px
 <section id="home" data-sec="home">
   <div class="wrap">
     <svg class="mark" viewBox="0 0 720 220" aria-label="Clearline Studio">
-      <path class="mark-line draw" id="markPath" d="M20 170 L120 60 L180 140 L260 40 L340 150 L420 55 L520 145 L600 50 L700 120"/>
+      <path class="mark-line draw" id="markPath" d="M260 195 L460 25"/>
     </svg>
     <div class="hero-lockup">
       <h1 class="hero-wordmark" aria-label="Clearline Studio"><span class="hero-wordmark__main" aria-hidden="true">Clearline</span><span class="hero-wordmark__sub" aria-hidden="true">Studio</span></h1>
@@ -307,12 +309,12 @@ footer{padding:34px 0;text-align:center;font-family:var(--mono);font-size:10.5px
     <div class="process-diagram">
       <svg viewBox="0 0 1000 40" width="100%" height="40" preserveAspectRatio="none" aria-hidden="true">
         <line class="process-line draw" id="processLine" x1="0" y1="20" x2="1000" y2="20"/>
-        <circle class="process-line--red" cx="0" cy="20" r="4" fill="var(--red)" stroke="none"/>
-        <circle class="process-line--red" cx="200" cy="20" r="4" fill="var(--red)" stroke="none"/>
-        <circle class="process-line--red" cx="400" cy="20" r="4" fill="var(--red)" stroke="none"/>
-        <circle class="process-line--red" cx="600" cy="20" r="4" fill="var(--red)" stroke="none"/>
-        <circle class="process-line--red" cx="800" cy="20" r="4" fill="var(--red)" stroke="none"/>
-        <circle class="process-line--red" cx="1000" cy="20" r="4" fill="var(--red)" stroke="none"/>
+        <circle class="process-line--mark" cx="0" cy="20" r="4" fill="var(--paper)" stroke="none"/>
+        <circle class="process-line--mark" cx="200" cy="20" r="4" fill="var(--paper)" stroke="none"/>
+        <circle class="process-line--mark" cx="400" cy="20" r="4" fill="var(--paper)" stroke="none"/>
+        <circle class="process-line--mark" cx="600" cy="20" r="4" fill="var(--paper)" stroke="none"/>
+        <circle class="process-line--mark" cx="800" cy="20" r="4" fill="var(--paper)" stroke="none"/>
+        <circle class="process-line--mark" cx="1000" cy="20" r="4" fill="var(--paper)" stroke="none"/>
       </svg>
       <div class="process-stages">
         <div class="process-stage"><b>01</b><h4>Draft</h4><span>The line, on paper — the idea stated once, plainly, before software touches it.</span></div>
@@ -677,7 +679,7 @@ footer{padding:34px 0;text-align:center;font-family:var(--mono);font-size:10.5px
     var r = canvas.getBoundingClientRect();
     canvas.width = r.width * devicePixelRatio; canvas.height = r.height * devicePixelRatio;
     ctx.scale(devicePixelRatio, devicePixelRatio);
-    ctx.strokeStyle = getComputedStyle(document.documentElement).getPropertyValue('--red');
+    ctx.strokeStyle = getComputedStyle(document.documentElement).getPropertyValue('--ink');
     ctx.lineWidth = 2.5; ctx.lineCap = 'round'; ctx.lineJoin = 'round';
   }
   sizeCanvas();
