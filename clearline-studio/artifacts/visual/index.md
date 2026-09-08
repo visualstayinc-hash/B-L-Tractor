@@ -69,6 +69,14 @@ The contact form's mailto-based "submission" (which just opened the visitor's ow
 
 `contact-form-error-state-mobile.png` — full mobile screenshot of the error state after submitting with the placeholder key, showing the wrapped fallback message and the standalone email/phone/address links immediately below it for comparison.
 
+## Real key configured — conclusive root-cause finding (with evidence)
+
+18. **The user supplied the real Web3Forms access key** (`c93a9106-98f4-4d02-b5fb-5e541e8ad9bf`, obtained via web3forms.com for `clear.line.studio.creative@gmail.com`). Configured in `index.html`, confirmed by direct `grep`, with the guard's comparison string deliberately left unchanged so the two strings now genuinely differ and the real fetch path executes rather than short-circuiting.
+19. **A full real-key submission (desktop and mobile) was run and failed identically to the earlier placeholder-key test** — `net::ERR_TUNNEL_CONNECTION_FAILED`. This time the root cause was confirmed directly, not inferred: `curl -sS "$HTTPS_PROXY/__agentproxy/status"` (this session's own proxy diagnostic, documented in this environment's setup notes) shows a logged `"connect_rejected"` entry reading `"gateway answered 403 to CONNECT (policy denial or upstream failure)"` for `"host": "api.web3forms.com:443"`. This is a hard egress-policy rejection at this sandbox's own outbound gateway — the connection never reaches Web3Forms' servers at all, so no HTTP response, success or failure, was ever received from Web3Forms itself. This is not a code defect, not a bad key, and not fixable by further changes made from inside this sandbox.
+20. **What this does not block**: this finding is specific to *this development sandbox's* network policy. The deployed artifact runs in a real visitor's browser, on their own network, which is not subject to this sandbox's proxy at all. That request path is untested from here by necessity — it requires a human opening the live URL and submitting a real test, then checking the actual inbox.
+
+`contact-form-real-key-desktop.png` / `contact-form-real-key-mobile.png` — the error state after a real-key submission attempt, both viewports, showing correct button re-enable, error message wrapping, and fallback contact info — visually identical to the placeholder-key error state, as expected, since both fail at the same network layer before ever reaching Web3Forms.
+
 ## Known, not yet verified (deferred to later passes, tracked in QUALITY_GATE.md)
 
 Scroll-settle jank (F08), reduced-motion behavior (F14), mobile touch-drag of the spine specifically (tested with mouse pointer simulation so far, not `hasTouch` pointer events — F09/M02/M04), and layout-shift-across-load-states (PF03). These remain FAIL in QUALITY_GATE.md until tested — not assumed to pass because the desktop/mouse path works.
