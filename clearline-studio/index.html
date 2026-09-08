@@ -104,6 +104,25 @@ section{position:relative;padding:150px 0}
 .signoff__mark path{fill:none;stroke:var(--paper);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .signoff__name{font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--muted-onDark)}
 
+/* ================= DIFFERENCE ================= */
+.approach{padding-top:110px;padding-bottom:110px;border-top:1px solid var(--line-soft)}
+.approach-diagram{margin-top:64px}
+.approach-line{stroke:var(--line-soft);stroke-width:1}
+.approach-mark{fill:var(--ink)}
+.approach-stages{display:grid;grid-template-columns:repeat(5,1fr);margin-top:26px}
+.approach-stage{padding-right:20px}
+.approach-stage b{display:block;font-family:var(--mono);font-size:11px;color:var(--ink);letter-spacing:.06em;transition:color .2s}
+.approach-stage span{display:block;margin-top:10px;font-size:14px;color:var(--muted);line-height:1.5}
+.approach-stage h4{font-size:17px;font-weight:600;margin-top:6px}
+@media (max-width:880px){ .approach-stages{grid-template-columns:1fr 1fr;gap:28px 20px} }
+@media (max-width:520px){ .approach-stages{grid-template-columns:1fr} }
+button.approach-stage{display:block;width:100%;text-align:left;font:inherit;color:inherit;background:none;border:none;padding:0 20px 0 0;cursor:pointer}
+button.approach-stage:hover b,button.approach-stage:focus-visible b{color:var(--muted)}
+.approach-reveal{display:block;max-height:0;opacity:0;overflow:hidden;transition:max-height .35s var(--ease),opacity .3s var(--ease),margin-top .35s var(--ease);margin-top:0;color:var(--muted)}
+button.approach-stage[aria-expanded="true"] .approach-reveal{max-height:160px;opacity:1;margin-top:8px}
+.approach-caption{margin-top:34px;font-family:var(--mono);font-size:11.5px;color:var(--muted);max-width:56ch}
+.approach-cta{margin-top:44px;display:flex;align-items:center;gap:28px;flex-wrap:wrap}
+
 /* ================= CONTACT ================= */
 .contact-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.85fr);gap:70px;align-items:start}
 @media (max-width:880px){
@@ -301,6 +320,40 @@ footer{padding:34px 0;text-align:center;font-family:var(--mono);font-size:10.5px
           <line class="draw plotdraw" stroke-width="5" x1="100" y1="170" x2="240" y2="30"/>
         </g></svg>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DIFFERENCE ================= -->
+<section id="difference" data-sec="difference" class="approach">
+  <div class="wrap">
+    <span class="eyebrow">The difference</span>
+    <h2 class="plot__title" style="margin-top:16px;max-width:16ch">Most studios wait for a brief.</h2>
+    <p class="lede">Depending on the business, Evan may already have researched it and sketched a direction — sometimes a working preview — before you ever pick up the phone. When it's useful, he meets in person, Texas Panhandle wide.</p>
+
+    <div class="approach-diagram">
+      <svg viewBox="0 0 1000 40" width="100%" height="40" preserveAspectRatio="none" aria-hidden="true">
+        <line class="approach-line draw" id="approachLine" x1="0" y1="20" x2="1000" y2="20"/>
+        <circle class="approach-mark" cx="0" cy="20" r="4" stroke="none"/>
+        <circle class="approach-mark" cx="200" cy="20" r="4" stroke="none"/>
+        <circle class="approach-mark" cx="400" cy="20" r="4" stroke="none"/>
+        <circle class="approach-mark" cx="600" cy="20" r="4" stroke="none"/>
+        <circle class="approach-mark" cx="800" cy="20" r="4" stroke="none"/>
+        <circle class="approach-mark" cx="1000" cy="20" r="4" stroke="none"/>
+      </svg>
+      <div class="approach-stages">
+        <div class="approach-stage"><b>01</b><h4>Discovered</h4><span>A local business worth a closer look.</span></div>
+        <div class="approach-stage"><b>02</b><h4>Research</h4><span>How it works, who it's for, what the current site does or doesn't do.</span></div>
+        <div class="approach-stage"><b>03</b><h4>Concept</h4><span>A direction sketched — what the site could look like, done properly.</span></div>
+        <button type="button" class="approach-stage" id="approachReveal" aria-expanded="false"><b>04</b><h4>Preview</h4><span>Sometimes, a rough preview.</span><span class="approach-reveal">Depending on the business, this can be an early concept sketch or, occasionally, a working preview — before Evan ever asks for the meeting.</span></button>
+        <div class="approach-stage"><b>05</b><h4>Meet</h4><span>In person, when that's useful. Texas Panhandle wide.</span></div>
+      </div>
+    </div>
+    <p class="approach-caption">Not every prospect gets a preview — it depends on the business and the timing. Evan works alone, so this happens before he asks for the meeting, not after.</p>
+
+    <div class="approach-cta">
+      <a class="btn btn--primary" href="#contact">Start a project</a>
+      <a class="btn" href="#contact">Meet in person</a>
     </div>
   </div>
 </section>
@@ -569,6 +622,15 @@ footer{padding:34px 0;text-align:center;font-family:var(--mono);font-size:10.5px
   document.getElementById('spineContact').addEventListener('click', function(e){
     e.preventDefault();
     springScrollTo(docTop(document.getElementById('contact')));
+  });
+
+  /* ---------- "the difference" preview reveal: a real state change (collapsed
+     summary -> expanded detail), not decoration. Click/tap-driven rather than
+     hover-only so it works identically on touch. ---------- */
+  var approachReveal = document.getElementById('approachReveal');
+  approachReveal.addEventListener('click', function(){
+    var open = approachReveal.getAttribute('aria-expanded') === 'true';
+    approachReveal.setAttribute('aria-expanded', String(!open));
   });
 
   /* ---------- process dimension-line draw ---------- */
