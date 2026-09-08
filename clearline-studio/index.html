@@ -58,8 +58,10 @@ section{position:relative;padding:150px 0}
 #home{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding-top:120px;padding-bottom:100px}
 .mark{width:min(720px,86vw)}
 .mark-line{fill:none;stroke:var(--ink);stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
-.hero-lockup{margin-top:30px;display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}
-.hero-wordmark{font-size:clamp(22px,2.6vw,30px);font-weight:600;letter-spacing:-.01em}
+.hero-lockup{margin-top:30px;display:flex;align-items:flex-end;gap:22px;flex-wrap:wrap}
+.hero-wordmark{display:flex;flex-direction:column;gap:6px;line-height:1}
+.hero-wordmark__main{font-size:clamp(22px,2.6vw,30px);font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+.hero-wordmark__sub{font-family:var(--mono);font-size:clamp(10px,1vw,12px);font-weight:500;letter-spacing:.34em;text-transform:uppercase;color:var(--muted)}
 .hero-byline{font-family:var(--mono);font-size:12px;letter-spacing:.05em;color:var(--muted)}
 .home-thesis{margin-top:22px;font-size:clamp(20px,2.6vw,28px);line-height:1.35;max-width:30ch;font-weight:400}
 .home-hint{margin-top:56px;display:flex;align-items:center;gap:11px;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
@@ -168,7 +170,7 @@ footer{padding:34px 0;text-align:center;font-family:var(--mono);font-size:10.5px
       <path class="mark-line draw" id="markPath" d="M20 170 L120 60 L180 140 L260 40 L340 150 L420 55 L520 145 L600 50 L700 120"/>
     </svg>
     <div class="hero-lockup">
-      <h1 class="hero-wordmark">Clearline Studio</h1>
+      <h1 class="hero-wordmark" aria-label="Clearline Studio"><span class="hero-wordmark__main" aria-hidden="true">Clearline</span><span class="hero-wordmark__sub" aria-hidden="true">Studio</span></h1>
       <div class="hero-byline">Evan Greene — independent design &amp; build</div>
     </div>
     <p class="home-thesis">Websites and digital products, designed and built the way this line was drawn — deliberately, one decision at a time.</p>
