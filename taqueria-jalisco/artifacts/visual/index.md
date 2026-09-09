@@ -26,8 +26,15 @@
 
 ## Claim/content validation
 
-- `grep -c "menu-item__name"` returns 32 (31 real HTML menu items + 1 CSS rule definition) — cross-checked by hand against CONCEPT.md's sourced-facts list; every item/price traces to the brief's own researched data.
+- `grep -c "class=\"menu-item"` variants confirm 39 real menu rows: 31 priced items (cross-checked by hand against CONCEPT.md's sourced-facts list — every price traces to the brief's own researched data) + 8 "Also on the menu" rows added this pass (real categories, honestly unpriced, not omitted or invented).
 - `grep -c "4.5"` returns 4 — hero meta, reviews eyebrow, review-source line, visit section — no Tripadvisor/Yelp rating citation remains.
 - `grep -c "<svg"` returns 1 — the arch-clip mechanism only; zero decorative illustration SVGs remain (the prior build's invented sun/agave icon is fully retired).
 - `grep -c "border-radius"` returns 2 (1–2px corner-softening, not pill shapes); `grep -c "gradient"` returns 3 (all functional photo-legibility scrims).
 - `du -sh assets/` — 280KB for all 10 real photographs, optimized JPEG.
+
+## This pass's evidence (brand board + accessibility/asset audit)
+
+3. **Arch divider, real bug found and fixed.** First implementation used `viewBox="0 0 240 36" preserveAspectRatio="xMidYMid slice"` on an SVG rendered at ~1440×36 — a 6x aspect-ratio mismatch that scaled the pattern up and sliced away everything except a thin middle band, showing only vertical lines where arches should be. Confirmed via a close-up element screenshot (`divider-closeup.png` before the fix, not kept — the bug reproduction). Fixed by removing the viewBox entirely, letting the pattern tile at true 1:1 pixel scale. `arch-divider-light.png`, `arch-divider-dark.png`, `arch-divider-mobile.png` confirm the fix: a clean, legible repeating row of rounded arches at all three checkpoints.
+4. **Menu completeness fix, real evidence.** `menu-also-on-menu.png` shows the new "Also on the menu" category open, all 8 previously-omitted categories present with "Ask your server" instead of either an invented price or a missing category — directly satisfying this task's explicit Section 15 correction.
+5. **Real asset-resolution audit** (not a code-reference assumption): Playwright checked every live `<img>` element's `complete`/`naturalWidth` state — 12/12 resolved. Full detail in `ASSET_MANIFEST.md`.
+6. **Real accessibility findings**: keyboard `Enter` on the menu accordion confirmed to produce the same `aria-expanded` state change as a mouse click; focus-outline confirmed not suppressed (`outline-style: auto`); a real WCAG contrast failure (4.41:1, just under the 4.5:1 AA minimum) was found by calculating the actual relative-luminance contrast ratio for the new "Ask your server" price text, and fixed (5.60:1 after the fix) — not eyeballed, computed.

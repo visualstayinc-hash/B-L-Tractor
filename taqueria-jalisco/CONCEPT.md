@@ -89,6 +89,15 @@ Removing this sentence would leave "use warm colors and real photos" — accurat
 - Photography reveals via clip/mask transitions echoing the arch, never a generic fade-up.
 - `prefers-reduced-motion`: all transitions resolve instantly to final state.
 
+## BRAND BOARD ADDENDUM (added in a later revision — secondary source, per this task's own source hierarchy)
+
+A brand identity board was supplied as a "secondary art-direction source," explicitly subordinate to the PDF's real photographs. Two genuinely useful, non-conflicting things were taken from it:
+
+1. **Exact hex values**, replacing this document's earlier photo-estimated approximations: Dark Wood/Ink `#3B2A1A`, Adobe Brown `#5B3A2B`, Brick Red `#A63A2A`, Cream `#F3E4C6`, Ochre `#DAA056`, Agave Blue `#4ABA82`, Warm Gold `#C9A34A`, Sage `#6B7F72`. Notably, three of these (`#3b2a1a`, `#a63a2a`, `#f3e4c6`) exactly matched values already extracted directly from the real photographs in the prior pass — a real, independent confirmation that the photo-based extraction was accurate, not a case where the board contradicted the photos.
+2. **The arch as a recurring divider motif**, not just the one large threshold interaction — the board shows a row of repeating arches with a decorative border strip. Added as two thin `.arch-divider` strips between major sections (see EXPERIENCE_ARCHITECTURE.md). A real implementation bug was found and fixed here too: the first attempt used a `viewBox`+`preserveAspectRatio="slice"` combination that cropped the arch tops off entirely (an aspect-ratio mismatch between the 240×36 viewBox and the actual ~1440×36 rendered element caused the pattern to scale up ~6x and show only a thin vertical-line slice of the content) — fixed by removing the viewBox and letting the SVG pattern tile at true 1:1 pixel scale.
+
+**Explicitly not taken from the board:** the suggested icon row (agave/taco/margarita/pin/fork-knife line icons) — this directly conflicts with this same task's own Section 33 anti-AI-slop rule, which explicitly bans "taco icons, cactus icons, sombreros, generic Mexican wallpaper." Where a secondary source's suggestion conflicts with a primary, explicit rule in the same brief, the rule wins — this is a deliberate judgment call, not an oversight. Also not taken: the "RESERVE A TABLE" button mockup — reservations were never confirmed as a real, current practice, so presenting one would be inventing a feature (see EXPERIENCE_ARCHITECTURE.md's Conversion/Visit Path section).
+
 ## HONESTY NOTES (carried forward, still binding)
 
 - Menu prices: every price shown must trace to the researched list in this task's brief or be labeled clearly as approximate/unconfirmed — see the menu data table for per-item sourcing status.
