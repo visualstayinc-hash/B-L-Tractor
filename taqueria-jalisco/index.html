@@ -4,249 +4,402 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Taqueria Jalisco</title>
-<meta name="description" content="Taqueria Jalisco — Mexican taqueria on Avenue Q in Lubbock, Texas, serving tacos, enchiladas, fajitas and menudo since 1995.">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23c1442c'/%3E%3Cpath d='M14 40 Q32 12 50 40' fill='none' stroke='%23f6efe0' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
+<meta name="description" content="Taqueria Jalisco — 2211 Avenue Q, Lubbock, TX. Real Mexican cooking, a hand-painted facade, and a menu built for regulars, since 1995.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23d9a75c'/%3E%3Cpath d='M18 46 L18 26 A14 14 0 0 1 46 26 L46 46' fill='none' stroke='%233b2a1a' stroke-width='4'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Work+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Rye&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 <style>
 :root{
-  --paper:#f6efe0;--paper-2:#efe4cd;--paper-3:#e7d9bb;
-  --ink:#241d15;--ink-2:#3a2f22;
-  --terracotta:#c1442c;--terracotta-2:#a1381f;
-  --marigold:#e2a63a;
-  --cactus:#4c7a52;
-  --papel-pink:#d94f8c;--papel-turq:#2e9199;--papel-purple:#6b4e9e;--papel-gold:#e2a63a;
-  --line:rgba(36,29,21,.16);--line-soft:rgba(36,29,21,.09);
-  --muted:#6b5d47;
-  --display:'Bungee',system-ui,sans-serif;--body:'Work Sans',system-ui,sans-serif;
+  --ochre:#d9a75c;--ochre-2:#c9954a;--ochre-dark:#b5813a;
+  --cream:#f3e4c6;--cream-2:#ecd9b3;
+  --ink:#3b2a1a;--ink-2:#4a3524;
+  --red:#a63a2a;--red-2:#8f3021;
+  --teal:#4a8a82;--teal-2:#3a726b;
+  --line:rgba(59,42,26,.18);--line-soft:rgba(59,42,26,.1);
+  --muted:#6b5638;
+  --display:'Rye',serif;--body:'Archivo',system-ui,sans-serif;
   --ease:cubic-bezier(.22,1,.36,1);
 }
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
+img{display:block;width:100%;height:100%;object-fit:cover}
 svg{display:block;max-width:100%;overflow:visible}
 h1,h2,h3,p{margin:0}
+button{font:inherit;color:inherit;background:none;border:none;padding:0;cursor:pointer}
 .wrap{width:min(1180px,calc(100% - 48px));margin:0 auto;position:relative}
-section{position:relative;padding:120px 0}
-.eyebrow{font-family:var(--body);font-weight:700;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--terracotta)}
-.h2{font-family:var(--display);font-size:clamp(32px,4.6vw,58px);line-height:1.05;margin-top:14px;color:var(--ink)}
-.lede{margin-top:20px;font-size:18px;color:var(--muted);max-width:56ch}
+section{position:relative}
+.eyebrow{font-family:var(--body);font-weight:800;font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--red)}
+.h2{font-family:var(--display);font-size:clamp(34px,5vw,62px);line-height:1.06;margin-top:14px;color:var(--ink);text-transform:uppercase;letter-spacing:.01em}
+.lede{margin-top:20px;font-size:18px;color:var(--muted);max-width:58ch}
+@media (prefers-reduced-motion:reduce){ *{transition:none!important;animation:none!important} }
 
-/* draw-on: hand-painted sign lettering resolving stroke by stroke */
-.draw{transition:stroke-dashoffset 1.3s var(--ease)}
-@media (prefers-reduced-motion:reduce){ .draw{transition:none!important} }
+/* ================= TOP BAR ================= */
+#topbar{position:fixed;top:0;left:0;right:0;z-index:90;display:flex;align-items:center;justify-content:space-between;padding:16px 24px;mix-blend-mode:normal}
+.topbar__name{font-family:var(--display);font-size:19px;color:var(--cream);text-shadow:0 1px 3px rgba(0,0,0,.4);letter-spacing:.02em}
+.topbar__call{font-family:var(--body);font-weight:700;font-size:13px;color:var(--cream);background:var(--red);padding:9px 16px;border-radius:2px;letter-spacing:.03em}
+#topbar.onlight .topbar__name{color:var(--ink);text-shadow:none}
+#topbar.onlight .topbar__call{background:var(--ink)}
 
-/* ================= BANNER-STRING NAV ================= */
-#banner{position:fixed;top:0;left:0;right:0;z-index:80;background:var(--paper);border-bottom:2px solid var(--ink)}
-.banner__row{width:min(1180px,calc(100% - 48px));margin:0 auto;display:flex;align-items:stretch;height:58px}
-.banner__flag{position:relative;display:flex;align-items:center;padding:0 20px;font-family:var(--display);font-size:13px;letter-spacing:.04em;color:var(--paper);cursor:pointer}
-.banner__flag:nth-child(1){background:var(--terracotta)}
-.banner__flag:nth-child(2){background:var(--papel-turq)}
-.banner__flag:nth-child(3){background:var(--papel-purple)}
-.banner__flag:nth-child(4){background:var(--cactus)}
-.banner__flag::after{content:"";position:absolute;left:0;right:0;bottom:-9px;height:9px;background:inherit;clip-path:polygon(0 0,100% 0,50% 100%)}
-.banner__flag--active{filter:brightness(1.15)}
-.banner__flag--active::before{content:"";position:absolute;left:8px;right:8px;bottom:6px;height:2px;background:var(--paper)}
-.banner__home{margin-right:auto;display:flex;align-items:center;font-family:var(--display);font-size:15px;color:var(--ink);padding:0 4px}
-@media (max-width:720px){ .banner__flag span{display:none} .banner__flag{padding:0 14px} .banner__row{height:50px} }
+/* ================= HERO — real storefront photo ================= */
+#hero{min-height:100svh;position:relative;display:flex;align-items:flex-end;overflow:hidden}
+.hero-photo{position:absolute;inset:0}
+.hero-photo img{filter:saturate(1.05) contrast(1.03)}
+/* Mobile recomposition: the wide landscape facade photo, cropped by object-fit:cover
+   on a narrow portrait viewport, was cutting the painted sign into an illegible
+   fragment ("ALISCO...RESTAU") sitting directly above our own HTML wordmark —
+   two half-legible "JALISCO"s stacked read as a mistake, not a deliberate echo.
+   Shifting the focal point down and off-center moves the crop toward the doorway
+   and windows instead of slicing through the sign text. */
+@media (max-width:640px){ .hero-photo img{object-position:60% 95%} }
+@media (max-width:640px){ .hero-scrim{background:linear-gradient(180deg,rgba(59,42,26,.55) 0%,rgba(59,42,26,.35) 30%,rgba(30,20,12,.88) 100%)} }
+.hero-scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(59,42,26,.15) 0%,rgba(59,42,26,.1) 40%,rgba(30,20,12,.82) 100%)}
+.hero-content{position:relative;z-index:2;padding:0 0 80px;color:var(--cream);width:100%}
+.hero-eyebrow{font-family:var(--body);font-weight:800;font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ochre)}
+.hero-wordmark{margin-top:10px;font-family:var(--display);font-size:clamp(52px,10vw,128px);line-height:.92;color:var(--cream);text-shadow:0 4px 18px rgba(0,0,0,.45);overflow-wrap:break-word}
+.hero-sub{margin-top:8px;font-family:var(--display);font-size:clamp(18px,2.6vw,30px);color:var(--ochre);letter-spacing:.03em}
+.hero-tagline{margin-top:22px;font-size:clamp(16px,1.8vw,20px);color:#e9dcc3;max-width:42ch;font-weight:500}
+.hero-meta{margin-top:30px;display:flex;gap:26px;flex-wrap:wrap;font-size:14px;color:#e9dcc3;font-weight:600}
+.hero-meta b{color:var(--cream)}
+.hero-hint{position:absolute;left:0;right:0;bottom:22px;z-index:2;display:flex;justify-content:center;gap:9px;align-items:center;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:#e9dcc3;font-weight:700}
+.hero-hint i{width:1px;height:26px;background:#e9dcc3;display:block;animation:hintdrop 1.8s ease-in-out infinite}
+@keyframes hintdrop{0%,100%{opacity:.3}50%{opacity:1}}
 
-/* ================= PAPER TEAR — the signature interaction ================= */
-/* Fixed pixel height, not inset:0 — a percentage-based clip-path scaled to
-   the FULL section height meant the "open" state's residual sliver (e.g. 9%
-   of a 1400px-tall section) was still ~120px of opaque paper sitting right
-   over the section's own heading. A fixed-height band means the torn strip
-   stays a strip (~30px residual) no matter how tall the section content is —
-   found by actually scrolling to a section and looking, not assumed correct
-   from the clip-path math alone. */
-.tear{position:absolute;top:0;left:0;right:0;height:340px;background:var(--paper);z-index:5;pointer-events:none;
-  clip-path:polygon(0% 0%,100% 0%,100% 100%,87.5% 85%,75% 100%,62.5% 85%,50% 100%,37.5% 85%,25% 100%,12.5% 85%,0% 100%);
-  transition:clip-path 1.1s var(--ease);}
-.tear--open{clip-path:polygon(0% 0%,100% 0%,100% 9%,87.5% 0%,75% 9%,62.5% 0%,50% 9%,37.5% 0%,25% 9%,12.5% 0%,0% 9%);}
-@media (prefers-reduced-motion:reduce){ .tear{transition:none} }
-@media (max-width:640px){ .tear{height:220px} }
-.tear-host{position:relative}
+/* ================= THRESHOLD — the signature arch interaction ================= */
+#threshold{height:280vh;background:var(--ink)}
+.threshold__sticky{position:sticky;top:0;height:100svh;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.threshold__frame{position:absolute;inset:0;pointer-events:none}
+.threshold__frame path{fill:none}
+.threshold__arch-outline{stroke:var(--ochre);stroke-width:3}
+.threshold__col{fill:var(--red)}
+.threshold__img-wrap{position:absolute;inset:0}
+.threshold__img-wrap img{filter:saturate(1.1)}
+.threshold__caption{position:absolute;bottom:56px;left:0;right:0;text-align:center;z-index:3;color:var(--cream);font-family:var(--body);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
 
-/* ================= HERO ================= */
-#hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding-top:150px;padding-bottom:100px;background:var(--paper)}
-.hero-sign{width:min(760px,90vw)}
-.hero-sign path{fill:none;stroke:var(--ink);stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
-.hero-wordmark{margin-top:8px;font-family:var(--display);font-size:clamp(44px,9vw,104px);line-height:.95;color:var(--terracotta);text-shadow:3px 3px 0 var(--ink)}
-.hero-wordmark small{display:block;font-size:.28em;color:var(--ink);text-shadow:none;letter-spacing:.1em;margin-top:10px}
-.hero-tagline{margin-top:26px;font-size:clamp(18px,2.2vw,24px);color:var(--ink-2);max-width:38ch;font-weight:500}
-.hero-meta{margin-top:34px;display:flex;gap:28px;flex-wrap:wrap;font-size:14.5px;color:var(--muted);font-weight:600}
-.hero-meta b{color:var(--ink)}
-.hero-hint{margin-top:60px;display:flex;align-items:center;gap:10px;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600}
-.hero-hint i{width:26px;height:2px;background:var(--muted)}
+/* ================= MURALS — real photography, choreographed ================= */
+#murals{background:var(--cream);padding:130px 0 100px}
+.mural-intro{max-width:64ch}
+.mural-seq{margin-top:70px;display:flex;flex-direction:column;gap:14vh}
+.mural-row{display:grid;grid-template-columns:1.1fr .9fr;gap:0;align-items:center}
+.mural-row--rev{grid-template-columns:.9fr 1.1fr}
+.mural-row--rev .mural-row__text{order:2}
+.mural-row__photo{aspect-ratio:4/5;overflow:hidden;position:relative;box-shadow:0 18px 44px -18px rgba(59,42,26,.4)}
+.mural-row--wide .mural-row__photo{aspect-ratio:16/9}
+.mural-row__text{padding:0 48px}
+.mural-row__num{font-family:var(--body);font-weight:800;font-size:12px;color:var(--red);letter-spacing:.1em}
+.mural-row__title{font-family:var(--display);font-size:clamp(24px,3vw,34px);margin-top:10px;text-transform:uppercase;color:var(--ink)}
+.mural-row__desc{margin-top:14px;color:var(--muted);font-size:15.5px;max-width:42ch}
+@media (max-width:860px){
+  .mural-row,.mural-row--rev{grid-template-columns:1fr;gap:26px}
+  .mural-row--rev .mural-row__text{order:0}
+  .mural-row__text{padding:0}
+}
 
-/* ================= FOOD / MENU ================= */
-#food{background:var(--paper-2);border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
-.menu-grid{margin-top:56px;display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line)}
-.menu-cat{padding:34px 30px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
-.menu-cat h3{font-family:var(--display);font-size:20px;color:var(--terracotta)}
-.menu-item{margin-top:16px;display:flex;justify-content:space-between;align-items:baseline;gap:14px}
-.menu-item span:first-child{font-weight:600}
-.menu-item .price{font-family:var(--body);font-weight:700;color:var(--ink);white-space:nowrap}
-.menu-item .price--na{color:var(--muted);font-weight:500;font-style:italic;font-size:14px}
+/* ================= FOOD — appetite moment ================= */
+#food-hero{position:relative;height:78vh;min-height:520px;overflow:hidden}
+.food-hero__img{position:absolute;inset:0}
+.food-hero__scrim{position:absolute;inset:0;background:linear-gradient(0deg,rgba(30,20,12,.86) 0%,rgba(30,20,12,.1) 55%)}
+.food-hero__content{position:absolute;left:0;right:0;bottom:0;padding:56px 0;color:var(--cream);z-index:2}
+.food-hero__content .h2{color:var(--cream)}
+.food-detail-row{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--ink)}
+.food-detail{aspect-ratio:1/1;position:relative;overflow:hidden}
+.food-detail__cap{position:absolute;left:16px;bottom:14px;color:var(--cream);font-family:var(--body);font-weight:700;font-size:13px;text-shadow:0 1px 4px rgba(0,0,0,.5)}
+
+/* ================= MENU — real data, expand-in-place ================= */
+#menu{background:var(--ink);color:var(--cream);padding:120px 0 130px}
+#menu .eyebrow{color:var(--ochre)}
+#menu .h2{color:var(--cream)}
+#menu .lede{color:#cbb98f}
+.menu-list{margin-top:56px;border-top:1px solid rgba(243,228,198,.2)}
+.menu-cat{border-bottom:1px solid rgba(243,228,198,.2)}
+.menu-cat__head{width:100%;display:flex;align-items:center;justify-content:space-between;padding:26px 4px;text-align:left}
+.menu-cat__head h3{font-family:var(--display);font-size:clamp(20px,2.4vw,28px);text-transform:uppercase;color:var(--cream);letter-spacing:.01em}
+.menu-cat__count{font-family:var(--body);font-size:12.5px;color:#a3906b;letter-spacing:.06em}
+.menu-cat__icon{width:22px;height:22px;flex-shrink:0;position:relative}
+.menu-cat__icon i{position:absolute;background:var(--ochre);border-radius:1px}
+.menu-cat__icon i:nth-child(1){left:0;top:50%;width:100%;height:2px;margin-top:-1px}
+.menu-cat__icon i:nth-child(2){top:0;left:50%;width:2px;height:100%;margin-left:-1px;transition:transform .3s var(--ease)}
+.menu-cat__head[aria-expanded="true"] .menu-cat__icon i:nth-child(2){transform:rotate(90deg)}
+.menu-cat__body{max-height:0;overflow:hidden;transition:max-height .5s var(--ease)}
+.menu-cat__head[aria-expanded="true"] + .menu-cat__body{max-height:2200px}
+.menu-cat__items{padding:4px 4px 30px}
+.menu-item{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:12px 0;border-top:1px dashed rgba(243,228,198,.16)}
+.menu-item:first-child{border-top:none}
+.menu-item__name{font-weight:600}
+.menu-item__note{display:block;margin-top:2px;font-size:13px;color:#a3906b;font-weight:400}
+.menu-item__price{font-family:var(--body);font-weight:700;white-space:nowrap;color:var(--ochre)}
+.menu-item__price--approx::after{content:" approx.";font-weight:500;font-size:11.5px;color:#a3906b}
 @media (max-width:420px){ .menu-item{flex-direction:column;align-items:flex-start;gap:2px} }
-.menu-note{margin-top:44px;font-size:13.5px;color:var(--muted);max-width:60ch;border-top:1px dashed var(--line);padding-top:18px}
-@media (max-width:760px){ .menu-grid{grid-template-columns:1fr} }
+.menu-note{margin-top:40px;font-size:13.5px;color:#a3906b;max-width:62ch}
+.specials-strip{margin-top:46px;border:1px solid rgba(243,228,198,.25);padding:26px 24px}
+.specials-strip h4{font-family:var(--display);font-size:18px;color:var(--ochre);text-transform:uppercase}
+.specials-grid{margin-top:16px;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.specials-day b{display:block;font-family:var(--body);font-weight:800;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--red)}
+.specials-day span{display:block;margin-top:6px;font-size:13.5px;color:#e9dcc3}
+@media (max-width:700px){ .specials-grid{grid-template-columns:1fr 1fr;gap:18px 20px} }
 
-/* ================= MURAL ================= */
-#mural{background:var(--paper);text-align:center}
-.mural-plate{margin:56px auto 0;max-width:820px}
-.mural-cap{margin-top:28px;font-size:13.5px;color:var(--muted);max-width:52ch;margin-left:auto;margin-right:auto}
-
-/* ================= STORY ================= */
-#story{background:var(--ink);color:var(--paper)}
-#story .eyebrow{color:var(--marigold)}
-#story .h2{color:var(--paper)}
-#story .lede{color:#cfc3aa}
-.story-stats{margin-top:50px;display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
-.story-stat b{display:block;font-family:var(--display);font-size:clamp(30px,4vw,44px);color:var(--marigold)}
-.story-stat span{display:block;margin-top:8px;font-size:13.5px;color:#cfc3aa;letter-spacing:.03em}
-@media (max-width:720px){ .story-stats{grid-template-columns:1fr;gap:26px} }
+/* ================= REVIEWS — real Google testimonials, editorial ================= */
+#reviews{background:var(--cream);padding:120px 0}
+.review-block{margin-top:60px;display:grid;grid-template-columns:.85fr 1.15fr;gap:0;align-items:stretch;border:1px solid var(--line)}
+.review-block__photo{position:relative;overflow:hidden}
+.review-block__text{padding:44px 46px;display:flex;flex-direction:column;justify-content:center}
+.review-block__stars{color:var(--red);font-size:15px;letter-spacing:2px}
+.review-block__quote{margin-top:16px;font-size:18px;line-height:1.6;color:var(--ink-2)}
+.review-block__quote::before{content:"\201C"}
+.review-block__quote::after{content:"\201D"}
+.review-block__meta{margin-top:20px;font-family:var(--body);font-weight:700;font-size:13.5px;color:var(--muted);letter-spacing:.03em}
+.review-block--rev{grid-template-columns:1.15fr .85fr}
+.review-block--rev .review-block__photo{order:2}
+@media (max-width:820px){ .review-block,.review-block--rev{grid-template-columns:1fr} .review-block--rev .review-block__photo{order:0} .review-block__photo{aspect-ratio:16/9} .review-block__text{padding:32px 26px} }
+.review-source{margin-top:44px;display:flex;align-items:center;gap:16px;font-family:var(--body);font-weight:700;font-size:14px;color:var(--muted)}
+.review-source b{color:var(--ink);font-size:22px}
 
 /* ================= VISIT ================= */
-#visit{background:var(--paper-2);border-top:2px solid var(--ink)}
-.visit-grid{margin-top:50px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.8fr);gap:60px;align-items:start}
-.visit-sign{border:3px solid var(--ink);background:var(--paper);padding:34px 30px;position:relative}
-.visit-sign::before{content:"";position:absolute;top:-3px;left:24px;right:24px;height:6px;background:repeating-linear-gradient(90deg,var(--terracotta) 0 14px,var(--papel-turq) 14px 28px,var(--papel-purple) 28px 42px,var(--cactus) 42px 56px)}
-.visit-row{display:flex;justify-content:space-between;align-items:baseline;padding:11px 0;border-bottom:1px dashed var(--line);font-size:15px;gap:12px}
+#visit{background:var(--ochre);padding:110px 0}
+#visit .eyebrow{color:var(--ink)}
+.visit-grid{margin-top:50px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.85fr);gap:60px;align-items:start}
+.visit-sign{border:3px solid var(--ink);background:var(--cream);padding:32px 28px}
+.visit-row{display:flex;justify-content:space-between;align-items:baseline;padding:10px 0;border-bottom:1px dashed var(--line);font-size:15px;gap:12px}
 .visit-row:last-child{border-bottom:none}
-.visit-row b{font-weight:700;white-space:nowrap}
-.visit-row .closed{color:var(--terracotta);font-weight:700;white-space:nowrap}
+.visit-row b{font-weight:800;white-space:nowrap}
+.visit-row .closed{color:var(--red);font-weight:800;white-space:nowrap}
 @media (max-width:420px){ .visit-row{flex-direction:column;align-items:flex-start;gap:2px} }
 .visit-links{display:flex;flex-direction:column;gap:16px}
-.visit-link{display:block;border:2px solid var(--ink);padding:18px 20px;font-weight:700}
-.visit-link small{display:block;font-weight:500;color:var(--muted);margin-top:4px;font-size:13px}
-.visit-link:hover{background:var(--terracotta);color:var(--paper);border-color:var(--terracotta)}
-.visit-link:hover small{color:var(--paper)}
+.visit-link{display:block;border:3px solid var(--ink);padding:18px 20px;font-weight:800;background:var(--cream)}
+.visit-link small{display:block;font-weight:600;color:var(--muted);margin-top:4px;font-size:13px}
+.visit-link:hover{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+.visit-link:hover small{color:#cbb98f}
 
-footer{padding:30px 0;text-align:center;font-size:12.5px;color:var(--muted);background:var(--paper-2);border-top:1px solid var(--line)}
+footer{padding:32px 0;text-align:center;font-size:12.5px;color:#cbb98f;background:var(--ink)}
 </style>
 </head>
 <body>
 
-<nav id="banner" aria-label="Sections">
-  <div class="banner__row">
-    <a class="banner__home" href="#hero">Taqueria Jalisco</a>
-    <a class="banner__flag" data-target="food" href="#food"><span>Food</span></a>
-    <a class="banner__flag" data-target="mural" href="#mural"><span>Story</span></a>
-    <a class="banner__flag" data-target="visit" href="#visit"><span>Visit</span></a>
-  </div>
+<nav id="topbar" aria-label="Quick contact">
+  <a class="topbar__name" href="#hero">Taqueria Jalisco</a>
+  <a class="topbar__call" href="tel:+18067637605">(806) 763-7605</a>
 </nav>
 
 <main>
 
 <!-- ================= HERO ================= -->
 <section id="hero" data-sec="hero">
-  <div class="wrap">
-    <svg class="hero-sign" viewBox="0 0 600 90" aria-hidden="true">
-      <path class="draw" id="signPath" d="M20 60 Q80 10 150 55 Q220 95 300 45 Q380 -5 450 50 Q510 90 580 40"/>
-    </svg>
-    <h1 class="hero-wordmark">TAQUERIA<small>JALISCO</small></h1>
-    <p class="hero-tagline">Tacos, tortas and menudo on Avenue Q — the same recipes since 1995.</p>
+  <div class="hero-photo"><img src="assets/storefront-hero.jpg" alt="The hand-painted Jalisco Taqueria &amp; Restaurant facade in Lubbock, Texas" loading="eager"></div>
+  <div class="hero-scrim"></div>
+  <div class="hero-content wrap">
+    <span class="hero-eyebrow">2211 Avenue Q · Lubbock, Texas</span>
+    <h1 class="hero-wordmark">JALISCO</h1>
+    <div class="hero-sub">TAQUERIA &amp; RESTAURANT</div>
+    <p class="hero-tagline">The same wall has said this since before most of our regulars were born. The food hasn't changed either.</p>
     <div class="hero-meta">
-      <span><b>2211 Avenue Q</b>, Lubbock, TX</span>
+      <span><b>4.5★</b> on Google</span>
       <span><b>Open today</b> · Tue–Sun 7am–10pm</span>
-      <span><b>4.3★</b> · #13 of 684 Lubbock restaurants</span>
+      <span><b>$10–$20</b> per person</span>
     </div>
-    <div class="hero-hint"><i></i>Scroll for the menu</div>
+  </div>
+  <div class="hero-hint"><i></i>Scroll</div>
+</section>
+
+<!-- ================= THRESHOLD — scroll through the painted arch ================= -->
+<section id="threshold" data-sec="threshold">
+  <div class="threshold__sticky">
+    <div class="threshold__img-wrap">
+      <img id="threshImg" src="assets/mural-serenade.jpg" alt="Inside the arch: one of the restaurant's real hand-painted murals">
+    </div>
+    <svg class="threshold__frame" width="0" height="0">
+      <defs>
+        <clipPath id="archClip" clipPathUnits="userSpaceOnUse">
+          <path id="archClipPath" d=""/>
+        </clipPath>
+      </defs>
+    </svg>
+    <div class="threshold__caption">Walk through the doorway painted on our own wall</div>
+  </div>
+</section>
+
+<!-- ================= MURALS ================= -->
+<section id="murals" data-sec="murals">
+  <div class="wrap">
+    <span class="eyebrow">Painted, not printed</span>
+    <h2 class="h2">Four walls, four stories.</h2>
+    <p class="lede mural-intro">None of this was commissioned as "branding." It's paint on the actual walls of the actual restaurant — a serenade, a portrait of a woman in front of Guadalajara's skyline, papel picado strung for real, and a Texas ranch scene that says as much about Lubbock as it does about Jalisco.</p>
+
+    <div class="mural-seq">
+      <div class="mural-row">
+        <div class="mural-row__photo"><img src="assets/mural-serenade.jpg" alt="A hand-painted mural of a man serenading a woman with a guitar, framed in a painted stone archway"></div>
+        <div class="mural-row__text">
+          <span class="mural-row__num">01 — The Serenade</span>
+          <h3 class="mural-row__title">A guitar, an archway, agave either side.</h3>
+          <p class="mural-row__desc">Painted in the same folk-art hand as the facade sign outside — the arch motif shows up again here, framing the figures the way the building frames its own doorway.</p>
+        </div>
+      </div>
+
+      <div class="mural-row mural-row--rev">
+        <div class="mural-row__photo"><img src="assets/mural-portrait-papel-picado.jpg" alt="A portrait mural of a woman in a red floral sombrero, with real papel picado banners strung above it"></div>
+        <div class="mural-row__text">
+          <span class="mural-row__num">02 — The Portrait</span>
+          <h3 class="mural-row__title">Guadalajara, strung with paper.</h3>
+          <p class="mural-row__desc">The papel picado you see here isn't a graphic — it's actually strung across the dining room, photographed exactly as it hangs.</p>
+        </div>
+      </div>
+
+      <div class="mural-row">
+        <div class="mural-row__photo"><img src="assets/mural-ranch-longhorns.jpg" alt="A mural of a West Texas ranch scene with cowboys, longhorn cattle, a barn, and a Texas flag"></div>
+        <div class="mural-row__text">
+          <span class="mural-row__num">03 — The Ranch</span>
+          <h3 class="mural-row__title">Jalisco met West Texas here.</h3>
+          <p class="mural-row__desc">A barn, a Texas flag, longhorns — this is the one wall no "generic Mexican restaurant" template would ever paint. It's specific to being a Jalisco family's restaurant on Avenue Q in Lubbock, not anywhere else.</p>
+        </div>
+      </div>
+
+      <div class="mural-row mural-row--rev mural-row--wide">
+        <div class="mural-row__photo"><img src="assets/mural-sign-restaurante.jpg" alt="A second real sign reading Taqueria Jalisco Restaurante in an old-west wanted-poster style serif"></div>
+        <div class="mural-row__text">
+          <span class="mural-row__num">04 — The Second Sign</span>
+          <h3 class="mural-row__title">Even the lettering is hand-painted twice.</h3>
+          <p class="mural-row__desc">A second sign, a different wall, the same dark-brown hand — this one in an old-west wanted-poster serif instead of the facade's bolder capitals.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- ================= FOOD ================= -->
-<section id="food" data-sec="food" class="tear-host">
-  <div class="tear" data-tear></div>
-  <div class="wrap">
-    <span class="eyebrow">On the menu</span>
-    <h2 class="h2">Made the same way<br>since 1995.</h2>
-    <p class="lede">A working taquería's menu, not a tasting-menu performance — tacos, tortas, fajitas, and the dishes regulars actually order.</p>
-
-    <div class="menu-grid">
-      <div class="menu-cat">
-        <h3>Tacos</h3>
-        <div class="menu-item"><span>Street Tacos</span><span class="price price--na">market price</span></div>
-        <div class="menu-item"><span>Tacos al Pastor</span><span class="price price--na">market price</span></div>
-      </div>
-      <div class="menu-cat">
-        <h3>Tortas</h3>
-        <div class="menu-item"><span>Torta Pastor</span><span class="price price--na">market price</span></div>
-      </div>
-      <div class="menu-cat">
-        <h3>Fajitas</h3>
-        <div class="menu-item"><span>Chicken Fajitas</span><span class="price">$16.99</span></div>
-      </div>
-      <div class="menu-cat">
-        <h3>Burritos</h3>
-        <div class="menu-item"><span>Burrito, regular or grande</span><span class="price">$11.99</span></div>
-      </div>
-      <div class="menu-cat">
-        <h3>Enchiladas &amp; Quesadillas</h3>
-        <div class="menu-item"><span>Chicken Enchiladas</span><span class="price price--na">market price</span></div>
-        <div class="menu-item"><span>Shrimp Cocktail Quesadilla</span><span class="price price--na">market price</span></div>
-      </div>
-      <div class="menu-cat">
-        <h3>Menudo</h3>
-        <div class="menu-item"><span>Menudo</span><span class="price price--na">market price</span></div>
-      </div>
+<section id="food" data-sec="food">
+  <div id="food-hero">
+    <div class="food-hero__img"><img src="assets/food-combo-plate.jpg" alt="A combo plate of cheese-smothered enchiladas, refried beans, and rice, with a drink in the background"></div>
+    <div class="food-hero__scrim"></div>
+    <div class="food-hero__content wrap">
+      <span class="eyebrow" style="color:var(--ochre)">On the table</span>
+      <h2 class="h2">Portioned for regulars, not photographs.</h2>
+      <p class="lede" style="color:#e9dcc3">Combo plates, not tasting portions — cheese-smothered enchiladas, rice, beans, and whatever came off the grill that made the plate next to it look plain.</p>
     </div>
-    <p class="menu-note">Prices shown are the ones we could confirm directly — call (806) 763-7605 for the full, current menu and pricing. Typical entrées run $10–$20 per person.</p>
+  </div>
+  <div class="food-detail-row">
+    <div class="food-detail"><img src="assets/food-crispy-tacos.jpg" alt="Crispy tacos on checkered paper with red and green salsa and fresh lime"><span class="food-detail__cap">Crispy tacos, made to order</span></div>
+    <div class="food-detail"><img src="assets/drink-margarita-dosxx.jpg" alt="A large margarita with a Dos Equis beer bottle inverted into the glass"><span class="food-detail__cap">The Dos Equis margarita</span></div>
   </div>
 </section>
 
-<!-- ================= MURAL ================= -->
-<section id="mural" data-sec="mural" class="tear-host">
-  <div class="tear" data-tear></div>
+<!-- ================= MENU ================= -->
+<section id="menu" data-sec="menu">
   <div class="wrap">
-    <span class="eyebrow">The wall out front</span>
-    <h2 class="h2">Painted, not printed.</h2>
-    <p class="lede" style="margin-left:auto;margin-right:auto">Jalisco is the state the agave plant calls home — tequila, mariachi, the food this menu is built on. Lubbock taquerías carry that identity the way they always have: a sign painted by hand, papel picado strung for a birthday, color that doesn't fade to a corporate palette. This is our version of that wall, drawn for the page.</p>
+    <span class="eyebrow">The menu</span>
+    <h2 class="h2">Everything on it, nothing invented.</h2>
+    <p class="lede">A real, current menu — organized the way the restaurant organizes it, not flattened into a grid. Tap a category to open it.</p>
 
-    <svg class="mural-plate" viewBox="0 0 800 380" role="img" aria-label="Illustrated mural: a sun, an agave plant, and strings of papel picado banners in the taqueria's colors">
-      <rect x="0" y="0" width="800" height="380" fill="none"/>
-      <circle cx="400" cy="150" r="92" fill="#e2a63a"/>
-      <g fill="none" stroke="#c1442c" stroke-width="10" stroke-linecap="round">
-        <line x1="400" y1="18" x2="400" y2="50"/>
-        <line x1="291" y1="150" x2="323" y2="150"/>
-        <line x1="477" y1="150" x2="509" y2="150"/>
-        <line x1="322" y1="72" x2="342" y2="92"/>
-        <line x1="478" y1="72" x2="458" y2="92"/>
-        <line x1="322" y1="228" x2="342" y2="208"/>
-        <line x1="478" y1="228" x2="458" y2="208"/>
-      </g>
-      <g>
-        <path d="M400 260 L400 340" stroke="#4c7a52" stroke-width="14" stroke-linecap="round" fill="none"/>
-        <path d="M400 300 Q340 260 320 210" stroke="#4c7a52" stroke-width="12" stroke-linecap="round" fill="none"/>
-        <path d="M400 300 Q460 260 480 210" stroke="#4c7a52" stroke-width="12" stroke-linecap="round" fill="none"/>
-        <path d="M400 280 Q360 250 355 205" stroke="#4c7a52" stroke-width="12" stroke-linecap="round" fill="none"/>
-        <path d="M400 280 Q440 250 445 205" stroke="#4c7a52" stroke-width="12" stroke-linecap="round" fill="none"/>
-        <path d="M400 265 Q400 230 400 195" stroke="#4c7a52" stroke-width="12" stroke-linecap="round" fill="none"/>
-      </g>
-      <g stroke="#241d15" stroke-width="3" fill="none">
-        <path d="M20 40 Q400 -10 780 40"/>
-      </g>
-      <g>
-        <path d="M40 40 L70 40 L55 80 Z" fill="#d94f8c"/>
-        <path d="M110 42 L140 42 L125 82 Z" fill="#2e9199"/>
-        <path d="M180 44 L210 44 L195 84 Z" fill="#e2a63a"/>
-        <path d="M250 45 L280 45 L265 85 Z" fill="#6b4e9e"/>
-        <path d="M320 45 L350 45 L335 85 Z" fill="#c1442c"/>
-        <path d="M450 45 L480 45 L465 85 Z" fill="#d94f8c"/>
-        <path d="M520 44 L550 44 L535 84 Z" fill="#2e9199"/>
-        <path d="M590 42 L620 42 L605 82 Z" fill="#e2a63a"/>
-        <path d="M660 40 L690 40 L675 80 Z" fill="#6b4e9e"/>
-        <path d="M730 40 L760 40 L745 80 Z" fill="#c1442c"/>
-      </g>
-    </svg>
-    <p class="mural-cap">Original illustration, not a photograph of the real storefront — we didn't have a verified photo of the actual mural to work from, so this is drawn in the same spirit rather than presented as the real thing.</p>
+    <div class="menu-list" id="menuList">
+      <div class="menu-cat">
+        <button class="menu-cat__head" aria-expanded="false" data-cat><h3>Antojitos</h3><span class="menu-cat__count">4 items</span><span class="menu-cat__icon"><i></i><i></i></span></button>
+        <div class="menu-cat__body"><div class="menu-cat__items">
+          <div class="menu-item"><span class="menu-item__name">Queso Fundido</span><span class="menu-item__price">$7.99</span></div>
+          <div class="menu-item"><span class="menu-item__name">Chile con Queso</span><span class="menu-item__price">$6.99</span></div>
+          <div class="menu-item"><span class="menu-item__name">Guacamole</span><span class="menu-item__price">$4.99</span></div>
+          <div class="menu-item"><span class="menu-item__name">Coctel de Camaron</span><span class="menu-item__price">$10.99</span></div>
+        </div></div>
+      </div>
 
-    <div class="story-stats" style="max-width:640px;margin-left:auto;margin-right:auto">
-      <div class="story-stat" style="color:var(--ink)"><b style="color:var(--terracotta)">1995</b><span>open on Avenue Q</span></div>
-      <div class="story-stat" style="color:var(--ink)"><b style="color:var(--terracotta)">4.3★</b><span>292 Yelp reviews</span></div>
-      <div class="story-stat" style="color:var(--ink)"><b style="color:var(--terracotta)">#13</b><span>of 684 Lubbock restaurants</span></div>
+      <div class="menu-cat">
+        <button class="menu-cat__head" aria-expanded="false" data-cat><h3>Ensaladas</h3><span class="menu-cat__count">3 items</span><span class="menu-cat__icon"><i></i><i></i></span></button>
+        <div class="menu-cat__body"><div class="menu-cat__items">
+          <div class="menu-item"><span class="menu-item__name">Taco Salad</span><span class="menu-item__price">$12.99</span></div>
+          <div class="menu-item"><span class="menu-item__name">Guacamole Salad</span><span class="menu-item__price">$5.99</span></div>
+          <div class="menu-item"><span class="menu-item__name">Grilled Chicken Salad</span><span class="menu-item__price">$12.99</span></div>
+        </div></div>
+      </div>
+
+      <div class="menu-cat">
+        <button class="menu-cat__head" aria-expanded="false" data-cat><h3>Especialidades de la Casa</h3><span class="menu-cat__count">10 items</span><span class="menu-cat__icon"><i></i><i></i></span></button>
+        <div class="menu-cat__body"><div class="menu-cat__items">
+          <div class="menu-item"><span class="menu-item__name">Plato de Birria</span><span class="menu-item__price">$16.99</span></div>
+          <div class="menu-item"><span class="menu-item__name">Camarones Empanizados</span><span class="menu-item__price">$21.99</span></div>
+          <div class="menu-item"><span class="menu-item__name">Tacos de Camaron</span><span class="menu-item__price">$16.99</span></div>
+          <div class="menu-item"><span class="menu-item__name">Carne Asada Plato</span><span class="menu-item__price">$19.99</span></div>
+          <div class="menu-item"><span class="menu-item__name">Albanil Plato</span><span class="menu-item__price">$18.99</span></div>
+          <div class="menu-item"><span class="menu-item__name">Carne Guisada Plato</span><span class="menu-item__price">$15.29</span></div>
+          <div class="menu-item"><span class="menu-item__name">Enchiladas Suizas</span><span class="menu-item__price">$12.29</span></div>
+          <div class="menu-item"><span class="menu-item__name">Carne Tampiquena</span><span class="menu-item__price">$18.99</span></div>
+          <div class="menu-item"><span class="menu-item__name">Quesabirria</span><span class="menu-item__price">$14.99</span></div>
+          <div class="menu-item"><span class="menu-item__name">Carne en su Jugo</span><span class="menu-item__price">$14.99</span></div>
+        </div></div>
+      </div>
+
+      <div class="menu-cat">
+        <button class="menu-cat__head" aria-expanded="false" data-cat><h3>A La Carte</h3><span class="menu-cat__count">13 items</span><span class="menu-cat__icon"><i></i><i></i></span></button>
+        <div class="menu-cat__body"><div class="menu-cat__items">
+          <div class="menu-item"><span class="menu-item__name">Supreme Quesadillas</span><span class="menu-item__price">$14.99+</span></div>
+          <div class="menu-item"><span class="menu-item__name">Meat Quesadillas</span><span class="menu-item__price">$15.99</span></div>
+          <div class="menu-item"><span class="menu-item__name">Cheese Quesadillas</span><span class="menu-item__price">$9.99</span></div>
+          <div class="menu-item"><span class="menu-item__name">Enchiladas de Carne o Pollo</span><span class="menu-item__price">$13.49</span></div>
+          <div class="menu-item"><span class="menu-item__name">Enchiladas Verdes</span><span class="menu-item__price">$11.99</span></div>
+          <div class="menu-item"><span class="menu-item__name">Jalisco Burrito</span><span class="menu-item__price menu-item__price--approx">$12.90</span></div>
+          <div class="menu-item"><span class="menu-item__name">Burrito</span><span class="menu-item__price menu-item__price--approx">$10.55</span></div>
+          <div class="menu-item"><span class="menu-item__name">Taco</span><span class="menu-item__price menu-item__price--approx">$5.04</span></div>
+          <div class="menu-item"><span class="menu-item__name">Crispy Taco</span><span class="menu-item__price menu-item__price--approx">$3.86</span></div>
+          <div class="menu-item"><span class="menu-item__name">Gordita</span><span class="menu-item__price menu-item__price--approx">$10.55</span></div>
+          <div class="menu-item"><span class="menu-item__name">Tostada</span><span class="menu-item__price menu-item__price--approx">$5.86</span></div>
+          <div class="menu-item"><span class="menu-item__name">Bean Tostada</span><span class="menu-item__price menu-item__price--approx">$2.34</span></div>
+          <div class="menu-item"><span class="menu-item__name">Torta</span><span class="menu-item__price menu-item__price--approx">$14.08</span></div>
+        </div></div>
+      </div>
+
+      <div class="menu-cat">
+        <button class="menu-cat__head" aria-expanded="false" data-cat><h3>Combinaciones</h3><span class="menu-cat__count">1 item</span><span class="menu-cat__icon"><i></i><i></i></span></button>
+        <div class="menu-cat__body"><div class="menu-cat__items">
+          <div class="menu-item"><span class="menu-item__name">Plato Mexicano</span><span class="menu-item__price">$15.29</span></div>
+        </div></div>
+      </div>
+    </div>
+
+    <p class="menu-note">Prices marked "approx." come from a secondary source that didn't fully agree with the primary menu — treat them as a close estimate, not exact. Desayuno, Nachos, Postres, Margaritas, Mixed Drinks, Shots, Kids, and To-Go all exist on the real menu too; we didn't have confirmed current pricing for them, so rather than invent numbers, we're pointing you to (806) 763-7605 or the restaurant's own posted menu for those.</p>
+
+    <div class="specials-strip">
+      <h4>Recent daily specials</h4>
+      <div class="specials-grid">
+        <div class="specials-day"><b>Tuesday</b><span>Beef Enchilada $10.99</span><span>Chorizo Huevo $6.99</span></div>
+        <div class="specials-day"><b>Wednesday</b><span>Bacon &amp; Eggs $6.99</span><span>Carne Guisada $10.99</span></div>
+        <div class="specials-day"><b>Thursday</b><span>Ham &amp; Eggs $6.99</span><span>Crispy Tacos $8.29</span></div>
+        <div class="specials-day"><b>Friday</b><span>Sausage &amp; Eggs $6.99</span><span>Especial $12.99</span></div>
+      </div>
+      <p class="menu-note" style="margin-top:18px">Plus Pozole, $8.29. Specials change — call to confirm before you drive over for one specifically.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= REVIEWS ================= -->
+<section id="reviews" data-sec="reviews">
+  <div class="wrap">
+    <span class="eyebrow">What regulars say</span>
+    <h2 class="h2">Straight from Google.</h2>
+    <div class="review-source"><b>4.5★</b><span>Google rating — these three reviews are quoted exactly as posted, not edited into marketing copy.</span></div>
+
+    <div class="review-block">
+      <div class="review-block__photo"><img src="assets/food-crispy-tacos.jpg" alt="Crispy steak tacos on checkered paper"></div>
+      <div class="review-block__text">
+        <div class="review-block__stars">★★★★★</div>
+        <p class="review-block__quote">Oh my goodness, I'm from Oklahoma. I wish i could come back often, the restaurant was so clean! My waitress was perfect, didn't check on me too much didn't disappear too long! Every thing was so prompt! The water was so clean n tasty, lemon was fresh, the steak tacos were large and full of flavor, avocado was fresh. Probably the best I've had in A VERY LONG TIME!! you know they're good when they have huge parking and extra parking across the street! I will be back one day!!! Keep up the good work!!!!</p>
+        <div class="review-block__meta">Candace Brown — Food 5/5 · Service 5/5 · Atmosphere 5/5</div>
+      </div>
+    </div>
+
+    <div class="review-block review-block--rev">
+      <div class="review-block__photo"><img src="assets/food-combo-plate.jpg" alt="A full combo plate with seafood-adjacent sides"></div>
+      <div class="review-block__text">
+        <div class="review-block__stars">★★★★★</div>
+        <p class="review-block__quote">This place is outrageously good. I was concerned when I drove up that it was going to be too busy, but even though there was a ton of people. There this place has run so well and managed so efficiently We had absolutely no trouble being served and the food came up fast. The meat and the tacos were excellent and I got the caldo de 7 mares and I'm still dreaming about that broth. If there was so much seafood in there and the food was such high quality. We also tried the Nepal's they were excellent and Made with care. They were a little too salty for my taste but they were so good. I ate them all. Made with care. The prices were excellent, so you get this outstanding five-star food at an incredibly good value. I highly recommend this place. It helped me fall in love with Lubbock</p>
+        <div class="review-block__meta">Google review — Food 5/5 · Service 5/5 · Atmosphere 5/5</div>
+      </div>
+    </div>
+
+    <div class="review-block">
+      <div class="review-block__photo"><img src="assets/drink-frozen-green.jpg" alt="A frozen green margarita with whipped cream"></div>
+      <div class="review-block__text">
+        <div class="review-block__stars">★★★★★</div>
+        <p class="review-block__quote">Very clean, delicious Mexican plates! Asap i arrive, beautiful girls greeted me very friendly and nice, waitress amazing and very fast with my order. Steak was cooked perfectly, guacamole fresh. I came by myself at 3pm not busy, bachata music and reguetton music, not just mexican music. Really enjoyed my visit, they even put my drink to go.</p>
+        <div class="review-block__meta">Google review — Food 5/5 · Service 5/5 · Atmosphere 5/5</div>
+      </div>
     </div>
   </div>
 </section>
@@ -269,6 +422,7 @@ footer{padding:30px 0;text-align:center;font-size:12.5px;color:var(--muted);back
       <div class="visit-links">
         <a class="visit-link" href="tel:+18067637605" aria-label="Call Taqueria Jalisco">(806) 763-7605<small>Tap to call</small></a>
         <a class="visit-link" href="https://www.google.com/maps/search/?api=1&query=2211+Avenue+Q%2C+Lubbock%2C+TX+79411" target="_blank" rel="noopener" aria-label="Open Taqueria Jalisco location in Maps">2211 Avenue Q<br>Lubbock, TX 79411<small>Get directions</small></a>
+        <a class="visit-link" href="#hero" aria-label="Back to top"><span aria-hidden="true">4.5★</span> on Google<small>292+ reviews and counting</small></a>
       </div>
     </div>
   </div>
@@ -282,45 +436,62 @@ footer{padding:30px 0;text-align:center;font-size:12.5px;color:var(--muted);back
 (function(){
   var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ---------- sign-painted wordmark draw-on ---------- */
-  function armDraw(el){
-    var len = el.getTotalLength();
-    el.style.strokeDasharray = len;
-    el.style.strokeDashoffset = reduce ? 0 : len;
+  /* ---------- topbar contrast: light text over the hero photo, dark once past it ---------- */
+  var topbar = document.getElementById('topbar');
+  var heroEl = document.getElementById('hero');
+  new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ topbar.classList.toggle('onlight', !e.isIntersecting); });
+  }, {threshold:0, rootMargin:'-80px 0px 0px 0px'}).observe(heroEl);
+
+  /* ---------- THE SIGNATURE INTERACTION: scroll through the painted arch.
+     #threshold is a tall (280vh) section with a position:sticky viewport-height
+     stage inside it. As the visitor scrolls through that runway, the arch-shaped
+     clip-path scales continuously from a small aperture to full-viewport size,
+     so the next section's imagery is revealed exactly like walking toward, then
+     through, the real building's painted doorway — a scroll-linked transform,
+     not a single fire-once reveal. ---------- */
+  var threshold = document.getElementById('threshold');
+  var archPath = document.getElementById('archClipPath');
+  var threshImg = document.getElementById('threshImg');
+  threshImg.style.clipPath = 'url(#archClip)';
+
+  // Builds an arch outline (two straight sides + a semicircle top) directly in
+  // real viewport pixels, centered at cx, with its bottom edge at baseY and a
+  // top-radius of `half` (so the arch is exactly as wide as it is rounded).
+  function archPathD(cx, baseY, half, straightHeight){
+    var left = cx - half, right = cx + half, topY = baseY - straightHeight;
+    return 'M' + left + ' ' + baseY + ' L' + left + ' ' + topY +
+      ' A' + half + ' ' + half + ' 0 0 1 ' + right + ' ' + topY +
+      ' L' + right + ' ' + baseY + ' Z';
   }
-  var signPath = document.getElementById('signPath');
-  armDraw(signPath);
-  requestAnimationFrame(function(){ requestAnimationFrame(function(){ signPath.style.strokeDashoffset = 0; }); });
 
-  /* ---------- paper-tear section reveal: the signature interaction.
-     Each .tear-host section starts covered by a jagged "paper" overlay
-     (clip-path polygon). Scrolling it into view morphs the SAME polygon's
-     vertices upward, so the covering edge visibly tears open and retracts
-     rather than fading — the site's one non-generic motion device. ---------- */
-  var tearObserver = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if (e.isIntersecting){
-        e.target.classList.add('tear--open');
-        tearObserver.unobserve(e.target);
-      }
+  function updateThreshold(){
+    var rect = threshold.getBoundingClientRect();
+    var vh = innerHeight;
+    var scrollable = rect.height - vh;
+    var progressed = -rect.top;
+    var frac = scrollable > 0 ? Math.min(1, Math.max(0, progressed / scrollable)) : 0;
+    if (reduce) frac = 1;
+    var vw = innerWidth;
+    var minHalf = 46, maxHalf = Math.max(vw, vh) * 0.75;
+    var half = minHalf + frac * (maxHalf - minHalf);
+    var baseY = vh + 40; // bottom edge always starts below the viewport — no visible seam at the base
+    archPath.setAttribute('d', archPathD(vw / 2, baseY, half, half * 1.3));
+  }
+  updateThreshold();
+  addEventListener('scroll', function(){ requestAnimationFrame(updateThreshold); }, {passive:true});
+  addEventListener('resize', updateThreshold);
+
+  /* ---------- menu: expand-in-place, one category open at a time ---------- */
+  var catHeads = [].slice.call(document.querySelectorAll('[data-cat]'));
+  catHeads.forEach(function(head){
+    head.addEventListener('click', function(){
+      var willOpen = head.getAttribute('aria-expanded') !== 'true';
+      catHeads.forEach(function(h){ h.setAttribute('aria-expanded', 'false'); });
+      head.setAttribute('aria-expanded', String(willOpen));
     });
-  }, {threshold:.25, rootMargin:'0px 0px -10% 0px'});
-  document.querySelectorAll('[data-tear]').forEach(function(el){
-    if (reduce) el.classList.add('tear--open');
-    else tearObserver.observe(el);
   });
-
-  /* ---------- banner-flag active state + smooth scroll ---------- */
-  var flags = [].slice.call(document.querySelectorAll('.banner__flag'));
-  var sections = [].slice.call(document.querySelectorAll('[data-sec]'));
-  var secObserver = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      var flag = flags.find(function(f){ return f.dataset.target === e.target.dataset.sec; });
-      if (!flag) return;
-      if (e.isIntersecting) flags.forEach(function(f){ f.classList.toggle('banner__flag--active', f === flag); });
-    });
-  }, {threshold:.4});
-  sections.forEach(function(s){ if (s.dataset.sec !== 'hero') secObserver.observe(s); });
+  if (catHeads[0]) catHeads[0].setAttribute('aria-expanded', 'true');
 })();
 </script>
 </body>

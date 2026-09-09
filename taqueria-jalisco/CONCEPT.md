@@ -1,71 +1,97 @@
-# CONCEPT.md — Taqueria Jalisco
+# CONCEPT.md — Taqueria Jalisco (rebuild)
 
-**Status: LOCKED before implementation.**
+**Status: LOCKED before implementation.** This replaces the prior build's concept entirely — that build used an invented SVG mural (sun/agave icon, generic papel-picado triangles) because no real photography was available. It now is. This document is written from the attached PDF's actual photographs, not from generic "Mexican restaurant" convention.
 
-## REAL BUSINESS FACTS (independently verified against public listings — see sources)
+## REAL BUSINESS FACTS
 
-- **Name:** Taqueria Jalisco (also listed as "Taqueria Jalisco #7")
+- **Name:** Taqueria Jalisco (storefront reads "JALISCO TAQUERIA & RESTAURANT" / "TAQUERIA JALISCO RESTAURANTE" — both real signs, see below)
 - **Address:** 2211 Avenue Q, Lubbock, TX 79411
 - **Phone:** (806) 763-7605
-- **Hours:** Closed Monday. Tuesday–Sunday, 7:00 AM – 10:00 PM.
-- **Cuisine:** Mexican taqueria — tacos, enchiladas, tortas, fajitas, menudo, margaritas
-- **Longevity:** BBB file opened 4/3/1995 — consistently described across aggregators as ~31 years in business
-- **Standing:** 4.3★ (Tripadvisor, ranked #13 of 684 Lubbock restaurants), 292 reviews on Yelp
-- **Confirmed real menu items/prices** (cross-checked across 2+ independent sources — this is the *complete* set of items with real, sourced data; nothing beyond this list should be presented with a specific price):
-  - Chicken Fajitas — $16.99
-  - Burrito (regular/grande) — $11.99
-  - Street Tacos
-  - Tacos al Pastor
-  - Torta Pastor
-  - Chicken Enchiladas
-  - Shrimp Cocktail Quesadilla
-  - Menudo
-  - General price range per person: $10–$20
+- **Hours:** Closed Monday. Tuesday–Sunday, 7:00 AM – 10:00 PM. (carried over from the prior build's cross-referenced research — unchanged, still the best-sourced hours)
+- **Rating:** 4.5★ Google (per this task's brief — supersedes the prior build's Tripadvisor 4.3★/Yelp citation; Google is the source of record per this task)
+- **Price range:** $10–$20/person
+- **Google description (verbatim, per brief):** "Tacos, enchiladas & other Mexican staples dished alongside margaritas in a modest space."
+- **Service signals:** happy hour food, private dining room, great cocktails
 
-**Sources:** Yelp, BBB, Tripadvisor, Waze, Favor Delivery, restaurantguru.com, menuswithprice.com — cross-referenced via web search since several individual restaurant/review sites (Yelp, kwickmenu.com) are blocked by this sandbox's network policy and could not be fetched directly. Address and phone number agree across every source. Hours reconciled after an initial apparent conflict (one snippet implied Sunday closed; a second, more specific query confirmed Sunday is open 7am–10pm, consistent with "Tuesday–Sunday" language elsewhere) — do not re-introduce the Monday-only-closed vs. Sunday-closed confusion; it is resolved.
+## VISUAL EXTRACTION (from the attached PDF — the actual restaurant, not a reference)
 
-**What is NOT claimed:** a complete menu with full pricing (only the items above have sourced prices/names — anything else on the page is a category or description, never an invented specific dish+price not in this list), any specific interior photography (no verified real photos of this location were available to this build — see IMAGE STRATEGY), any awards beyond the sourced rating/rank above, any staff names beyond none supplied.
+### STOREFRONT CHARACTER
+A plain stucco commercial box building turned into an illustrated hacienda facade entirely through paint — no real architectural arches or columns, but PAINTED ones: a trompe-l'oeil arch spans the top of the wall, flanked by two painted brick-red cylindrical "columns," with painted brown window trim and lintels below. It is a flat wall performing as architecture. This trompe-l'oeil-through-paint logic is the single most important, specific, non-generic fact about this building — a Google Maps hero shot only gets you the address, not the trick this exact building is playing on its own flat wall.
+
+### SIGNAGE CHARACTER
+Two distinct real signs photographed, both dark chocolate-brown ink on warm ochre/cream ground, both ALL CAPS, both bold and blocky with a hand-painted (not printed) irregularity — no script/cursive "taco truck" font anywhere on the actual building:
+1. **"JALISCO / TAQUERIA & RESTAURANT"** — the main facade sign, bold slab-adjacent poster capitals, arched baseline following the painted arch above it, with a small teal-green agave silhouette centered beneath the wordmark.
+2. **"TAQUERIA JALISCO ⚜ RESTAURANTE"** — a second sign (different wall/angle), old-west wanted-poster-style serif capitals with a small ornamental flourish divider between lines, framed by a scalloped painted arch border.
+
+### COLOR SYSTEM (sourced directly from the photographs, not invented)
+- **Ground:** warm ochre / ochre-gold stucco, sun-aged, not flat or clean (`#c9954a`–`#d9a75c` range observed)
+- **Ink:** dark chocolate brown, not black (`#3b2a1a`–`#4a3524` range) — every line, every letter
+- **Accent — architecture:** brick/terracotta red, used only for the two painted "columns" and the curb paint (`#a63a2a`–`#b8432c` range)
+- **Accent — agave:** a single small muted teal-green, used sparingly as one graphic element, not a dominant color (`#4a8a82` range)
+- **Papel picado (interior only):** a brighter, more varied party-banner palette (blue, yellow, green, purple, pink) — confirmed by a real interior photo, but confined to that specific decorative context, not bled into the main UI chrome
+- **Food/interior:** warm ambient restaurant lighting, wood-grain tables, cheese-yellow and salsa-red as food-photography accent notes
+
+### MATERIAL SYSTEM
+Painted stucco (not brick, not real wood cladding — a flat illustrated surface), real wood-grain tables, red-painted curb, checkered red/white paper for food presentation, warm low interior lighting (sconces visible in the facade photo, warm tungsten tones in interior food shots).
+
+### MURAL SYSTEM (real, photographed, figurative — not abstract icons)
+Four distinct real murals identified, each doing different narrative work:
+1. **The serenade** — a man playing guitar to a seated woman, framed in a painted stone archway flanked by agave, romantic folk-art painting style.
+2. **The portrait** — a woman in a red floral sombrero with a bouquet, a distant cathedral/cityscape behind her (likely evoking Guadalajara, Jalisco's capital), photographed with real papel picado banners strung above it — this is the one photo that shows papel picado as it actually exists in the space.
+3. **The ranch** — a wooden barn, a Texas flag, cowboys on horseback herding longhorn cattle. This is the single most specific, least-generic fact available: this taquería's own wall blends Jalisco identity with West Texas ranching identity. No generic "Mexican restaurant" template would arrive at this image.
+4. **The two exterior signs themselves** — see SIGNAGE CHARACTER above; they are murals too, not typography applied after the fact.
+
+### TYPOGRAPHIC CHARACTER
+Bold, blocky, hand-painted poster capitals (facade sign) and an old-west wanted-poster serif (second sign) — dignified and a little severe, not playful or bubbly. The prior build's choice of "Bungee" (a rounded, bouncy poster font) is a real mismatch against this reference and is replaced here with **Rye** (Google Fonts' actual wanted-poster/Western-signage display face) for major headline moments, paired with a plain, confident grotesk (**Archivo**) for body copy, menu prices, and anything that needs to stay fast to read.
+
+### PHOTOGRAPHIC CHARACTER
+Unstaged, real restaurant photography — slightly warm/dim indoor lighting, generous home-style combo plates (cheese-smothered, not minimalist plating), oversized novelty-glass margaritas (one with a Dos Equis bottle inverted into the glass), checkered-paper taco presentation. Not food-blog-clean; not styled. The site's photographic treatment should not "clean up" this character with bright clinical color grading.
+
+### ATMOSPHERE
+Warm, established, lived-in, family-run — a real Lubbock fixture, not a resort or a big-city trend restaurant. The ranch mural specifically signals West Texas belonging alongside Jalisco heritage — both real, both present, neither performed for effect.
+
+## IMAGE LIBRARY (real photographs from the attached PDF — `assets/`)
+
+| File | Role |
+|---|---|
+| `storefront-hero.jpg` | HERO / STOREFRONT — the primary facade shot, highest native resolution (680×510) of the set |
+| `storefront-side.jpg` | STOREFRONT (secondary) — ramp/accessible-entrance side view |
+| `mural-sign-restaurante.jpg` | SIGNAGE — the second real sign, wanted-poster serif |
+| `mural-serenade.jpg` | MURAL — the guitar/serenade scene |
+| `mural-portrait-papel-picado.jpg` | MURAL + real papel picado in situ |
+| `mural-ranch-longhorns.jpg` | MURAL — the Texas ranch/longhorn scene |
+| `drink-margarita-dosxx.jpg` | DRINK — margarita with inverted Dos Equis |
+| `drink-frozen-green.jpg` | DRINK — frozen green margarita, whipped cream |
+| `food-crispy-tacos.jpg` | FOOD — crispy tacos, checkered paper, salsas, lime |
+| `food-combo-plate.jpg` | FOOD — combo plate, cheese-smothered enchiladas, beans, rice |
+
+All ten are real photographs of the actual restaurant, supplied directly by the user for this build (not scraped from Yelp/Google, which are blocked by this sandbox's network policy in any case, and which the brief itself flags as not automatically licensed for production use). Native resolution is modest (258×258 for 8 of 10 images) — used here at supporting/detail scale, not stretched to full-bleed hero sizes where softness would show, except the one higher-resolution storefront shot.
+
+## GOOGLE TESTIMONIALS (verbatim, user-supplied — primary source, not Yelp)
+
+Three reviews, used exactly as supplied, no paraphrasing, no invented names beyond what was given (Review 2 and 3 had no name supplied — presented unattributed, not fabricated). See index.html for full text and the presentation system (editorial integration paired with food/atmosphere imagery, not generic testimonial cards).
 
 ## CREATIVE THESIS
 
-A taquería's identity in West Texas is carried by hand: the painted plywood sign bolted above the door, the papel picado strung across the ceiling for a birthday or a saint's day, the mural on the cinderblock wall next door. None of it is subtle, all of it is made by a person with a brush, not a printer. The site treats **papel picado — cut paper — as the literal interface**: sections are introduced by a scalloped, perforated paper edge that tears away to reveal what's under it, exactly the gesture of pulling down a banner to see the wall behind it.
+This building performs architecture it doesn't have — a flat stucco wall painted into an arch, columns, and a wanted-poster sign. The site does the same thing to a flat screen: typography and image framing perform the trompe-l'oeil arch-and-column logic of the real facade, so scrolling through the page feels like walking toward, and then through, that painted doorway.
 
-Removing this sentence would make the direction generic: without "cut paper as interface," this is just "a colorful Mexican restaurant site." With it, every reveal on the page has to be a tear, not a fade.
-
-## VISUAL METAPHOR
-
-Hand-painted taquería signage + papel picado banner strings + the flat, saturated color-block language of Mexican folk art — filtered through a modest West Texas storefront, not a resort-Cancún aesthetic. Bold, slightly imperfect hand-lettering (never a generic script font standing in for "Mexican"), flat color fields with no gradients, a perforated/scalloped edge motif used structurally.
-
-## USER JOURNEY
-
-1. **Attention** — the page opens on a single painted sign board, hand-lettered, the taquería's name resolving stroke by stroke like a sign painter's brush.
-2. **Curiosity** — a strung papel picado banner runs across the top of the page as the persistent navigation device — each flag is a section, scalloped edges torn rather than clicked.
-3. **Discovery** — scrolling tears through banner after banner into the food, the story, the visit info — each section is genuinely different in composition, not a repeated card.
-4. **Trust** — real hours, real address, real phone, real rating are stated plainly, with a disclosed boundary on what isn't independently confirmed (no invented menu beyond the sourced items).
-5. **Action** — visit info reads like a hand-painted hours sign, not a generic contact card; a real tel: link, a real maps link, a real address.
+Removing this sentence would leave "use warm colors and real photos" — accurate but generic. With it, the arch/column motif has a job: it has to actually frame content, not decorate a header.
 
 ## SIGNATURE INTERACTION
 
-**The paper-tear reveal.** Each major section is capped by a perforated papel picado edge. Scrolling into a section visibly tears that edge open (an SVG clip-path/mask animation, not a plain fade or slide) to reveal the content beneath — the site's one non-generic, non-decorative motion signature, doing the job a card-grid fade normally fakes.
+**The painted arch as a real framing device.** A CSS/SVG arch-and-column frame (matching the facade's actual proportions and colors) is the structural container the visitor scrolls *through* at the transition into the mural section — not a static illustration, an actual clip-path/mask the following content is revealed inside of, tightening or widening as you scroll, echoing the trompe-l'oeil logic of the real wall.
+
+**Secondary interaction:** the menu behaves as a real menu board — categories expand in place (accordion-like reveal with new information, not a modal or a separate page), so exploring the (large, real) menu doesn't dump forty items on the visitor at once.
 
 ## MOTION LANGUAGE
 
-- Sections reveal via a **paper-tear** (animated scalloped clip-path), never opacity/translateY fade-up.
-- The sign-painted wordmark **draws on** (stroke-dashoffset), same discipline as every other site in this project.
-- `prefers-reduced-motion`: tears and draw-ons resolve instantly to their final state.
+- The arch-frame interaction is the one non-generic motion device — purposeful, tied to the actual facade, not decorative.
+- Photography reveals via clip/mask transitions echoing the arch, never a generic fade-up.
+- `prefers-reduced-motion`: all transitions resolve instantly to final state.
 
-## TYPOGRAPHY STRATEGY
+## HONESTY NOTES (carried forward, still binding)
 
-One bold hand-painted-feeling display face for headlines/signage (large, slightly irregular baseline treatment via letter-spacing/rotation micro-variance, not a script cliché), one clean grotesk for body/menu copy so prices and hours stay legible — sign-painter voice for identity, plain readable voice for information a diner actually needs.
-
-## IMAGE STRATEGY
-
-No stock photography, no borrowed/implied photos of this specific restaurant (none were available to verify). All visuals are original CSS/SVG illustration — flat-color plates, papel picado cut patterns, hand-lettered marks — openly a designed interpretation of the taquería's real visual culture, not a fabricated photograph passed off as the real location. This mirrors the same disclosed-illustration approach used elsewhere in this repository (Clearline Studio's concept-study portfolio) — original work standing in honestly for photography that isn't available.
-
-## MENU STRATEGY
-
-Only the sourced items/prices listed above appear with specific prices. Broader categories (tacos, tortas, enchiladas, fajitas, quesadillas, menudo) are presented as real categories this taquería serves, without inventing specific unlisted dishes or numbers.
-
-## CONVERSION STRATEGY
-
-Visit info (hours/address/phone) presented as its own hand-painted "sign," with real `tel:`/maps links — no fake reservation system, no fake online-ordering flow that doesn't exist on the real site.
+- Menu prices: every price shown must trace to the researched list in this task's brief or be labeled clearly as approximate/unconfirmed — see the menu data table for per-item sourcing status.
+- Daily specials are presented as "recent specials, subject to change," not permanent facts.
+- No fabricated testimonials, no invented reviewer names beyond what was supplied, no Yelp substitution for the three Google reviews or the 4.5★ rating.
+- Real photography only — no stock imagery, no invented SVG mural (that approach is retired per this task's explicit rejection of it).
