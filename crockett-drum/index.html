@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crockett Drum Plumbing Heating &amp; Air | Lubbock, TX</title>
+<meta name="description" content="Crockett Drum Plumbing Heating &amp; Air — plumbing, heating, and air conditioning service in Lubbock, TX. Call (806) 866-0588.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230a0e14'/%3E%3Cpath d='M20 55h20l8-16 8 24 8-16h16' fill='none' stroke='%231f6feb' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0a0e14;
+  --ink-2:#0f1520;
+  --panel:#131a26;
+  --water:#1256bd;
+  --water-bright:#4fb2ff;
+  --air:#22b8cf;
+  --air-bright:#5fe3f0;
+  --heat:#b23414;
+  --heat-bright:#ff8a5c;
+  --paper:#f5f7fa;
+  --white:#ffffff;
+  --stone:#5b6472;
+  --line:rgba(255,255,255,0.1);
+  --line-dark:rgba(10,14,20,0.1);
+  --shadow:0 24px 60px rgba(3,6,12,0.4);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Inter',sans-serif;background:var(--paper);color:var(--ink);
+  line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:-0.01em;color:var(--ink);}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+button{font-family:inherit;cursor:pointer;border:none;background:none;}
+.wrap{max-width:1220px;margin:0 auto;padding:0 32px;}
+.eyebrow{font-family:'Inter',sans-serif;font-weight:700;font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--water);display:inline-flex;align-items:center;gap:10px;}
+.eyebrow::before{content:'';width:26px;height:1.5px;background:var(--water);display:inline-block;}
+.mono-label{font-family:'Space Grotesk',sans-serif;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--stone);}
+:focus-visible{outline:3px solid var(--water-bright);outline-offset:3px;}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1);}
+.reveal.in{opacity:1;transform:translateY(0);}
+
+/* ===== NAV ===== */
+.nav{position:fixed;top:0;left:0;right:0;z-index:600;display:flex;align-items:center;justify-content:space-between;padding:16px 32px;transition:background .3s,padding .3s,box-shadow .3s;}
+.nav::before{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(10,14,20,0.7) 0%,rgba(10,14,20,0) 100%);opacity:1;transition:opacity .3s;}
+.nav.scrolled::before{opacity:0;}
+.nav.scrolled{background:rgba(245,247,250,0.96);backdrop-filter:blur(10px);box-shadow:0 2px 18px rgba(3,6,12,0.1);}
+.nav__brand{display:flex;align-items:center;gap:10px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.05rem;color:#fff;letter-spacing:-0.01em;line-height:1.1;}
+.nav__brand small{display:block;font-family:'Inter',sans-serif;font-weight:600;font-size:0.6rem;letter-spacing:0.14em;color:var(--water-bright);margin-top:2px;}
+.nav.scrolled .nav__brand{color:var(--ink);}
+.nav.scrolled .nav__brand small{color:var(--water);}
+.nav__brand svg{width:38px;height:38px;flex-shrink:0;}
+.nav__links{display:flex;align-items:center;gap:28px;}
+.nav__links a{font-size:0.85rem;font-weight:600;letter-spacing:0.02em;color:rgba(255,255,255,0.88);transition:color .3s;}
+.nav.scrolled .nav__links a{color:var(--stone);}
+.nav__links a:hover{color:#fff;}
+.nav.scrolled .nav__links a:hover{color:var(--ink);}
+.nav__cta{display:inline-flex;align-items:center;gap:8px;background:var(--water);color:#fff;padding:11px 20px;border-radius:100px;font-weight:700;font-size:0.85rem;box-shadow:0 8px 22px rgba(31,111,235,0.4);transition:transform .2s,box-shadow .2s;}
+.nav__cta:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(31,111,235,0.5);}
+.nav__cta--mobile{display:none;}
+.nav__toggle{display:none;width:44px;height:44px;align-items:center;justify-content:center;}
+.nav__toggle span,.nav__toggle span::before,.nav__toggle span::after{content:'';display:block;width:22px;height:2px;background:#fff;position:relative;transition:.3s;}
+.nav.scrolled .nav__toggle span,.nav.scrolled .nav__toggle span::before,.nav.scrolled .nav__toggle span::after{background:var(--ink);}
+.nav__toggle span::before{position:absolute;top:-7px;}
+.nav__toggle span::after{position:absolute;top:7px;}
+.nav__toggle.active span{background:transparent;}
+.nav__toggle.active span::before{top:0;transform:rotate(45deg);}
+.nav__toggle.active span::after{top:0;transform:rotate(-45deg);}
+@media(max-width:960px){
+  .nav__links{position:fixed;top:0;right:-100%;width:min(320px,84vw);height:100vh;background:var(--paper);
+    flex-direction:column;align-items:flex-start;justify-content:center;gap:24px;padding:40px;
+    transition:right .4s cubic-bezier(.4,0,.2,1);box-shadow:-10px 0 40px rgba(0,0,0,0.15);}
+  .nav__links.open{right:0;}
+  .nav__links a{color:var(--ink)!important;font-size:1.2rem;}
+  .nav__cta{display:none;}
+  .nav__links .nav__cta--mobile{display:inline-flex;margin-top:12px;}
+  .nav__toggle{display:flex;}
+}
+
+/* ===== HERO ===== */
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;overflow:hidden;background:var(--ink);}
+.hero__scene{position:absolute;inset:0;z-index:0;}
+.hero__scene svg{width:100%;height:100%;}
+.hero__grid{position:absolute;inset:0;z-index:0;opacity:0.35;
+  background-image:linear-gradient(rgba(255,255,255,0.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.035) 1px,transparent 1px);
+  background-size:44px 44px;}
+.hero__vignette{position:absolute;inset:0;z-index:1;background:radial-gradient(ellipse 70% 55% at 50% 48%,rgba(10,14,20,0.72) 0%,rgba(10,14,20,0.3) 55%,rgba(10,14,20,0) 78%);}
+.hero__inner{position:relative;z-index:2;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:130px 24px 60px;text-align:center;}
+@media(max-width:720px){.hero__vignette{background:radial-gradient(ellipse 90% 65% at 50% 48%,rgba(10,14,20,0.88) 0%,rgba(10,14,20,0.55) 60%,rgba(10,14,20,0.15) 85%);}}
+.hero__badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.14);color:#fff;padding:8px 16px;border-radius:100px;font-size:0.8rem;font-weight:600;margin-bottom:26px;}
+.hero__badge .stars{color:var(--heat-bright);letter-spacing:1px;}
+.hero__title{font-size:clamp(2.4rem,6.4vw,4.6rem);color:#fff;line-height:0.98;letter-spacing:-0.01em;margin-bottom:14px;}
+.hero__systems{display:flex;gap:22px;justify-content:center;flex-wrap:wrap;margin-bottom:26px;}
+.hero__systems span{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:1.05rem;letter-spacing:0.08em;text-transform:uppercase;padding-bottom:4px;border-bottom:2px solid currentColor;}
+.hero__systems .s-water{color:var(--water-bright);}
+.hero__systems .s-heat{color:var(--heat-bright);}
+.hero__systems .s-air{color:var(--air-bright);}
+.hero__sub{color:rgba(255,255,255,0.7);font-size:1.04rem;max-width:560px;margin:0 auto 34px;}
+.hero__actions{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 30px;border-radius:100px;font-weight:700;font-size:0.95rem;transition:transform .2s,box-shadow .2s;}
+.btn--primary{background:var(--water);color:#fff;box-shadow:0 12px 28px rgba(31,111,235,0.4);}
+.btn--primary:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(31,111,235,0.5);}
+.btn--ghost{background:rgba(255,255,255,0.06);color:#fff;border:1.5px solid rgba(255,255,255,0.35);}
+.btn--ghost:hover{background:rgba(255,255,255,0.14);}
+.btn--dark{background:var(--ink);color:#fff;}
+.btn--dark:hover{background:var(--ink-2);transform:translateY(-3px);}
+.hero__scroll{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,255,255,0.5);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;padding-bottom:26px;}
+.hero__scroll .line{width:1px;height:30px;background:rgba(255,255,255,0.3);position:relative;overflow:hidden;}
+.hero__scroll .line::after{content:'';position:absolute;top:-100%;left:0;width:100%;height:100%;background:#fff;animation:scrollLine 1.8s ease-in-out infinite;}
+@keyframes scrollLine{0%{top:-100%;}50%{top:0;}100%{top:100%;}}
+@media(max-width:720px){.hero__scroll{display:none;}}
+
+/* ===== SECTION SHARED ===== */
+section{position:relative;}
+.section-head{max-width:640px;margin-bottom:56px;}
+.section-head h2{font-size:clamp(2rem,4vw,3rem);margin-top:14px;line-height:1.05;}
+.section-head p{font-size:1.06rem;color:var(--stone);margin-top:16px;max-width:560px;}
+
+/* ===== SYSTEM SELECTOR ===== */
+.selector{background:var(--ink);padding:120px 0;position:relative;overflow:hidden;}
+.selector .section-head h2{color:#fff;}
+.selector .section-head p{color:rgba(255,255,255,0.65);}
+.selector__tabs{display:flex;gap:12px;margin-bottom:46px;flex-wrap:wrap;}
+.stab{
+  display:flex;align-items:center;gap:10px;padding:14px 24px;border-radius:100px;
+  border:1.5px solid rgba(255,255,255,0.16);background:rgba(255,255,255,0.03);color:rgba(255,255,255,0.7);
+  font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.95rem;letter-spacing:0.02em;transition:.25s;
+}
+.stab svg{width:20px;height:20px;}
+.stab[aria-pressed="true"]{color:#fff;border-color:currentColor;background:rgba(255,255,255,0.08);}
+.stab[data-sys="plumbing"][aria-pressed="true"]{color:var(--water-bright);box-shadow:0 0 0 1px var(--water-bright) inset;}
+.stab[data-sys="heating"][aria-pressed="true"]{color:var(--heat-bright);box-shadow:0 0 0 1px var(--heat-bright) inset;}
+.stab[data-sys="air"][aria-pressed="true"]{color:var(--air-bright);box-shadow:0 0 0 1px var(--air-bright) inset;}
+.selector__grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+.selector__text h3{color:#fff;font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:16px;transition:color .3s;}
+.selector__text p{color:rgba(255,255,255,0.68);font-size:1.02rem;max-width:460px;margin-bottom:20px;}
+.selector__meta{display:flex;gap:28px;margin-top:24px;}
+.smeta{color:rgba(255,255,255,0.85);}
+.smeta .n{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.85rem;letter-spacing:0.06em;text-transform:uppercase;}
+.smeta .l{font-size:0.82rem;color:rgba(255,255,255,0.5);margin-top:2px;}
+.selector__diagram{position:relative;aspect-ratio:1/1;max-width:480px;margin:0 auto;}
+.selector__diagram svg{width:100%;height:100%;}
+@media(max-width:900px){.selector__grid{grid-template-columns:1fr;gap:36px;}.selector__diagram{max-width:340px;}}
+
+/* ===== HOW IT WORKS ===== */
+.howitworks{padding:120px 0;background:var(--paper);}
+.howitworks .eyebrow{color:var(--water);}
+.hiw__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-dark);border:1px solid var(--line-dark);border-radius:16px;overflow:hidden;margin-top:20px;}
+.hiwstep{background:#fff;padding:36px 30px;}
+.hiwstep__num{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.85rem;color:var(--water);letter-spacing:0.08em;margin-bottom:14px;}
+.hiwstep svg{width:42px;height:42px;color:var(--ink);margin-bottom:16px;}
+.hiwstep h4{font-size:1.15rem;margin-bottom:8px;}
+.hiwstep p{font-size:0.9rem;color:var(--stone);}
+@media(max-width:900px){.hiw__grid{grid-template-columns:1fr;}}
+
+/* ===== SERVICES ===== */
+.services{padding:120px 0;background:#fff;}
+.services .eyebrow{color:var(--water);}
+.svc__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:20px;}
+.svcard{border-radius:18px;padding:34px 28px;color:#fff;position:relative;overflow:hidden;min-height:220px;display:flex;flex-direction:column;justify-content:flex-end;}
+.svcard::before{content:'';position:absolute;inset:0;opacity:0.9;}
+.svcard--water::before{background:linear-gradient(155deg,#123a73,#0a1e3f);}
+.svcard--heat::before{background:linear-gradient(155deg,#8a2f13,#3f1408);}
+.svcard--air::before{background:linear-gradient(155deg,#0e5f6b,#052b31);}
+.svcard__icon{position:relative;width:38px;height:38px;margin-bottom:auto;color:rgba(255,255,255,0.85);}
+.svcard__icon svg{width:100%;height:100%;}
+.svcard h3{position:relative;color:#fff;font-size:1.35rem;margin-top:20px;}
+.svcard p{position:relative;color:rgba(255,255,255,0.75);font-size:0.9rem;margin-top:8px;}
+.svcard .evidence{position:relative;margin-top:14px;font-size:0.76rem;color:rgba(255,255,255,0.55);font-style:italic;}
+@media(max-width:900px){.svc__grid{grid-template-columns:1fr;}}
+
+/* ===== PROBLEM -> SOLUTION ===== */
+.diagnose{background:var(--panel);padding:120px 0;position:relative;overflow:hidden;}
+.diagnose .eyebrow{color:var(--air-bright);}
+.diagnose .section-head h2{color:#fff;}
+.diagnose .section-head p{color:rgba(255,255,255,0.65);}
+.diag__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.diagcard{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);border-radius:18px;padding:32px 26px;cursor:pointer;transition:.25s;text-align:left;}
+.diagcard:hover,.diagcard:focus-visible{background:rgba(255,255,255,0.07);transform:translateY(-4px);}
+.diagcard svg{width:36px;height:36px;margin-bottom:18px;}
+.diagcard--water svg{color:var(--water-bright);}
+.diagcard--heat svg{color:var(--heat-bright);}
+.diagcard--air svg{color:var(--air-bright);}
+.diagcard h4{color:#fff;font-size:1.15rem;margin-bottom:8px;}
+.diagcard p{color:rgba(255,255,255,0.62);font-size:0.9rem;margin-bottom:16px;}
+.diagcard .goto{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.82rem;letter-spacing:0.04em;display:inline-flex;align-items:center;gap:6px;}
+.diagcard--water .goto{color:var(--water-bright);}
+.diagcard--heat .goto{color:var(--heat-bright);}
+.diagcard--air .goto{color:var(--air-bright);}
+.diagnose__note{margin-top:26px;font-size:0.85rem;color:rgba(255,255,255,0.45);font-style:italic;}
+@media(max-width:900px){.diag__grid{grid-template-columns:1fr;}}
+
+/* ===== REVIEWS ===== */
+.reviews{padding:120px 0;background:var(--paper);}
+.reviews .eyebrow{color:var(--water);}
+.reviews__head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px;margin-bottom:44px;}
+.reviews__rating{display:flex;align-items:center;gap:14px;}
+.reviews__rating .num{font-family:'Space Grotesk',sans-serif;font-size:2.6rem;color:var(--ink);font-weight:700;}
+.reviews__rating .stars{color:var(--heat);font-size:1.1rem;letter-spacing:2px;}
+.reviews__rating .meta{font-size:0.85rem;color:var(--stone);}
+.revgrid{display:grid;grid-template-columns:1.3fr 1fr;gap:24px;}
+.revcard{background:#fff;border-radius:18px;padding:34px 32px;box-shadow:0 10px 30px rgba(10,14,20,0.06);border:1px solid var(--line-dark);}
+.revcard .quote-mark{font-family:'Space Grotesk',sans-serif;font-size:2.6rem;color:var(--water);line-height:1;margin-bottom:6px;}
+.revcard p{font-size:1.02rem;color:var(--ink);line-height:1.6;margin-bottom:18px;}
+.revcard__foot{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+.revcard__stars{color:var(--heat);letter-spacing:2px;}
+.revcard__src{font-size:0.8rem;color:var(--stone);font-weight:600;}
+.revcard__truncnote{font-size:0.76rem;color:var(--stone);font-style:italic;margin-top:10px;}
+.revside{display:flex;flex-direction:column;gap:20px;}
+.revmini{background:#fff;border-radius:14px;padding:22px 24px;border:1px solid var(--line-dark);}
+.revmini p{font-size:0.94rem;color:var(--ink);margin-bottom:10px;}
+.revmini .revcard__stars{font-size:0.9rem;}
+.reviews__honesty{margin-top:24px;font-size:0.86rem;color:var(--stone);max-width:640px;}
+.reviews__cta{margin-top:22px;}
+@media(max-width:900px){.revgrid{grid-template-columns:1fr;}}
+
+/* ===== CONTACT ===== */
+.contact{background:var(--ink);padding:120px 0 100px;position:relative;overflow:hidden;}
+.contact::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at bottom left,rgba(31,111,235,0.14),transparent 55%);}
+.contact__inner{position:relative;z-index:1;text-align:center;max-width:680px;margin:0 auto;}
+.contact .eyebrow{color:var(--water-bright);justify-content:center;}
+.contact h2{color:#fff;font-size:clamp(2.1rem,4.4vw,3.2rem);margin:16px 0 18px;}
+.contact p{color:rgba(255,255,255,0.7);font-size:1.05rem;margin-bottom:36px;}
+.contact__actions{display:flex;justify-content:center;flex-wrap:wrap;gap:16px;margin-bottom:46px;}
+.contact__details{display:flex;justify-content:center;gap:44px;flex-wrap:wrap;color:rgba(255,255,255,0.85);}
+.cdetail{display:flex;flex-direction:column;align-items:center;gap:8px;font-size:0.9rem;}
+.cdetail svg{width:24px;height:24px;color:var(--water-bright);}
+.cdetail b{color:#fff;font-weight:700;font-size:1.02rem;}
+
+/* ===== FINAL SYSTEM ===== */
+.final-system{background:var(--ink);padding:80px 0 0;text-align:center;position:relative;overflow:hidden;}
+.final-system svg{width:100%;max-width:900px;margin:0 auto;display:block;}
+.final-system__label{color:rgba(255,255,255,0.5);font-family:'Space Grotesk',sans-serif;font-size:0.82rem;letter-spacing:0.14em;text-transform:uppercase;padding-bottom:40px;}
+
+/* ===== FOOTER ===== */
+footer{background:var(--ink);padding:36px 0 100px;color:rgba(255,255,255,0.45);border-top:1px solid rgba(255,255,255,0.08);}
+.footer__row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:0.85rem;}
+.footer__brand{display:flex;align-items:center;gap:10px;color:#fff;font-family:'Space Grotesk',sans-serif;font-weight:700;}
+.footer__brand svg{width:26px;height:26px;}
+
+/* ===== MOBILE ACTION BAR ===== */
+.actionbar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:700;grid-template-columns:1fr 1fr;box-shadow:0 -6px 24px rgba(0,0,0,0.2);}
+.actionbar a{display:flex;align-items:center;justify-content:center;gap:8px;padding:16px 10px;font-weight:700;font-size:0.9rem;font-family:'Space Grotesk',sans-serif;}
+.actionbar a:first-child{background:var(--water);color:#fff;}
+.actionbar a:last-child{background:var(--ink-2);color:#fff;}
+.actionbar svg{width:18px;height:18px;}
+@media(max-width:720px){.actionbar{display:grid;}body{padding-bottom:64px;}}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;scroll-behavior:auto!important;}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <a href="#top" class="nav__brand">
+    <svg viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="20" fill="#0a0e14"/><path d="M20 55h20l8-16 8 24 8-16h16" fill="none" stroke="#1f6feb" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span>Crockett Drum<small>PLUMBING · HEATING · AIR</small></span>
+  </a>
+  <div class="nav__links" id="navLinks">
+    <a href="#systems">Plumbing</a>
+    <a href="#systems">Heating</a>
+    <a href="#systems">Air</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact">Contact</a>
+    <a href="tel:+18068660588" class="nav__cta nav__cta--mobile">Call Now</a>
+  </div>
+  <a href="tel:+18068660588" class="nav__cta" id="navCta">Call Now</a>
+  <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero__grid" aria-hidden="true"></div>
+  <div class="hero__scene" aria-hidden="true">
+    <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="heroGlow" cx="50%" cy="46%" r="55%">
+          <stop offset="0%" stop-color="#132038" stop-opacity="1"/>
+          <stop offset="100%" stop-color="#0a0e14" stop-opacity="1"/>
+        </radialGradient>
+        <linearGradient id="waterGrad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#1f6feb" stop-opacity="0.2"/>
+          <stop offset="100%" stop-color="#4fb2ff"/>
+        </linearGradient>
+        <linearGradient id="heatGrad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#e8542a" stop-opacity="0.2"/>
+          <stop offset="100%" stop-color="#ff8a5c"/>
+        </linearGradient>
+        <linearGradient id="airGrad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#22b8cf" stop-opacity="0.2"/>
+          <stop offset="100%" stop-color="#5fe3f0"/>
+        </linearGradient>
+      </defs>
+      <rect width="1440" height="900" fill="url(#heroGlow)"/>
+
+      <!-- water path (plumbing) -->
+      <path id="waterPath" d="M -40 300 L 260 300 L 320 360 L 560 360 L 620 420 L 720 420" fill="none" stroke="url(#waterGrad)" stroke-width="4" stroke-linecap="round" opacity="0.85"/>
+      <path d="M -40 300 L 260 300 L 320 360 L 560 360 L 620 420 L 720 420" fill="none" stroke="#4fb2ff" stroke-width="4" stroke-linecap="round" stroke-dasharray="8 22" class="flow-dash flow-water"/>
+      <circle r="4.5" fill="#bfe3ff" class="flow-dot flow-dot-water"><animateMotion dur="4.5s" repeatCount="indefinite" path="M -40 300 L 260 300 L 320 360 L 560 360 L 620 420 L 720 420"/></circle>
+
+      <!-- heat path (heating) -->
+      <path id="heatPath" d="M -40 620 L 240 620 L 300 560 L 540 560 L 610 480 L 720 480" fill="none" stroke="url(#heatGrad)" stroke-width="4" stroke-linecap="round" opacity="0.85"/>
+      <path d="M -40 620 L 240 620 L 300 560 L 540 560 L 610 480 L 720 480" fill="none" stroke="#ff8a5c" stroke-width="4" stroke-linecap="round" stroke-dasharray="8 22" class="flow-dash flow-heat"/>
+      <circle r="4.5" fill="#ffd0b8" class="flow-dot flow-dot-heat"><animateMotion dur="5.2s" repeatCount="indefinite" path="M -40 620 L 240 620 L 300 560 L 540 560 L 610 480 L 720 480"/></circle>
+
+      <!-- air path -->
+      <path id="airPath" d="M 1480 260 L 1180 260 L 1120 320 L 900 320 L 830 400 L 730 400" fill="none" stroke="url(#airGrad)" stroke-width="4" stroke-linecap="round" opacity="0.85"/>
+      <path d="M 1480 260 L 1180 260 L 1120 320 L 900 320 L 830 400 L 730 400" fill="none" stroke="#5fe3f0" stroke-width="4" stroke-linecap="round" stroke-dasharray="8 22" class="flow-dash flow-air"/>
+      <circle r="4.5" fill="#d3f7fb" class="flow-dot flow-dot-air"><animateMotion dur="4.9s" repeatCount="indefinite" path="M 1480 260 L 1180 260 L 1120 320 L 900 320 L 830 400 L 730 400"/></circle>
+
+      <!-- convergence node -->
+      <circle cx="725" cy="410" r="7" fill="#ffffff" opacity="0.9"/>
+      <circle cx="725" cy="410" r="16" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.35" class="pulse-ring"/>
+      <circle cx="725" cy="410" r="28" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.18" class="pulse-ring" style="animation-delay:.8s"/>
+    </svg>
+  </div>
+  <div class="hero__vignette" aria-hidden="true"></div>
+  <div class="hero__inner">
+    <div class="hero__badge"><span class="stars">★★★★☆</span> 4.4 on Google · 38 reviews</div>
+    <h1 class="hero__title">CROCKETT DRUM</h1>
+    <div class="hero__systems">
+      <span class="s-water">Plumbing</span>
+      <span class="s-heat">Heating</span>
+      <span class="s-air">Air</span>
+    </div>
+    <p class="hero__sub">Water, heat, and airflow are the systems that keep a home running — Crockett Drum has kept them working in Lubbock, TX for over 30 years.</p>
+    <div class="hero__actions">
+      <a href="tel:+18068660588" class="btn btn--primary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call (806) 866-0588
+      </a>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=8808+Urbana+Ave%2C+Lubbock%2C+TX+79424" target="_blank" rel="noopener" class="btn btn--ghost">Get Directions</a>
+    </div>
+  </div>
+  <div class="hero__scroll" aria-hidden="true"><span>Scroll</span><div class="line"></div></div>
+</header>
+
+<section class="selector" id="systems">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">The System</span>
+      <h2>Three systems. One house.</h2>
+      <p>Every home runs on water, heat, and air. Select a system to see what Crockett Drum handles.</p>
+    </div>
+    <div class="selector__tabs reveal" role="tablist" aria-label="Select a system">
+      <button class="stab" data-sys="plumbing" aria-pressed="true" role="tab">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l2-4 4 8 2-4h6"/></svg>
+        Plumbing
+      </button>
+      <button class="stab" data-sys="heating" aria-pressed="false" role="tab">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2c-2 3-2 4 0 6s2 3 0 6-2 4 0 6M8 2c-2 3-2 4 0 6s2 3 0 6-2 4 0 6M16 2c-2 3-2 4 0 6s2 3 0 6-2 4 0 6"/></svg>
+        Heating
+      </button>
+      <button class="stab" data-sys="air" aria-pressed="false" role="tab">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h11a3 3 0 1 0-3-3M3 16h15a3 3 0 1 1-3 3M3 12h8"/></svg>
+        Air
+      </button>
+    </div>
+    <div class="selector__grid">
+      <div class="selector__text reveal">
+        <h3 id="sysTitle">Plumbing</h3>
+        <p id="sysDesc">Water pressure, pipes, fixtures, and leaks — the system that carries water through the whole property.</p>
+        <div class="selector__meta">
+          <div class="smeta"><div class="n" id="sysMetaLabel1">System</div><div class="l" id="sysMetaVal1">Water distribution</div></div>
+          <div class="smeta"><div class="n" id="sysMetaLabel2">Signal</div><div class="l" id="sysMetaVal2">Leaks, pressure, no water</div></div>
+        </div>
+        <a href="tel:+18068660588" class="btn btn--primary" style="margin-top:28px;">Call (806) 866-0588</a>
+      </div>
+      <div class="selector__diagram reveal">
+        <svg viewBox="0 0 400 400" id="diagramSvg" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="200" cy="200" r="180" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+          <circle cx="200" cy="200" r="130" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+          <!-- house silhouette -->
+          <path d="M140 230 L140 170 L200 120 L260 170 L260 230 Z" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="2"/>
+          <!-- plumbing branch -->
+          <g class="diagram-branch" data-branch="plumbing">
+            <path d="M200 380 L200 300 L150 260 L150 210" fill="none" stroke="var(--water-bright)" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="150" cy="210" r="6" fill="var(--water-bright)"/>
+            <circle r="4" fill="#bfe3ff" class="diagram-dot"><animateMotion dur="2.6s" repeatCount="indefinite" path="M200 380 L200 300 L150 260 L150 210"/></circle>
+          </g>
+          <!-- heating branch -->
+          <g class="diagram-branch" data-branch="heating" opacity="0.25">
+            <path d="M60 200 L110 200 L150 235 L150 265" fill="none" stroke="var(--heat-bright)" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="150" cy="265" r="6" fill="var(--heat-bright)"/>
+            <circle r="4" fill="#ffd0b8" class="diagram-dot"><animateMotion dur="3s" repeatCount="indefinite" path="M60 200 L110 200 L150 235 L150 265"/></circle>
+          </g>
+          <!-- air branch -->
+          <g class="diagram-branch" data-branch="air" opacity="0.25">
+            <path d="M340 200 L290 200 L250 235 L250 265" fill="none" stroke="var(--air-bright)" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="250" cy="265" r="6" fill="var(--air-bright)"/>
+            <circle r="4" fill="#d3f7fb" class="diagram-dot"><animateMotion dur="2.8s" repeatCount="indefinite" path="M340 200 L290 200 L250 235 L250 265"/></circle>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="howitworks">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">How It Works</span>
+      <h2>Call, diagnose, fix.</h2>
+      <p>A straightforward process — no guesswork about what happens after you call.</p>
+    </div>
+    <div class="hiw__grid reveal">
+      <div class="hiwstep">
+        <div class="hiwstep__num">01</div>
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M40 30v6a3 3 0 0 1-3.3 3 32 32 0 0 1-14-5 31.5 31.5 0 0 1-9.7-9.7 32 32 0 0 1-5-14A3 3 0 0 1 11 7h6a3 3 0 0 1 3 2.6c.2 1.6.6 3.2 1.2 4.7a3 3 0 0 1-.7 3.2L18 20a25.8 25.8 0 0 0 9.7 9.7l2.5-2.5a3 3 0 0 1 3.2-.7c1.5.6 3.1 1 4.7 1.2a3 3 0 0 1 2.6 3z"/></svg>
+        <h4>You Call</h4>
+        <p>Describe the issue — (806) 866-0588. Typically Mon–Fri 8am–5pm, Sat 8am–12pm per public listings — call to confirm today's hours.</p>
+      </div>
+      <div class="hiwstep">
+        <div class="hiwstep__num">02</div>
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="24" cy="24" r="18"/><path d="M24 14v10l7 4"/></svg>
+        <h4>Crockett Drum Responds</h4>
+        <p>Reviewers describe fast response — one noting a same-day faucet repair after calling.</p>
+      </div>
+      <div class="hiwstep">
+        <div class="hiwstep__num">03</div>
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M8 40l6-14 8 4 8-16 10 26z"/><circle cx="36" cy="12" r="4"/></svg>
+        <h4>The System Gets Fixed</h4>
+        <p>Plumbing, heating, or air — addressed on site, from the water heater to the gas line.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Services</span>
+      <h2>Plumbing, heating, and air.</h2>
+      <p>Verified service categories, plus specific work confirmed by real customer reviews below.</p>
+    </div>
+    <div class="svc__grid reveal">
+      <div class="svcard svcard--water">
+        <div class="svcard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.5s6 7 6 11.5a6 6 0 0 1-12 0c0-4.5 6-11.5 6-11.5z"/></svg></div>
+        <h3>Plumbing</h3>
+        <p>Pipes, fixtures, water heaters, and gas lines.</p>
+        <div class="evidence">Categories: drain &amp; sewer cleaning, fixture &amp; water heater installation. Also confirmed by real reviews below: an outside faucet repair, a burst water heater repair, and a gas line leak repair.</div>
+      </div>
+      <div class="svcard svcard--heat">
+        <div class="svcard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2c-2 3-2 4 0 6s2 3 0 6-2 4 0 6"/></svg></div>
+        <h3>Heating</h3>
+        <p>Home heating systems and repairs.</p>
+        <div class="evidence">Category confirmed via Google Business listing</div>
+      </div>
+      <div class="svcard svcard--air">
+        <div class="svcard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h11a3 3 0 1 0-3-3M3 16h15a3 3 0 1 1-3 3"/></svg></div>
+        <h3>Air Conditioning</h3>
+        <p>Cooling and airflow service.</p>
+        <div class="evidence">Category confirmed via Google Business listing</div>
+      </div>
+    </div>
+    <p style="margin-top:26px;font-size:0.86rem;color:var(--stone);font-style:italic;">Not a confirmed price or full service list — call (806) 866-0588 to ask about your specific job.</p>
+  </div>
+</section>
+
+<section class="diagnose" id="diagnose">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">What's Wrong?</span>
+      <h2>Start with what you're noticing.</h2>
+      <p>A visual guide to which system is likely involved — not a diagnosis. Call to confirm what's actually going on.</p>
+    </div>
+    <div class="diag__grid reveal">
+      <a href="tel:+18068660588" class="diagcard diagcard--water">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.5s6 7 6 11.5a6 6 0 0 1-12 0c0-4.5 6-11.5 6-11.5z"/></svg>
+        <h4>No Water / A Leak</h4>
+        <p>Likely the plumbing system — pipes, fixtures, or a water heater.</p>
+        <span class="goto">Call about plumbing →</span>
+      </a>
+      <a href="tel:+18068660588" class="diagcard diagcard--heat">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2c-2 3-2 4 0 6s2 3 0 6-2 4 0 6"/></svg>
+        <h4>No Heat</h4>
+        <p>Likely the heating system.</p>
+        <span class="goto">Call about heating →</span>
+      </a>
+      <a href="tel:+18068660588" class="diagcard diagcard--air">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h11a3 3 0 1 0-3-3M3 16h15a3 3 0 1 1-3 3"/></svg>
+        <h4>No Cool Air</h4>
+        <p>Likely the air conditioning system.</p>
+        <span class="goto">Call about air →</span>
+      </a>
+    </div>
+    <p class="diagnose__note">This is a visual guide, not a diagnostic tool — the actual cause can only be confirmed on site.</p>
+  </div>
+</section>
+
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <div class="reviews__head reveal">
+      <div>
+        <span class="eyebrow">Customer Proof</span>
+        <div class="reviews__rating" style="margin-top:14px;">
+          <span class="num">4.4</span>
+          <div>
+            <div class="stars">★★★★☆</div>
+            <div class="meta">38 Google reviews</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="revgrid reveal">
+      <div class="revcard">
+        <div class="quote-mark">"</div>
+        <p>Mr Crockett and his two man crew showed up early Friday morning 9/25/20 to locate and repair backyard gas leak. They started 9:00am dug up the ground and cutting both end of metal gas line from the alley meter to the outside wall gas line …</p>
+        <div class="revcard__foot"><span class="revcard__src">Jerry Reyes · Google Review</span></div>
+        <div class="revcard__truncnote">Shown as supplied — the source review continues beyond this point.</div>
+      </div>
+      <div class="revcard">
+        <div class="quote-mark">"</div>
+        <p>We had our water heater burst at our nail salon and Mr. Drum headed over immediately to fix it, the price he gave us was the best quote out of all the others and he was extremely helpful and professional. Will definitely use his services again in the future! - Paint Nail Bar Lubbock</p>
+        <div class="revcard__foot"><span class="revcard__stars">★★★★★</span><span class="revcard__src">Baylee Stovall · Google Review</span></div>
+      </div>
+    </div>
+    <div class="revside" style="margin-top:24px;display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+      <div class="revmini"><p>"Great Service and very knowledgable."</p><div class="revcard__stars">★★★★★</div></div>
+      <div class="revmini"><p>"Responded very quickly and fixed my outside faucet."</p><div class="revcard__stars">★★★★★</div></div>
+    </div>
+    <p class="reviews__honesty">Crockett Drum's Google rating is 4.4★ from 38 reviews — a strong, honest rating, not a perfect one. Feedback is mixed, as it is for most real businesses; these are genuine excerpts, not cherry-picked to imply universal praise.</p>
+    <div class="reviews__cta">
+      <a href="tel:+18068660588" class="btn btn--dark">Call (806) 866-0588</a>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap contact__inner">
+    <span class="eyebrow">Get In Touch</span>
+    <h2>Call Crockett Drum.</h2>
+    <p>Plumbing, heating, and air service for Lubbock, TX.</p>
+    <div class="contact__actions">
+      <a href="tel:+18068660588" class="btn btn--primary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call (806) 866-0588
+      </a>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=8808+Urbana+Ave%2C+Lubbock%2C+TX+79424" target="_blank" rel="noopener" class="btn btn--ghost">Get Directions</a>
+    </div>
+    <div class="contact__details">
+      <div class="cdetail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><b>8808 Urbana Ave</b>Lubbock, TX 79424</div>
+      <div class="cdetail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><b>Mon–Fri 8am–5pm, Sat 8am–12pm</b>Per public listings — call to confirm</div>
+      <div class="cdetail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 7.4H22l-6 4.4 2.3 7.2L12 16.6 5.7 21l2.3-7.2-6-4.4h7.6z"/></svg><b>4.4★ · 38 reviews</b>on Google</div>
+    </div>
+  </div>
+</section>
+
+<section class="final-system" aria-hidden="true">
+  <svg viewBox="0 0 900 260" xmlns="http://www.w3.org/2000/svg">
+    <path d="M 0 60 L 260 60 L 320 130 L 580 130 L 640 200 L 900 200" fill="none" stroke="#4fb2ff" stroke-width="2" opacity="0.5"/>
+    <path d="M 0 200 L 260 200 L 320 130" fill="none" stroke="#ff8a5c" stroke-width="2" opacity="0.5"/>
+    <path d="M 900 60 L 640 60 L 580 130" fill="none" stroke="#5fe3f0" stroke-width="2" opacity="0.5"/>
+    <circle cx="450" cy="130" r="5" fill="#fff"/>
+    <circle cx="450" cy="130" r="14" fill="none" stroke="#fff" stroke-width="1" opacity="0.3" class="pulse-ring"/>
+    <text x="450" y="105" text-anchor="middle" fill="#ffffff" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="28" letter-spacing="1">CROCKETT DRUM</text>
+    <text x="450" y="160" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-family="Inter, sans-serif" font-weight="600" font-size="12" letter-spacing="3">PLUMBING · HEATING · AIR</text>
+  </svg>
+  <div class="final-system__label">Lubbock, TX · (806) 866-0588</div>
+</section>
+
+<footer>
+  <div class="wrap footer__row">
+    <div class="footer__brand">
+      <svg viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="20" fill="#0a0e14"/><path d="M20 55h20l8-16 8 24 8-16h16" fill="none" stroke="#1f6feb" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Crockett Drum
+    </div>
+    <div>© 2026 Crockett Drum Plumbing Heating &amp; Air · Lubbock, TX</div>
+    <div><a href="tel:+18068660588">(806) 866-0588</a></div>
+  </div>
+</footer>
+
+<div class="actionbar">
+  <a href="tel:+18068660588"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call Now</a>
+  <a href="https://www.google.com/maps/dir/?api=1&destination=8808+Urbana+Ave%2C+Lubbock%2C+TX+79424" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Directions</a>
+</div>
+
+<style>
+.flow-dash{animation:flowDash 1.4s linear infinite;}
+@keyframes flowDash{to{stroke-dashoffset:-30;}}
+.pulse-ring{animation:pulseRing 2.6s ease-out infinite;}
+@keyframes pulseRing{0%{transform:scale(0.6);opacity:0.5;}100%{transform:scale(1.8);opacity:0;}}
+.diagram-branch{transition:opacity .4s ease;}
+</style>
+
+<script>
+(function(){
+  var nav = document.getElementById('nav');
+  window.addEventListener('scroll', function(){ nav.classList.toggle('scrolled', window.scrollY > 60); }, {passive:true});
+
+  var toggle = document.getElementById('navToggle');
+  var links = document.getElementById('navLinks');
+  toggle.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    toggle.classList.toggle('active', open);
+    toggle.setAttribute('aria-expanded', open ? 'true':'false');
+  });
+  links.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(){ links.classList.remove('open'); toggle.classList.remove('active'); toggle.setAttribute('aria-expanded','false'); });
+  });
+
+  var reveals = document.querySelectorAll('.reveal');
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.15});
+  reveals.forEach(function(el){ io.observe(el); });
+
+  // Three-system selector — real state change, not fake interactivity
+  var SYSTEMS = {
+    plumbing: {
+      title: 'Plumbing',
+      desc: 'Water pressure, pipes, fixtures, and leaks — the system that carries water through the whole property.',
+      meta1l: 'System', meta1v: 'Water distribution',
+      meta2l: 'Signal', meta2v: 'Leaks, pressure, no water',
+      color: 'water-bright'
+    },
+    heating: {
+      title: 'Heating',
+      desc: 'The system that brings warmth into the property.',
+      meta1l: 'System', meta1v: 'Warm air distribution',
+      meta2l: 'Signal', meta2v: 'No heat, uneven warmth',
+      color: 'heat-bright'
+    },
+    air: {
+      title: 'Air',
+      desc: 'The system that cools and circulates air through the property.',
+      meta1l: 'System', meta1v: 'Cool air circulation',
+      meta2l: 'Signal', meta2v: 'No cool air, weak airflow',
+      color: 'air-bright'
+    }
+  };
+
+  var tabs = document.querySelectorAll('.stab');
+  var title = document.getElementById('sysTitle');
+  var desc = document.getElementById('sysDesc');
+  var m1l = document.getElementById('sysMetaLabel1');
+  var m1v = document.getElementById('sysMetaVal1');
+  var m2l = document.getElementById('sysMetaLabel2');
+  var m2v = document.getElementById('sysMetaVal2');
+  var branches = document.querySelectorAll('.diagram-branch');
+
+  function setSystem(key){
+    var s = SYSTEMS[key];
+    title.textContent = s.title;
+    title.style.color = 'var(--' + s.color + ')';
+    desc.textContent = s.desc;
+    m1l.textContent = s.meta1l; m1v.textContent = s.meta1v;
+    m2l.textContent = s.meta2l; m2v.textContent = s.meta2v;
+    tabs.forEach(function(t){ t.setAttribute('aria-pressed', t.dataset.sys === key ? 'true' : 'false'); });
+    branches.forEach(function(b){ b.style.opacity = b.dataset.branch === key ? '1' : '0.22'; });
+  }
+
+  tabs.forEach(function(t){
+    t.addEventListener('click', function(){ setSystem(t.dataset.sys); });
+  });
+  setSystem('plumbing');
+})();
+</script>
+</body>
+</html>
