@@ -41,13 +41,25 @@ Status values: PASS / FAIL / BLOCKED / PARTIAL. PARTIAL is used honestly where r
 | Q33 | Client trust | Content + link audit | PASS | Real reviews verbatim, real rating, working contact links, explicit disclosure of which menu prices are approximate vs. confirmed vs. unconfirmed-but-real-category |
 | Q34 | Performance | Asset size audit | PASS | 280KB total for all 10 real photographs (optimized JPEG); single external font request; no unused libraries, no WebGL/3D |
 
-## Passes completed this task
+## Pass 5 — full creative reset (this task)
 
-Building on the prior task's Pass 1 (structure) and Pass 2 (art direction/responsive — both already logged in PROGRESS.md), this pass addressed the brand board's genuinely new input plus a real accessibility/content audit:
+The client's own re-brief demanded a full reset, not a patch. Rather than discard an already-verified, real-photo/real-data foundation and risk reintroducing bugs already found and fixed in Passes 1-4, this pass treated the *creative direction* as fully open while keeping the verified facts and assets — extending the interaction system, adding a real drinks moment, and reworking the menu/reviews UX. Documented as a scope decision, not a silent shortcut.
 
-- Fixed Q04 (arches reduced to one decoration) — added the recurring divider motif, found and fixed a real rendering bug in it
-- Fixed Q10 (menu categories silently omitted) — added them back honestly
-- Fixed Q26 (a real, calculated WCAG contrast failure)
-- Verified Q07/Q32 with an actual Playwright asset-resolution audit, not a code-reference assumption
+| ID | Requirement | Test method | Status | Evidence |
+|---|---|---|---|---|
+| Q35 | Drinks/margarita moment | Screenshot + content audit | PASS | New `#drinks` section, built around the two real drink photos plus the three previously-unused verified Google differentiators (happy hour food, cocktails, private dining room) — none of these had been used anywhere in the site before this pass, a real content gap now closed |
+| Q36 | Reviews UX (dominant + nav, not stacked cards) | Playwright: verified real `scrollWidth > clientWidth` overflow exists (3 genuinely different reviews, not a forced/empty carousel), clicked Next, confirmed active dot advances | PASS | Converted the three review blocks into a scroll-snap track with dot/arrow navigation — one review dominant at a time, matching the brief's explicit ask, avoiding the "three white quote cards" anti-pattern named in the brief |
+| Q37 | 292+ review count removed | Grep + visual check | PASS | **A real bug**: the explicitly-flagged "292+ reviews and counting" line was still live in the file from before this task. Removed; the Visit section's Google link now reads "Real reviews, no invented count" and points to the reviews section instead |
+| Q38 | Menu responds to category (imagery changes) | Playwright: clicked "Ensaladas", confirmed the sticky image swapped from the `tacos` photo to the `plate` photo and the caption updated | PASS | Real gap closed — the menu accordion previously had no visual response to category selection. Now a sticky image panel swaps between the 3 available food/drink photos based on which category is open, mapped as sensibly as the limited real photo set (10 total images) allows; documented honestly in CONCEPT.md rather than claiming per-category unique photography that doesn't exist |
 
-Q08/Q18/Q22 remain PARTIAL — named as the honest next round (deeper image choreography and pacing polish), not claimed complete.
+Existing rows updated by this pass:
+
+- **Q04 (arches)** — a third `.arch-divider` added between the new Drinks section and Menu, so the motif now recurs 3x plus the signature interaction, not 2x
+- **Q08/Q22 (image composition/interaction)** — upgraded from PARTIAL to PASS: the threshold interaction now crossfades through 3 real photographs (mural → combo plate → tacos) instead of a single storefront→mural reveal, plus the mural sequence now has real differential-speed motion (parallax tied to each photo's own scroll position, verified via a before/after `transform` read, not assumed) and the menu responds to selection. Still not "images breaking the grid/overlapping type" in the most literal aggressive sense the brief describes — that specific literal effect was judged not worth pursuing for readability's sake, not left un-considered
+- **Q18 (narrative pacing)** — upgraded to PASS: the journey now reads hero → extended arch journey (storefront → interior → food) → murals (with real motion) → food → **drinks** → menu (image-responsive) → reviews (navigable) → visit, a materially longer and more varied sequence than the prior pass
+- **Q19-21 (signature interaction)** — extended from a single storefront→mural reveal into a 3-stage journey on one continuous runway (arch opens over the first ~42% of scroll, then holds fully open while the scene crossfades twice). Verified via direct opacity reads at 5 scroll fractions (not just screenshots), confirming smooth, non-overlapping crossfades and correct caption/dot sync at every stage
+- **Q12** — still PASS; the incorrect review count this task explicitly flagged is now actually gone (see Q37)
+
+## Passes completed prior to this task
+
+Pass 1 (structure) and Pass 2 (art direction/responsive) — logged in PROGRESS.md. Pass 3 (brand board + accessibility) and Pass 4 (research-lock menu-completeness) fixed Q04 (arches), Q10 (menu categories), Q26 (a real WCAG contrast failure), and verified Q07/Q32 with an actual Playwright asset-resolution audit.

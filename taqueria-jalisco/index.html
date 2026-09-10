@@ -71,16 +71,25 @@ section{position:relative}
 .hero-hint i{width:1px;height:26px;background:#e9dcc3;display:block;animation:hintdrop 1.8s ease-in-out infinite}
 @keyframes hintdrop{0%,100%{opacity:.3}50%{opacity:1}}
 
-/* ================= THRESHOLD — the signature arch interaction ================= */
-#threshold{height:280vh;background:var(--ink)}
+/* ================= THRESHOLD — the signature arch interaction =================
+   Extended into a three-stage journey on one continuous scroll runway: the arch
+   grows open (stage 0), then — arch held fully open — the scene crossfades from
+   the mural into the dining table (stage 1), then from the table into a second
+   real dish (stage 2). One mechanism, three real photographs, no re-triggering. */
+#threshold{height:420vh;background:var(--ink)}
 .threshold__sticky{position:sticky;top:0;height:100svh;overflow:hidden;display:flex;align-items:center;justify-content:center}
 .threshold__frame{position:absolute;inset:0;pointer-events:none}
 .threshold__frame path{fill:none}
 .threshold__arch-outline{stroke:var(--ochre);stroke-width:3}
 .threshold__col{fill:var(--red)}
 .threshold__img-wrap{position:absolute;inset:0}
-.threshold__img-wrap img{filter:saturate(1.1)}
+.threshold__img-wrap img{position:absolute;inset:0;filter:saturate(1.1)}
+.threshold__img-wrap img.is-under{opacity:0}
 .threshold__caption{position:absolute;bottom:56px;left:0;right:0;text-align:center;z-index:3;color:var(--cream);font-family:var(--body);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+.threshold__caption span{transition:opacity .35s var(--ease)}
+.threshold__dots{position:absolute;top:36px;left:0;right:0;z-index:3;display:flex;justify-content:center;gap:8px}
+.threshold__dots i{width:6px;height:6px;border-radius:50%;background:rgba(243,228,198,.35);transition:background .3s var(--ease),transform .3s var(--ease)}
+.threshold__dots i.is-active{background:var(--ochre);transform:scale(1.3)}
 
 /* ================= MURALS — real photography, choreographed ================= */
 #murals{background:var(--cream);padding:130px 0 100px}
@@ -111,12 +120,39 @@ section{position:relative}
 .food-detail{aspect-ratio:1/1;position:relative;overflow:hidden}
 .food-detail__cap{position:absolute;left:16px;bottom:14px;color:var(--cream);font-family:var(--body);font-weight:700;font-size:13px;text-shadow:0 1px 4px rgba(0,0,0,.5)}
 
+/* ================= DRINKS — the bar moment ================= */
+#drinks{background:var(--ink);padding:120px 0;overflow:hidden}
+#drinks .eyebrow{color:var(--ochre)}
+#drinks .h2{color:var(--cream)}
+#drinks .lede{color:#cbb98f}
+.drinks-grid{margin-top:56px;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.drinks-photos{position:relative;aspect-ratio:4/5}
+.drinks-photos__main{position:absolute;top:0;right:0;width:78%;aspect-ratio:4/5;overflow:hidden;box-shadow:0 24px 54px -20px rgba(0,0,0,.55)}
+.drinks-photos__sub{position:absolute;left:0;bottom:0;width:46%;aspect-ratio:1/1;overflow:hidden;border:6px solid var(--ink);box-shadow:0 18px 40px -16px rgba(0,0,0,.6)}
+.drinks-facts{margin-top:34px;display:grid;gap:0;border-top:1px solid rgba(243,228,198,.2)}
+.drinks-fact{padding:20px 0;border-bottom:1px solid rgba(243,228,198,.2);display:flex;gap:16px;align-items:baseline}
+.drinks-fact b{font-family:var(--display);font-size:16px;color:var(--cream);text-transform:uppercase;letter-spacing:.01em;white-space:nowrap}
+.drinks-fact span{color:#cbb98f;font-size:14.5px}
+@media (max-width:860px){
+  .drinks-grid{grid-template-columns:1fr;gap:40px}
+  .drinks-photos{aspect-ratio:5/4}
+}
+
 /* ================= MENU — real data, expand-in-place ================= */
 #menu{background:var(--ink);color:var(--cream);padding:120px 0 130px}
 #menu .eyebrow{color:var(--ochre)}
 #menu .h2{color:var(--cream)}
 #menu .lede{color:#cbb98f}
-.menu-list{margin-top:56px;border-top:1px solid rgba(243,228,198,.2)}
+.menu-layout{margin-top:56px;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:56px;align-items:start}
+.menu-image{position:sticky;top:100px;aspect-ratio:4/5;overflow:hidden;background:var(--ink-2);box-shadow:0 24px 54px -20px rgba(0,0,0,.5)}
+.menu-image img{position:absolute;inset:0;opacity:0;transition:opacity .5s var(--ease)}
+.menu-image img.is-active{opacity:1}
+.menu-image__cap{position:absolute;left:18px;bottom:16px;z-index:2;color:var(--cream);font-family:var(--body);font-weight:700;font-size:13px;letter-spacing:.04em;text-shadow:0 1px 4px rgba(0,0,0,.6)}
+@media (max-width:900px){
+  .menu-layout{grid-template-columns:1fr;gap:26px}
+  .menu-image{position:static;aspect-ratio:16/10}
+}
+.menu-list{border-top:1px solid rgba(243,228,198,.2)}
 .menu-cat{border-bottom:1px solid rgba(243,228,198,.2)}
 .menu-cat__head{width:100%;display:flex;align-items:center;justify-content:space-between;padding:26px 4px;text-align:left}
 .menu-cat__head h3{font-family:var(--display);font-size:clamp(20px,2.4vw,28px);text-transform:uppercase;color:var(--cream);letter-spacing:.01em}
@@ -146,9 +182,13 @@ section{position:relative}
 .specials-day span{display:block;margin-top:6px;font-size:13.5px;color:#e9dcc3}
 @media (max-width:700px){ .specials-grid{grid-template-columns:1fr 1fr;gap:18px 20px} }
 
-/* ================= REVIEWS — real Google testimonials, editorial ================= */
+/* ================= REVIEWS — one dominant review at a time, real photos,
+   subtle navigation — not three stacked quote cards ================= */
 #reviews{background:var(--cream);padding:120px 0}
-.review-block{margin-top:60px;display:grid;grid-template-columns:.85fr 1.15fr;gap:0;align-items:stretch;border:1px solid var(--line)}
+.reviews-carousel{margin-top:60px;position:relative}
+.reviews-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;border:1px solid var(--line)}
+.reviews-track::-webkit-scrollbar{display:none}
+.review-block{flex:0 0 100%;scroll-snap-align:start;display:grid;grid-template-columns:.85fr 1.15fr;gap:0;align-items:stretch}
 .review-block__photo{position:relative;overflow:hidden}
 .review-block__text{padding:44px 46px;display:flex;flex-direction:column;justify-content:center}
 .review-block__stars{color:var(--red);font-size:15px;letter-spacing:2px}
@@ -159,6 +199,13 @@ section{position:relative}
 .review-block--rev{grid-template-columns:1.15fr .85fr}
 .review-block--rev .review-block__photo{order:2}
 @media (max-width:820px){ .review-block,.review-block--rev{grid-template-columns:1fr} .review-block--rev .review-block__photo{order:0} .review-block__photo{aspect-ratio:16/9} .review-block__text{padding:32px 26px} }
+.reviews-nav{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:26px}
+.reviews-nav__btn{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:var(--cream);display:grid;place-items:center;color:var(--ink);cursor:pointer;transition:background .2s,border-color .2s}
+.reviews-nav__btn:hover{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+.reviews-nav__btn svg{width:16px;height:16px}
+.reviews-dots{display:flex;gap:9px}
+.reviews-dots button{width:8px;height:8px;border-radius:50%;background:var(--line);border:0;padding:0;cursor:pointer;transition:background .25s,transform .25s}
+.reviews-dots button.is-active{background:var(--red);transform:scale(1.3)}
 .review-source{margin-top:44px;display:flex;align-items:center;gap:16px;font-family:var(--body);font-weight:700;font-size:14px;color:var(--muted)}
 .review-source b{color:var(--ink);font-size:22px}
 
@@ -185,7 +232,17 @@ section{position:relative}
 .arch-divider--onDark{background:var(--ink)}
 .arch-divider svg{width:100%;height:100%;display:block}
 
-footer{padding:32px 0;text-align:center;font-size:12.5px;color:#cbb98f;background:var(--ink)}
+footer{padding:32px 0 32px;text-align:center;font-size:12.5px;color:#cbb98f;background:var(--ink)}
+
+/* ================= MOBILE ACTION BAR ================= */
+.actionbar{position:fixed;left:0;right:0;bottom:0;z-index:80;display:none;grid-template-columns:1fr 1fr;box-shadow:0 -10px 26px -16px rgba(0,0,0,.5)}
+.actionbar a{display:flex;align-items:center;justify-content:center;gap:9px;padding:16px 8px;font-family:var(--body);font-weight:800;font-size:13.5px;letter-spacing:.03em;text-transform:uppercase}
+.actionbar a:first-child{background:var(--red);color:var(--cream)}
+.actionbar a:last-child{background:var(--ink);color:var(--cream)}
+@media (max-width:720px){
+  .actionbar{display:grid}
+  footer{padding-bottom:96px}
+}
 </style>
 </head>
 <body>
@@ -218,8 +275,11 @@ footer{padding:32px 0;text-align:center;font-size:12.5px;color:#cbb98f;backgroun
 <!-- ================= THRESHOLD — scroll through the painted arch ================= -->
 <section id="threshold" data-sec="threshold">
   <div class="threshold__sticky">
+    <div class="threshold__dots" aria-hidden="true"><i class="is-active"></i><i></i><i></i></div>
     <div class="threshold__img-wrap">
-      <img id="threshImg" src="assets/mural-serenade.jpg" alt="Inside the arch: one of the restaurant's real hand-painted murals">
+      <img id="threshImg0" src="assets/mural-serenade.jpg" alt="Inside the arch: one of the restaurant's real hand-painted murals">
+      <img id="threshImg1" class="is-under" src="assets/food-combo-plate.jpg" alt="A real combo plate on the table inside the restaurant">
+      <img id="threshImg2" class="is-under" src="assets/food-crispy-tacos.jpg" alt="Crispy tacos on checkered paper, fresh off the grill">
     </div>
     <svg class="threshold__frame" width="0" height="0">
       <defs>
@@ -228,7 +288,7 @@ footer{padding:32px 0;text-align:center;font-size:12.5px;color:#cbb98f;backgroun
         </clipPath>
       </defs>
     </svg>
-    <div class="threshold__caption">Walk through the doorway painted on our own wall</div>
+    <div class="threshold__caption"><span id="threshCaption">Walk through the doorway painted on our own wall</span></div>
   </div>
 </section>
 
@@ -298,6 +358,30 @@ footer{padding:32px 0;text-align:center;font-size:12.5px;color:#cbb98f;backgroun
   </div>
 </section>
 
+<!-- ================= DRINKS ================= -->
+<section id="drinks" data-sec="drinks">
+  <div class="wrap">
+    <div class="drinks-grid">
+      <div class="drinks-photos">
+        <div class="drinks-photos__main"><img src="assets/drink-margarita-dosxx.jpg" alt="A large margarita with a Dos Equis beer bottle inverted into the glass"></div>
+        <div class="drinks-photos__sub"><img src="assets/drink-frozen-green.jpg" alt="A frozen green margarita topped with whipped cream"></div>
+      </div>
+      <div>
+        <span class="eyebrow">The bar moment</span>
+        <h2 class="h2">Margaritas, out loud.</h2>
+        <p class="lede">Google's own description of this place doesn't lead with the food — it leads with "tacos, enchiladas &amp; other Mexican staples dished alongside margaritas." That's the order things actually come up at the table.</p>
+        <div class="drinks-facts">
+          <div class="drinks-fact"><b>Happy hour</b><span>Food specials during happy hour — ask your server what's running today.</span></div>
+          <div class="drinks-fact"><b>Cocktails</b><span>Margaritas by the glass or the novelty Dos Equis-bottle version pictured here, plus the full bar.</span></div>
+          <div class="drinks-fact"><b>Private room</b><span>A private dining room is available for groups — call ahead to ask about booking it.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="arch-divider arch-divider--onDark" aria-hidden="true"><svg width="100%" height="36"><defs><pattern id="archTile3" width="48" height="36" patternUnits="userSpaceOnUse"><path d="M8 36 L8 16 A16 16 0 0 1 40 16 L40 36" fill="none" stroke="#daa056" stroke-width="2"/></pattern></defs><rect width="100%" height="36" fill="url(#archTile3)"/></svg></div>
+
 <!-- ================= MENU ================= -->
 <section id="menu" data-sec="menu">
   <div class="wrap">
@@ -305,8 +389,15 @@ footer{padding:32px 0;text-align:center;font-size:12.5px;color:#cbb98f;backgroun
     <h2 class="h2">Everything on it, nothing invented.</h2>
     <p class="lede">A real, current menu — organized the way the restaurant organizes it, not flattened into a grid. Tap a category to open it.</p>
 
+    <div class="menu-layout">
+    <div class="menu-image" id="menuImage" aria-hidden="true">
+      <img class="is-active" data-img="tacos" src="assets/food-crispy-tacos.jpg" alt="">
+      <img data-img="plate" src="assets/food-combo-plate.jpg" alt="">
+      <img data-img="drink" src="assets/drink-margarita-dosxx.jpg" alt="">
+      <span class="menu-image__cap" id="menuImageCap">Antojitos</span>
+    </div>
     <div class="menu-list" id="menuList">
-      <div class="menu-cat">
+      <div class="menu-cat" data-img="tacos">
         <button class="menu-cat__head" aria-expanded="false" data-cat><h3>Antojitos</h3><span class="menu-cat__count">4 items</span><span class="menu-cat__icon"><i></i><i></i></span></button>
         <div class="menu-cat__body"><div class="menu-cat__items">
           <div class="menu-item"><span class="menu-item__name">Queso Fundido</span><span class="menu-item__price">$7.99</span></div>
@@ -316,7 +407,7 @@ footer{padding:32px 0;text-align:center;font-size:12.5px;color:#cbb98f;backgroun
         </div></div>
       </div>
 
-      <div class="menu-cat">
+      <div class="menu-cat" data-img="plate">
         <button class="menu-cat__head" aria-expanded="false" data-cat><h3>Ensaladas</h3><span class="menu-cat__count">3 items</span><span class="menu-cat__icon"><i></i><i></i></span></button>
         <div class="menu-cat__body"><div class="menu-cat__items">
           <div class="menu-item"><span class="menu-item__name">Taco Salad</span><span class="menu-item__price">$12.99</span></div>
@@ -325,7 +416,7 @@ footer{padding:32px 0;text-align:center;font-size:12.5px;color:#cbb98f;backgroun
         </div></div>
       </div>
 
-      <div class="menu-cat">
+      <div class="menu-cat" data-img="plate">
         <button class="menu-cat__head" aria-expanded="false" data-cat><h3>Especialidades de la Casa</h3><span class="menu-cat__count">11 items</span><span class="menu-cat__icon"><i></i><i></i></span></button>
         <div class="menu-cat__body"><div class="menu-cat__items">
           <div class="menu-item"><span class="menu-item__name">Plato de Birria</span><span class="menu-item__price">$16.99</span></div>
@@ -342,7 +433,7 @@ footer{padding:32px 0;text-align:center;font-size:12.5px;color:#cbb98f;backgroun
         </div></div>
       </div>
 
-      <div class="menu-cat">
+      <div class="menu-cat" data-img="tacos">
         <button class="menu-cat__head" aria-expanded="false" data-cat><h3>A La Carte</h3><span class="menu-cat__count">13 items</span><span class="menu-cat__icon"><i></i><i></i></span></button>
         <div class="menu-cat__body"><div class="menu-cat__items">
           <div class="menu-item"><span class="menu-item__name">Supreme Quesadillas</span><span class="menu-item__price">$14.99+</span></div>
@@ -361,14 +452,14 @@ footer{padding:32px 0;text-align:center;font-size:12.5px;color:#cbb98f;backgroun
         </div></div>
       </div>
 
-      <div class="menu-cat">
+      <div class="menu-cat" data-img="plate">
         <button class="menu-cat__head" aria-expanded="false" data-cat><h3>Combinaciones</h3><span class="menu-cat__count">1 item</span><span class="menu-cat__icon"><i></i><i></i></span></button>
         <div class="menu-cat__body"><div class="menu-cat__items">
           <div class="menu-item"><span class="menu-item__name">Plato Mexicano</span><span class="menu-item__price">$15.29</span></div>
         </div></div>
       </div>
 
-      <div class="menu-cat">
+      <div class="menu-cat" data-img="drink">
         <button class="menu-cat__head" aria-expanded="false" data-cat><h3>Also on the menu</h3><span class="menu-cat__count">10 categories</span><span class="menu-cat__icon"><i></i><i></i></span></button>
         <div class="menu-cat__body"><div class="menu-cat__items">
           <div class="menu-item menu-item--ask"><span class="menu-item__name">Desayuno<span class="menu-item__note">Breakfast plates, served all day</span></span><span class="menu-item__price menu-item__price--ask">Ask your server</span></div>
@@ -383,6 +474,7 @@ footer{padding:32px 0;text-align:center;font-size:12.5px;color:#cbb98f;backgroun
           <div class="menu-item menu-item--ask"><span class="menu-item__name">To-Go</span><span class="menu-item__price menu-item__price--ask">Ask your server</span></div>
         </div></div>
       </div>
+    </div>
     </div>
 
     <p class="menu-note">Prices marked "approx." come from a secondary source that didn't fully agree with the primary menu — treat them as a close estimate, not exact. The categories under "Also on the menu" are real — we could confirm they exist, but not current pricing, so we're listing them honestly rather than guessing or leaving them off entirely. Call (806) 763-7605 or ask in person for those.</p>
@@ -409,30 +501,39 @@ footer{padding:32px 0;text-align:center;font-size:12.5px;color:#cbb98f;backgroun
     <h2 class="h2">Straight from Google.</h2>
     <div class="review-source"><b>4.5★</b><span>Google rating — these three reviews are quoted exactly as posted, not edited into marketing copy.</span></div>
 
-    <div class="review-block">
-      <div class="review-block__photo"><img src="assets/food-crispy-tacos.jpg" alt="Crispy steak tacos on checkered paper"></div>
-      <div class="review-block__text">
-        <div class="review-block__stars">★★★★★</div>
-        <p class="review-block__quote">Oh my goodness, I'm from Oklahoma. I wish i could come back often, the restaurant was so clean! My waitress was perfect, didn't check on me too much didn't disappear too long! Every thing was so prompt! The water was so clean n tasty, lemon was fresh, the steak tacos were large and full of flavor, avocado was fresh. Probably the best I've had in A VERY LONG TIME!! you know they're good when they have huge parking and extra parking across the street! I will be back one day!!! Keep up the good work!!!!</p>
-        <div class="review-block__meta">Candace Brown — Food 5/5 · Service 5/5 · Atmosphere 5/5</div>
-      </div>
-    </div>
+    <div class="reviews-carousel">
+      <div class="reviews-track" id="reviewsTrack">
+        <div class="review-block">
+          <div class="review-block__photo"><img src="assets/food-crispy-tacos.jpg" alt="Crispy steak tacos on checkered paper"></div>
+          <div class="review-block__text">
+            <div class="review-block__stars">★★★★★</div>
+            <p class="review-block__quote">Oh my goodness, I'm from Oklahoma. I wish i could come back often, the restaurant was so clean! My waitress was perfect, didn't check on me too much didn't disappear too long! Every thing was so prompt! The water was so clean n tasty, lemon was fresh, the steak tacos were large and full of flavor, avocado was fresh. Probably the best I've had in A VERY LONG TIME!! you know they're good when they have huge parking and extra parking across the street! I will be back one day!!! Keep up the good work!!!!</p>
+            <div class="review-block__meta">Candace Brown — Food 5/5 · Service 5/5 · Atmosphere 5/5</div>
+          </div>
+        </div>
 
-    <div class="review-block review-block--rev">
-      <div class="review-block__photo"><img src="assets/food-combo-plate.jpg" alt="A full combo plate with seafood-adjacent sides"></div>
-      <div class="review-block__text">
-        <div class="review-block__stars">★★★★★</div>
-        <p class="review-block__quote">This place is outrageously good. I was concerned when I drove up that it was going to be too busy, but even though there was a ton of people. There this place has run so well and managed so efficiently We had absolutely no trouble being served and the food came up fast. The meat and the tacos were excellent and I got the caldo de 7 mares and I'm still dreaming about that broth. If there was so much seafood in there and the food was such high quality. We also tried the Nepal's they were excellent and Made with care. They were a little too salty for my taste but they were so good. I ate them all. Made with care. The prices were excellent, so you get this outstanding five-star food at an incredibly good value. I highly recommend this place. It helped me fall in love with Lubbock</p>
-        <div class="review-block__meta">Google review — Food 5/5 · Service 5/5 · Atmosphere 5/5</div>
-      </div>
-    </div>
+        <div class="review-block review-block--rev">
+          <div class="review-block__photo"><img src="assets/food-combo-plate.jpg" alt="A full combo plate with seafood-adjacent sides"></div>
+          <div class="review-block__text">
+            <div class="review-block__stars">★★★★★</div>
+            <p class="review-block__quote">This place is outrageously good. I was concerned when I drove up that it was going to be too busy, but even though there was a ton of people. There this place has run so well and managed so efficiently We had absolutely no trouble being served and the food came up fast. The meat and the tacos were excellent and I got the caldo de 7 mares and I'm still dreaming about that broth. If there was so much seafood in there and the food was such high quality. We also tried the Nepal's they were excellent and Made with care. They were a little too salty for my taste but they were so good. I ate them all. Made with care. The prices were excellent, so you get this outstanding five-star food at an incredibly good value. I highly recommend this place. It helped me fall in love with Lubbock</p>
+            <div class="review-block__meta">Google review — Food 5/5 · Service 5/5 · Atmosphere 5/5</div>
+          </div>
+        </div>
 
-    <div class="review-block">
-      <div class="review-block__photo"><img src="assets/drink-frozen-green.jpg" alt="A frozen green margarita with whipped cream"></div>
-      <div class="review-block__text">
-        <div class="review-block__stars">★★★★★</div>
-        <p class="review-block__quote">Very clean, delicious Mexican plates! Asap i arrive, beautiful girls greeted me very friendly and nice, waitress amazing and very fast with my order. Steak was cooked perfectly, guacamole fresh. I came by myself at 3pm not busy, bachata music and reguetton music, not just mexican music. Really enjoyed my visit, they even put my drink to go.</p>
-        <div class="review-block__meta">Google review — Food 5/5 · Service 5/5 · Atmosphere 5/5</div>
+        <div class="review-block">
+          <div class="review-block__photo"><img src="assets/drink-frozen-green.jpg" alt="A frozen green margarita with whipped cream"></div>
+          <div class="review-block__text">
+            <div class="review-block__stars">★★★★★</div>
+            <p class="review-block__quote">Very clean, delicious Mexican plates! Asap i arrive, beautiful girls greeted me very friendly and nice, waitress amazing and very fast with my order. Steak was cooked perfectly, guacamole fresh. I came by myself at 3pm not busy, bachata music and reguetton music, not just mexican music. Really enjoyed my visit, they even put my drink to go.</p>
+            <div class="review-block__meta">Google review — Food 5/5 · Service 5/5 · Atmosphere 5/5</div>
+          </div>
+        </div>
+      </div>
+      <div class="reviews-nav">
+        <button class="reviews-nav__btn" id="reviewsPrev" aria-label="Previous review"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6l-6 6 6 6"/></svg></button>
+        <div class="reviews-dots" id="reviewsDots"></div>
+        <button class="reviews-nav__btn" id="reviewsNext" aria-label="Next review"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
       </div>
     </div>
   </div>
@@ -456,7 +557,7 @@ footer{padding:32px 0;text-align:center;font-size:12.5px;color:#cbb98f;backgroun
       <div class="visit-links">
         <a class="visit-link" href="tel:+18067637605" aria-label="Call Taqueria Jalisco">(806) 763-7605<small>Tap to call</small></a>
         <a class="visit-link" href="https://www.google.com/maps/search/?api=1&query=2211+Avenue+Q%2C+Lubbock%2C+TX+79411" target="_blank" rel="noopener" aria-label="Open Taqueria Jalisco location in Maps">2211 Avenue Q<br>Lubbock, TX 79411<small>Get directions</small></a>
-        <a class="visit-link" href="#hero" aria-label="Back to top"><span aria-hidden="true">4.5★</span> on Google<small>292+ reviews and counting</small></a>
+        <a class="visit-link" href="#reviews" aria-label="Read reviews"><span aria-hidden="true">4.5★</span> on Google<small>Real reviews, no invented count</small></a>
       </div>
     </div>
   </div>
@@ -465,6 +566,11 @@ footer{padding:32px 0;text-align:center;font-size:12.5px;color:#cbb98f;backgroun
 </main>
 
 <footer>Taqueria Jalisco — 2211 Avenue Q, Lubbock, TX 79411 · (806) 763-7605</footer>
+
+<nav class="actionbar" aria-label="Quick actions">
+  <a href="tel:+18067637605">Call</a>
+  <a href="https://www.google.com/maps/search/?api=1&query=2211+Avenue+Q%2C+Lubbock%2C+TX+79411" target="_blank" rel="noopener">Directions</a>
+</nav>
 
 <script>
 (function(){
@@ -486,8 +592,11 @@ footer{padding:32px 0;text-align:center;font-size:12.5px;color:#cbb98f;backgroun
      not a single fire-once reveal. ---------- */
   var threshold = document.getElementById('threshold');
   var archPath = document.getElementById('archClipPath');
-  var threshImg = document.getElementById('threshImg');
-  threshImg.style.clipPath = 'url(#archClip)';
+  var threshImgs = [document.getElementById('threshImg0'), document.getElementById('threshImg1'), document.getElementById('threshImg2')];
+  threshImgs.forEach(function(img){ img.style.clipPath = 'url(#archClip)'; });
+  var threshCaption = document.getElementById('threshCaption');
+  var threshDots = [].slice.call(document.querySelectorAll('.threshold__dots i'));
+  var CAPTIONS = ['Walk through the doorway painted on our own wall', 'Into the dining room', 'To the table'];
 
   // Builds an arch outline (two straight sides + a semicircle top) directly in
   // real viewport pixels, centered at cx, with its bottom edge at baseY and a
@@ -499,6 +608,8 @@ footer{padding:32px 0;text-align:center;font-size:12.5px;color:#cbb98f;backgroun
       ' L' + right + ' ' + baseY + ' Z';
   }
 
+  var ARCH_OPEN_AT = 0.42; // arch finishes opening by this fraction of the runway; the rest crossfades the scene
+  var lastStage = -1;
   function updateThreshold(){
     var rect = threshold.getBoundingClientRect();
     var vh = innerHeight;
@@ -506,26 +617,101 @@ footer{padding:32px 0;text-align:center;font-size:12.5px;color:#cbb98f;backgroun
     var progressed = -rect.top;
     var frac = scrollable > 0 ? Math.min(1, Math.max(0, progressed / scrollable)) : 0;
     if (reduce) frac = 1;
+    var archFrac = Math.min(1, frac / ARCH_OPEN_AT);
     var vw = innerWidth;
     var minHalf = 46, maxHalf = Math.max(vw, vh) * 0.75;
-    var half = minHalf + frac * (maxHalf - minHalf);
+    var half = minHalf + archFrac * (maxHalf - minHalf);
     var baseY = vh + 40; // bottom edge always starts below the viewport — no visible seam at the base
     archPath.setAttribute('d', archPathD(vw / 2, baseY, half, half * 1.3));
+
+    // Beyond the arch-open point, the remaining scroll crossfades scene 0 -> 1 -> 2.
+    var stageFrac = Math.max(0, (frac - ARCH_OPEN_AT) / (1 - ARCH_OPEN_AT)); // 0..1
+    var stagePos = Math.min(1.999, stageFrac * 2); // 2 transitions across the remaining scroll
+    var stageIdx = Math.floor(stagePos); // 0 or 1: which transition we're in
+    var stageLocal = stagePos - stageIdx; // 0..1 progress within that transition
+    threshImgs.forEach(function(img, i){
+      var op = i === stageIdx ? (1 - stageLocal) : (i === stageIdx + 1 ? stageLocal : 0);
+      img.style.opacity = op;
+    });
+    var activeStage = stageLocal < 0.5 ? stageIdx : Math.min(2, stageIdx + 1);
+    if (activeStage !== lastStage){
+      threshCaption.textContent = CAPTIONS[activeStage];
+      threshDots.forEach(function(d, i){ d.classList.toggle('is-active', i === activeStage); });
+      lastStage = activeStage;
+    }
   }
   updateThreshold();
   addEventListener('scroll', function(){ requestAnimationFrame(updateThreshold); }, {passive:true});
   addEventListener('resize', updateThreshold);
 
-  /* ---------- menu: expand-in-place, one category open at a time ---------- */
+  /* ---------- menu: expand-in-place, one category open at a time, paired with a
+     responding image — selecting a category swaps the sticky photo alongside it. ---------- */
   var catHeads = [].slice.call(document.querySelectorAll('[data-cat]'));
+  var menuImages = [].slice.call(document.querySelectorAll('#menuImage img'));
+  var menuImageCap = document.getElementById('menuImageCap');
+  function setMenuImage(cat){
+    var key = cat.closest('.menu-cat').getAttribute('data-img');
+    menuImages.forEach(function(img){ img.classList.toggle('is-active', img.getAttribute('data-img') === key); });
+    menuImageCap.textContent = cat.querySelector('h3').textContent;
+  }
   catHeads.forEach(function(head){
     head.addEventListener('click', function(){
       var willOpen = head.getAttribute('aria-expanded') !== 'true';
       catHeads.forEach(function(h){ h.setAttribute('aria-expanded', 'false'); });
       head.setAttribute('aria-expanded', String(willOpen));
+      if (willOpen) setMenuImage(head);
     });
   });
-  if (catHeads[0]) catHeads[0].setAttribute('aria-expanded', 'true');
+  if (catHeads[0]){ catHeads[0].setAttribute('aria-expanded', 'true'); setMenuImage(catHeads[0]); }
+
+  /* ---------- reviews: one dominant review + nav, real scroll-snap track ---------- */
+  var revTrack = document.getElementById('reviewsTrack');
+  var revCards = [].slice.call(revTrack.children);
+  var revDotsWrap = document.getElementById('reviewsDots');
+  revCards.forEach(function(_, i){
+    var d = document.createElement('button');
+    d.setAttribute('aria-label', 'Go to review ' + (i + 1));
+    d.addEventListener('click', function(){ scrollToReview(i); });
+    revDotsWrap.appendChild(d);
+  });
+  var revDots = [].slice.call(revDotsWrap.children);
+  function scrollToReview(i){
+    i = Math.max(0, Math.min(revCards.length - 1, i));
+    revTrack.scrollTo({left: revCards[i].offsetLeft - revTrack.offsetLeft, behavior: reduce ? 'auto' : 'smooth'});
+  }
+  function currentReviewIndex(){
+    var maxScroll = revTrack.scrollWidth - revTrack.clientWidth;
+    if (maxScroll <= 0) return 0;
+    return Math.round((revTrack.scrollLeft / maxScroll) * (revCards.length - 1));
+  }
+  function updateReviewNav(){
+    var i = currentReviewIndex();
+    revDots.forEach(function(d, idx){ d.classList.toggle('is-active', idx === i); });
+    document.getElementById('reviewsPrev').disabled = i === 0;
+    document.getElementById('reviewsNext').disabled = i === revCards.length - 1;
+  }
+  revTrack.addEventListener('scroll', function(){ requestAnimationFrame(updateReviewNav); }, {passive:true});
+  document.getElementById('reviewsPrev').addEventListener('click', function(){ scrollToReview(currentReviewIndex() - 1); });
+  document.getElementById('reviewsNext').addEventListener('click', function(){ scrollToReview(currentReviewIndex() + 1); });
+  updateReviewNav();
+
+  /* ---------- murals: subtle differential-speed motion, tied to each photo's own
+     scroll position — a sense of moving past each wall, not a floating decoration ---------- */
+  if (!reduce){
+    var muralPhotos = [].slice.call(document.querySelectorAll('.mural-row__photo img'));
+    function updateMuralParallax(){
+      var vh = innerHeight;
+      muralPhotos.forEach(function(img){
+        var rect = img.parentElement.getBoundingClientRect();
+        var centerDelta = (rect.top + rect.height / 2) - vh / 2; // 0 when photo is centered in viewport
+        var shift = Math.max(-24, Math.min(24, centerDelta * -0.06));
+        img.style.transform = 'translateY(' + shift + 'px) scale(1.12)';
+      });
+    }
+    updateMuralParallax();
+    addEventListener('scroll', function(){ requestAnimationFrame(updateMuralParallax); }, {passive:true});
+    addEventListener('resize', updateMuralParallax);
+  }
 })();
 </script>
 </body>
