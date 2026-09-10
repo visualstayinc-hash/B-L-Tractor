@@ -128,7 +128,9 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;}
 .hero__meta{display:flex;flex-wrap:wrap;gap:14px 40px;margin-bottom:44px;color:rgba(255,253,249,0.6);font-size:0.86rem;}
 .hero__meta b{color:#fff;font-weight:700;}
 .hero__actions{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:60px;}
-.btn{display:inline-flex;align-items:center;gap:10px;padding:17px 32px;border-radius:100px;font-weight:700;font-size:0.95rem;transition:transform .2s,box-shadow .2s;}
+.btn{position:relative;display:inline-flex;align-items:center;gap:10px;padding:17px 32px;border-radius:100px;font-weight:700;font-size:0.95rem;transition:transform .2s,box-shadow .2s;overflow:hidden;}
+.btn::after{content:'';position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(115deg,transparent,rgba(255,255,255,0.35),transparent);transform:skewX(-20deg);transition:left .6s ease;}
+.btn:hover::after{left:130%;}
 .btn--sun{background:linear-gradient(135deg,var(--heat-glow),var(--heat-red));color:#1a0f08;box-shadow:0 14px 32px rgba(201,66,30,0.35);}
 .btn--sun:hover{transform:translateY(-3px);box-shadow:0 18px 38px rgba(201,66,30,0.45);}
 .btn--outline{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,0.4);}
@@ -196,28 +198,31 @@ section{position:relative;}
 .local .eyebrow{color:var(--heat-red);}
 .local h2{font-size:clamp(2.1rem,4vw,3rem);margin:18px 0 22px;line-height:1.05;}
 .local p{color:var(--stone);font-size:1.06rem;margin-bottom:18px;max-width:520px;}
-.local__stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;}
-.lstat{background:#fff;padding:34px 28px;}
-.lstat .n{font-family:'Bricolage Grotesque',sans-serif;font-size:2rem;font-weight:800;color:var(--heat-red);}
-.lstat .l{font-size:0.86rem;color:var(--stone);margin-top:6px;}
+.local__stats{display:flex;gap:56px;margin-top:38px;padding-top:32px;border-top:1px solid var(--line);}
+.lstat .n{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(2.4rem,4.4vw,3.4rem);font-weight:800;line-height:1;letter-spacing:-0.02em;}
+.lstat .n--hot{color:var(--heat-red);}
+.lstat .n--cold{color:var(--cool-blue);}
+.lstat .l{font-size:0.84rem;color:var(--stone);margin-top:10px;max-width:160px;}
 .local__art{position:relative;aspect-ratio:1/1;border-radius:8px;overflow:hidden;}
 .local__art svg{width:100%;height:100%;}
 @media(max-width:900px){.local__grid{grid-template-columns:1fr;gap:40px;}}
 
-/* ===== TRUST / REVIEWS ===== */
+/* ===== TRUST / REVIEWS (spec-sheet ledger, not cards) ===== */
 .trust{background:#fff;padding:140px 0;}
 .trust .eyebrow{color:var(--heat-red);}
-.trust__head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px;margin-bottom:50px;}
-.trust__rating{display:flex;align-items:center;gap:16px;}
-.trust__rating .num{font-family:'Bricolage Grotesque',sans-serif;font-size:3rem;color:var(--ink);font-weight:800;}
-.trust__rating .stars{color:var(--heat-red);font-size:1.15rem;letter-spacing:2px;}
-.trust__rating .meta{font-size:0.86rem;color:var(--stone);}
-.trust__note{font-size:0.95rem;color:var(--stone);max-width:460px;}
-.trust__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;}
-.tcard{background:var(--paper);padding:36px 30px;}
-.tcard h4{font-size:1.05rem;margin-bottom:10px;}
-.tcard p{font-size:0.92rem;color:var(--stone);}
-@media(max-width:900px){.trust__grid{grid-template-columns:1fr;}}
+.trust__layout{display:grid;grid-template-columns:0.85fr 1.15fr;gap:80px;align-items:start;}
+.trust__rating{display:flex;align-items:baseline;gap:18px;margin-top:20px;}
+.trust__rating .num{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(4rem,9vw,7rem);color:var(--ink);font-weight:800;line-height:0.9;letter-spacing:-0.03em;}
+.trust__rating .stars{color:var(--heat-red);font-size:1.2rem;letter-spacing:3px;}
+.trust__rating .meta{font-size:0.88rem;color:var(--stone);margin-top:4px;}
+.trust__note{font-size:1rem;color:var(--stone);max-width:420px;margin-top:24px;}
+.ledger{border-top:1px solid var(--line);}
+.ledger__row{display:grid;grid-template-columns:200px 1fr;gap:24px;padding:24px 0;border-bottom:1px solid var(--line);align-items:baseline;}
+.ledger__label{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--heat-red);}
+.ledger__value{font-size:1.02rem;color:var(--ink);}
+.ledger__value span{color:var(--stone);}
+@media(max-width:900px){.trust__layout{grid-template-columns:1fr;gap:40px;}.ledger__row{grid-template-columns:140px 1fr;}}
+@media(max-width:520px){.ledger__row{grid-template-columns:1fr;gap:6px;}}
 
 /* ===== CONTACT ===== */
 .contact{background:var(--heat-deep);padding:150px 0 120px;position:relative;overflow:hidden;}
@@ -236,6 +241,12 @@ section{position:relative;}
 footer{background:#0c0704;padding:40px 0 110px;color:rgba(255,255,255,0.58);border-top:1px solid rgba(255,255,255,0.08);}
 .footer__row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:0.84rem;}
 .footer__brand{color:#fff;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;}
+
+/* ===== SYSTEM LINE (persistent scroll-linked thread) ===== */
+.systemline{position:fixed;top:0;left:0;bottom:0;width:3px;z-index:800;background:rgba(20,17,12,0.06);}
+.systemline__fill{position:absolute;top:0;left:0;width:100%;height:0%;background:var(--heat-glow);}
+.systemline__node{position:absolute;left:50%;width:9px;height:9px;border-radius:50%;background:var(--paper);border:2px solid var(--heat-glow);transform:translate(-50%,-50%);transition:border-color .3s;}
+@media(max-width:720px){.systemline{display:none;}}
 
 /* ===== MOBILE ACTION BAR ===== */
 .actionbar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:950;grid-template-columns:1fr 1fr;box-shadow:0 -6px 24px rgba(0,0,0,0.25);}
@@ -412,9 +423,9 @@ footer{background:#0c0704;padding:40px 0 110px;color:rgba(255,255,255,0.58);bord
       <h2>This is West Texas weather.</h2>
       <p>Lubbock summers push into triple digits; winters bring hard freezes. Homes and businesses here rely on systems built to handle that swing in both directions, not just one.</p>
       <p>Lubbock Heating and Air Conditioning is based at 4630 50th St — serving the city and the extremes that come with it.</p>
-      <div class="local__stats" style="margin-top:30px;">
-        <div class="lstat"><div class="n">93°F</div><div class="l">Average Lubbock July high (NOAA)</div></div>
-        <div class="lstat"><div class="n">27°F</div><div class="l">Average Lubbock January low (NOAA)</div></div>
+      <div class="local__stats">
+        <div class="lstat"><div class="n n--hot">93°F</div><div class="l">Average Lubbock July high (NOAA)</div></div>
+        <div class="lstat"><div class="n n--cold">27°F</div><div class="l">Average Lubbock January low (NOAA)</div></div>
       </div>
     </div>
     <div class="local__art reveal" aria-hidden="true">
@@ -438,35 +449,39 @@ footer{background:#0c0704;padding:40px 0 110px;color:rgba(255,255,255,0.58);bord
 
 <section class="trust" id="trust">
   <div class="wrap">
-    <div class="trust__head reveal">
-      <div>
+    <div class="trust__layout">
+      <div class="reveal">
         <span class="eyebrow">Customer Proof</span>
-        <div class="trust__rating" style="margin-top:16px;">
+        <div class="trust__rating">
           <span class="num">3.8</span>
           <div>
             <div class="stars">★★★★☆</div>
             <div class="meta">9 Google reviews</div>
           </div>
         </div>
+        <p class="trust__note">Nine reviews is a small sample, and we're not going to dress that up. Here's what we can say honestly.</p>
+        <div style="margin-top:34px;">
+          <a href="tel:+18062090976" class="btn btn--dark">Call (806) 209-0976</a>
+        </div>
       </div>
-      <p class="trust__note">Nine reviews is a small sample, and we're not going to dress that up. Here's what we can say honestly.</p>
-    </div>
-    <div class="trust__grid reveal">
-      <div class="tcard">
-        <h4>An honest rating</h4>
-        <p>3.8★ on Google from 9 reviews — shown exactly as it stands, not rounded up or filtered.</p>
+      <div class="ledger reveal">
+        <div class="ledger__row">
+          <div class="ledger__label">Rating</div>
+          <div class="ledger__value">3.8 out of 5 <span>— shown exactly as it stands, not rounded up</span></div>
+        </div>
+        <div class="ledger__row">
+          <div class="ledger__label">Review Count</div>
+          <div class="ledger__value">9 on Google <span>— a small, honest sample, not inflated</span></div>
+        </div>
+        <div class="ledger__row">
+          <div class="ledger__label">Location</div>
+          <div class="ledger__value">4630 50th St, Lubbock, TX <span>— a physical address, not a lead-gen listing</span></div>
+        </div>
+        <div class="ledger__row">
+          <div class="ledger__label">How To Judge</div>
+          <div class="ledger__value">Call, describe the job <span>— and see how it's handled</span></div>
+        </div>
       </div>
-      <div class="tcard">
-        <h4>A real, local business</h4>
-        <p>Based at 4630 50th St, Lubbock, TX — a physical address you can visit, not a lead-gen listing.</p>
-      </div>
-      <div class="tcard">
-        <h4>One way to find out</h4>
-        <p>The best way to judge the work is to call, describe the job, and see how it's handled.</p>
-      </div>
-    </div>
-    <div style="margin-top:34px;">
-      <a href="tel:+18062090976" class="btn btn--dark">Call (806) 209-0976</a>
     </div>
   </div>
 </section>
@@ -498,6 +513,15 @@ footer{background:#0c0704;padding:40px 0 110px;color:rgba(255,255,255,0.58);bord
     <div><a href="tel:+18062090976">(806) 209-0976</a></div>
   </div>
 </footer>
+
+<div class="systemline" id="systemLine" aria-hidden="true">
+  <div class="systemline__fill" id="systemLineFill"></div>
+  <div class="systemline__node" data-target="top" style="top:0%"></div>
+  <div class="systemline__node" data-target="services" style="top:0%"></div>
+  <div class="systemline__node" data-target="local" style="top:0%"></div>
+  <div class="systemline__node" data-target="trust" style="top:0%"></div>
+  <div class="systemline__node" data-target="contact" style="top:0%"></div>
+</div>
 
 <div class="actionbar">
   <a href="tel:+18062090976"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call Now</a>
@@ -586,14 +610,49 @@ footer{background:#0c0704;padding:40px 0 110px;color:rgba(255,255,255,0.58);bord
     });
   }
 
+  // System line — persistent scroll-linked thread connecting every section
+  var lineFill = document.getElementById('systemLineFill');
+  var lineNodes = document.querySelectorAll('.systemline__node');
+  var HEAT_RGB = [255,180,84], COOL_RGB = [79,209,232];
+
+  function positionNodes(){
+    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    if (docHeight <= 0) return;
+    lineNodes.forEach(function(node){
+      var target = document.getElementById(node.dataset.target);
+      if (!target) return;
+      var pct = (target.offsetTop / document.documentElement.scrollHeight) * 100;
+      node.style.top = pct + '%';
+    });
+  }
+
+  function updateSystemLine(){
+    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    var progress = docHeight > 0 ? Math.min(1, Math.max(0, window.scrollY / docHeight)) : 0;
+    lineFill.style.height = (progress * 100) + '%';
+    var r = Math.round(HEAT_RGB[0] + (COOL_RGB[0]-HEAT_RGB[0])*progress);
+    var g = Math.round(HEAT_RGB[1] + (COOL_RGB[1]-HEAT_RGB[1])*progress);
+    var b = Math.round(HEAT_RGB[2] + (COOL_RGB[2]-HEAT_RGB[2])*progress);
+    var color = 'rgb(' + r + ',' + g + ',' + b + ')';
+    lineFill.style.background = color;
+    lineNodes.forEach(function(node){
+      var nodeTop = parseFloat(node.style.top);
+      var fillTop = progress * 100;
+      node.style.borderColor = fillTop >= nodeTop ? color : 'rgba(20,17,12,0.18)';
+    });
+  }
+
   var ticking = false;
   window.addEventListener('scroll', function(){
     if (!ticking) {
-      window.requestAnimationFrame(function(){ updateThreshold(); ticking = false; });
+      window.requestAnimationFrame(function(){ updateThreshold(); updateSystemLine(); ticking = false; });
       ticking = true;
     }
   }, {passive:true});
+  window.addEventListener('resize', positionNodes);
+  positionNodes();
   updateThreshold();
+  updateSystemLine();
 })();
 </script>
 </body>
