@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lubbock Heating and Air Conditioning | HVAC Service in Lubbock, TX</title>
+<meta name="description" content="Lubbock Heating and Air Conditioning provides air conditioning repair, heating service, and HVAC maintenance in Lubbock, TX. Call (806) 209-0976.">
+<link rel="canonical" href="https://lubbockheatingandair.example/">
+<meta property="og:title" content="Lubbock Heating and Air Conditioning">
+<meta property="og:description" content="Air conditioning repair, heating service, and HVAC maintenance in Lubbock, TX. Call (806) 209-0976.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%2306131c'/%3E%3Cpath d='M30 65 Q50 35 70 65' fill='none' stroke='%234fd1e8' stroke-width='7' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HVACBusiness",
+  "name": "Lubbock Heating and Air Conditioning",
+  "telephone": "+18062090976",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "4630 50th St",
+    "addressLocality": "Lubbock",
+    "addressRegion": "TX",
+    "postalCode": "79414",
+    "addressCountry": "US"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "3.8",
+    "reviewCount": "9"
+  },
+  "areaServed": "Lubbock, TX"
+}
+</script>
+<style>
+:root{
+  --heat-deep:#1a0f08;
+  --heat-red:#c9421e;
+  --heat-amber:#e8923a;
+  --heat-glow:#ffb454;
+  --cool-deep:#06131c;
+  --cool-blue:#1c5f7a;
+  --cool-cyan:#4fd1e8;
+  --cool-mist:#cde9f0;
+  --paper:#f7f5f0;
+  --white:#fffdf9;
+  --ink:#14110c;
+  --stone:#5c564c;
+  --line:rgba(20,17,12,0.1);
+  --shadow:0 24px 60px rgba(0,0,0,0.35);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Inter',sans-serif;background:var(--paper);color:var(--ink);
+  line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;letter-spacing:-0.02em;color:var(--ink);}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+button{font-family:inherit;cursor:pointer;border:none;background:none;}
+.wrap{max-width:1280px;margin:0 auto;padding:0 40px;}
+.eyebrow{font-family:'Inter',sans-serif;font-weight:700;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--heat-red);display:inline-flex;align-items:center;gap:12px;}
+.eyebrow::before{content:'';width:30px;height:1.5px;background:var(--heat-amber);display:inline-block;}
+.eyebrow--cool{color:var(--cool-cyan);}
+.eyebrow--cool::before{background:var(--cool-cyan);}
+:focus-visible{outline:3px solid var(--cool-cyan);outline-offset:3px;}
+.reveal{opacity:0;transform:translateY(32px);transition:opacity .9s cubic-bezier(.22,1,.36,1),transform .9s cubic-bezier(.22,1,.36,1);}
+.reveal.in{opacity:1;transform:translateY(0);}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}
+
+/* ===== NAV ===== */
+.nav{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:center;justify-content:space-between;padding:22px 40px;transition:padding .3s,background .3s;}
+.nav::before{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(12,7,4,0.75) 0%,rgba(12,7,4,0) 100%);opacity:1;transition:opacity .3s;}
+.nav.scrolled::before{opacity:0;}
+.nav.scrolled{padding:16px 40px;mix-blend-mode:normal;background:rgba(247,245,240,0.94);backdrop-filter:blur(10px);box-shadow:0 2px 18px rgba(0,0,0,0.06);}
+.nav__brand{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1.02rem;line-height:1.15;color:#fff;letter-spacing:-0.01em;}
+.nav.scrolled .nav__brand{color:var(--ink);}
+.nav__brand small{display:block;font-family:'Inter',sans-serif;font-weight:600;font-size:0.6rem;letter-spacing:0.16em;color:rgba(255,255,255,0.6);margin-top:3px;text-transform:uppercase;}
+.nav.scrolled .nav__brand small{color:var(--stone);}
+.nav__links{display:flex;align-items:center;gap:32px;}
+.nav__links a{font-size:0.82rem;font-weight:600;letter-spacing:0.03em;text-transform:uppercase;color:#fff;transition:opacity .3s;}
+.nav.scrolled .nav__links a{color:var(--ink);}
+.nav__links a:hover{opacity:0.6;}
+.nav__cta{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--ink);padding:11px 22px;border-radius:100px;font-weight:700;font-size:0.82rem;transition:transform .2s;}
+.nav.scrolled .nav__cta{background:var(--heat-red);color:#fff;}
+.nav__cta:hover{transform:translateY(-2px);}
+.nav__cta--mobile{display:none;}
+.nav__toggle{display:none;width:44px;height:44px;align-items:center;justify-content:center;}
+.nav__toggle span,.nav__toggle span::before,.nav__toggle span::after{content:'';display:block;width:22px;height:2px;background:#fff;position:relative;transition:.3s;}
+.nav.scrolled .nav__toggle span,.nav.scrolled .nav__toggle span::before,.nav.scrolled .nav__toggle span::after{background:var(--ink);}
+.nav__toggle span::before{position:absolute;top:-7px;}
+.nav__toggle span::after{position:absolute;top:7px;}
+.nav__toggle.active span{background:transparent;}
+.nav__toggle.active span::before{top:0;transform:rotate(45deg);}
+.nav__toggle.active span::after{top:0;transform:rotate(-45deg);}
+@media(max-width:960px){
+  .nav__links{position:fixed;top:0;right:-100%;width:min(320px,84vw);height:100vh;background:var(--paper);
+    flex-direction:column;align-items:flex-start;justify-content:center;gap:26px;padding:40px;
+    transition:right .4s cubic-bezier(.4,0,.2,1);box-shadow:-10px 0 40px rgba(0,0,0,0.15);}
+  .nav__links.open{right:0;}
+  .nav__links a{color:var(--ink)!important;font-size:1.3rem;}
+  .nav__cta{display:none;}
+  .nav__links .nav__cta--mobile{display:inline-flex;margin-top:14px;background:var(--heat-red);color:#fff;}
+  .nav__toggle{display:flex;}
+}
+
+/* ===== HERO ===== */
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;overflow:hidden;background:linear-gradient(180deg,#2a1509 0%,var(--heat-deep) 55%,#0c0704 100%);}
+.hero__haze{position:absolute;inset:0;z-index:0;}
+.hero__haze svg{width:100%;height:100%;}
+.hero__sun{position:absolute;top:12%;left:50%;width:340px;height:340px;margin-left:-170px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,180,84,0.9) 0%,rgba(232,146,58,0.5) 40%,rgba(232,146,58,0) 72%);
+  filter:blur(2px);animation:sunPulse 6s ease-in-out infinite;z-index:1;}
+@keyframes sunPulse{0%,100%{opacity:0.85;transform:scale(1);}50%{opacity:1;transform:scale(1.05);}}
+.hero__grain{position:absolute;inset:0;z-index:2;opacity:0.05;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+.hero__inner{position:relative;z-index:3;flex:1;display:flex;flex-direction:column;justify-content:flex-end;padding:150px 40px 0;}
+.hero__temp{font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:0.95rem;letter-spacing:0.04em;color:var(--heat-glow);display:flex;align-items:center;gap:10px;margin-bottom:28px;}
+.hero__temp .dot{width:7px;height:7px;border-radius:50%;background:var(--heat-glow);animation:blink 1.8s ease-in-out infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0.25;}}
+.hero__title{font-size:clamp(2.6rem,8vw,6.4rem);color:#fff;line-height:0.94;letter-spacing:-0.03em;max-width:1100px;}
+.hero__title em{font-style:normal;color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,0.85);}
+.hero__sub{color:rgba(255,253,249,0.78);font-size:1.1rem;max-width:520px;margin:30px 0 40px;font-weight:400;}
+.hero__meta{display:flex;flex-wrap:wrap;gap:14px 40px;margin-bottom:44px;color:rgba(255,253,249,0.6);font-size:0.86rem;}
+.hero__meta b{color:#fff;font-weight:700;}
+.hero__actions{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:60px;}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:17px 32px;border-radius:100px;font-weight:700;font-size:0.95rem;transition:transform .2s,box-shadow .2s;}
+.btn--sun{background:linear-gradient(135deg,var(--heat-glow),var(--heat-red));color:#1a0f08;box-shadow:0 14px 32px rgba(201,66,30,0.35);}
+.btn--sun:hover{transform:translateY(-3px);box-shadow:0 18px 38px rgba(201,66,30,0.45);}
+.btn--outline{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,0.4);}
+.btn--outline:hover{background:rgba(255,255,255,0.1);}
+.btn--ice{background:linear-gradient(135deg,var(--cool-cyan),var(--cool-blue));color:#06131c;box-shadow:0 14px 32px rgba(79,209,232,0.3);}
+.btn--ice:hover{transform:translateY(-3px);box-shadow:0 18px 38px rgba(79,209,232,0.4);}
+.btn--dark{background:var(--ink);color:#fff;}
+.btn--dark:hover{transform:translateY(-3px);}
+.hero__scrollcue{position:relative;z-index:3;display:flex;align-items:center;gap:12px;padding:0 40px 30px;color:rgba(255,253,249,0.55);font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;}
+.hero__scrollcue .line{width:44px;height:1px;background:rgba(255,255,255,0.3);position:relative;overflow:hidden;}
+.hero__scrollcue .line::after{content:'';position:absolute;left:-100%;top:0;width:100%;height:100%;background:var(--heat-glow);animation:scrollLineH 2s ease-in-out infinite;}
+@keyframes scrollLineH{0%{left:-100%;}50%{left:0;}100%{left:100%;}}
+@media(max-width:720px){.hero__scrollcue{display:none;}}
+@media(max-width:720px){.hero__inner{padding-top:120px;}.hero__sun{width:220px;height:220px;margin-left:-110px;}}
+
+/* ===== THRESHOLD (signature scroll interaction) ===== */
+.threshold{position:relative;height:420vh;}
+.threshold__stage{position:sticky;top:0;height:100vh;overflow:hidden;background:var(--heat-deep);}
+.threshold__bg{position:absolute;inset:0;z-index:0;}
+.threshold__heat,.threshold__cool{position:absolute;inset:0;}
+.threshold__heat{background:linear-gradient(180deg,#3a1c0c 0%,var(--heat-deep) 70%);}
+.threshold__cool{background:linear-gradient(180deg,#0a2433 0%,var(--cool-deep) 70%);opacity:0;}
+.threshold__content{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 24px;}
+.threshold__label{font-family:'Inter',sans-serif;font-weight:700;font-size:0.75rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--heat-glow);margin-bottom:26px;transition:color .3s;}
+.threshold__temp{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(4rem,16vw,11rem);line-height:0.9;color:#fff;letter-spacing:-0.03em;font-variant-numeric:tabular-nums;}
+.threshold__temp .unit{font-size:0.32em;vertical-align:super;opacity:0.7;}
+.threshold__caption{margin-top:30px;font-size:1.05rem;color:rgba(255,255,255,0.72);max-width:480px;}
+.threshold__line{position:absolute;left:0;right:0;top:50%;height:2px;background:rgba(255,255,255,0.18);z-index:1;transform:scaleX(var(--line-scale,0));transform-origin:center;}
+.threshold__progress{position:absolute;bottom:56px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:2;}
+.threshold__progress span{width:34px;height:3px;border-radius:3px;background:rgba(255,255,255,0.2);overflow:hidden;position:relative;}
+.threshold__progress span i{position:absolute;inset:0;background:var(--heat-glow);transform:scaleX(0);transform-origin:left;transition:background .3s;}
+@media(max-width:720px){.threshold{height:360vh;}}
+
+/* ===== SECTION SHARED ===== */
+section{position:relative;}
+.section-head{max-width:680px;margin-bottom:60px;}
+.section-head h2{font-size:clamp(2.2rem,4.6vw,3.6rem);margin-top:16px;line-height:1.02;}
+.section-head p{font-size:1.08rem;color:var(--stone);margin-top:18px;max-width:560px;}
+
+/* ===== SERVICES (interactive exploration) ===== */
+.services{background:var(--cool-deep);padding:140px 0;position:relative;overflow:hidden;}
+.services::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 0%,rgba(79,209,232,0.1),transparent 60%);}
+.services .section-head h2{color:#fff;}
+.services .section-head p{color:rgba(255,255,255,0.62);}
+.svc-list{position:relative;z-index:1;border-top:1px solid rgba(255,255,255,0.12);}
+.svc-item{border-bottom:1px solid rgba(255,255,255,0.12);}
+.svc-item__head{display:flex;align-items:center;justify-content:space-between;padding:36px 4px;width:100%;text-align:left;gap:24px;}
+.svc-item__num{font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:0.9rem;color:var(--cool-cyan);min-width:44px;}
+.svc-item__title{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(1.6rem,3.4vw,2.6rem);color:rgba(255,255,255,0.4);transition:color .35s;flex:1;}
+.svc-item.active .svc-item__title{color:#fff;}
+.svc-item__icon{width:28px;height:28px;color:rgba(255,255,255,0.4);flex-shrink:0;transition:transform .35s,color .35s;}
+.svc-item.active .svc-item__icon{color:var(--cool-cyan);transform:rotate(45deg);}
+.svc-item__body{max-height:0;overflow:hidden;transition:max-height .5s cubic-bezier(.22,1,.36,1);}
+.svc-item.active .svc-item__body{max-height:280px;}
+.svc-item__body-inner{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;padding:0 4px 40px;align-items:start;}
+.svc-item__body-inner p{color:rgba(255,255,255,0.68);font-size:1rem;max-width:480px;}
+.svc-item__evidence{font-size:0.82rem;color:rgba(255,255,255,0.45);font-style:italic;margin-top:14px;}
+.svc-item__visual{aspect-ratio:16/10;border-radius:8px;overflow:hidden;position:relative;background:linear-gradient(155deg,#0d2b3a,#06131c);}
+.svc-item__visual svg{width:100%;height:100%;}
+@media(max-width:800px){.svc-item__body-inner{grid-template-columns:1fr;}.svc-item__title{font-size:1.5rem;}}
+
+/* ===== LOCAL IDENTITY ===== */
+.local{background:var(--paper);padding:140px 0;}
+.local__grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;}
+.local .eyebrow{color:var(--heat-red);}
+.local h2{font-size:clamp(2.1rem,4vw,3rem);margin:18px 0 22px;line-height:1.05;}
+.local p{color:var(--stone);font-size:1.06rem;margin-bottom:18px;max-width:520px;}
+.local__stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;}
+.lstat{background:#fff;padding:34px 28px;}
+.lstat .n{font-family:'Bricolage Grotesque',sans-serif;font-size:2rem;font-weight:800;color:var(--heat-red);}
+.lstat .l{font-size:0.86rem;color:var(--stone);margin-top:6px;}
+.local__art{position:relative;aspect-ratio:1/1;border-radius:8px;overflow:hidden;}
+.local__art svg{width:100%;height:100%;}
+@media(max-width:900px){.local__grid{grid-template-columns:1fr;gap:40px;}}
+
+/* ===== TRUST / REVIEWS ===== */
+.trust{background:#fff;padding:140px 0;}
+.trust .eyebrow{color:var(--heat-red);}
+.trust__head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px;margin-bottom:50px;}
+.trust__rating{display:flex;align-items:center;gap:16px;}
+.trust__rating .num{font-family:'Bricolage Grotesque',sans-serif;font-size:3rem;color:var(--ink);font-weight:800;}
+.trust__rating .stars{color:var(--heat-red);font-size:1.15rem;letter-spacing:2px;}
+.trust__rating .meta{font-size:0.86rem;color:var(--stone);}
+.trust__note{font-size:0.95rem;color:var(--stone);max-width:460px;}
+.trust__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;}
+.tcard{background:var(--paper);padding:36px 30px;}
+.tcard h4{font-size:1.05rem;margin-bottom:10px;}
+.tcard p{font-size:0.92rem;color:var(--stone);}
+@media(max-width:900px){.trust__grid{grid-template-columns:1fr;}}
+
+/* ===== CONTACT ===== */
+.contact{background:var(--heat-deep);padding:150px 0 120px;position:relative;overflow:hidden;}
+.contact::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at top right,rgba(232,146,58,0.14),transparent 55%);}
+.contact__inner{position:relative;z-index:1;text-align:center;max-width:700px;margin:0 auto;}
+.contact .eyebrow{color:var(--heat-glow);justify-content:center;}
+.contact h2{color:#fff;font-size:clamp(2.4rem,5vw,3.8rem);margin:20px 0 20px;}
+.contact p{color:rgba(255,255,255,0.68);font-size:1.08rem;margin-bottom:40px;}
+.contact__actions{display:flex;justify-content:center;flex-wrap:wrap;gap:16px;margin-bottom:50px;}
+.contact__details{display:flex;justify-content:center;gap:48px;flex-wrap:wrap;color:rgba(255,255,255,0.85);}
+.cdetail{display:flex;flex-direction:column;align-items:center;gap:10px;font-size:0.9rem;}
+.cdetail svg{width:24px;height:24px;color:var(--heat-glow);}
+.cdetail b{color:#fff;font-weight:700;font-size:1.04rem;}
+
+/* ===== FOOTER ===== */
+footer{background:#0c0704;padding:40px 0 110px;color:rgba(255,255,255,0.58);border-top:1px solid rgba(255,255,255,0.08);}
+.footer__row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:0.84rem;}
+.footer__brand{color:#fff;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;}
+
+/* ===== MOBILE ACTION BAR ===== */
+.actionbar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:950;grid-template-columns:1fr 1fr;box-shadow:0 -6px 24px rgba(0,0,0,0.25);}
+.actionbar a{display:flex;align-items:center;justify-content:center;gap:8px;padding:17px 10px;font-weight:700;font-size:0.92rem;font-family:'Bricolage Grotesque',sans-serif;}
+.actionbar a:first-child{background:var(--heat-red);color:#fff;}
+.actionbar a:last-child{background:var(--cool-blue);color:#fff;}
+.actionbar svg{width:18px;height:18px;}
+@media(max-width:720px){.actionbar{display:grid;}body{padding-bottom:66px;}}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;scroll-behavior:auto!important;}
+  .threshold{height:auto;}
+  .threshold__stage{position:relative;height:auto;padding:120px 0;}
+  .threshold__cool{opacity:1;position:relative;}
+  .threshold__heat{display:none;}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <a href="#top" class="nav__brand">Lubbock Heating<br>&amp; Air Conditioning<small>HVAC SERVICE · LUBBOCK, TX</small></a>
+  <div class="nav__links" id="navLinks">
+    <a href="#services">Services</a>
+    <a href="#local">Lubbock</a>
+    <a href="#trust">Reviews</a>
+    <a href="#contact">Contact</a>
+    <a href="tel:+18062090976" class="nav__cta nav__cta--mobile">Call Now</a>
+  </div>
+  <a href="tel:+18062090976" class="nav__cta" id="navCta">Call (806) 209-0976</a>
+  <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero__sun" aria-hidden="true"></div>
+  <div class="hero__haze" aria-hidden="true">
+    <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="heatShimmer" x="-20%" y="-20%" width="140%" height="140%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.008 0.05" numOctaves="2" seed="7" result="noise">
+            <animate attributeName="baseFrequency" values="0.008 0.05;0.011 0.06;0.008 0.05" dur="7s" repeatCount="indefinite"/>
+          </feTurbulence>
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="18" xChannelSelector="R" yChannelSelector="G"/>
+        </filter>
+      </defs>
+      <g filter="url(#heatShimmer)" opacity="0.5">
+        <path d="M0 620 L1440 620 L1440 900 L0 900 Z" fill="#0c0704"/>
+        <path d="M0 640 Q360 600 720 640 T1440 630" fill="none" stroke="#e8923a" stroke-width="2" opacity="0.4"/>
+        <path d="M0 670 Q360 700 720 668 T1440 680" fill="none" stroke="#c9421e" stroke-width="1.5" opacity="0.3"/>
+      </g>
+    </svg>
+  </div>
+  <div class="hero__grain" aria-hidden="true"></div>
+  <div class="hero__inner">
+    <div class="hero__temp"><span class="dot"></span> LUBBOCK, TX — WEST TEXAS HEAT</div>
+    <h1 class="hero__title">Comfort built <em>against</em><br>the Lubbock heat.</h1>
+    <p class="hero__sub">Lubbock Heating and Air Conditioning provides air conditioning and heating service for homes and businesses across Lubbock, TX.</p>
+    <div class="hero__meta">
+      <span><b>4630 50th St</b> · Lubbock, TX 79414</span>
+      <span><b>(806) 209-0976</b></span>
+    </div>
+    <div class="hero__actions">
+      <a href="tel:+18062090976" class="btn btn--sun">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call (806) 209-0976
+      </a>
+      <a href="#services" class="btn btn--outline">Explore Services</a>
+    </div>
+  </div>
+  <div class="hero__scrollcue" aria-hidden="true"><span>Scroll</span><div class="line"></div><span>93° avg. July high</span></div>
+</header>
+
+<section class="threshold" id="threshold" aria-label="From West Texas heat to controlled comfort">
+  <div class="threshold__stage" id="thresholdStage">
+    <div class="threshold__bg">
+      <div class="threshold__heat" id="thresholdHeat"></div>
+      <div class="threshold__cool" id="thresholdCool"></div>
+    </div>
+    <div class="threshold__line" id="thresholdLine" aria-hidden="true"></div>
+    <div class="threshold__content">
+      <div class="threshold__label" id="thresholdLabel">Outside · Lubbock, TX</div>
+      <div class="threshold__temp" id="thresholdTemp">93<span class="unit">°F</span></div>
+      <p class="threshold__caption" id="thresholdCaption">Lubbock's average July high runs about 93°F — and plenty of days run hotter than that. Every degree of relief inside depends on a system that's actually working.</p>
+    </div>
+    <div class="threshold__progress" aria-hidden="true">
+      <span><i id="prog1"></i></span><span><i id="prog2"></i></span><span><i id="prog3"></i></span>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow eyebrow--cool">What We Do</span>
+      <h2>Heating. Cooling.<br>One system.</h2>
+      <p>Explore each side of the system Lubbock Heating and Air Conditioning services.</p>
+    </div>
+    <div class="svc-list reveal" id="svcList">
+      <div class="svc-item active" data-svc="ac">
+        <button class="svc-item__head" aria-expanded="true">
+          <span class="svc-item__num">01</span>
+          <span class="svc-item__title">Air Conditioning Repair</span>
+          <svg class="svc-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="svc-item__body">
+          <div class="svc-item__body-inner">
+            <div>
+              <p>Diagnosing and repairing air conditioning systems that have stopped cooling, are cooling poorly, or are running when they shouldn't be.</p>
+            </div>
+            <div class="svc-item__visual">
+              <svg viewBox="0 0 200 125" xmlns="http://www.w3.org/2000/svg">
+                <rect width="200" height="125" fill="#06131c"/>
+                <g class="ac-flow">
+                  <path d="M20 90 Q60 60 100 90 T180 85" fill="none" stroke="#4fd1e8" stroke-width="2" opacity="0.7"/>
+                  <path d="M20 70 Q60 45 100 68 T180 60" fill="none" stroke="#4fd1e8" stroke-width="1.5" opacity="0.4"/>
+                </g>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="svc-item" data-svc="heat">
+        <button class="svc-item__head" aria-expanded="false">
+          <span class="svc-item__num">02</span>
+          <span class="svc-item__title">Heating</span>
+          <svg class="svc-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="svc-item__body">
+          <div class="svc-item__body-inner">
+            <div>
+              <p>Heating system service for the cold side of West Texas weather, when winter temperatures drop well below freezing.</p>
+            </div>
+            <div class="svc-item__visual">
+              <svg viewBox="0 0 200 125" xmlns="http://www.w3.org/2000/svg">
+                <rect width="200" height="125" fill="#06131c"/>
+                <g class="heat-flow">
+                  <path d="M100 100 C90 80 110 70 100 50 C90 30 110 20 100 5" fill="none" stroke="#e8923a" stroke-width="2.5" opacity="0.75" stroke-linecap="round"/>
+                </g>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="svc-item" data-svc="hvac">
+        <button class="svc-item__head" aria-expanded="false">
+          <span class="svc-item__num">03</span>
+          <span class="svc-item__title">HVAC Service &amp; Maintenance</span>
+          <svg class="svc-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="svc-item__body">
+          <div class="svc-item__body-inner">
+            <div>
+              <p>General HVAC troubleshooting and service for residential and commercial systems in Lubbock.</p>
+            </div>
+            <div class="svc-item__visual">
+              <svg viewBox="0 0 200 125" xmlns="http://www.w3.org/2000/svg">
+                <rect width="200" height="125" fill="#06131c"/>
+                <circle cx="100" cy="62" r="30" fill="none" stroke="#cde9f0" stroke-width="1.5" opacity="0.5"/>
+                <circle cx="100" cy="62" r="8" fill="#4fd1e8" opacity="0.8"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p style="margin-top:30px;font-size:0.86rem;color:rgba(255,255,255,0.45);font-style:italic;">Not a confirmed price or full service list — call (806) 209-0976 to ask about your specific job.</p>
+  </div>
+</section>
+
+<section class="local" id="local">
+  <div class="wrap local__grid">
+    <div class="reveal">
+      <span class="eyebrow">Built For Lubbock</span>
+      <h2>This is West Texas weather.</h2>
+      <p>Lubbock summers push into triple digits; winters bring hard freezes. Homes and businesses here rely on systems built to handle that swing in both directions, not just one.</p>
+      <p>Lubbock Heating and Air Conditioning is based at 4630 50th St — serving the city and the extremes that come with it.</p>
+      <div class="local__stats" style="margin-top:30px;">
+        <div class="lstat"><div class="n">93°F</div><div class="l">Average Lubbock July high (NOAA)</div></div>
+        <div class="lstat"><div class="n">27°F</div><div class="l">Average Lubbock January low (NOAA)</div></div>
+      </div>
+    </div>
+    <div class="local__art reveal" aria-hidden="true">
+      <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+        <rect width="400" height="400" fill="#0f0a06"/>
+        <rect y="260" width="400" height="140" fill="#1a120a"/>
+        <g fill="none" stroke="#e8923a" stroke-width="1.5" opacity="0.5">
+          <path d="M0 260 L120 260 L150 200 L400 200"/>
+        </g>
+        <g fill="#241a10">
+          <rect x="60" y="180" width="90" height="80" rx="2"/>
+          <rect x="220" y="150" width="70" height="110" rx="2"/>
+          <rect x="310" y="195" width="60" height="65" rx="2"/>
+        </g>
+        <circle cx="320" cy="80" r="46" fill="#e8923a" opacity="0.85"/>
+        <circle cx="320" cy="80" r="70" fill="none" stroke="#e8923a" stroke-width="1" opacity="0.25"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="trust" id="trust">
+  <div class="wrap">
+    <div class="trust__head reveal">
+      <div>
+        <span class="eyebrow">Customer Proof</span>
+        <div class="trust__rating" style="margin-top:16px;">
+          <span class="num">3.8</span>
+          <div>
+            <div class="stars">★★★★☆</div>
+            <div class="meta">9 Google reviews</div>
+          </div>
+        </div>
+      </div>
+      <p class="trust__note">Nine reviews is a small sample, and we're not going to dress that up. Here's what we can say honestly.</p>
+    </div>
+    <div class="trust__grid reveal">
+      <div class="tcard">
+        <h4>An honest rating</h4>
+        <p>3.8★ on Google from 9 reviews — shown exactly as it stands, not rounded up or filtered.</p>
+      </div>
+      <div class="tcard">
+        <h4>A real, local business</h4>
+        <p>Based at 4630 50th St, Lubbock, TX — a physical address you can visit, not a lead-gen listing.</p>
+      </div>
+      <div class="tcard">
+        <h4>One way to find out</h4>
+        <p>The best way to judge the work is to call, describe the job, and see how it's handled.</p>
+      </div>
+    </div>
+    <div style="margin-top:34px;">
+      <a href="tel:+18062090976" class="btn btn--dark">Call (806) 209-0976</a>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap contact__inner">
+    <span class="eyebrow">Get In Touch</span>
+    <h2>Call Lubbock Heating<br>and Air Conditioning.</h2>
+    <p>Heating and air conditioning service in Lubbock, TX.</p>
+    <div class="contact__actions">
+      <a href="tel:+18062090976" class="btn btn--sun">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call (806) 209-0976
+      </a>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=4630+50th+St%2C+Lubbock%2C+TX+79414" target="_blank" rel="noopener" class="btn btn--outline">Get Directions</a>
+    </div>
+    <div class="contact__details">
+      <div class="cdetail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><b>4630 50th St</b>Lubbock, TX 79414</div>
+      <div class="cdetail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><b>Call for hours</b>Not confirmed online</div>
+      <div class="cdetail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 7.4H22l-6 4.4 2.3 7.2L12 16.6 5.7 21l2.3-7.2-6-4.4h7.6z"/></svg><b>3.8★ · 9 reviews</b>on Google</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer__row">
+    <div class="footer__brand">Lubbock Heating &amp; Air Conditioning</div>
+    <div>© 2026 Lubbock Heating and Air Conditioning · Lubbock, TX</div>
+    <div><a href="tel:+18062090976">(806) 209-0976</a></div>
+  </div>
+</footer>
+
+<div class="actionbar">
+  <a href="tel:+18062090976"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call Now</a>
+  <a href="https://www.google.com/maps/dir/?api=1&destination=4630+50th+St%2C+Lubbock%2C+TX+79414" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Directions</a>
+</div>
+
+<script>
+(function(){
+  var nav = document.getElementById('nav');
+  window.addEventListener('scroll', function(){ nav.classList.toggle('scrolled', window.scrollY > 60); }, {passive:true});
+
+  var toggle = document.getElementById('navToggle');
+  var links = document.getElementById('navLinks');
+  toggle.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    toggle.classList.toggle('active', open);
+    toggle.setAttribute('aria-expanded', open ? 'true':'false');
+  });
+  links.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(){ links.classList.remove('open'); toggle.classList.remove('active'); toggle.setAttribute('aria-expanded','false'); });
+  });
+
+  var reveals = document.querySelectorAll('.reveal');
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.15});
+  reveals.forEach(function(el){ io.observe(el); });
+
+  // Services accordion — real state change
+  var items = document.querySelectorAll('.svc-item');
+  items.forEach(function(item){
+    var head = item.querySelector('.svc-item__head');
+    head.addEventListener('click', function(){
+      var wasActive = item.classList.contains('active');
+      items.forEach(function(i){ i.classList.remove('active'); i.querySelector('.svc-item__head').setAttribute('aria-expanded','false'); });
+      if (!wasActive) { item.classList.add('active'); head.setAttribute('aria-expanded','true'); }
+    });
+  });
+
+  // Threshold scroll interaction: heat -> cool
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var thresholdSection = document.getElementById('threshold');
+  var coolLayer = document.getElementById('thresholdCool');
+  var lineEl = document.getElementById('thresholdLine');
+  var labelEl = document.getElementById('thresholdLabel');
+  var tempEl = document.getElementById('thresholdTemp');
+  var captionEl = document.getElementById('thresholdCaption');
+  var progEls = [document.getElementById('prog1'), document.getElementById('prog2'), document.getElementById('prog3')];
+
+  var STAGES = [
+    { label: 'Outside · Lubbock, TX', temp: 93, caption: "Lubbock's average July high runs about 93°F — and plenty of days run hotter than that. Every degree of relief inside depends on a system that's actually working." },
+    { label: 'At the threshold', temp: 82, caption: 'The gap between outside and in is where a struggling system shows itself first.' },
+    { label: 'Inside · Working as it should', temp: 72, caption: 'Lubbock Heating and Air Conditioning keeps that gap under control, in both directions.' }
+  ];
+
+  function lerp(a,b,t){ return a + (b-a)*t; }
+
+  function updateThreshold(){
+    if (reduceMotion) return;
+    var rect = thresholdSection.getBoundingClientRect();
+    var total = rect.height - window.innerHeight;
+    var progress = Math.min(1, Math.max(0, -rect.top / total));
+
+    coolLayer.style.opacity = progress;
+    lineEl.style.setProperty('--line-scale', Math.min(1, progress * 1.4));
+
+    var stageIndex = progress < 0.4 ? 0 : (progress < 0.75 ? 1 : 2);
+    var stage = STAGES[stageIndex];
+    if (labelEl.textContent !== stage.label) {
+      labelEl.textContent = stage.label;
+      labelEl.style.color = stageIndex === 0 ? 'var(--heat-glow)' : 'var(--cool-cyan)';
+      captionEl.textContent = stage.caption;
+    }
+
+    var tempFrom = 93, tempTo = 72;
+    var t = Math.min(1, progress / 0.9);
+    var eased = t*t*(3-2*t);
+    var currentTemp = Math.round(lerp(tempFrom, tempTo, eased));
+    tempEl.innerHTML = currentTemp + '<span class="unit">°F</span>';
+
+    progEls.forEach(function(el, i){
+      var segStart = i/3, segEnd = (i+1)/3;
+      var segT = Math.min(1, Math.max(0, (progress - segStart) / (segEnd - segStart)));
+      el.style.transform = 'scaleX(' + segT + ')';
+      el.style.background = progress > 0.5 ? 'var(--cool-cyan)' : 'var(--heat-glow)';
+    });
+  }
+
+  var ticking = false;
+  window.addEventListener('scroll', function(){
+    if (!ticking) {
+      window.requestAnimationFrame(function(){ updateThreshold(); ticking = false; });
+      ticking = true;
+    }
+  }, {passive:true});
+  updateThreshold();
+})();
+</script>
+</body>
+</html>
