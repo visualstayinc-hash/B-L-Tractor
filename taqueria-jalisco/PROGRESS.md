@@ -2,6 +2,12 @@
 
 Read this first if context resets, then QUALITY_GATE.md, then CONCEPT.md and REFERENCE_EXTRACTION.md, then `git status`, then run the site, then continue from the first unresolved item.
 
+## Post-Pass-5 fix: made fully self-contained
+
+The user reported the delivered `index.html` showing no images or animation — root cause confirmed via `file://` testing: opening the HTML file on its own (without the separate `assets/` folder alongside it, since the file was handed over as a standalone download) breaks all `assets/xxx.jpg` relative paths, and without those images the scroll-driven reveal, mural parallax, and menu image-swap have nothing visible to show even though the interaction code itself was working correctly (verified: 0 broken images, correct arch path data, when the folder *was* present).
+
+Every other site in this repo is a single self-contained file with no external dependency — Taqueria Jalisco was the one exception, carrying a separate `assets/` folder because of how the real photos were originally extracted from the source PDF. Fixed permanently by base64-embedding all 9 real photographs directly into `index.html` as `data:image/jpeg;base64,...` URIs, removing every `assets/` path reference (confirmed via grep: 0 remaining). File grew from ~52KB to ~608KB — still a fast, reasonable single-file page, and now impossible to break by forgetting a folder. Re-verified via `file://` protocol directly (matching how a user would actually open a handed-over file): all 19 image tags resolve, 0 horizontal overflow, arch interaction confirmed still functional.
+
 ## What this replaces
 
 The prior build (invented SVG mural, Bungee font, Tripadvisor rating, paper-tear interaction) is retired per this task's explicit instruction — "OLD WEBSITE: DO NOT USE AS DESIGN FOUNDATION." This is a from-scratch rebuild: new architecture, new visual system (built from the attached PDF's real photographs, not generic Mexican-restaurant convention), new interaction system, new motion language, new typography (Rye + Archivo, matching the real signage rather than a generic poster font).
