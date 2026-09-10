@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mālama Tree Service | Tree Care in Keaau, Hawaii</title>
+<meta name="description" content="Mālama Tree Service — tree trimming, removal, stump grinding, and storm cleanup in Keaau, Hawaii. 5.0★ on Google, 17 reviews. Call (808) 640-5035.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23142b1f'/%3E%3Cpath d='M50 18 L68 52 L58 52 L72 78 L28 78 L42 52 L32 52 Z' fill='%237fa66b'/%3E%3Crect x='45' y='78' width='10' height='14' fill='%235a3f2c'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --forest-deep:#0f2419;
+  --forest:#1c3b28;
+  --forest-mid:#33613f;
+  --moss:#7fa66b;
+  --moss-light:#a8c793;
+  --bark:#4a3323;
+  --bark-light:#8a6a4c;
+  --charcoal:#181510;
+  --stone:#5b564c;
+  --cream:#f3eee1;
+  --paper:#faf8f2;
+  --ink:#17190f;
+  --amber:#9c5e18;
+  --amber-bright:#e6952e;
+  --sky:#9fbcc7;
+  --line:rgba(23,25,15,0.12);
+  --shadow:0 20px 50px rgba(15,36,25,0.18);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.6;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:700;letter-spacing:-0.01em;color:var(--forest-deep);}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+button{font-family:inherit;cursor:pointer;border:none;background:none;}
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+.eyebrow{
+  font-family:'Inter',sans-serif;font-weight:700;font-size:0.72rem;letter-spacing:0.16em;
+  text-transform:uppercase;color:var(--amber);display:inline-flex;align-items:center;gap:10px;
+}
+.eyebrow::before{content:'';width:26px;height:2px;background:var(--amber);display:inline-block;}
+.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}
+:focus-visible{outline:3px solid var(--amber-bright);outline-offset:3px;}
+
+/* ===== NAV ===== */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:500;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 32px;transition:background .35s ease, padding .35s ease, box-shadow .35s ease;
+}
+.nav.scrolled{background:rgba(250,248,242,0.96);backdrop-filter:blur(10px);padding:12px 32px;box-shadow:0 2px 18px rgba(15,36,25,0.08);}
+.nav__brand{display:flex;align-items:center;gap:10px;font-family:'Fraunces',serif;font-weight:700;font-size:1.18rem;color:#fff;letter-spacing:-0.01em;transition:color .35s;}
+.nav.scrolled .nav__brand{color:var(--forest-deep);}
+.nav__brand svg{width:34px;height:34px;flex-shrink:0;}
+.nav__links{display:flex;align-items:center;gap:30px;}
+.nav__links a{font-size:0.86rem;font-weight:600;color:rgba(255,255,255,0.88);letter-spacing:0.02em;transition:color .35s;position:relative;}
+.nav.scrolled .nav__links a{color:var(--stone);}
+.nav__links a:hover{color:#fff;}
+.nav.scrolled .nav__links a:hover{color:var(--forest-deep);}
+.nav__cta{
+  display:flex;align-items:center;gap:8px;background:var(--amber);color:#fff;
+  padding:11px 20px;border-radius:100px;font-weight:700;font-size:0.85rem;letter-spacing:0.02em;
+  box-shadow:0 8px 22px rgba(201,121,31,0.35);transition:transform .2s, box-shadow .2s;
+}
+.nav__cta:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(201,121,31,0.45);}
+.nav__cta--mobile{display:none;}
+.nav__toggle{display:none;width:44px;height:44px;align-items:center;justify-content:center;border-radius:10px;}
+.nav__toggle span,.nav__toggle span::before,.nav__toggle span::after{
+  content:'';display:block;width:22px;height:2px;background:#fff;position:relative;transition:.3s;
+}
+.nav.scrolled .nav__toggle span,.nav.scrolled .nav__toggle span::before,.nav.scrolled .nav__toggle span::after{background:var(--forest-deep);}
+.nav__toggle span::before{position:absolute;top:-7px;}
+.nav__toggle span::after{position:absolute;top:7px;}
+.nav__toggle.active span{background:transparent;}
+.nav__toggle.active span::before{top:0;transform:rotate(45deg);}
+.nav__toggle.active span::after{top:0;transform:rotate(-45deg);}
+
+@media(max-width:920px){
+  .nav__links{position:fixed;top:0;right:-100%;width:min(320px,84vw);height:100vh;background:var(--paper);
+    flex-direction:column;align-items:flex-start;justify-content:center;gap:26px;padding:40px;
+    transition:right .4s cubic-bezier(.4,0,.2,1);box-shadow:-10px 0 40px rgba(0,0,0,0.15);}
+  .nav__links.open{right:0;}
+  .nav__links a{color:var(--ink)!important;font-size:1.15rem;}
+  .nav__cta{display:none;}
+  .nav__links .nav__cta--mobile{display:inline-flex;margin-top:10px;}
+  .nav__toggle{display:flex;}
+}
+
+/* ===== HERO ===== */
+.hero{
+  position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;
+  overflow:hidden;background:linear-gradient(180deg,var(--forest-deep) 0%,#0a1a12 100%);
+}
+.hero__canopy{position:absolute;inset:0;z-index:1;}
+.hero__canopy svg{width:100%;height:100%;}
+.hero__scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,22,15,0.15) 0%,rgba(10,22,15,0.55) 55%,rgba(10,22,15,0.92) 100%);z-index:2;}
+.hero__content{position:relative;z-index:3;padding:0 32px 88px;max-width:1180px;margin:0 auto;width:100%;}
+.hero__badge{
+  display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.12);
+  border:1px solid rgba(255,255,255,0.22);backdrop-filter:blur(6px);color:#fff;
+  padding:8px 16px;border-radius:100px;font-size:0.82rem;font-weight:600;margin-bottom:22px;
+}
+.hero__badge .stars{color:var(--amber-bright);letter-spacing:1px;}
+.hero__title{
+  font-size:clamp(2.6rem,7.2vw,5.6rem);color:#fff;line-height:0.98;letter-spacing:-0.02em;
+  margin-bottom:20px;
+}
+.hero__title span{display:block;overflow:hidden;}
+.hero__title span em{
+  display:block;font-style:normal;transform:translateY(110%);
+  animation:riseWord .9s cubic-bezier(.22,1,.36,1) forwards;
+}
+.hero__title span:nth-child(1) em{animation-delay:.15s;}
+.hero__title span:nth-child(2) em{animation-delay:.32s;color:var(--moss-light);}
+@keyframes riseWord{to{transform:translateY(0);}}
+.hero__sub{
+  font-size:clamp(1.02rem,1.6vw,1.28rem);color:rgba(255,255,255,0.82);max-width:520px;
+  margin-bottom:34px;font-weight:400;opacity:0;animation:fadeUp .8s ease forwards;animation-delay:.7s;
+}
+.hero__actions{display:flex;flex-wrap:wrap;gap:16px;opacity:0;animation:fadeUp .8s ease forwards;animation-delay:.9s;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;padding:16px 30px;border-radius:100px;
+  font-weight:700;font-size:0.95rem;letter-spacing:0.01em;transition:transform .2s,box-shadow .2s;
+}
+.btn--primary{background:var(--amber);color:#fff;box-shadow:0 12px 30px rgba(201,121,31,0.4);}
+.btn--primary:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(201,121,31,0.5);}
+.btn--ghost{background:rgba(255,255,255,0.08);color:#fff;border:1.5px solid rgba(255,255,255,0.4);}
+.btn--ghost:hover{background:rgba(255,255,255,0.18);}
+.btn--dark{background:var(--forest-deep);color:#fff;}
+.btn--dark:hover{background:var(--forest);transform:translateY(-3px);}
+.hero__scrolldown{
+  position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:3;
+  display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,255,255,0.65);
+  font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;
+}
+.hero__scrolldown .line{width:1px;height:34px;background:rgba(255,255,255,0.4);position:relative;overflow:hidden;}
+.hero__scrolldown .line::after{content:'';position:absolute;top:-100%;left:0;width:100%;height:100%;background:#fff;animation:scrollLine 1.8s ease-in-out infinite;}
+@keyframes scrollLine{0%{top:-100%;}50%{top:0;}100%{top:100%;}}
+@media(max-width:720px){.hero__scrolldown{display:none;}}
+
+/* ===== SECTION SHARED ===== */
+section{position:relative;}
+.section-head{max-width:640px;margin-bottom:56px;}
+.section-head h2{font-size:clamp(2rem,4vw,3rem);margin-top:14px;line-height:1.08;}
+.section-head p{font-size:1.08rem;color:var(--stone);margin-top:16px;max-width:560px;}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1);}
+.reveal.in{opacity:1;transform:translateY(0);}
+
+/* ===== TRUST STRIP ===== */
+.trust{background:var(--forest-deep);padding:26px 0;overflow:hidden;}
+.trust__row{display:flex;align-items:center;gap:48px;color:rgba(255,255,255,0.9);font-weight:600;font-size:0.95rem;}
+.trust__item{display:flex;align-items:center;gap:10px;white-space:nowrap;}
+.trust__item svg{width:20px;height:20px;flex-shrink:0;color:var(--moss-light);}
+.trust__row{justify-content:center;flex-wrap:wrap;}
+
+/* ===== TRANSFORMATION (signature interaction) ===== */
+.transform{padding:120px 0 100px;background:var(--paper);}
+.transform__frame{
+  position:relative;border-radius:20px;overflow:hidden;aspect-ratio:16/9;max-height:640px;
+  box-shadow:var(--shadow);cursor:ew-resize;user-select:none;touch-action:pan-y;
+  border:1px solid var(--line);
+}
+.transform__side{position:absolute;inset:0;}
+.transform__side svg{width:100%;height:100%;}
+.transform__after{clip-path:inset(0 0 0 50%);}
+.transform__label{
+  position:absolute;top:22px;font-family:'Inter',sans-serif;font-weight:700;font-size:0.78rem;
+  letter-spacing:0.12em;text-transform:uppercase;color:#fff;background:rgba(15,36,25,0.55);
+  backdrop-filter:blur(4px);padding:8px 16px;border-radius:100px;
+}
+.transform__label--before{left:22px;}
+.transform__label--after{right:22px;}
+.transform__divider{
+  position:absolute;top:0;bottom:0;left:50%;width:4px;background:#fff;transform:translateX(-50%);
+  box-shadow:0 0 0 4px rgba(255,255,255,0.25);
+}
+.transform__handle{
+  position:absolute;top:50%;left:50%;width:52px;height:52px;border-radius:50%;background:#fff;
+  transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;
+  box-shadow:0 8px 24px rgba(0,0,0,0.3);color:var(--forest-deep);
+}
+.transform__handle svg{width:22px;height:22px;}
+.transform__hint{text-align:center;color:var(--stone);font-size:0.86rem;margin-top:18px;font-weight:500;}
+.transform__hint kbd{background:var(--cream);border:1px solid var(--line);border-radius:5px;padding:1px 7px;font-family:inherit;font-size:0.8em;}
+
+/* ===== STORM STORY ===== */
+.storm{background:var(--charcoal);padding:120px 0;position:relative;overflow:hidden;}
+.storm .eyebrow{color:var(--amber-bright);}
+.storm__grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;}
+.storm__text h2{color:#fff;font-size:clamp(1.9rem,3.6vw,2.7rem);margin:16px 0 22px;line-height:1.12;}
+.storm__text p{color:rgba(255,255,255,0.72);font-size:1.04rem;margin-bottom:16px;max-width:520px;}
+.storm__text .note{font-size:0.86rem;color:rgba(255,255,255,0.45);margin-top:22px;font-style:italic;}
+.storm__art{position:relative;aspect-ratio:4/3;border-radius:18px;overflow:hidden;background:linear-gradient(180deg,#2a3a2f,#161f15);}
+.storm__art svg{width:100%;height:100%;}
+@media(max-width:900px){.storm__grid{grid-template-columns:1fr;gap:44px;}}
+
+/* ===== SERVICES ===== */
+.services{padding:120px 0;background:var(--paper);}
+.services .eyebrow{color:var(--amber);}
+.services__list{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden;}
+.svc{background:var(--paper);padding:34px 26px;transition:background .3s;}
+.svc:hover{background:var(--cream);}
+.svc__icon{width:44px;height:44px;color:var(--forest);margin-bottom:18px;}
+.svc__icon svg{width:100%;height:100%;}
+.svc h3{font-size:1.08rem;color:var(--forest-deep);margin-bottom:6px;}
+.svc p{font-size:0.88rem;color:var(--stone);}
+@media(max-width:900px){.services__list{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:560px){.services__list{grid-template-columns:1fr;}}
+
+/* ===== APPROACH (process) ===== */
+.approach{background:var(--forest-mid);padding:110px 0;position:relative;}
+.approach::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at top right,rgba(255,255,255,0.06),transparent 60%);}
+.approach .eyebrow{color:var(--moss-light);}
+.approach .section-head h2{color:#fff;}
+.approach .section-head p{color:rgba(255,255,255,0.78);}
+.approach__steps{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;position:relative;z-index:1;}
+.astep{color:#fff;}
+.astep__num{font-family:'Fraunces',serif;font-size:2.6rem;color:rgba(255,255,255,0.49);font-weight:700;margin-bottom:10px;}
+.astep h4{color:#fff;font-family:'Fraunces',serif;font-size:1.15rem;margin-bottom:8px;}
+.astep p{color:rgba(255,255,255,0.72);font-size:0.92rem;}
+@media(max-width:900px){.approach__steps{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:520px){.approach__steps{grid-template-columns:1fr;}}
+
+/* ===== REVIEWS (carousel) ===== */
+.reviews{padding:120px 0;background:var(--cream);}
+.reviews .eyebrow{color:var(--amber);}
+.reviews__head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px;margin-bottom:44px;}
+.reviews__rating{display:flex;align-items:center;gap:14px;}
+.reviews__rating .num{font-family:'Fraunces',serif;font-size:2.6rem;color:var(--forest-deep);font-weight:700;}
+.reviews__rating .stars{color:var(--amber);font-size:1.1rem;letter-spacing:2px;}
+.reviews__rating .meta{font-size:0.85rem;color:var(--stone);}
+.revwrap{position:relative;}
+.revtrack{display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:6px;}
+.revtrack::-webkit-scrollbar{display:none;}
+.revcard{
+  scroll-snap-align:start;flex:0 0 min(600px,100%);background:#fff;border-radius:18px;padding:38px 36px;
+  box-shadow:0 10px 30px rgba(23,25,15,0.06);border:1px solid var(--line);
+}
+.revcard .quote-mark{font-family:'Fraunces',serif;font-size:3rem;color:var(--amber);line-height:1;margin-bottom:6px;}
+.revcard p{font-size:1.1rem;color:var(--ink);line-height:1.55;margin-bottom:20px;}
+.revcard__foot{display:flex;align-items:center;justify-content:space-between;}
+.revcard__stars{color:var(--amber);letter-spacing:2px;}
+.revcard__src{font-size:0.8rem;color:var(--stone);font-weight:600;}
+.revnav{display:flex;justify-content:center;gap:14px;margin-top:28px;visibility:hidden;opacity:0;transition:opacity .3s;}
+.revnav.has-overflow{visibility:visible;opacity:1;}
+.revnav button{
+  width:44px;height:44px;border-radius:50%;background:#fff;border:1px solid var(--line);
+  display:flex;align-items:center;justify-content:center;color:var(--forest-deep);transition:.2s;
+}
+.revnav button:hover:not(:disabled){background:var(--forest-deep);color:#fff;}
+.revnav button:disabled{opacity:0.35;cursor:default;}
+.revnav svg{width:18px;height:18px;}
+.revdots{display:flex;justify-content:center;gap:8px;margin-top:18px;visibility:hidden;opacity:0;transition:opacity .3s;}
+.revdots.has-overflow{visibility:visible;opacity:1;}
+.revdots button{width:8px;height:8px;border-radius:50%;background:var(--line);transition:.2s;}
+.revdots button.active{background:var(--amber);width:22px;border-radius:5px;}
+
+/* ===== ABOUT ===== */
+.about{padding:120px 0;background:var(--paper);}
+.about__grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:70px;align-items:center;}
+.about .eyebrow{color:var(--amber);}
+.about h2{font-size:clamp(1.9rem,3.6vw,2.6rem);margin:14px 0 22px;line-height:1.14;}
+.about p{color:var(--stone);font-size:1.04rem;margin-bottom:16px;max-width:540px;}
+.about__stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden;}
+.astat{background:var(--paper);padding:30px 26px;}
+.astat .n{font-family:'Fraunces',serif;font-size:2.2rem;color:var(--forest-deep);font-weight:700;}
+.astat .l{font-size:0.85rem;color:var(--stone);margin-top:4px;}
+@media(max-width:900px){.about__grid{grid-template-columns:1fr;gap:40px;}}
+
+/* ===== CONTACT ===== */
+.contact{background:var(--forest-deep);padding:120px 0 100px;position:relative;overflow:hidden;}
+.contact::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at bottom left,rgba(127,166,107,0.14),transparent 55%);}
+.contact__inner{position:relative;z-index:1;text-align:center;max-width:680px;margin:0 auto;}
+.contact .eyebrow{color:var(--moss-light);justify-content:center;}
+.contact h2{color:#fff;font-size:clamp(2rem,4.4vw,3.2rem);margin:16px 0 18px;}
+.contact p{color:rgba(255,255,255,0.75);font-size:1.06rem;margin-bottom:38px;}
+.contact__actions{display:flex;justify-content:center;flex-wrap:wrap;gap:16px;margin-bottom:48px;}
+.contact__details{display:flex;justify-content:center;gap:44px;flex-wrap:wrap;color:rgba(255,255,255,0.85);}
+.cdetail{display:flex;flex-direction:column;align-items:center;gap:8px;font-size:0.92rem;}
+.cdetail svg{width:24px;height:24px;color:var(--moss-light);}
+.cdetail b{color:#fff;font-weight:700;font-size:1.02rem;}
+
+/* ===== FOOTER ===== */
+footer{background:var(--charcoal);padding:44px 0 100px;color:rgba(255,255,255,0.55);}
+.footer__row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:0.85rem;}
+.footer__brand{display:flex;align-items:center;gap:10px;color:#fff;font-family:'Fraunces',serif;font-weight:700;}
+.footer__brand svg{width:26px;height:26px;}
+
+/* ===== MOBILE ACTION BAR ===== */
+.actionbar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:600;grid-template-columns:1fr 1fr;box-shadow:0 -6px 24px rgba(0,0,0,0.18);}
+.actionbar a{display:flex;align-items:center;justify-content:center;gap:8px;padding:16px 10px;font-weight:700;font-size:0.92rem;}
+.actionbar a:first-child{background:var(--amber);color:#fff;}
+.actionbar a:last-child{background:var(--forest-deep);color:#fff;}
+.actionbar svg{width:18px;height:18px;}
+@media(max-width:720px){
+  .actionbar{display:grid;}
+  body{padding-bottom:66px;}
+  .transform__frame{aspect-ratio:3/4;}
+}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;scroll-behavior:auto!important;}
+  .hero__title span em{transform:translateY(0);}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <a href="#top" class="nav__brand">
+    <svg viewBox="0 0 100 100" fill="none" aria-hidden="true"><rect width="100" height="100" rx="20" fill="#0f2419"/><path d="M50 18 L68 52 L58 52 L72 78 L28 78 L42 52 L32 52 Z" fill="#7fa66b"/><rect x="45" y="78" width="10" height="14" fill="#5a3f2c"/></svg>
+    Mālama
+  </a>
+  <div class="nav__links" id="navLinks">
+    <a href="#transform">Work</a>
+    <a href="#services">Services</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <a href="tel:+18086405035" class="nav__cta nav__cta--mobile">Call Now</a>
+  </div>
+  <a href="tel:+18086405035" class="nav__cta" id="navCta">Call Now</a>
+  <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero__canopy" aria-hidden="true">
+    <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="skyfade" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#1c3b28"/>
+          <stop offset="1" stop-color="#0a1a12"/>
+        </linearGradient>
+      </defs>
+      <rect width="1440" height="900" fill="url(#skyfade)"/>
+      <!-- back canopy layer -->
+      <g opacity="0.55" fill="#122a1c">
+        <ellipse cx="180" cy="620" rx="340" ry="260"/>
+        <ellipse cx="640" cy="560" rx="420" ry="320"/>
+        <ellipse cx="1180" cy="640" rx="380" ry="290"/>
+      </g>
+      <!-- mid canopy layer, gentle sway -->
+      <g class="canopy-mid" fill="#1e4029" opacity="0.85">
+        <ellipse cx="120" cy="700" rx="300" ry="230"/>
+        <ellipse cx="560" cy="660" rx="380" ry="280"/>
+        <ellipse cx="1020" cy="690" rx="340" ry="260"/>
+        <ellipse cx="1360" cy="720" rx="260" ry="220"/>
+      </g>
+      <!-- trunks -->
+      <g fill="#241813">
+        <rect x="540" y="640" width="34" height="280" rx="6"/>
+        <rect x="980" y="660" width="28" height="260" rx="6"/>
+      </g>
+      <!-- front canopy, most motion -->
+      <g class="canopy-front" fill="#2c5236">
+        <path d="M420 900 C420 740 500 610 620 600 C740 590 840 700 840 900 Z"/>
+        <path d="M860 900 C860 780 940 680 1040 670 C1140 660 1220 760 1220 900 Z"/>
+      </g>
+      <!-- branch accent with chainsaw cut animation -->
+      <g class="branch-cut">
+        <line x1="640" y1="600" x2="760" y2="520" stroke="#4a3323" stroke-width="10" stroke-linecap="round"/>
+        <line x1="760" y1="520" x2="860" y2="470" stroke="#4a3323" stroke-width="7" stroke-linecap="round" class="limb"/>
+      </g>
+      <!-- falling leaves -->
+      <g class="leaf-fall" fill="#7fa66b" opacity="0.9">
+        <ellipse class="leaf l1" cx="760" cy="470" rx="7" ry="4"/>
+        <ellipse class="leaf l2" cx="800" cy="440" rx="6" ry="3.5"/>
+        <ellipse class="leaf l3" cx="700" cy="500" rx="6.5" ry="4"/>
+      </g>
+    </svg>
+  </div>
+  <div class="hero__scrim" aria-hidden="true"></div>
+  <div class="hero__content">
+    <div class="hero__badge"><span class="stars">★★★★★</span> 5.0 on Google · 17 reviews</div>
+    <h1 class="hero__title">
+      <span><em>MĀLAMA</em></span>
+      <span><em>TREE SERVICE</em></span>
+    </h1>
+    <p class="hero__sub">Tree trimming, removal, and storm cleanup for Keaau, Hawaii properties — handled with care, from the first cut to the final cleanup.</p>
+    <div class="hero__actions">
+      <a href="tel:+18086405035" class="btn btn--primary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call (808) 640-5035
+      </a>
+      <a href="#contact" class="btn btn--ghost">Get a Quote</a>
+    </div>
+  </div>
+  <div class="hero__scrolldown" aria-hidden="true"><span>Scroll</span><div class="line"></div></div>
+</header>
+
+<div class="trust">
+  <div class="wrap trust__row">
+    <div class="trust__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 7.4H22l-6 4.4 2.3 7.2L12 16.6 5.7 21l2.3-7.2-6-4.4h7.6z"/></svg>5.0★ Google Rating</div>
+    <div class="trust__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>17 Reviews</div>
+    <div class="trust__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Open 24 Hours</div>
+    <div class="trust__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Keaau, Hawaii</div>
+  </div>
+</div>
+
+<section class="transform" id="transform">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">The Work</span>
+      <h2>Overgrown to cared-for.</h2>
+      <p>Drag the divider to see what a Mālama visit changes — an overgrown canopy brought back under control, cleared, and cleaned up.</p>
+    </div>
+    <div class="transform__frame reveal" id="transformFrame" tabindex="0" role="slider" aria-label="Before and after tree transformation slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+      <div class="transform__side transform__before" aria-hidden="true">
+        <svg viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice">
+          <rect width="800" height="500" fill="#3a3226"/>
+          <rect y="380" width="800" height="120" fill="#2b2419"/>
+          <g fill="#4a5c3a" opacity="0.9">
+            <ellipse cx="130" cy="200" rx="180" ry="150"/>
+            <ellipse cx="420" cy="150" rx="220" ry="180"/>
+            <ellipse cx="660" cy="220" rx="170" ry="150"/>
+            <ellipse cx="260" cy="270" rx="140" ry="120"/>
+            <ellipse cx="560" cy="300" rx="150" ry="120"/>
+          </g>
+          <g stroke="#5c4a30" stroke-width="6" opacity="0.7">
+            <line x1="60" y1="420" x2="130" y2="330"/>
+            <line x1="700" y1="430" x2="640" y2="320"/>
+            <line x1="360" y1="440" x2="400" y2="300"/>
+          </g>
+          <g fill="#39432c">
+            <path d="M0 500 L0 420 Q60 380 120 420 L180 500 Z"/>
+            <path d="M600 500 L620 400 Q680 370 750 410 L800 500 Z"/>
+          </g>
+        </svg>
+      </div>
+      <div class="transform__side transform__after" id="transformAfter" aria-hidden="true">
+        <svg viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice">
+          <rect width="800" height="500" fill="#bcd6e0"/>
+          <rect y="380" width="800" height="120" fill="#6f8f52"/>
+          <rect y="400" width="800" height="100" fill="#5c7a44"/>
+          <g fill="#2f5536">
+            <ellipse cx="220" cy="230" rx="110" ry="95"/>
+            <ellipse cx="560" cy="210" rx="120" ry="100"/>
+          </g>
+          <rect x="205" y="320" width="20" height="70" fill="#4a3323"/>
+          <rect x="545" y="310" width="22" height="80" fill="#4a3323"/>
+          <g fill="#3f6a48" opacity="0.9">
+            <ellipse cx="220" cy="220" rx="88" ry="72"/>
+            <ellipse cx="560" cy="200" rx="96" ry="78"/>
+          </g>
+          <g fill="#7a5a3a" opacity="0.6">
+            <ellipse cx="150" cy="440" rx="60" ry="12"/>
+            <ellipse cx="650" cy="450" rx="70" ry="14"/>
+          </g>
+        </svg>
+      </div>
+      <div class="transform__label transform__label--before">Before</div>
+      <div class="transform__label transform__label--after">After</div>
+      <div class="transform__divider" id="transformDivider">
+        <div class="transform__handle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg></div>
+      </div>
+    </div>
+    <p class="transform__hint">Drag, or use <kbd>←</kbd> <kbd>→</kbd> after clicking the frame · illustrated representation, not a specific job-site photo</p>
+  </div>
+</section>
+
+<section class="storm" id="storm">
+  <div class="wrap storm__grid">
+    <div class="storm__text reveal">
+      <span class="eyebrow">A Real Call</span>
+      <h2>When a banyan came down on three cars.</h2>
+      <p>During a Kona storm, a large banyan tree came down onto three parked vehicles. According to the customer who called Mālama Tree Service in, the crew worked carefully to cut back the tree and relieve the pressure on the vehicles — limiting further damage rather than making it worse.</p>
+      <p>It's the kind of job that doesn't leave room for guesswork: a heavy tree, vehicles underneath, and a homeowner who needed it handled safely and quickly.</p>
+      <p class="note">Paraphrased from a real customer review — not a verbatim quote or an official incident report.</p>
+    </div>
+    <div class="storm__art reveal" aria-hidden="true">
+      <svg viewBox="0 0 500 380" preserveAspectRatio="xMidYMid slice">
+        <rect width="500" height="380" fill="#161f15"/>
+        <g opacity="0.5" fill="#233828">
+          <ellipse cx="120" cy="140" rx="150" ry="110"/>
+          <ellipse cx="330" cy="110" rx="170" ry="120"/>
+        </g>
+        <g fill="#2c4530">
+          <ellipse cx="230" cy="150" rx="200" ry="120"/>
+        </g>
+        <path d="M180 250 L260 190 L380 240 L330 300 L200 300 Z" fill="#1c2a1a" opacity="0.9"/>
+        <rect x="40" y="285" width="105" height="48" rx="8" fill="#8a3a2c"/>
+        <rect x="48" y="276" width="88" height="18" rx="6" fill="#a44a38"/>
+        <circle cx="60" cy="335" r="11" fill="#0f130e"/>
+        <circle cx="122" cy="335" r="11" fill="#0f130e"/>
+        <rect x="196" y="292" width="105" height="48" rx="8" fill="#3a5a7a"/>
+        <rect x="204" y="283" width="88" height="18" rx="6" fill="#4a6c8e"/>
+        <circle cx="216" cy="342" r="11" fill="#0f130e"/>
+        <circle cx="278" cy="342" r="11" fill="#0f130e"/>
+        <rect x="350" y="288" width="105" height="48" rx="8" fill="#4a6a3f"/>
+        <rect x="358" y="279" width="88" height="18" rx="6" fill="#5c8050"/>
+        <circle cx="370" cy="338" r="11" fill="#0f130e"/>
+        <circle cx="432" cy="338" r="11" fill="#0f130e"/>
+        <line x1="200" y1="230" x2="150" y2="288" stroke="#4a3323" stroke-width="10" stroke-linecap="round"/>
+        <line x1="280" y1="215" x2="235" y2="292" stroke="#4a3323" stroke-width="9" stroke-linecap="round"/>
+        <line x1="330" y1="225" x2="360" y2="290" stroke="#4a3323" stroke-width="8" stroke-linecap="round"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Services</span>
+      <h2>What Mālama handles.</h2>
+      <p>Based on the work Mālama Tree Service is set up to do — call to confirm scope and pricing for your specific property.</p>
+    </div>
+    <div class="services__list reveal">
+      <div class="svc">
+        <div class="svc__icon"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M24 6v14M24 20l10 8M24 20l-10 8M24 34v8"/><circle cx="24" cy="18" r="3" fill="currentColor" stroke="none"/></svg></div>
+        <h3>Tree Trimming</h3>
+        <p>Shaping and thinning canopy for health, clearance, and appearance.</p>
+      </div>
+      <div class="svc">
+        <div class="svc__icon"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M14 42h20M18 42V16l6-10 6 10v26"/><path d="M12 30l10-4 10 4"/></svg></div>
+        <h3>Tree Removal</h3>
+        <p>Full removal of trees that are a risk, dead, or in the way.</p>
+      </div>
+      <div class="svc">
+        <div class="svc__icon"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4"><ellipse cx="24" cy="36" rx="16" ry="5"/><path d="M10 36 C10 22 16 14 24 14 C32 14 38 22 38 36"/></svg></div>
+        <h3>Stump Grinding</h3>
+        <p>Grinding stumps down so the yard is usable again.</p>
+      </div>
+      <div class="svc">
+        <div class="svc__icon"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="6" y="24" width="20" height="12" rx="2"/><path d="M26 28h10l6 6v2H26z"/><circle cx="14" cy="40" r="3"/><circle cx="34" cy="40" r="3"/><path d="M14 24V16h8v8"/></svg></div>
+        <h3>Excavator Work</h3>
+        <p>Heavier equipment for stump, root, and site clearing work.</p>
+      </div>
+      <div class="svc">
+        <div class="svc__icon"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="4" y="26" width="16" height="10" rx="2"/><circle cx="9" cy="40" r="3"/><circle cx="19" cy="40" r="3"/><path d="M20 30h6l12-16h4v20"/></svg></div>
+        <h3>Boom Truck Service</h3>
+        <p>Aerial access for tall or hard-to-reach tree work.</p>
+      </div>
+      <div class="svc">
+        <div class="svc__icon"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="6" y="18" width="16" height="14" rx="2"/><path d="M22 22h10l8 6v4H22z"/><circle cx="30" cy="38" r="3"/><path d="M10 12l4 6M16 12l3 6"/></svg></div>
+        <h3>Chipping</h3>
+        <p>On-site chipping so cut material doesn't sit around.</p>
+      </div>
+      <div class="svc">
+        <div class="svc__icon"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M24 8c-6 6-6 14 0 20 6-6 6-14 0-20z"/><path d="M24 28v12"/><path d="M14 20l8 4M34 20l-8 4"/></svg></div>
+        <h3>Pruning</h3>
+        <p>Targeted cuts to keep individual trees healthy long-term.</p>
+      </div>
+      <div class="svc">
+        <div class="svc__icon"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M8 40l6-14 8 4 8-16 10 26z"/><circle cx="36" cy="12" r="4"/></svg></div>
+        <h3>Free Estimates</h3>
+        <p>Call to walk through the job before anything is scheduled.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="approach">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">How It Works</span>
+      <h2>From call to cleared property.</h2>
+      <p>A straightforward process — no guesswork about what happens after you call.</p>
+    </div>
+    <div class="approach__steps">
+      <div class="astep reveal"><div class="astep__num">01</div><h4>You Call</h4><p>Describe the tree, the property, and what's needed — (808) 640-5035, any time.</p></div>
+      <div class="astep reveal"><div class="astep__num">02</div><h4>Free Estimate</h4><p>Mālama walks the site and gives you a clear picture before work starts.</p></div>
+      <div class="astep reveal"><div class="astep__num">03</div><h4>The Work</h4><p>Trimming, removal, or grinding — done with the right equipment for the job.</p></div>
+      <div class="astep reveal"><div class="astep__num">04</div><h4>Cleanup</h4><p>Chipped, hauled, and cleared so the property is left ready to use.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <div class="reviews__head reveal">
+      <div>
+        <span class="eyebrow">Reviews</span>
+        <div class="reviews__rating" style="margin-top:14px;">
+          <span class="num">5.0</span>
+          <div>
+            <div class="stars">★★★★★</div>
+            <div class="meta">17 Google reviews</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="revwrap reveal">
+      <div class="revtrack" id="revTrack">
+        <div class="revcard">
+          <div class="quote-mark">"</div>
+          <p>Very professional, and answers quickly, super easy to get in touch with. Darrick is a great person to have cutting trees for you. Would recommend him 100x</p>
+          <div class="revcard__foot"><span class="revcard__stars">★★★★★</span><span class="revcard__src">Google Review</span></div>
+        </div>
+        <div class="revcard">
+          <div class="quote-mark">"</div>
+          <p>Darrick is very skilled and took his time to make sure everything was done to my liking. He also got the job done quickly and everything looks perfect. 10/10 would recommend if need any tree service. He's really flexible, understanding and easy to get along with.</p>
+          <div class="revcard__foot"><span class="revcard__stars">★★★★★</span><span class="revcard__src">Google Review</span></div>
+        </div>
+        <div class="revcard">
+          <div class="quote-mark">"</div>
+          <p>Great communication between him and I and professional at what he does.</p>
+          <div class="revcard__foot"><span class="revcard__stars">★★★★★</span><span class="revcard__src">Google Review</span></div>
+        </div>
+        <div class="revcard">
+          <div class="quote-mark">"</div>
+          <p>Did a good job and fair pricing 👍🏼</p>
+          <div class="revcard__foot"><span class="revcard__stars">★★★★★</span><span class="revcard__src">Google Review</span></div>
+        </div>
+      </div>
+      <div class="revnav" id="revNav">
+        <button id="revPrev" aria-label="Previous review"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M15 18l-6-6 6-6"/></svg></button>
+        <button id="revNext" aria-label="Next review"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg></button>
+      </div>
+      <div class="revdots" id="revDots"></div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap about__grid">
+    <div class="reveal">
+      <span class="eyebrow">About</span>
+      <h2>Local tree care, care taken seriously.</h2>
+      <p>Mālama Tree Service works on properties in and around Keaau, Hawaii — handling everything from routine trimming to storm-damage cleanup. The name comes from mālama, a Hawaiian word often understood as care, tending, or stewardship — reflected in how the reviews describe the work: careful, communicative, and done right the first time.</p>
+      <p>Available 24 hours, with free estimates before anything is scheduled.</p>
+      <a href="tel:+18086405035" class="btn btn--dark">Call (808) 640-5035</a>
+    </div>
+    <div class="about__stats reveal">
+      <div class="astat"><div class="n">5.0★</div><div class="l">Google Rating</div></div>
+      <div class="astat"><div class="n">17</div><div class="l">Google Reviews</div></div>
+      <div class="astat"><div class="n">24/7</div><div class="l">Availability</div></div>
+      <div class="astat"><div class="n">Free</div><div class="l">Estimates</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap contact__inner">
+    <span class="eyebrow">Get In Touch</span>
+    <h2>Get a free estimate.</h2>
+    <p>Call or text to describe the job — Mālama Tree Service is available 24 hours, serving Keaau, Hawaii and the surrounding area.</p>
+    <div class="contact__actions">
+      <a href="tel:+18086405035" class="btn btn--primary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call (808) 640-5035
+      </a>
+      <a href="sms:+18086405035" class="btn btn--ghost">Text Instead</a>
+    </div>
+    <div class="contact__details">
+      <div class="cdetail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><b>Keaau, HI 96749</b>Service area</div>
+      <div class="cdetail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><b>Open 24 Hours</b>Every day</div>
+      <div class="cdetail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 7.4H22l-6 4.4 2.3 7.2L12 16.6 5.7 21l2.3-7.2-6-4.4h7.6z"/></svg><b>5.0★ · 17 reviews</b>on Google</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer__row">
+    <div class="footer__brand">
+      <svg viewBox="0 0 100 100" fill="none" aria-hidden="true"><rect width="100" height="100" rx="20" fill="#0f2419"/><path d="M50 18 L68 52 L58 52 L72 78 L28 78 L42 52 L32 52 Z" fill="#7fa66b"/><rect x="45" y="78" width="10" height="14" fill="#5a3f2c"/></svg>
+      Mālama Tree Service
+    </div>
+    <div>© 2026 Mālama Tree Service · Keaau, Hawaii</div>
+    <div><a href="tel:+18086405035">(808) 640-5035</a></div>
+  </div>
+</footer>
+
+<div class="actionbar">
+  <a href="tel:+18086405035"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call Now</a>
+  <a href="#contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Get Quote</a>
+</div>
+
+<style>
+.canopy-mid{animation:swayMid 7s ease-in-out infinite;transform-origin:center bottom;}
+.canopy-front{animation:swayFront 6s ease-in-out infinite;transform-origin:center bottom;}
+@keyframes swayMid{0%,100%{transform:rotate(0deg) translateX(0);}50%{transform:rotate(0.4deg) translateX(4px);}}
+@keyframes swayFront{0%,100%{transform:rotate(0deg) translateX(0);}50%{transform:rotate(-0.6deg) translateX(-6px);}}
+.limb{transform-origin:760px 520px;animation:limbDrop 4s ease-in-out infinite;}
+@keyframes limbDrop{0%,70%,100%{transform:rotate(0deg);opacity:1;}75%{transform:rotate(18deg);opacity:1;}85%{transform:rotate(18deg);opacity:0;}86%{transform:rotate(0deg);opacity:0;}95%{opacity:1;}}
+.leaf{animation:leafDrift 4s ease-in infinite;opacity:0;}
+.l1{animation-delay:2.8s;}
+.l2{animation-delay:3s;}
+.l3{animation-delay:3.2s;}
+@keyframes leafDrift{0%{opacity:0;transform:translate(0,0) rotate(0deg);}5%{opacity:1;}100%{opacity:0;transform:translate(-30px,140px) rotate(160deg);}}
+</style>
+
+<script>
+(function(){
+  // Nav scroll state
+  var nav = document.getElementById('nav');
+  window.addEventListener('scroll', function(){
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  }, {passive:true});
+
+  // Mobile nav toggle
+  var toggle = document.getElementById('navToggle');
+  var links = document.getElementById('navLinks');
+  toggle.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    toggle.classList.toggle('active', open);
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(){
+      links.classList.remove('open');
+      toggle.classList.remove('active');
+      toggle.setAttribute('aria-expanded','false');
+    });
+  });
+
+  // Active nav link tracking
+  var sections = document.querySelectorAll('section[id], header[id]');
+  var navAnchors = document.querySelectorAll('.nav__links a[href^="#"]');
+  var activeObserver = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting) {
+        var id = entry.target.getAttribute('id');
+        navAnchors.forEach(function(a){
+          a.classList.toggle('active', a.getAttribute('href') === '#' + id);
+        });
+      }
+    });
+  }, {rootMargin:'-45% 0px -45% 0px'});
+  sections.forEach(function(s){ activeObserver.observe(s); });
+
+  // Reveal on scroll
+  var reveals = document.querySelectorAll('.reveal');
+  var reveal = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        reveal.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.15});
+  reveals.forEach(function(el){ reveal.observe(el); });
+
+  // Before/After transformation slider
+  var frame = document.getElementById('transformFrame');
+  var after = document.getElementById('transformAfter');
+  var divider = document.getElementById('transformDivider');
+  var dragging = false;
+
+  function setPos(pct){
+    pct = Math.max(0, Math.min(100, pct));
+    after.style.clipPath = 'inset(0 0 0 ' + pct + '%)';
+    divider.style.left = pct + '%';
+    frame.setAttribute('aria-valuenow', Math.round(pct));
+  }
+  function posFromEvent(clientX){
+    var rect = frame.getBoundingClientRect();
+    var pct = ((clientX - rect.left) / rect.width) * 100;
+    return pct;
+  }
+  frame.addEventListener('mousedown', function(e){ dragging = true; setPos(posFromEvent(e.clientX)); });
+  window.addEventListener('mousemove', function(e){ if (dragging) setPos(posFromEvent(e.clientX)); });
+  window.addEventListener('mouseup', function(){ dragging = false; });
+  frame.addEventListener('touchstart', function(e){ dragging = true; setPos(posFromEvent(e.touches[0].clientX)); }, {passive:true});
+  frame.addEventListener('touchmove', function(e){ if (dragging) setPos(posFromEvent(e.touches[0].clientX)); }, {passive:true});
+  frame.addEventListener('touchend', function(){ dragging = false; });
+  frame.addEventListener('keydown', function(e){
+    var current = parseFloat(frame.getAttribute('aria-valuenow')) || 50;
+    if (e.key === 'ArrowLeft') { setPos(current - 5); e.preventDefault(); }
+    if (e.key === 'ArrowRight') { setPos(current + 5); e.preventDefault(); }
+  });
+  setPos(50);
+
+  // Reviews carousel
+  var track = document.getElementById('revTrack');
+  var cards = track.querySelectorAll('.revcard');
+  var prevBtn = document.getElementById('revPrev');
+  var nextBtn = document.getElementById('revNext');
+  var nav2 = document.getElementById('revNav');
+  var dotsWrap = document.getElementById('revDots');
+
+  cards.forEach(function(_, i){
+    var dot = document.createElement('button');
+    dot.setAttribute('aria-label', 'Go to review ' + (i+1));
+    dot.addEventListener('click', function(){ scrollToReview(i); });
+    dotsWrap.appendChild(dot);
+  });
+  var dots = dotsWrap.querySelectorAll('button');
+
+  function refreshOverflow(){
+    var hasOverflow = track.scrollWidth > track.clientWidth + 2;
+    nav2.classList.toggle('has-overflow', hasOverflow);
+    dotsWrap.classList.toggle('has-overflow', hasOverflow);
+  }
+
+  function currentReviewIndex(){
+    var maxScroll = track.scrollWidth - track.clientWidth;
+    if (maxScroll <= 0) return 0;
+    return Math.round((track.scrollLeft / maxScroll) * (cards.length - 1));
+  }
+
+  function updateReviewNav(){
+    var idx = currentReviewIndex();
+    var maxScroll = track.scrollWidth - track.clientWidth;
+    prevBtn.disabled = track.scrollLeft <= 4;
+    nextBtn.disabled = track.scrollLeft >= maxScroll - 4;
+    dots.forEach(function(d, i){ d.classList.toggle('active', i === idx); });
+  }
+
+  function scrollToReview(i){
+    var card = cards[i];
+    track.scrollTo({left: card.offsetLeft - track.offsetLeft, behavior:'smooth'});
+  }
+
+  prevBtn.addEventListener('click', function(){ scrollToReview(Math.max(0, currentReviewIndex() - 1)); });
+  nextBtn.addEventListener('click', function(){ scrollToReview(Math.min(cards.length - 1, currentReviewIndex() + 1)); });
+  track.addEventListener('scroll', function(){ window.requestAnimationFrame(updateReviewNav); }, {passive:true});
+  window.addEventListener('resize', function(){ refreshOverflow(); updateReviewNav(); });
+  refreshOverflow();
+  updateReviewNav();
+})();
+</script>
+</body>
+</html>
