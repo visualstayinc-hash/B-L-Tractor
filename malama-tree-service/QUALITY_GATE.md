@@ -7,13 +7,13 @@ the shipped build after the fixes noted below (Playwright verification at
 | # | Item | Status | Evidence |
 |---|------|--------|----------|
 | B01 | Mālama identity immediately clear | PASS | Hero: logo mark, "MĀLAMA / TREE SERVICE" headline, Keaau HI subline |
-| B02 | Real supplied imagery used | PARTIAL | Not embeddable as files in this environment (confirmed via repeated filesystem search); original illustration built from the palette/shapes observed instead — see CONCEPT.md |
-| B03 | Real supplied video integrated | N/A | No video was ever accessible as a file |
+| B02 | Real supplied imagery used | PASS | Real photos (palm-climb, chainsaw-on-trunk, crew+child-on-felled-tree, the actual Google Business flyer) extracted from a genuine PDF attachment and embedded as base64 — hero background, "Real Job Photos" gallery, About section flyer card |
+| B03 | Real supplied video integrated | N/A | No video was ever supplied as an accessible file |
 | B04 | Hero visually distinctive | PASS | Full-bleed animated SVG canopy, staged headline reveal |
 | B05 | Hero communicates tree service immediately | PASS | Canopy scene + "TREE SERVICE / KEAAU, HAWAII" copy in first view |
 | B06 | Motion is purposeful | PASS | Canopy sway, branch-drop/leaf-fall loop, scroll reveals — no floating-leaf filler |
 | B07 | Tree transformation interaction exists | PASS | Drag-to-reveal Overgrown→Cared-for slider, mouse+touch+keyboard verified in Playwright |
-| B08 | Real work visually demonstrated | PARTIAL | Same photo constraint as B02; illustrated and honestly captioned |
+| B08 | Real work visually demonstrated | PASS | "Real Job Photos" gallery section with the 2 real job-site photos, honestly captioned, no invented project names/locations |
 | B09 | Services accurate | PASS | Trimming, Removal, Stump Grinding, Excavator, Boom Truck, Chipping, Pruning, Free Estimates — from supplied source material only |
 | B10 | No fabricated services | PASS | No service listed beyond the confirmed list |
 | B11 | Google rating accurate | PASS | 5.0★ shown in hero badge, trust strip, reviews, about, contact |
@@ -53,3 +53,22 @@ the shipped build after the fixes noted below (Playwright verification at
 3. **Storm illustration only showed 2 cars** while the copy says three —
    fixed to show three vehicles under the fallen limb for consistency with
    the real, paraphrased storm story.
+4. **Nav text had no contrast fallback over the real hero photo** — the hero
+   background changed from a dark illustrated scene (always dark, so white
+   nav text was always safe) to a real bright-sky photo with a slow pan/zoom
+   animation. White nav links floating over open sky or a cloud with only a
+   light scrim were a real, verifiable contrast risk. Fixed with a dedicated
+   dark gradient behind the unscrolled nav plus a text-shadow fallback, both
+   removed once the nav switches to its solid scrolled background.
+
+## Real photos (added after initial ship)
+
+The client's first two attempts to send real tree-work photos arrived as
+pasted/inline chat images and were never accessible as files in this build
+environment. A third attempt sent as a genuine PDF attachment worked —
+extracted the embedded images directly (native resolution, not a
+re-rasterized page render) and embedded them as base64 `data:` URIs:
+hero background (palm-climbing photo), a new "Real Job Photos" gallery
+(chainsaw-on-trunk, crew member + child on a felled tree), and the actual
+Google Business flyer image in the About section. B02/B08 flipped from
+PARTIAL to PASS as a result.

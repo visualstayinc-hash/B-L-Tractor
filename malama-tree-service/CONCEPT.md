@@ -3,20 +3,26 @@
 **Business:** Mālama Tree Service, Keaau, HI 96749, (808) 640-5035
 **Google:** 5.0★, 17 reviews, "Tree service" category, Open 24 hours
 
-## Constraint that shaped this build
+## Photos
 
-The real supplied tree-work photos/video (a flyer graphic, then 3 real job-site
-photos) were never accessible as embeddable files in this build environment —
-confirmed repeatedly via filesystem search. Rather than fabricate "real"
-photography or closely trace the supplied images without a clean way to embed
-them, the site uses an **original illustrated visual identity** (SVG canopy
-scenes, an illustrated before/after transformation, an illustrated storm-story
-graphic) built from the palette and shapes actually observed in the supplied
-images, honestly labeled as illustration where it matters (the transformation
-slider caption says "illustrated representation, not a specific job-site
-photo"). All *text* facts — services, reviews, rating, phone, location, hours,
-the storm story — come directly from the client-supplied brief and are not
-fabricated.
+The client's first two attempts to send real tree-work photos (a flyer image,
+then 3 job-site photos) arrived as pasted/inline chat images, which are never
+accessible as files in this build environment — confirmed repeatedly via
+filesystem search. A third attempt, sent as a genuine PDF file attachment,
+landed in an accessible path and was used directly: the flyer/logo image and
+all 3 real job-site photos (palm-climbing, chainsaw-on-freshly-cut-trunk,
+crew-member-and-child-on-felled-tree) were extracted from the embedded PDF
+images at their native resolution and embedded as base64 `data:` URIs —
+**real photography, not illustration.** They're used for the hero background,
+a dedicated "Real Job Photos" gallery, and the real Google Business flyer
+image in the About section.
+
+No matching real before/after pair was ever supplied, so the signature
+"tree transformation" drag interaction still uses original illustration
+(honestly captioned as such) rather than fabricating a before/after pair
+that doesn't exist. All *text* facts — services, reviews, rating, phone,
+location, hours, the storm story — come directly from the client-supplied
+brief and are not fabricated.
 
 ## Brand thesis
 

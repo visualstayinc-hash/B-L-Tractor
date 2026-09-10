@@ -35,25 +35,50 @@ Verified via Playwright at 1920/1440/1024/390px:
 3. Storm-story illustration showed only 2 cars against copy describing
    three — added a third vehicle for consistency.
 
-## Photo/video constraint
+## Pass 2 — Real photos integrated
 
-The client attached a flyer image, then 3 real job-site photos, across two
-messages. Neither was ever accessible as a file on disk in this build
-environment (checked via `find /root/.claude/uploads/<session>/` and a
-broader recent-file search both times — consistently empty for pasted
-images, unlike genuine file attachments which do land in an accessible
-path). Per the client's explicit go-ahead ("it is all confirmed info"), the
-site was built with all verified text facts (services list from the flyer,
-reviews, rating, phone, location, hours) plus an original illustrated visual
-identity in place of the inaccessible real photography — never a fabricated
-"real" photo, never a close trace of the actual supplied images. If real
-photos/video are later provided as genuine file attachments (not pasted
-inline), they can be dropped into the hero canopy layer, the transformation
-slider's two `<svg>` sides, and the storm-story graphic to replace the
-illustrations directly.
+The client's first two attempts to send real tree-work photos (a flyer
+image, then 3 job-site photos) arrived as pasted/inline chat images —
+confirmed via `find /root/.claude/uploads/<session>/` and a broader
+recent-file search, both consistently empty. The client then sent the same
+material as a genuine PDF file attachment, which landed in an accessible
+path. Extracted the embedded images directly from the PDF (native
+resolution — the flyer/logo card, and 3 real photos: palm-climbing,
+chainsaw-on-freshly-cut-trunk, crew-member-with-child-on-felled-tree),
+converted the 3 photos to compressed JPEG (~30–60KB each) and kept the
+flyer as PNG, and embedded all 4 as base64 `data:` URIs.
+
+Changes made:
+- Hero background swapped from an illustrated SVG canopy scene to the real
+  palm-climbing photo, with a slow Ken Burns pan/zoom (disabled under
+  `prefers-reduced-motion`).
+- New "Real Job Photos" gallery section (`#work`, nav "Work" link repointed
+  to it) showing the 2 remaining real photos with honest captions — no
+  invented project names or locations.
+- The actual Google Business flyer image added to the About section,
+  captioned "From Mālama's own Google Business listing" — this is the
+  business's own material, not a trace of a third-party trademark, so it's
+  used directly rather than redrawn.
+- About copy updated with the confirmed full name "Darrick DeAnda" (visible
+  on the real flyer) — still never asserted as "the owner," consistent with
+  the brief's explicit caution.
+- Fixed a real contrast bug this surfaced: the unscrolled nav had no
+  fallback for white text landing over a bright sky/cloud area of the photo
+  during the pan animation. Added a dedicated dark gradient + text-shadow
+  behind the unscrolled nav, removed once scrolled.
+
+No matching real before/after pair was ever supplied, so the transformation
+slider still uses original, honestly-captioned illustration.
+
+Re-verified via Playwright after the change: zero overflow at all 4
+viewports, all real photos resolve (`naturalWidth > 0`) once scrolled into
+view (the flyer image is `loading="lazy"`, confirmed via a scroll-then-check
+test rather than an immediate check), slider/carousel/nav functionality
+unchanged, final file size 540KB.
 
 ## Status: shipped
 
-All B01–B30 matrix items PASS or PARTIAL (photo/video items only, blocked by
-the environment constraint above, not by scope). Committed and pushed to
+All B01–B30 matrix items PASS (photo/video items now PASS with real
+photography integrated; video remains N/A, no video was ever supplied as an
+accessible file). Committed and pushed to
 `claude/install-ui-ux-pro-max-skill-xkwlx1`.
