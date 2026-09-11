@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Garcia Lawn Services | Local Lawn Care, Mowing &amp; Irrigation</title>
+<meta name="description" content="Garcia Lawn Services — mowing, yard cleanup and irrigation care with a 4.8-star reputation from 53 reviews. Call (619) 915-8327 for a quote.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%23171a16'/%3E%3Cpath d='M30 78V46M42 78V36M54 78V50M66 78V30M78 78V42' stroke='%235fa066' stroke-width='7' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "Garcia Lawn Services",
+  "telephone": "+16199158327",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "53"
+  }
+}
+</script>
+<style>
+:root{
+  --charcoal:#171a16;
+  --charcoal-2:#20241f;
+  --charcoal-3:#2a2f27;
+  --green:#3f7a4a;
+  --green-text:#2f6339;
+  --green-bright:#5fa066;
+  --green-pale:#dcead7;
+  --water:#3c7f96;
+  --water-bright:#5ba4bd;
+  --water-text:#215a6c;
+  --paper:#f6f4ec;
+  --ink:#171a16;
+  --stone:#5f6459;
+  --line-dark:rgba(220,234,215,0.14);
+  --line-light:rgba(23,26,22,0.12);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'IBM Plex Sans',sans-serif;background:var(--paper);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+h1,h2,h3,h4{font-family:'Manrope',sans-serif;font-weight:800;letter-spacing:-0.015em;line-height:1.08;}
+a{color:inherit;text-decoration:none;}
+button{font:inherit;background:none;border:none;cursor:pointer;color:inherit;}
+img,svg{display:block;max-width:100%;}
+.wrap{max-width:1240px;margin:0 auto;padding:0 40px;}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-family:'IBM Plex Sans',sans-serif;font-weight:700;font-size:0.76rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--green-text);}
+.eyebrow::before{content:'';width:22px;height:2px;background:var(--green-text);}
+.eyebrow--dark{color:var(--green-bright);}
+.eyebrow--dark::before{background:var(--green-bright);}
+:focus-visible{outline:3px solid var(--water);outline-offset:3px;border-radius:2px;}
+section{position:relative;}
+
+/* ---------- Nav ---------- */
+.nav{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:center;justify-content:space-between;padding:18px 40px;transition:padding .3s,background .3s;}
+.nav::before{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(23,26,22,0.75) 0%,rgba(23,26,22,0) 100%);opacity:1;transition:opacity .3s;}
+.nav.scrolled::before{opacity:0;}
+.nav.scrolled{padding:12px 40px;background:rgba(23,26,22,0.94);backdrop-filter:blur(10px);box-shadow:0 2px 20px rgba(0,0,0,0.3);}
+.nav__brand{display:flex;align-items:center;gap:12px;font-family:'Manrope',sans-serif;font-weight:800;font-size:1rem;color:#fff;letter-spacing:-0.01em;}
+.nav__brand svg{width:36px;height:36px;flex-shrink:0;}
+.nav__links{display:flex;align-items:center;gap:32px;}
+.nav__links a{font-size:0.82rem;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:rgba(246,244,236,0.82);transition:color .2s;}
+.nav__links a:hover{color:var(--green-bright);}
+.nav__cta{display:inline-flex;align-items:center;gap:8px;background:var(--green-text);color:#fff;padding:11px 22px;border-radius:5px;font-weight:700;font-size:0.85rem;transition:transform .2s,box-shadow .2s,background .2s;box-shadow:0 8px 22px rgba(47,99,57,0.35);}
+.nav__cta:hover{transform:translateY(-2px);background:var(--green-bright);}
+.nav__cta svg{width:15px;height:15px;flex-shrink:0;}
+.nav__cta--mobile{display:none;}
+.nav__toggle{display:none;width:44px;height:44px;align-items:center;justify-content:center;}
+.nav__toggle span,.nav__toggle span::before,.nav__toggle span::after{content:'';display:block;width:22px;height:2px;background:#fff;position:relative;transition:.3s;}
+.nav__toggle span::before{position:absolute;top:-7px;}
+.nav__toggle span::after{position:absolute;top:7px;}
+.nav__toggle.active span{background:transparent;}
+.nav__toggle.active span::before{top:0;transform:rotate(45deg);}
+.nav__toggle.active span::after{top:0;transform:rotate(-45deg);}
+
+@media(max-width:960px){
+  .nav__links{position:fixed;top:0;right:-100%;width:min(320px,84vw);height:100vh;background:var(--charcoal);
+    flex-direction:column;align-items:flex-start;justify-content:center;gap:26px;padding:40px;transition:right .35s cubic-bezier(.4,0,.2,1);box-shadow:-10px 0 40px rgba(0,0,0,0.4);}
+  .nav__links.open{right:0;}
+  .nav__links a{font-size:1.1rem;}
+  .nav__cta--mobile{display:inline-flex;margin-top:10px;}
+  .nav > a.nav__cta{display:none;}
+  .nav__toggle{display:inline-flex;}
+}
+
+/* ---------- Hero (static, immediate identity) ---------- */
+.hero{height:100vh;min-height:640px;background:var(--charcoal);position:relative;overflow:hidden;display:flex;align-items:center;}
+.hero__field{position:absolute;inset:0;background:linear-gradient(180deg,#12140f 0%,var(--charcoal) 55%,#1d2519 100%);}
+.hero__blades{position:absolute;left:0;right:0;bottom:0;height:34%;display:flex;align-items:flex-end;justify-content:space-between;padding:0 2%;opacity:0.55;}
+.hero__blade{width:1.6%;background:linear-gradient(180deg,var(--green-bright),var(--green));border-radius:3px 3px 0 0;transform-origin:bottom center;}
+.hero__content{position:relative;z-index:4;text-align:center;width:100%;opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease;}
+.hero.is-ready .hero__content{opacity:1;transform:translateY(0);}
+.hero__eyebrow{font-family:'IBM Plex Sans',sans-serif;font-weight:700;font-size:0.8rem;letter-spacing:0.24em;text-transform:uppercase;color:var(--water-bright);margin-bottom:18px;}
+.hero__title{font-size:clamp(2.4rem,6.4vw,4.8rem);color:#fff;margin-bottom:18px;}
+.hero__title span{color:var(--green-bright);}
+.hero__lede{font-family:'IBM Plex Sans',sans-serif;font-size:1.15rem;color:rgba(246,244,236,0.72);max-width:520px;margin:0 auto 34px;}
+.hero__ctas{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 30px;border-radius:6px;font-weight:700;font-size:0.95rem;position:relative;overflow:hidden;transition:transform .2s;}
+.btn svg{width:17px;height:17px;flex-shrink:0;}
+.btn::after{content:'';position:absolute;top:0;bottom:0;left:-60%;width:40%;background:linear-gradient(120deg,transparent,rgba(255,255,255,0.22),transparent);transform:skewX(-20deg);transition:left .6s ease;}
+.btn:hover::after{left:130%;}
+.btn:hover{transform:translateY(-2px);}
+.btn--primary{background:var(--green-text);color:#fff;box-shadow:0 10px 26px rgba(47,99,57,0.35);}
+.btn--primary:hover{background:var(--green-bright);}
+.btn--ghost{border:1.5px solid var(--line-dark);color:#fff;}
+.btn--ghost:hover{border-color:var(--green-bright);}
+.btn--dark{border:1.5px solid var(--line-light);color:var(--ink);}
+.btn--dark:hover{border-color:var(--green);}
+.hero__scroll{position:absolute;bottom:36px;left:40px;display:flex;align-items:center;gap:12px;color:rgba(246,244,236,0.5);font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;z-index:4;}
+.hero__scroll-line{width:1px;height:40px;background:linear-gradient(180deg,var(--water),transparent);position:relative;overflow:hidden;}
+.hero__scroll-line::after{content:'';position:absolute;top:-40px;left:0;width:100%;height:40%;background:#fff;animation:scrollDrip 2.4s ease-in-out infinite;}
+@keyframes scrollDrip{0%{top:-40%;}100%{top:100%;}}
+@media(max-width:720px){.hero__scroll{display:none;}}
+
+/* ---------- Transform (scroll-driven cut) ---------- */
+.transform{height:320vh;background:var(--charcoal);}
+.transform__stage{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+.transform__field{position:absolute;inset:0;background:linear-gradient(180deg,#12140f 0%,var(--charcoal) 55%,#1d2519 100%);}
+.transform__blades{position:absolute;left:0;right:0;bottom:0;height:62%;display:flex;align-items:flex-end;justify-content:space-between;padding:0 2%;}
+.transform__blade{width:1.6%;background:linear-gradient(180deg,var(--green-bright),var(--green));border-radius:3px 3px 0 0;transform-origin:bottom center;opacity:0.85;}
+.transform__mowline{position:absolute;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--water),var(--green-bright));box-shadow:0 0 30px 6px rgba(95,160,102,0.55);left:-2%;z-index:3;}
+.transform__stripes{position:absolute;left:0;right:0;bottom:0;height:62%;clip-path:inset(0 100% 0 0);z-index:1;
+  background:repeating-linear-gradient(90deg,var(--green) 0 42px,var(--green-bright) 42px 84px);}
+.transform__waterline{position:absolute;left:0;right:0;bottom:62%;height:2px;background:var(--water);opacity:0;z-index:2;}
+.transform__waterline::after{content:'';position:absolute;top:-3px;left:0;width:14px;height:8px;border-radius:50%;background:var(--water);filter:blur(1px);}
+.transform__content{position:absolute;top:64px;left:0;right:0;z-index:4;text-align:center;padding:0 24px;}
+.transform__label{display:inline-flex;padding:7px 16px;border-radius:20px;background:rgba(23,26,22,0.78);font-family:'IBM Plex Sans',sans-serif;font-weight:700;font-size:0.78rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--green-bright);}
+.transform__title{margin-top:16px;font-size:clamp(1.6rem,3.6vw,2.4rem);color:#fff;}
+.transform__rail{position:absolute;bottom:56px;left:50%;transform:translateX(-50%);width:min(400px,70vw);height:2px;background:rgba(246,244,236,0.18);z-index:4;}
+.transform__rail-fill{height:100%;width:0%;background:var(--water);transform-origin:left;}
+@media(max-width:720px){.transform{height:280vh;}.transform__content{top:96px;}}
+
+@media(prefers-reduced-motion:reduce){
+  .transform{height:auto;}
+  .transform__stage{position:relative;height:80vh;min-height:560px;}
+  .transform__rail{display:none;}
+}
+
+/* ---------- The Difference (slider) ---------- */
+.difference{background:var(--paper);padding:150px 0 130px;}
+.difference__head{max-width:640px;margin-bottom:56px;}
+.difference__head h2{font-size:clamp(2rem,4.4vw,3rem);margin:16px 0 18px;}
+.difference__head p{color:var(--stone);font-size:1.08rem;max-width:560px;}
+.compare{position:relative;max-width:1000px;margin:0 auto;aspect-ratio:16/9;border-radius:12px;overflow:hidden;box-shadow:0 30px 70px rgba(23,26,22,0.18);}
+.compare__before,.compare__after{position:absolute;inset:0;}
+.compare__before{background:linear-gradient(180deg,#d9d2b8,#c9c09e 60%,#b6ac86);}
+.compare__after{background:linear-gradient(180deg,#eef3e6,#dce9d4 60%,var(--green-pale));clip-path:inset(0 0 0 50%);}
+.compare svg{position:absolute;inset:0;width:100%;height:100%;}
+.compare__label{position:absolute;top:20px;font-family:'IBM Plex Sans',sans-serif;font-weight:700;font-size:0.78rem;letter-spacing:0.16em;text-transform:uppercase;padding:8px 14px;border-radius:20px;background:rgba(23,26,22,0.78);color:#fff;}
+.compare__label--before{left:20px;}
+.compare__label--after{right:20px;}
+.compare__handle-track{position:absolute;inset:0;width:100%;height:100%;margin:0;appearance:none;background:transparent;cursor:ew-resize;z-index:5;}
+.compare__handle-track::-webkit-slider-runnable-track{background:transparent;}
+.compare__handle-track::-webkit-slider-thumb{-webkit-appearance:none;width:52px;height:52px;border-radius:50%;background:#fff;border:3px solid var(--green-text);box-shadow:0 6px 20px rgba(23,26,22,0.3);cursor:ew-resize;margin-top:0;}
+.compare__handle-track::-moz-range-thumb{width:52px;height:52px;border-radius:50%;background:#fff;border:3px solid var(--green-text);box-shadow:0 6px 20px rgba(23,26,22,0.3);cursor:ew-resize;}
+.compare__handle-track::-moz-range-track{background:transparent;border:none;}
+.compare__seam{position:absolute;top:0;bottom:0;width:3px;background:#fff;box-shadow:0 0 0 4px rgba(255,255,255,0.35);left:50%;transform:translateX(-50%);pointer-events:none;z-index:4;}
+.compare__handle-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:52px;height:52px;border-radius:50%;background:#fff;border:3px solid var(--green-text);display:flex;align-items:center;justify-content:center;pointer-events:none;z-index:4;box-shadow:0 6px 20px rgba(23,26,22,0.3);}
+.compare__handle-icon svg{width:20px;height:20px;color:var(--green-text);}
+.compare__caption{max-width:680px;margin:28px auto 0;text-align:center;color:var(--stone);font-size:0.95rem;}
+@media(max-width:640px){.compare{aspect-ratio:4/5;}}
+
+/* ---------- Services ---------- */
+.services{background:var(--charcoal);padding:150px 0 130px;color:#fff;}
+.services__head{max-width:640px;margin-bottom:56px;}
+.services__head h2{font-size:clamp(2rem,4.4vw,3rem);margin:16px 0 18px;color:#fff;}
+.services__head p{color:rgba(246,244,236,0.68);font-size:1.08rem;max-width:540px;}
+.svc-layout{display:grid;grid-template-columns:0.85fr 1.15fr;gap:64px;align-items:center;}
+.svc-tabs{display:flex;flex-direction:column;gap:14px;}
+.svc-tab{display:flex;align-items:center;gap:16px;padding:20px 22px;border:1.5px solid var(--line-dark);border-radius:10px;cursor:pointer;transition:border-color .2s,background .2s;}
+.svc-tab:hover{border-color:var(--green-bright);}
+.svc-tab.active{border-color:var(--green-bright);background:rgba(95,160,102,0.08);}
+.svc-tab__icon{width:38px;height:38px;flex-shrink:0;display:flex;align-items:center;justify-content:center;border-radius:50%;background:var(--charcoal-3);color:var(--green-bright);}
+.svc-tab__icon svg{width:20px;height:20px;}
+.svc-tab__text h3{font-family:'Manrope',sans-serif;font-weight:700;font-size:1.08rem;text-transform:none;letter-spacing:0;margin-bottom:4px;}
+.svc-tab__text p{font-size:0.92rem;color:rgba(246,244,236,0.62);}
+.svc-diagram{position:relative;aspect-ratio:4/3;background:var(--charcoal-2);border-radius:14px;border:1px solid var(--line-dark);overflow:hidden;}
+.svc-diagram svg{width:100%;height:100%;}
+.svc-zone{transition:opacity .4s ease;}
+@media(max-width:900px){.svc-layout{grid-template-columns:1fr;gap:36px;}}
+
+/* ---------- Reviews ---------- */
+.reviews{background:var(--paper);padding:150px 0 130px;}
+.reviews__top{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:32px;margin-bottom:56px;}
+.reviews__rating{display:flex;align-items:center;gap:22px;}
+.reviews__num{font-family:'Manrope',sans-serif;font-weight:800;font-size:3.4rem;line-height:1;}
+.reviews__stars{color:var(--green-text);font-size:1.3rem;letter-spacing:2px;}
+.reviews__count{color:var(--stone);font-size:0.92rem;margin-top:4px;}
+.reviews__head h2{font-size:clamp(2rem,4.4vw,3rem);max-width:520px;}
+.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+.review-card{background:#fff;border:1.5px solid var(--line-light);border-radius:12px;padding:30px;display:flex;flex-direction:column;}
+.review-card__quote{font-size:1.02rem;line-height:1.6;flex:1;margin-bottom:20px;}
+.review-card__quote--truncated::after{content:' …';color:var(--stone);}
+.review-card__reply{margin-top:16px;padding-top:16px;border-top:1px solid var(--line-light);font-size:0.9rem;color:var(--stone);font-style:italic;}
+.review-card__reply b{color:var(--ink);font-style:normal;}
+.review-card__note{margin-top:14px;font-size:0.82rem;color:var(--stone);}
+.review-card__foot{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:6px;}
+.review-card__name{font-family:'Manrope',sans-serif;font-weight:700;font-size:0.95rem;}
+.review-card__stars{color:var(--green-text);font-size:0.85rem;letter-spacing:1px;}
+@media(max-width:960px){.review-grid{grid-template-columns:1fr;}}
+
+/* ---------- Quote ---------- */
+.quote{background:var(--green-pale);padding:140px 0;}
+.quote__inner{max-width:760px;margin:0 auto;text-align:center;}
+.quote h2{font-size:clamp(2rem,4.6vw,3.2rem);margin:16px 0 18px;}
+.quote p{color:var(--stone);font-size:1.08rem;max-width:520px;margin:0 auto 40px;}
+.quote-chips{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:40px;}
+.quote-chip{padding:13px 22px;border-radius:30px;border:1.5px solid var(--line-light);background:#fff;font-weight:700;font-size:0.92rem;cursor:pointer;transition:border-color .2s,background .2s,color .2s;}
+.quote-chip:hover{border-color:var(--green-text);}
+.quote-chip.active{background:var(--green-text);border-color:var(--green-text);color:#fff;}
+.quote-summary{font-size:1.02rem;color:var(--ink);margin-bottom:26px;}
+.quote-summary b{color:var(--green-text);}
+
+/* ---------- Contact / footer ---------- */
+.contact{background:var(--charcoal);padding:130px 0 60px;position:relative;overflow:hidden;color:#fff;}
+.contact::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 0%,rgba(95,160,102,0.14),transparent 55%);}
+.contact__inner{position:relative;text-align:center;max-width:720px;margin:0 auto;}
+.contact h2{color:#fff;font-size:clamp(2.1rem,4.8vw,3.4rem);margin:18px 0 20px;}
+.contact p{color:rgba(246,244,236,0.68);font-size:1.08rem;max-width:520px;margin:0 auto 40px;}
+.contact__phone{display:block;font-family:'Manrope',sans-serif;font-weight:800;font-size:clamp(2rem,5.6vw,3rem);color:var(--green-bright);margin-bottom:34px;transition:opacity .2s;}
+.contact__phone:hover{opacity:0.8;}
+.contact__ctas{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:56px;}
+.contact__meta{border-top:1px solid var(--line-dark);padding-top:30px;color:rgba(246,244,236,0.6);font-size:0.92rem;max-width:460px;margin:0 auto;}
+.footer{background:var(--charcoal);padding:36px 0;border-top:1px solid var(--line-dark);}
+.footer__inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+.footer__brand{display:flex;align-items:center;gap:10px;color:rgba(246,244,236,0.6);font-size:0.85rem;}
+.footer__brand svg{width:24px;height:24px;}
+.footer__links{display:flex;gap:24px;font-size:0.85rem;color:rgba(246,244,236,0.6);}
+.footer__links a:hover{color:var(--green-bright);}
+
+/* ---------- Mobile action bar ---------- */
+.actionbar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:800;grid-template-columns:1fr 1fr;box-shadow:0 -4px 20px rgba(0,0,0,0.25);}
+.actionbar a{display:flex;align-items:center;justify-content:center;gap:8px;padding:16px 0;font-weight:700;font-size:0.9rem;}
+.actionbar a:first-child{background:var(--green-text);color:#fff;}
+.actionbar a:last-child{background:var(--charcoal-3);color:#fff;}
+.actionbar svg{width:18px;height:18px;}
+@media(max-width:720px){.actionbar{display:grid;}body{padding-bottom:66px;}}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;scroll-behavior:auto!important;}
+}
+
+#services,#difference,#reviews,#quote,#contact{scroll-margin-top:90px;}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <a href="#top" class="nav__brand">
+    <svg viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="18" fill="#20241f"/><path d="M30 78V46M42 78V36M54 78V50M66 78V30M78 78V42" stroke="#5fa066" stroke-width="7" stroke-linecap="round"/></svg>
+    Garcia Lawn Services
+  </a>
+  <div class="nav__links" id="navLinks">
+    <a href="#services">Services</a>
+    <a href="#difference">The Difference</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#quote">Quote</a>
+    <a href="tel:+16199158327" class="nav__cta nav__cta--mobile">Call Now</a>
+  </div>
+  <a href="tel:+16199158327" class="nav__cta">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    (619) 915-8327
+  </a>
+  <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+</nav>
+
+<section class="hero" id="top">
+  <div class="hero__field"></div>
+  <div class="hero__blades" id="heroBlades" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="hero__content" id="heroContent">
+      <div class="hero__eyebrow">Local Lawn Care</div>
+      <h1 class="hero__title">From Overgrown<br>to <span>Clean.</span></h1>
+      <p class="hero__lede">Garcia Lawn Services handles mowing, yard cleanup and irrigation care — call and we'll get your yard back in shape.</p>
+      <div class="hero__ctas">
+        <a href="tel:+16199158327" class="btn btn--primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call Now
+        </a>
+        <a href="#quote" class="btn btn--ghost">Get a Quote</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero__scroll"><div class="hero__scroll-line"></div>Scroll</div>
+</section>
+
+<section class="transform" id="transform" aria-label="From overgrown to a clean, finished lawn">
+  <div class="transform__stage">
+    <div class="transform__field"></div>
+    <div class="transform__blades" id="transformBlades" aria-hidden="true"></div>
+    <div class="transform__stripes" id="transformStripes" aria-hidden="true"></div>
+    <div class="transform__waterline" id="transformWaterline" aria-hidden="true"></div>
+    <div class="transform__mowline" id="transformMowline" aria-hidden="true"></div>
+    <div class="transform__content">
+      <div class="transform__label" id="transformLabel">Overgrown</div>
+      <h2 class="transform__title" id="transformTitle">Grass gone tall, edges undefined.</h2>
+    </div>
+    <div class="transform__rail"><div class="transform__rail-fill" id="transformRail"></div></div>
+  </div>
+</section>
+
+<section class="difference" id="difference">
+  <div class="wrap">
+    <div class="difference__head">
+      <span class="eyebrow">The Difference</span>
+      <h2>Drag to see it change.</h2>
+      <p>An illustrated look at what a Garcia Lawn Services visit changes — built so the same frame can carry real before/after photography once it's available.</p>
+    </div>
+    <div class="compare" id="compare">
+      <div class="compare__before" aria-hidden="true">
+        <svg viewBox="0 0 400 300" preserveAspectRatio="none">
+          <rect width="400" height="300" fill="none"/>
+          <g id="beforeBlades"></g>
+        </svg>
+      </div>
+      <div class="compare__after" id="compareAfter" aria-hidden="true">
+        <svg viewBox="0 0 400 300" preserveAspectRatio="none">
+          <rect x="0" y="180" width="400" height="120" fill="none"/>
+          <g id="afterStripes"></g>
+          <line x1="0" y1="180" x2="400" y2="180" stroke="#2f6339" stroke-width="2"/>
+          <g stroke="#3c7f96" stroke-width="2" fill="none" opacity="0.8">
+            <path d="M20 300V220h360v80" />
+            <circle cx="20" cy="220" r="4" fill="#3c7f96"/>
+            <circle cx="200" cy="220" r="4" fill="#3c7f96"/>
+            <circle cx="380" cy="220" r="4" fill="#3c7f96"/>
+          </g>
+        </svg>
+      </div>
+      <div class="compare__label compare__label--before">Overgrown</div>
+      <div class="compare__label compare__label--after">Finished</div>
+      <div class="compare__seam" id="compareSeam"></div>
+      <div class="compare__handle-icon" id="compareHandleIcon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M8 6l-6 6 6 6M16 6l6 6-6 6"/></svg>
+      </div>
+      <input type="range" class="compare__handle-track" id="compareRange" min="0" max="100" value="50" aria-label="Drag to compare overgrown and finished lawn">
+    </div>
+    <p class="compare__caption">Illustrated, not a photograph — Garcia Lawn Services doesn't have client project photos on file yet, so this is a generative stand-in for the real transformation, not a picture of actual work.</p>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="services__head">
+      <span class="eyebrow eyebrow--dark">What We Handle</span>
+      <h2>Select a service to see it work.</h2>
+      <p>Core lawn care, matched to what Garcia Lawn Services' own reviews actually describe.</p>
+    </div>
+    <div class="svc-layout">
+      <div class="svc-tabs" id="svcTabs">
+        <div class="svc-tab active" data-svc="lawn">
+          <div class="svc-tab__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20V10M9 20V6M14 20V12M19 20V8"/></svg></div>
+          <div class="svc-tab__text"><h3>Lawn Care</h3><p>Mowing and regular upkeep to keep grass even.</p></div>
+        </div>
+        <div class="svc-tab" data-svc="irrigation">
+          <div class="svc-tab__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3c3 4 6 7.5 6 11a6 6 0 0 1-12 0c0-3.5 3-7 6-11z"/></svg></div>
+          <div class="svc-tab__text"><h3>Irrigation</h3><p>Checking and adjusting sprinkler settings.</p></div>
+        </div>
+        <div class="svc-tab" data-svc="yard">
+          <div class="svc-tab__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 20h18M6 20V11l4-6 4 6v9M14 20v-6l4-3v9"/></svg></div>
+          <div class="svc-tab__text"><h3>Yard Care</h3><p>Front and backyard cleanup and general care.</p></div>
+        </div>
+      </div>
+      <div class="svc-diagram">
+        <svg viewBox="0 0 400 300" preserveAspectRatio="none">
+          <rect width="400" height="300" fill="#20241f"/>
+          <rect x="20" y="20" width="360" height="260" fill="none" stroke="#3a4034" stroke-width="1.5" stroke-dasharray="4 5"/>
+          <g id="zoneLawn" class="svc-zone"></g>
+          <g id="zoneIrrigation" class="svc-zone" opacity="0.15">
+            <path d="M60 260V120h280v140" fill="none" stroke="#3c7f96" stroke-width="2.5"/>
+            <circle cx="60" cy="120" r="7" fill="#3c7f96"/>
+            <circle cx="200" cy="120" r="7" fill="#3c7f96"/>
+            <circle cx="340" cy="120" r="7" fill="#3c7f96"/>
+            <g id="waterDrops"></g>
+          </g>
+          <g id="zoneYard" class="svc-zone" opacity="0.15">
+            <rect x="45" y="45" width="310" height="210" fill="none" stroke="#5fa066" stroke-width="3" stroke-dasharray="8 6"/>
+            <circle cx="45" cy="45" r="5" fill="#5fa066"/>
+            <circle cx="355" cy="45" r="5" fill="#5fa066"/>
+            <circle cx="45" cy="255" r="5" fill="#5fa066"/>
+            <circle cx="355" cy="255" r="5" fill="#5fa066"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <div class="reviews__top">
+      <div class="reviews__rating">
+        <div class="reviews__num">4.8</div>
+        <div>
+          <div class="reviews__stars">★★★★★</div>
+          <div class="reviews__count">53 Google reviews</div>
+        </div>
+      </div>
+      <div class="reviews__head">
+        <span class="eyebrow">Customer Proof</span>
+        <h2>What people actually said.</h2>
+      </div>
+    </div>
+    <div class="review-grid">
+      <div class="review-card">
+        <p class="review-card__quote review-card__quote--truncated">"They did an AMAZING job. Not only did they find a way to come at an earlier time so we wouldn't have to wait until next week, but they went beyond what we imagined. Sent a photo for a quote on what we needed done, and they did more. Will</p>
+        <div class="review-card__reply"><b>Owner response:</b> "Thank you so much for the amazing review Murr! We are thrilled that we could fit you into our schedule early and exceed your expectations. Providing fast, quotes, clear, communication, and great pricing is exactly how</div>
+        <div class="review-card__note">Shown as supplied — both the review and owner reply continue beyond this point on Google.</div>
+        <div class="review-card__foot"><span class="review-card__name">Murr H.</span><span class="review-card__stars">★★★★★</span></div>
+      </div>
+      <div class="review-card">
+        <p class="review-card__quote">"My lawn was really over grown. I was able to schedule my appointment on my time schedule. They did an excellent job. I will definitely be using them again. The price was the best I found. Below are both before and after pictures. You can see how big of a difference they made."</p>
+        <div class="review-card__note">Photos referenced were posted directly to Google — not reproduced here.</div>
+        <div class="review-card__foot"><span class="review-card__name">Baron Milton</span><span class="review-card__stars">★★★★★</span></div>
+      </div>
+      <div class="review-card">
+        <p class="review-card__quote">"I can't begin to tell you how wonderful of a job Mauricio does with my home yard. He does a prestige job every time! He's always on time and professional. He gives amazing pricing for the work done. I highly recommend hiring Mauricio for your next yards needs!"</p>
+        <div class="review-card__foot"><span class="review-card__name">Ortenza Sanchez</span><span class="review-card__stars">★★★★★</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="quote" id="quote">
+  <div class="wrap">
+    <div class="quote__inner">
+      <span class="eyebrow">Your Yard</span>
+      <h2>What needs to change?</h2>
+      <p>Pick what's closest, then call — Garcia Lawn Services will go over pricing and scheduling with you directly.</p>
+      <div class="quote-chips" id="quoteChips">
+        <button class="quote-chip active" data-need="Overgrown lawn">Overgrown</button>
+        <button class="quote-chip" data-need="Regular mowing">Mowing</button>
+        <button class="quote-chip" data-need="Yard cleanup">Yard Care</button>
+        <button class="quote-chip" data-need="Irrigation / sprinklers">Irrigation</button>
+        <button class="quote-chip" data-need="Something else">Other</button>
+      </div>
+      <p class="quote-summary">Ready to talk about: <b id="quoteNeed">Overgrown lawn</b></p>
+      <a href="tel:+16199158327" class="btn btn--primary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call (619) 915-8327
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="contact__inner">
+      <span class="eyebrow eyebrow--dark">Get In Touch</span>
+      <h2>Ready when you are.</h2>
+      <p>Garcia Lawn Services serves its local area — call to check that your address is covered.</p>
+      <a href="tel:+16199158327" class="contact__phone">(619) 915-8327</a>
+      <div class="contact__ctas">
+        <a href="tel:+16199158327" class="btn btn--primary">Call Now</a>
+        <a href="#quote" class="btn btn--ghost">Get a Quote</a>
+      </div>
+      <div class="contact__meta">4.8★ from 53 Google reviews. Hours vary — call to check current availability.</div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <div class="footer__brand">
+      <svg viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="18" fill="#20241f"/><path d="M30 78V46M42 78V36M54 78V50M66 78V30M78 78V42" stroke="#5fa066" stroke-width="7" stroke-linecap="round"/></svg>
+      &copy; <span id="year"></span> Garcia Lawn Services
+    </div>
+    <div class="footer__links">
+      <a href="#services">Services</a>
+      <a href="#reviews">Reviews</a>
+      <a href="tel:+16199158327">(619) 915-8327</a>
+    </div>
+  </div>
+</footer>
+
+<div class="actionbar">
+  <a href="tel:+16199158327">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Call Now
+  </a>
+  <a href="#quote">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+    Get a Quote
+  </a>
+</div>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+var nav = document.getElementById('nav');
+window.addEventListener('scroll', function(){ nav.classList.toggle('scrolled', window.scrollY > 40); }, {passive:true});
+var navToggle = document.getElementById('navToggle');
+var navLinks = document.getElementById('navLinks');
+navToggle.addEventListener('click', function(){
+  var open = navLinks.classList.toggle('open');
+  navToggle.classList.toggle('active', open);
+  navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+});
+navLinks.querySelectorAll('a').forEach(function(a){
+  a.addEventListener('click', function(){ navLinks.classList.remove('open'); navToggle.classList.remove('active'); navToggle.setAttribute('aria-expanded','false'); });
+});
+
+var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function seededRandom(seed){
+  var s = seed;
+  return function(){ s = (s * 9301 + 49297) % 233280; return s / 233280; };
+}
+
+function makeBlades(wrap, count, className, seed, minH, maxH, sway){
+  var rnd = seededRandom(seed);
+  var list = [];
+  for (var i = 0; i < count; i++){
+    var el = document.createElement('div');
+    el.className = className;
+    var baseH = minH + rnd() * (maxH - minH);
+    el.style.height = baseH + '%';
+    el.dataset.base = baseH;
+    if (!reduceMotion && sway){
+      var swayDeg = 2 + rnd() * 3;
+      var dur = 2.6 + rnd() * 1.8;
+      var delay = rnd() * 2;
+      el.animate(
+        [{ transform: 'rotate(0deg)' }, { transform: 'rotate(' + swayDeg + 'deg)' }, { transform: 'rotate(0deg)' }],
+        { duration: dur * 1000, delay: delay * 1000, iterations: Infinity, easing: 'ease-in-out' }
+      );
+    }
+    wrap.appendChild(el);
+    list.push(el);
+  }
+  return list;
+}
+
+/* ---- hero: ambient grass, always visible, idle sway only ---- */
+makeBlades(document.getElementById('heroBlades'), 40, 'hero__blade', 11, 45, 85, true);
+
+/* ---- hero entrance ---- */
+requestAnimationFrame(function(){ document.querySelector('.hero').classList.add('is-ready'); });
+
+/* ---- transform section: scroll-driven mow/edge/clean sequence ---- */
+var transformBlades = makeBlades(document.getElementById('transformBlades'), 46, 'transform__blade', 42, 55, 95, false);
+var transformSection = document.getElementById('transform');
+var transformMowline = document.getElementById('transformMowline');
+var transformStripes = document.getElementById('transformStripes');
+var transformWaterline = document.getElementById('transformWaterline');
+var transformLabel = document.getElementById('transformLabel');
+var transformTitle = document.getElementById('transformTitle');
+var transformRail = document.getElementById('transformRail');
+
+var TSTAGES = [
+  { label:'Overgrown', title:'Grass gone tall, edges undefined.' },
+  { label:'Cutting', title:'The mower passes through — height comes down fast.' },
+  { label:'Edged & Clean', title:'Clean lines, even coverage, a finished yard.' }
+];
+
+function updateTransform(){
+  if (reduceMotion) return;
+  var rect = transformSection.getBoundingClientRect();
+  var total = rect.height - window.innerHeight;
+  var progress = Math.min(1, Math.max(0, -rect.top / total));
+
+  var mowProgress = Math.min(1, progress / 0.6);
+  transformMowline.style.left = (mowProgress * 100) + '%';
+  transformMowline.style.opacity = progress > 0.02 && progress < 0.62 ? 1 : 0;
+
+  transformBlades.forEach(function(el){
+    var base = parseFloat(el.dataset.base);
+    var finalH = 34;
+    var h = base - (base - finalH) * mowProgress;
+    el.style.height = h + '%';
+  });
+
+  var stripeProgress = Math.min(1, Math.max(0, (progress - 0.55) / 0.25));
+  transformStripes.style.clipPath = 'inset(0 ' + (100 - stripeProgress * 100) + '% 0 0)';
+
+  var waterProgress = Math.min(1, Math.max(0, (progress - 0.75) / 0.2));
+  transformWaterline.style.opacity = waterProgress > 0 && waterProgress < 1 ? 1 : 0;
+
+  var stageIndex = progress < 0.32 ? 0 : (progress < 0.68 ? 1 : 2);
+  var stage = TSTAGES[stageIndex];
+  if (transformLabel.textContent !== stage.label) {
+    transformLabel.textContent = stage.label;
+    transformTitle.textContent = stage.title;
+  }
+  transformRail.style.width = (progress * 100) + '%';
+}
+
+if (reduceMotion){
+  transformBlades.forEach(function(el){ el.style.height = '34%'; });
+  transformStripes.style.clipPath = 'inset(0 0 0 0)';
+  transformMowline.style.opacity = 0;
+  transformLabel.textContent = TSTAGES[2].label;
+  transformTitle.textContent = TSTAGES[2].title;
+}
+
+var tickingTransform = false;
+window.addEventListener('scroll', function(){
+  if (!tickingTransform){
+    requestAnimationFrame(function(){ updateTransform(); tickingTransform = false; });
+    tickingTransform = true;
+  }
+}, {passive:true});
+updateTransform();
+
+/* ---- before/after compare slider ---- */
+function buildBlades(svgGroup, count, seed){
+  var s = seed;
+  function rnd(){ s = (s * 9301 + 49297) % 233280; return s / 233280; }
+  var html = '';
+  for (var i = 0; i < count; i++){
+    var x = (i / count) * 400 + rnd() * 4;
+    var h = 60 + rnd() * 70;
+    html += '<rect x="' + x.toFixed(1) + '" y="' + (300 - h).toFixed(1) + '" width="3.2" height="' + h.toFixed(1) + '" rx="1.5" fill="#8a8a52"/>';
+  }
+  svgGroup.innerHTML = html;
+}
+function buildStripes(svgGroup){
+  var html = '';
+  for (var i = 0; i < 10; i++){
+    html += '<rect x="' + (i * 40) + '" y="180" width="40" height="120" fill="' + (i % 2 === 0 ? '#8fc78a' : '#79b374') + '"/>';
+  }
+  svgGroup.innerHTML = html;
+}
+buildBlades(document.getElementById('beforeBlades'), 60, 7);
+buildStripes(document.getElementById('afterStripes'));
+
+var compareRange = document.getElementById('compareRange');
+var compareAfter = document.getElementById('compareAfter');
+var compareSeam = document.getElementById('compareSeam');
+var compareHandleIcon = document.getElementById('compareHandleIcon');
+function updateCompare(){
+  var v = compareRange.value;
+  compareAfter.style.clipPath = 'inset(0 0 0 ' + v + '%)';
+  compareSeam.style.left = v + '%';
+  compareHandleIcon.style.left = v + '%';
+}
+compareRange.addEventListener('input', updateCompare);
+updateCompare();
+
+/* ---- services selector ---- */
+var svcTabs = document.querySelectorAll('.svc-tab');
+var zoneLawn = document.getElementById('zoneLawn');
+var zoneIrrigation = document.getElementById('zoneIrrigation');
+var zoneYard = document.getElementById('zoneYard');
+var lawnStripes = '';
+for (var i = 0; i < 9; i++){
+  lawnStripes += '<rect x="' + (20 + i * 40) + '" y="20" width="40" height="260" fill="' + (i % 2 === 0 ? '#2c3527' : '#242b21') + '"/>';
+}
+zoneLawn.innerHTML = lawnStripes;
+
+function setSvc(name){
+  svcTabs.forEach(function(t){ t.classList.toggle('active', t.dataset.svc === name); });
+  zoneLawn.style.opacity = name === 'lawn' ? 1 : 0.12;
+  zoneIrrigation.style.opacity = name === 'irrigation' ? 1 : 0.12;
+  zoneYard.style.opacity = name === 'yard' ? 1 : 0.12;
+}
+svcTabs.forEach(function(tab){
+  tab.addEventListener('click', function(){ setSvc(tab.dataset.svc); });
+});
+setSvc('lawn');
+
+/* irrigation water drops when active */
+var waterDrops = document.getElementById('waterDrops');
+var dropPositions = [60, 200, 340];
+dropPositions.forEach(function(x, i){
+  if (!reduceMotion){
+    var drop = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    drop.setAttribute('cx', x);
+    drop.setAttribute('cy', 130);
+    drop.setAttribute('r', 3);
+    drop.setAttribute('fill', '#3c7f96');
+    waterDrops.appendChild(drop);
+    drop.animate(
+      [{ cy: 130, opacity: 1 }, { cy: 250, opacity: 0 }],
+      { duration: 1400, delay: i * 300, iterations: Infinity, easing: 'ease-in' }
+    );
+  }
+});
+
+/* ---- quote chips ---- */
+var quoteChips = document.querySelectorAll('.quote-chip');
+var quoteNeed = document.getElementById('quoteNeed');
+quoteChips.forEach(function(chip){
+  chip.addEventListener('click', function(){
+    quoteChips.forEach(function(c){ c.classList.remove('active'); });
+    chip.classList.add('active');
+    quoteNeed.textContent = chip.dataset.need;
+  });
+});
+</script>
+</body>
+</html>
