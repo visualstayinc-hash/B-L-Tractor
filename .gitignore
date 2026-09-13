@@ -1,2 +1,7 @@
 __pycache__/
 *.pyc
+
+# Higgsfield CLI companion skills (local tooling, not part of any client site)
+/.agents/
+/.claude/skills/higgsfield-*
+/skills-lock.json
