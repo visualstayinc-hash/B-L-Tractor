@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Next Level Tree Service LLC | North Richland Hills, TX</title>
+<meta name="description" content="Next Level Tree Service — tree removal, health-focused pruning, and stump grinding in North Richland Hills, TX. Text owner Daniel a photo for a quote, or call. 5.0 stars from 125 Google reviews.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%23183a30'/%3E%3Cpath d='M50 25c14 12 22 26 22 40a22 22 0 0 1-44 0c0-14 8-28 22-40z' fill='%23dabc81'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;family=Mulish:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Next Level Tree Service LLC",
+  "telephone": "+18172171155",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "7033 Crabtree Ln",
+    "addressLocality": "North Richland Hills",
+    "addressRegion": "TX",
+    "postalCode": "76182",
+    "addressCountry": "US"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "125"
+  },
+  "areaServed": "North Richland Hills, TX and the surrounding DFW area"
+}
+</script>
+<style>
+:root{
+  --cedar:#183a30;
+  --cedar-deep:#0f241e;
+  --cedar-2:#1c4438;
+  --gold:#b98f3f;
+  --gold-text:#7e6125;
+  --gold-bright:#dabc81;
+  --paper:#f6f2e9;
+  --paper-2:#eee7d6;
+  --charcoal:#27251f;
+  --stone-mid:#6b6455;
+  --line-light:rgba(39,37,31,0.12);
+  --line-dark:rgba(246,242,233,0.16);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Mulish',sans-serif;background:var(--paper);color:var(--charcoal);line-height:1.58;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+h1,h2,h3,h4{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;letter-spacing:-0.015em;line-height:1.12;}
+a{color:inherit;text-decoration:none;}
+button{font:inherit;background:none;border:none;cursor:pointer;color:inherit;}
+img,svg{display:block;max-width:100%;}
+.wrap{max-width:1200px;margin:0 auto;padding:0 32px;}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.78rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-text);}
+.eyebrow::before{content:'';width:22px;height:2px;background:var(--gold-text);}
+.eyebrow--dark{color:var(--gold-bright);}
+.eyebrow--dark::before{background:var(--gold-bright);}
+:focus-visible{outline:3px solid var(--gold-text);outline-offset:3px;border-radius:2px;}
+section{position:relative;}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s cubic-bezier(.2,.6,.2,1),transform .7s cubic-bezier(.2,.6,.2,1);}
+.reveal.in{opacity:1;transform:translateY(0);}
+
+/* canopy motif: soft overlapping arcs */
+.canopy{position:absolute;pointer-events:none;}
+.canopy svg{width:100%;height:100%;}
+
+/* ---------- Nav ---------- */
+.nav{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:center;justify-content:space-between;padding:16px 32px;transition:padding .3s,background .3s,box-shadow .3s;}
+.nav::before{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(15,36,30,0.85) 0%,rgba(15,36,30,0) 100%);opacity:1;transition:opacity .3s;}
+.nav.scrolled::before{opacity:0;}
+.nav.scrolled{padding:10px 32px;background:rgba(15,36,30,0.96);box-shadow:0 2px 20px rgba(0,0,0,0.25);}
+.nav__word{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.05rem;letter-spacing:-0.01em;color:#fff;line-height:1.15;}
+.nav__word small{display:block;font-family:'Mulish',sans-serif;font-weight:600;font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(246,242,233,0.6);margin-top:1px;}
+.nav__links{display:flex;align-items:center;gap:26px;}
+.nav__links a{font-family:'Plus Jakarta Sans',sans-serif;font-size:0.86rem;font-weight:600;letter-spacing:0.02em;color:rgba(246,242,233,0.85);transition:color .2s;}
+.nav__links a:hover{color:var(--gold-bright);}
+.nav__ctas{display:flex;align-items:center;gap:10px;}
+.nav__cta{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:5px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.86rem;letter-spacing:0.01em;transition:transform .15s,box-shadow .15s,background .15s;}
+.nav__cta--call{background:var(--gold-text);color:#fff;box-shadow:0 6px 18px rgba(0,0,0,0.25);}
+.nav__cta--call:hover{transform:translateY(-2px);background:#976f2c;}
+.nav__cta--text{border:1.5px solid var(--line-dark);color:#fff;}
+.nav__cta--text:hover{border-color:var(--gold-bright);}
+.nav__cta:active{transform:translateY(0) scale(0.96);}
+.nav__cta svg{width:14px;height:14px;flex-shrink:0;}
+.nav__cta--mobile{display:none;}
+.nav__toggle{display:none;width:44px;height:44px;align-items:center;justify-content:center;}
+.nav__toggle span,.nav__toggle span::before,.nav__toggle span::after{content:'';display:block;width:22px;height:2px;background:#fff;position:relative;transition:.3s;}
+.nav__toggle span::before{position:absolute;top:-7px;}
+.nav__toggle span::after{position:absolute;top:7px;}
+.nav__toggle.active span{background:transparent;}
+.nav__toggle.active span::before{top:0;transform:rotate(45deg);}
+.nav__toggle.active span::after{top:0;transform:rotate(-45deg);}
+
+@media(max-width:960px){
+  .nav__links{position:fixed;top:0;right:-100%;width:min(320px,84vw);height:100vh;background:var(--cedar-deep);
+    flex-direction:column;align-items:flex-start;justify-content:center;gap:24px;padding:40px;transition:right .35s cubic-bezier(.4,0,.2,1);box-shadow:-10px 0 40px rgba(0,0,0,0.4);}
+  .nav__links.open{right:0;}
+  .nav__links a{font-size:1.15rem;}
+  .nav__cta--mobile{display:inline-flex;margin-top:10px;}
+  .nav__ctas{display:none;}
+  .nav__toggle{display:inline-flex;}
+}
+
+/* ---------- Hero ---------- */
+.hero{min-height:100vh;background:var(--cedar-deep);position:relative;overflow:hidden;display:flex;align-items:center;padding:140px 0 90px;}
+.hero__field{position:absolute;inset:0;background:radial-gradient(circle at 82% 26%,rgba(218,188,129,0.13),transparent 55%);}
+.hero .canopy{right:-10%;top:50%;transform:translateY(-50%);width:min(58vw,600px);aspect-ratio:1;opacity:0.55;}
+.hero__body{position:relative;z-index:2;max-width:660px;}
+.hero__title{font-size:clamp(2.4rem,6.4vw,4.4rem);color:#fff;margin:18px 0 22px;}
+.hero__title em{font-style:normal;color:var(--gold-bright);}
+.hero__lede{font-size:1.14rem;color:rgba(246,242,233,0.78);max-width:520px;margin-bottom:30px;}
+.hero__rating{display:inline-flex;align-items:center;gap:14px;padding:14px 20px;border:1.5px solid var(--line-dark);border-radius:6px;margin-bottom:34px;}
+.hero__rating .stars{color:var(--gold-bright);font-size:1.1rem;letter-spacing:2px;}
+.hero__rating .num{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.35rem;color:#fff;}
+.hero__rating .count{font-size:0.86rem;color:rgba(246,242,233,0.65);}
+.hero__ctas{display:flex;gap:14px;flex-wrap:wrap;}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 26px;border-radius:6px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.98rem;letter-spacing:0.01em;transition:transform .15s,box-shadow .15s,background .15s;}
+.btn svg{width:18px;height:18px;flex-shrink:0;}
+.btn:active{transform:scale(0.96);}
+.btn--primary{background:var(--gold-text);color:#fff;box-shadow:0 10px 26px rgba(134,103,39,0.4);}
+.btn--primary:hover{background:#976f2c;transform:translateY(-2px);}
+.btn--primary:active{transform:translateY(0) scale(0.96);}
+.btn--ghost{border:1.5px solid var(--line-dark);color:#fff;}
+.btn--ghost:hover{border-color:var(--gold-bright);}
+.btn--dark{border:1.5px solid var(--line-light);color:var(--charcoal);}
+.btn--dark:hover{border-color:var(--gold-text);}
+.hero__equal{margin-top:14px;font-size:0.84rem;color:rgba(246,242,233,0.5);}
+@media(max-width:720px){.hero{padding:120px 0 80px;}.hero .canopy{width:120vw;right:-40%;opacity:0.3;}}
+
+/* ---------- Trust bar ---------- */
+.trustbar{background:var(--cedar);padding:34px 0;border-top:1px solid var(--line-dark);border-bottom:1px solid var(--line-dark);}
+.trustbar__row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:26px;}
+.trustbar__stat{display:flex;align-items:center;gap:14px;}
+.trustbar__stat .stars{color:var(--gold-bright);font-size:1.05rem;letter-spacing:2px;}
+.trustbar__stat .big{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.4rem;color:#fff;}
+.trustbar__stat .lbl{font-size:0.85rem;color:rgba(246,242,233,0.68);}
+.trustbar__badges{display:flex;gap:24px;flex-wrap:wrap;}
+.trustbar__badge{display:flex;align-items:center;gap:9px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:0.92rem;color:rgba(246,242,233,0.9);}
+.trustbar__badge svg{width:18px;height:18px;color:var(--gold-bright);flex-shrink:0;}
+@media(max-width:720px){.trustbar__row{flex-direction:column;align-items:flex-start;}}
+
+/* ---------- Services ---------- */
+.services{background:var(--paper);padding:120px 0 100px;}
+.services__head{max-width:640px;margin-bottom:52px;}
+.services__head h2{font-size:clamp(2rem,4.4vw,3rem);margin:16px 0 16px;}
+.services__head p{color:var(--stone-mid);font-size:1.06rem;max-width:560px;}
+.svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--line-light);border:1px solid var(--line-light);}
+.svc-card{background:var(--paper);padding:34px;display:flex;flex-direction:column;gap:14px;}
+.svc-card__icon{width:40px;height:40px;color:var(--gold-text);}
+.svc-card__icon svg{width:100%;height:100%;}
+.svc-card h3{font-size:1.3rem;letter-spacing:-0.01em;}
+.svc-card p{color:var(--stone-mid);font-size:0.97rem;}
+@media(max-width:720px){.svc-grid{grid-template-columns:1fr;}.svc-card{padding:26px;}}
+
+/* ---------- Meet Daniel ---------- */
+.daniel{background:var(--cedar-deep);padding:120px 0;color:#fff;position:relative;}
+.daniel__bg{position:absolute;inset:0;overflow:hidden;pointer-events:none;}
+.daniel .canopy{left:-14%;bottom:-14%;width:50vw;aspect-ratio:1;opacity:0.35;}
+.daniel__layout{display:grid;grid-template-columns:0.85fr 1.15fr;gap:60px;align-items:start;position:relative;z-index:2;}
+.daniel__intro{position:sticky;top:110px;}
+.daniel__mark{width:76px;height:76px;border-radius:50%;background:var(--cedar-2);border:1.5px solid var(--line-dark);display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.8rem;color:var(--gold-bright);margin-bottom:22px;}
+.daniel__intro h2{font-size:clamp(2rem,4.2vw,2.8rem);color:#fff;margin-bottom:16px;}
+.daniel__intro p{color:rgba(246,242,233,0.7);font-size:1.05rem;max-width:420px;}
+.daniel-points{display:flex;flex-direction:column;gap:0;}
+.daniel-point{display:flex;gap:20px;padding:38px 0;border-bottom:1px solid var(--line-dark);}
+.daniel-point:first-child{padding-top:0;}
+.daniel-point:last-child{border-bottom:none;}
+.daniel-point__icon{width:26px;height:26px;color:var(--gold-bright);flex-shrink:0;margin-top:2px;}
+.daniel-point__icon svg{width:100%;height:100%;}
+.daniel-point h3{font-size:1.14rem;margin-bottom:6px;color:#fff;letter-spacing:-0.005em;}
+.daniel-point p{font-size:0.96rem;color:rgba(246,242,233,0.65);}
+@media(max-width:900px){.daniel__layout{grid-template-columns:1fr;gap:30px;}.daniel__intro{position:static;}}
+
+/* ---------- Reviews (editorial pull-quotes) ---------- */
+.reviews{background:var(--paper-2);padding:120px 0;}
+.reviews__top{max-width:680px;margin-bottom:20px;}
+.reviews__top h2{font-size:clamp(2rem,4.4vw,3rem);margin:16px 0 14px;}
+.reviews__top p{color:var(--stone-mid);font-size:1.05rem;}
+.reviews__rating{display:flex;align-items:center;gap:16px;margin-bottom:60px;}
+.reviews__rating .stars{color:var(--gold-text);font-size:1.25rem;letter-spacing:2px;}
+.reviews__rating .num{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:2.1rem;}
+.reviews__rating .count{color:var(--stone-mid);font-size:0.94rem;}
+.quote-list{display:flex;flex-direction:column;gap:0;}
+.quote-item{display:grid;grid-template-columns:64px 1fr;gap:24px;padding:36px 0;border-top:1px solid var(--line-light);}
+.quote-item:last-child{border-bottom:1px solid var(--line-light);}
+.quote-item__mark{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:3rem;line-height:0.7;color:var(--gold-text);opacity:0.55;}
+.quote-item__text{font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:clamp(1.15rem,2vw,1.4rem);letter-spacing:-0.01em;line-height:1.4;margin-bottom:10px;}
+.quote-item__ctx{font-size:0.96rem;color:var(--stone-mid);max-width:640px;}
+.quote-item__src{margin-top:10px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:0.82rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--gold-text);}
+@media(max-width:640px){.quote-item{grid-template-columns:40px 1fr;gap:14px;padding:28px 0;}.quote-item__mark{font-size:2.2rem;}}
+
+/* ---------- Service area ---------- */
+.area{background:var(--paper);padding:100px 0;}
+.area__inner{max-width:720px;}
+.area__inner h2{font-size:clamp(1.8rem,3.8vw,2.5rem);margin:16px 0 16px;}
+.area__inner p{color:var(--stone-mid);font-size:1.08rem;}
+
+/* ---------- Contact ---------- */
+.contact{background:var(--cedar);padding:120px 0 60px;color:#fff;position:relative;overflow:hidden;}
+.contact .canopy{right:-12%;top:-18%;width:42vw;aspect-ratio:1;opacity:0.3;}
+.contact__layout{display:grid;grid-template-columns:1fr 1fr;gap:60px;position:relative;z-index:2;}
+.contact__info h2{font-size:clamp(2rem,4.4vw,2.9rem);margin:16px 0 18px;color:#fff;}
+.contact__info p{color:rgba(246,242,233,0.72);font-size:1.05rem;max-width:440px;margin-bottom:30px;}
+.contact__ctas{display:flex;flex-direction:column;gap:14px;margin-bottom:28px;max-width:340px;}
+.contact__ctas .btn{justify-content:center;width:100%;}
+.contact__meta{font-size:0.94rem;color:rgba(246,242,233,0.65);line-height:1.8;}
+.contact__meta b{color:#fff;}
+.form{background:var(--paper);border-radius:8px;padding:36px;color:var(--charcoal);}
+.form h3{font-size:1.25rem;margin-bottom:6px;}
+.form__sub{font-size:0.9rem;color:var(--stone-mid);margin-bottom:24px;}
+.field{margin-bottom:16px;}
+.field label{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:0.8rem;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:6px;color:var(--stone-mid);}
+.field input,.field textarea{width:100%;padding:12px 14px;border:1.5px solid var(--line-light);border-radius:5px;font-family:'Mulish',sans-serif;font-size:1rem;background:#fff;color:var(--charcoal);}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--gold-text);}
+.field textarea{resize:vertical;min-height:84px;}
+.form__submit{width:100%;padding:15px;background:var(--gold-text);color:#fff;border-radius:5px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.98rem;transition:transform .15s,background .15s;}
+.form__submit:hover{background:#976f2c;}
+.form__submit:active{transform:scale(0.97);}
+.form__success{display:none;text-align:center;padding:16px 0;}
+.form__success.show{display:block;}
+.form__success svg{width:38px;height:38px;color:var(--cedar);margin:0 auto 12px;}
+.form__success h4{font-size:1.15rem;margin-bottom:8px;}
+.form__success p{font-size:0.93rem;color:var(--stone-mid);}
+@media(max-width:860px){.contact__layout{grid-template-columns:1fr;gap:40px;}}
+
+.imgslot{border:2px dashed var(--line-light);border-radius:8px;background:rgba(134,103,39,0.05);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;padding:24px;text-align:center;color:var(--stone-mid);font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:0.82rem;letter-spacing:0.03em;text-transform:uppercase;min-height:150px;}
+.imgslot svg{width:26px;height:26px;opacity:0.5;}
+
+/* ---------- Footer ---------- */
+.footer{background:var(--cedar-deep);padding:36px 0;border-top:1px solid var(--line-dark);color:rgba(246,242,233,0.6);}
+.footer__inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:0.85rem;}
+.footer__links{display:flex;gap:22px;flex-wrap:wrap;}
+.footer__links a:hover{color:var(--gold-bright);}
+.footer__preview{text-align:center;font-size:0.78rem;color:rgba(246,242,233,0.55);margin-top:18px;padding-top:18px;border-top:1px solid rgba(246,242,233,0.08);}
+
+/* ---------- Mobile action bar ---------- */
+.actionbar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:800;grid-template-columns:1fr 1fr;box-shadow:0 -4px 20px rgba(0,0,0,0.25);}
+.actionbar a{display:flex;align-items:center;justify-content:center;gap:8px;padding:16px 0;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:0.94rem;}
+.actionbar a:first-child{background:var(--gold-text);color:#fff;}
+.actionbar a:last-child{background:var(--cedar);color:#fff;}
+.actionbar svg{width:18px;height:18px;}
+@media(max-width:720px){.actionbar{display:grid;}body{padding-bottom:66px;}}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;scroll-behavior:auto!important;}
+  .reveal{opacity:1!important;transform:none!important;}
+}
+
+#services,#daniel,#reviews,#area,#contact{scroll-margin-top:86px;}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <a href="#top" class="nav__word">Next Level<small>Tree Service LLC</small></a>
+  <div class="nav__links" id="navLinks">
+    <a href="#services">Services</a>
+    <a href="#daniel">Meet Daniel</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact">Contact</a>
+    <a href="tel:+18172171155" class="nav__cta nav__cta--call nav__cta--mobile">Call Now</a>
+    <a href="sms:+18172171155" class="nav__cta nav__cta--text nav__cta--mobile">Text a Photo</a>
+  </div>
+  <div class="nav__ctas">
+    <a href="sms:+18172171155" class="nav__cta nav__cta--text">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      Text a Photo
+    </a>
+    <a href="tel:+18172171155" class="nav__cta nav__cta--call">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Call Now
+    </a>
+  </div>
+  <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+</nav>
+
+<section class="hero" id="top">
+  <div class="hero__field"></div>
+  <div class="canopy" aria-hidden="true">
+    <svg viewBox="0 0 400 400">
+      <circle cx="220" cy="150" r="120" fill="none" stroke="var(--gold-bright)" stroke-width="1.5" opacity="0.7"/>
+      <circle cx="150" cy="240" r="140" fill="none" stroke="var(--gold-bright)" stroke-width="1.5" opacity="0.5"/>
+      <circle cx="260" cy="270" r="90" fill="none" stroke="var(--gold-bright)" stroke-width="1.5" opacity="0.6"/>
+      <circle cx="190" cy="190" r="60" fill="none" stroke="var(--gold-bright)" stroke-width="1.5" opacity="0.8"/>
+    </svg>
+  </div>
+  <div class="wrap">
+    <div class="hero__body">
+      <span class="eyebrow eyebrow--dark">North Richland Hills, TX</span>
+      <h1 class="hero__title">Every Cut Has <em>a Reason.</em></h1>
+      <p class="hero__lede">Tree removal, health-focused pruning, and stump grinding around North Richland Hills — from an owner who explains the plan before the chainsaw starts.</p>
+      <div class="hero__rating">
+        <span class="stars">★★★★★</span>
+        <span class="num">5.0</span>
+        <span class="count">125 Google reviews</span>
+      </div>
+      <div class="hero__ctas">
+        <a href="sms:+18172171155" class="btn btn--primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Text Daniel a Photo
+        </a>
+        <a href="tel:+18172171155" class="btn btn--ghost">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call Now
+        </a>
+      </div>
+      <p class="hero__equal">Send a photo of the tree and get a real answer back — same as calling.</p>
+    </div>
+  </div>
+</section>
+
+<div class="trustbar">
+  <div class="wrap trustbar__row">
+    <div class="trustbar__stat">
+      <span class="stars">★★★★★</span>
+      <span class="big">5.0</span>
+      <span class="lbl">from 125 Google reviews</span>
+    </div>
+    <div class="trustbar__badges">
+      <div class="trustbar__badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+        Owner-Led, Not a Franchise
+      </div>
+      <div class="trustbar__badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Text a Photo, Get a Quote
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="services__head reveal">
+      <span class="eyebrow">What We Do</span>
+      <h2>Tree &amp; Yard Work, Done With a Plan</h2>
+      <p>Every job below is something Daniel and the crew have actually done — no padded service list.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card reveal">
+        <div class="svc-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 17l6-6M13 7l7 7-3 3-7-7M13 7L9 3 3 9l4 4"/><circle cx="6" cy="14" r="1"/></svg></div>
+        <h3>Tree Removal</h3>
+        <p>Full removals, including large or dying trees — one job removed five dying trees in a single visit.</p>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3l12 12M18 3L6 15M9 18l3 3 3-3M12 21v-6"/><circle cx="6" cy="3" r="2"/><circle cx="18" cy="3" r="2"/></svg></div>
+        <h3>Trimming &amp; Pruning</h3>
+        <p>Pruned for light and long-term tree health, not just cut back — including overhanging branches near the house.</p>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><ellipse cx="12" cy="18" rx="8" ry="3"/><circle cx="12" cy="18" r="4.5"/><circle cx="12" cy="18" r="2"/><path d="M12 4v11"/></svg></div>
+        <h3>Stump Grinding &amp; Root Removal</h3>
+        <p>Stumps ground down and roots dug out, not just left behind once the tree itself is gone.</p>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21h18M5 21V10l7-6 7 6v11M9 21v-6h6v6"/></svg></div>
+        <h3>Overgrowth, Vines &amp; Cleanup</h3>
+        <p>Vine and brush clearing plus full yard cleanup and haul-off — one job cleared 18 overgrown trees in one visit.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="daniel" id="daniel">
+  <div class="daniel__bg" aria-hidden="true">
+    <div class="canopy">
+      <svg viewBox="0 0 400 400">
+        <circle cx="180" cy="220" r="140" fill="none" stroke="var(--gold-bright)" stroke-width="1.5" opacity="0.6"/>
+        <circle cx="240" cy="160" r="90" fill="none" stroke="var(--gold-bright)" stroke-width="1.5" opacity="0.7"/>
+      </svg>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="daniel__layout">
+      <div class="daniel__intro reveal">
+        <div class="daniel__mark">D</div>
+        <span class="eyebrow eyebrow--dark">Meet the Owner</span>
+        <h2>Daniel Runs Every Job Personally.</h2>
+        <p>Reviewers don't describe a company — they describe working with Daniel directly. Here's what shows up again and again.</p>
+      </div>
+      <div class="daniel-points">
+        <div class="daniel-point reveal">
+          <div class="daniel-point__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+          <h3>Responds Fast — Even From a Photo</h3>
+          <p>Reviewers describe texting Daniel a photo of the tree and getting a quote back before the crew ever showed up.</p>
+        </div>
+        <div class="daniel-point reveal">
+          <div class="daniel-point__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+          <h3>Explains the Plan First</h3>
+          <p>Daniel walks through the project and his recommendations before any work starts — not just an invoice after the fact.</p>
+        </div>
+        <div class="daniel-point reveal">
+          <div class="daniel-point__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 19.5V5a2 2 0 0 1 2-2h11l3 3v13.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 19.5z"/><path d="M8 7h6M8 11h8M8 15h5"/></svg></div>
+          <h3>Documents the Job &amp; Quotes a Real Price</h3>
+          <p>The plan gets written down and priced specifically — reviewers describe it as competitive, not padded.</p>
+        </div>
+        <div class="daniel-point reveal">
+          <div class="daniel-point__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <h3>Crew Cleans Up as They Go</h3>
+          <p>Reviewers consistently call the crew prompt, hard-working, and thorough — cleanup included, not an afterthought.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <div class="reviews__top reveal">
+      <span class="eyebrow">Customer Proof</span>
+      <h2>125 Five-Star Google Reviews</h2>
+      <p>Five of them, in their own words — short quoted fragments exactly as reviewers wrote them.</p>
+    </div>
+    <div class="reviews__rating reveal">
+      <span class="stars">★★★★★</span>
+      <span class="num">5.0</span>
+      <span class="count">out of 5, from 125 Google reviews</span>
+    </div>
+    <div class="quote-list">
+      <div class="quote-item reveal">
+        <div class="quote-item__mark">&ldquo;</div>
+        <div>
+          <div class="quote-item__text">Prompt, hard working, thorough and professional.</div>
+          <p class="quote-item__ctx">After the crew removed five dying trees, pruned overhanging branches, ground the stumps, and left a stacked wood pile on request.</p>
+          <div class="quote-item__src">Google Review</div>
+        </div>
+      </div>
+      <div class="quote-item reveal">
+        <div class="quote-item__mark">&ldquo;</div>
+        <div>
+          <div class="quote-item__text">The owner's attention to detail is what immediately sets them apart.</div>
+          <p class="quote-item__ctx">Daniel walked through the project in person and explained his recommendations before the crew started.</p>
+          <div class="quote-item__src">Google Review</div>
+        </div>
+      </div>
+      <div class="quote-item reveal">
+        <div class="quote-item__mark">&ldquo;</div>
+        <div>
+          <div class="quote-item__text">Worth every penny.</div>
+          <p class="quote-item__ctx">Daniel gave a quote based on photos texted to him, before the crew ever arrived on site.</p>
+          <div class="quote-item__src">Google Review</div>
+        </div>
+      </div>
+      <div class="quote-item reveal">
+        <div class="quote-item__mark">&ldquo;</div>
+        <div>
+          <div class="quote-item__text">Very knowledgeable and patient with my questions.</div>
+          <p class="quote-item__ctx">A reviewer said they loved working with Daniel directly on their project.</p>
+          <div class="quote-item__src">Google Review</div>
+        </div>
+      </div>
+      <div class="quote-item reveal">
+        <div class="quote-item__mark">&ldquo;</div>
+        <div>
+          <div class="quote-item__text">Exactly the kind of person you hope shows up when you have a service need.</div>
+          <p class="quote-item__ctx">After 18 overgrown trees were cleaned up — Daniel documented the plan, quoted a competitive price, and followed through with his team.</p>
+          <div class="quote-item__src">Google Review</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="area" id="area">
+  <div class="wrap">
+    <div class="area__inner reveal">
+      <span class="eyebrow">Where We Work</span>
+      <h2>North Richland Hills &amp; the Surrounding DFW Area</h2>
+      <p>Based in North Richland Hills, TX, serving the surrounding Dallas–Fort Worth area. Text a photo or call to check that your address is covered.</p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="imgslot" style="margin: 0 0 100px;">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10.5" r="1.5"/><path d="M21 15l-5-5-9 9"/></svg>
+    Add job-site photo here
+  </div>
+</div>
+
+<section class="contact" id="contact">
+  <div class="canopy" aria-hidden="true">
+    <svg viewBox="0 0 400 400">
+      <circle cx="220" cy="180" r="110" fill="none" stroke="var(--gold-bright)" stroke-width="1.5" opacity="0.6"/>
+      <circle cx="160" cy="230" r="70" fill="none" stroke="var(--gold-bright)" stroke-width="1.5" opacity="0.7"/>
+    </svg>
+  </div>
+  <div class="wrap">
+    <div class="contact__layout">
+      <div class="contact__info reveal">
+        <span class="eyebrow eyebrow--dark">Get In Touch</span>
+        <h2>Call Daniel, or Text a Photo.</h2>
+        <p>Both work exactly the same — whichever's easier from where you're standing.</p>
+        <div class="contact__ctas">
+          <a href="sms:+18172171155" class="btn btn--primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            Text a Photo: (817) 217-1155
+          </a>
+          <a href="tel:+18172171155" class="btn btn--ghost">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call (817) 217-1155
+          </a>
+        </div>
+        <div class="contact__meta">
+          <b>Next Level Tree Service LLC</b><br>
+          7033 Crabtree Ln, North Richland Hills, TX 76182<br>
+          Serving North Richland Hills &amp; the surrounding DFW area
+        </div>
+      </div>
+      <div class="form reveal" id="contactForm">
+        <div id="formFields">
+          <h3>Send the Details</h3>
+          <p class="form__sub">No phone or texting handy right now? Leave the details and we'll follow up.</p>
+          <form id="quoteForm" novalidate>
+            <div class="field">
+              <label for="fname">Name</label>
+              <input type="text" id="fname" name="name" required autocomplete="name">
+            </div>
+            <div class="field">
+              <label for="fphone">Phone</label>
+              <input type="tel" id="fphone" name="phone" required autocomplete="tel">
+            </div>
+            <div class="field">
+              <label for="fjob">What do you need done?</label>
+              <textarea id="fjob" name="job" placeholder="e.g. Large dead oak near the driveway, plus a couple of stumps"></textarea>
+            </div>
+            <button type="submit" class="form__submit">Send to Next Level</button>
+          </form>
+        </div>
+        <div class="form__success" id="formSuccess">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6"/></svg>
+          <h4>Got it.</h4>
+          <p>This is a preview site, so nothing was actually sent yet — once live, this form will route straight to Next Level. For a real request right now, text or call (817) 217-1155.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__inner">
+      <div>Next Level Tree Service LLC &middot; 7033 Crabtree Ln, North Richland Hills, TX 76182</div>
+      <div class="footer__links">
+        <a href="tel:+18172171155">(817) 217-1155</a>
+        <a href="#services">Services</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer__preview">This is a preview site built to show what's possible — not yet the live Next Level Tree Service website.</div>
+  </div>
+</footer>
+
+<div class="actionbar">
+  <a href="sms:+18172171155">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    Text a Photo
+  </a>
+  <a href="tel:+18172171155">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Call Now
+  </a>
+</div>
+
+<script>
+var nav = document.getElementById('nav');
+window.addEventListener('scroll', function(){ nav.classList.toggle('scrolled', window.scrollY > 40); }, {passive:true});
+var navToggle = document.getElementById('navToggle');
+var navLinks = document.getElementById('navLinks');
+navToggle.addEventListener('click', function(){
+  var open = navLinks.classList.toggle('open');
+  navToggle.classList.toggle('active', open);
+  navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+});
+navLinks.querySelectorAll('a').forEach(function(a){
+  a.addEventListener('click', function(){ navLinks.classList.remove('open'); navToggle.classList.remove('active'); navToggle.setAttribute('aria-expanded','false'); });
+});
+
+/* scroll reveals */
+var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var revealEls = document.querySelectorAll('.reveal');
+if (reduceMotion) {
+  revealEls.forEach(function(el){ el.classList.add('in'); });
+} else {
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting) { entry.target.classList.add('in'); io.unobserve(entry.target); }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+  revealEls.forEach(function(el){ io.observe(el); });
+}
+
+/* contact form (demo, no backend) */
+var quoteForm = document.getElementById('quoteForm');
+var formFields = document.getElementById('formFields');
+var formSuccess = document.getElementById('formSuccess');
+quoteForm.addEventListener('submit', function(e){
+  e.preventDefault();
+  if (!quoteForm.checkValidity()) { quoteForm.reportValidity(); return; }
+  formFields.style.display = 'none';
+  formSuccess.classList.add('show');
+});
+</script>
+</body>
+</html>
