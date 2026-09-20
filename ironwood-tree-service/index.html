@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ironwood Tree Service | Tulsa, OK</title>
+<meta name="description" content="Ironwood Tree Service — tree removal in confined spaces, stump removal, shoreline and property cleanup, and bucket-truck access in Tulsa, OK. 5.0 stars from 112 Google reviews. Call (918) 201-1987.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%2314261c'/%3E%3Cpath d='M20 68h60v10H20z' fill='%238b5e3c'/%3E%3Cpath d='M30 68V52h16v16' fill='none' stroke='%23f5f0e8' stroke-width='5'/%3E%3Cpath d='M46 56l22-22' stroke='%23f5f0e8' stroke-width='5' stroke-linecap='round'/%3E%3Crect x='62' y='26' width='16' height='12' rx='2' fill='%238b5e3c'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;0,900;1,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Ironwood Tree Service",
+  "telephone": "+19182011987",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "5831 E 99th St",
+    "addressLocality": "Tulsa",
+    "addressRegion": "OK",
+    "postalCode": "74137",
+    "addressCountry": "US"
+  },
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "112" },
+  "areaServed": "Tulsa, OK"
+}
+</script>
+<style>
+:root{
+  --pine:#14261C;
+  --pine-2:#1B3327;
+  --pine-3:#22402F;
+  --bark:#8B5E3C;
+  --bark-deep:#6F4526;
+  --off:#F5F0E8;
+  --off-2:#EAE3D6;
+  --char:#241F1B;
+  --muted:#6B6157;
+  --line-light:rgba(36,31,27,0.13);
+  --line-dark:rgba(245,240,232,0.15);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;background:var(--off);color:var(--char);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+body.loading{overflow:hidden;}
+h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.015em;line-height:1.08;}
+em{font-style:italic;font-weight:500;}
+a{color:inherit;text-decoration:none;}
+button{font:inherit;background:none;border:none;cursor:pointer;color:inherit;}
+img,svg{display:block;max-width:100%;}
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-family:'Inter',sans-serif;font-weight:600;font-size:0.76rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);}
+.eyebrow::before{content:'';width:22px;height:1.5px;background:currentColor;}
+.eyebrow--dark{color:rgba(245,240,232,0.7);}
+:focus-visible{outline:3px solid var(--bark);outline-offset:3px;border-radius:2px;}
+section{position:relative;}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.2,.6,.2,1),transform .7s cubic-bezier(.2,.6,.2,1);}
+.reveal.in{opacity:1;transform:translateY(0);}
+
+/* ---------- Loader ---------- */
+.loader{display:none;position:fixed;inset:0;z-index:9999;background:var(--pine);align-items:center;justify-content:center;text-align:center;transition:opacity .3s ease;}
+.loader.active{display:flex;}
+.loader.out{opacity:0;pointer-events:none;}
+.loader__num{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(4rem,14vw,8rem);color:#fff;line-height:1;letter-spacing:-0.03em;font-variant-numeric:tabular-nums;}
+.loader__label{font-family:'Inter',sans-serif;font-weight:600;font-size:0.82rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--bark);margin-top:14px;}
+.loader__sub{font-family:'Fraunces',serif;font-style:italic;font-size:1.05rem;color:rgba(245,240,232,0.75);margin-top:22px;opacity:0;transform:translateY(6px);transition:opacity .34s ease,transform .34s ease;}
+.loader.done .loader__sub{opacity:1;transform:translateY(0);}
+
+/* ---------- Nav ---------- */
+.nav{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:center;justify-content:space-between;padding:18px 32px;transition:padding .3s,background .3s,box-shadow .3s;}
+.nav::before{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(20,38,28,0.92) 0%,rgba(20,38,28,0) 100%);opacity:1;transition:opacity .3s;}
+.nav.scrolled::before{opacity:0;}
+.nav.scrolled{padding:12px 32px;background:rgba(20,38,28,0.97);box-shadow:0 2px 20px rgba(0,0,0,0.3);}
+.nav__word{font-family:'Fraunces',serif;font-weight:700;font-size:1.12rem;letter-spacing:0.02em;color:#fff;line-height:1.1;text-transform:uppercase;}
+.nav__word small{display:block;font-family:'Inter',sans-serif;font-weight:500;font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(245,240,232,0.55);margin-top:3px;}
+.nav__links{display:flex;align-items:center;gap:26px;}
+.nav__links a{font-size:0.86rem;font-weight:500;color:rgba(245,240,232,0.82);transition:color .2s;}
+.nav__links a:hover{color:#fff;}
+.nav__cta{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:4px;font-weight:700;font-size:0.88rem;background:var(--bark);color:#fff;box-shadow:0 6px 18px rgba(0,0,0,0.3);transition:transform .15s,background .15s;}
+.nav__cta:hover{transform:translateY(-2px);background:#9a6942;}
+.nav__cta:active{transform:translateY(0) scale(0.96);}
+.nav__cta svg{width:15px;height:15px;flex-shrink:0;}
+.nav__cta--mobile{display:none;}
+.nav__toggle{display:none;width:44px;height:44px;align-items:center;justify-content:center;}
+.nav__toggle span,.nav__toggle span::before,.nav__toggle span::after{content:'';display:block;width:22px;height:2px;background:#fff;position:relative;transition:.3s;}
+.nav__toggle span::before{position:absolute;top:-7px;}
+.nav__toggle span::after{position:absolute;top:7px;}
+.nav__toggle.active span{background:transparent;}
+.nav__toggle.active span::before{top:0;transform:rotate(45deg);}
+.nav__toggle.active span::after{top:0;transform:rotate(-45deg);}
+@media(max-width:960px){
+  .nav__links{position:fixed;top:0;right:-100%;width:min(320px,84vw);height:100vh;background:var(--pine);
+    flex-direction:column;align-items:flex-start;justify-content:center;gap:26px;padding:40px;transition:right .35s cubic-bezier(.4,0,.2,1);box-shadow:-10px 0 40px rgba(0,0,0,0.45);}
+  .nav__links.open{right:0;}
+  .nav__links a{font-size:1.18rem;}
+  .nav__cta--mobile{display:inline-flex;margin-top:10px;}
+  .nav > a.nav__cta{display:none;}
+  .nav__toggle{display:inline-flex;}
+}
+
+/* ---------- Hero ---------- */
+.hero{min-height:100vh;background:var(--pine);position:relative;display:flex;align-items:center;padding:150px 0 100px;}
+.hero__bg{position:absolute;inset:0;overflow:hidden;pointer-events:none;}
+.hero__truck{position:absolute;right:-6%;bottom:6%;width:min(62vw,700px);opacity:0.13;}
+.hero__truck svg{width:100%;height:auto;}
+.hero__body{position:relative;z-index:2;max-width:760px;}
+.hero__title{font-size:clamp(2.4rem,6vw,4.3rem);color:#fff;margin:20px 0 24px;}
+.hero__title em{color:var(--bark);font-style:italic;}
+.hero__lede{font-size:1.14rem;color:rgba(245,240,232,0.75);max-width:520px;margin-bottom:32px;}
+.hero__row{display:flex;align-items:center;gap:26px;flex-wrap:wrap;}
+.hero__rating{display:inline-flex;align-items:center;gap:13px;padding:13px 20px;border:1.5px solid var(--line-dark);border-radius:6px;}
+.hero__rating .stars{color:var(--bark);font-size:1.05rem;letter-spacing:2px;}
+.hero__rating .num{font-family:'Fraunces',serif;font-weight:600;font-size:1.28rem;color:#fff;}
+.hero__rating .count{font-size:0.84rem;color:rgba(245,240,232,0.65);}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:17px 28px;border-radius:5px;font-weight:700;font-size:1.02rem;transition:transform .15s,background .15s;}
+.btn svg{width:19px;height:19px;flex-shrink:0;}
+.btn--primary{background:var(--bark);color:#fff;box-shadow:0 12px 30px rgba(139,94,60,0.4);}
+.btn--primary:hover{background:#9a6942;transform:translateY(-2px);}
+.btn--primary:active{transform:translateY(0) scale(0.96);}
+@media(max-width:720px){.hero{padding:126px 0 80px;}.hero__truck{width:150vw;right:-45%;opacity:0.09;}}
+
+/* ---------- Bid comparison (scroll-driven) ---------- */
+.bid{background:var(--pine);color:#fff;}
+.bid__wrap{height:260vh;position:relative;}
+.bid__stage{position:sticky;top:0;min-height:100vh;display:flex;align-items:center;padding:100px 0;}
+.bid__head{max-width:660px;margin-bottom:46px;}
+.bid__head h2{font-size:clamp(1.9rem,4.2vw,2.8rem);color:#fff;margin:16px 0 14px;}
+.bid__head p{color:rgba(245,240,232,0.7);font-size:1.04rem;max-width:520px;}
+.bid__cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start;}
+.bidcard{background:var(--pine-2);border:1.5px solid var(--line-dark);border-radius:12px;padding:26px 24px;transition:transform .6s cubic-bezier(.2,.7,.2,1),opacity .6s ease,border-color .6s ease,background .6s ease,box-shadow .6s ease;}
+.bidcard__tag{font-family:'Inter',sans-serif;font-weight:700;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(245,240,232,0.55);margin-bottom:16px;position:relative;height:1.1em;transition:color .5s ease;}
+.bidcard__tag span{position:absolute;left:0;top:0;transition:opacity .45s ease,transform .45s ease;}
+.bidcard__tag .tag-alt{opacity:0;transform:translateY(5px);color:var(--bark);}
+.bidcard__title{font-family:'Fraunces',serif;font-weight:600;font-size:1.32rem;color:#fff;margin-bottom:18px;transition:color .5s ease;}
+.bidlist{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.bidlist li{position:relative;padding-left:26px;font-size:0.93rem;color:rgba(245,240,232,0.72);transition:color .5s ease;}
+.bidlist li::before{content:'';position:absolute;left:0;top:0.52em;width:10px;height:10px;border:1.5px solid rgba(245,240,232,0.4);border-radius:2px;transition:border-color .4s ease,background .4s ease;}
+.bidlist li .strike{position:absolute;left:24px;right:0;top:0.72em;height:1.5px;background:rgba(245,240,232,0.5);transform:scaleX(0);transform-origin:left;transition:transform .55s cubic-bezier(.4,0,.2,1);}
+.bidcard__stamp{margin-top:20px;display:inline-block;font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:rgba(245,240,232,0.55);border:1px solid rgba(245,240,232,0.25);border-radius:3px;padding:5px 10px;opacity:0;transform:translateY(4px);transition:opacity .45s ease,transform .45s ease;}
+.bidcard--iron{transform:rotate(1.4deg);}
+.bidcard--iron .bidcard__check{position:absolute;left:0;top:0.42em;width:14px;height:14px;opacity:0;transform:scale(.6);transition:opacity .4s ease,transform .4s ease;color:var(--bark);}
+.bidcard--iron .bidlist li{padding-left:26px;}
+
+/* passed-over state: explicit colors (not blanket opacity) so text stays legible */
+.bid__wrap.s1 .bidcard[data-bid="a"],
+.bid__wrap.s2 .bidcard[data-bid="b"]{background:#172C21;transform:translateY(10px) scale(0.965);border-color:rgba(245,240,232,0.07);}
+.bid__wrap.s1 .bidcard[data-bid="a"] .bidcard__title,
+.bid__wrap.s2 .bidcard[data-bid="b"] .bidcard__title{color:rgba(245,240,232,0.72);}
+.bid__wrap.s1 .bidcard[data-bid="a"] .bidcard__tag,
+.bid__wrap.s2 .bidcard[data-bid="b"] .bidcard__tag{color:rgba(245,240,232,0.45);}
+.bid__wrap.s1 .bidcard[data-bid="a"] .bidlist li,
+.bid__wrap.s2 .bidcard[data-bid="b"] .bidlist li{color:rgba(245,240,232,0.62);}
+.bid__wrap.s1 .bidcard[data-bid="a"] .bidlist li::before,
+.bid__wrap.s2 .bidcard[data-bid="b"] .bidlist li::before{border-color:rgba(245,240,232,0.22);}
+.bid__wrap.s1 .bidcard[data-bid="a"] .strike,
+.bid__wrap.s2 .bidcard[data-bid="b"] .strike{transform:scaleX(1);}
+.bid__wrap.s1 .bidcard[data-bid="a"] .bidcard__stamp,
+.bid__wrap.s2 .bidcard[data-bid="b"] .bidcard__stamp{opacity:1;transform:translateY(0);}
+/* state 3: ironwood wins */
+.bid__wrap.s3 .bidcard--iron{transform:rotate(0deg) translateY(-8px) scale(1.035);background:var(--pine-3);border-color:var(--bark);box-shadow:0 26px 60px rgba(0,0,0,0.45),0 0 0 1px var(--bark);}
+.bid__wrap.s3 .bidcard--iron .tag-orig{opacity:0;transform:translateY(-5px);}
+.bid__wrap.s3 .bidcard--iron .tag-alt{opacity:1;transform:translateY(0);}
+.bid__wrap.s3 .bidcard--iron .bidcard__check{opacity:1;transform:scale(1);}
+.bid__wrap.s3 .bidcard--iron .bidlist li{color:#fff;}
+.bid__wrap.s3 .bidcard--iron .bidlist li::before{opacity:0;}
+.bid__note{margin-top:30px;font-size:0.84rem;color:rgba(245,240,232,0.55);max-width:620px;font-style:italic;}
+@media(max-width:860px){
+  .bid__wrap{height:auto;}
+  .bid__stage{position:static;min-height:0;padding:100px 0;}
+  .bid__cards{grid-template-columns:1fr;gap:16px;}
+  .bidcard--iron{transform:rotate(0deg);}
+  .bid__wrap.s3 .bidcard--iron{transform:rotate(0deg) scale(1);}
+}
+
+/* ---------- Services ---------- */
+.services{background:var(--off);padding:120px 0 100px;}
+.services__head{max-width:620px;margin-bottom:50px;}
+.services__head h2{font-size:clamp(2rem,4.2vw,2.9rem);margin:16px 0 16px;}
+.services__head p{color:var(--muted);font-size:1.05rem;max-width:540px;}
+.svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--line-light);border:1px solid var(--line-light);}
+.svc-card{background:var(--off);padding:34px;display:flex;flex-direction:column;gap:13px;transition:background .25s;}
+.svc-card:hover{background:#fff;}
+.svc-card__icon{width:38px;height:38px;color:var(--pine);}
+.svc-card__icon svg{width:100%;height:100%;}
+.svc-card h3{font-size:1.24rem;}
+.svc-card p{color:var(--muted);font-size:0.95rem;}
+@media(max-width:760px){.svc-grid{grid-template-columns:1fr;}.svc-card{padding:26px;}}
+
+/* ---------- Why Ironwood ---------- */
+.why{background:var(--off-2);padding:120px 0;}
+.why__layout{display:grid;grid-template-columns:0.95fr 1.05fr;gap:60px;align-items:center;}
+.why__head h2{font-size:clamp(2rem,4.2vw,2.9rem);margin:16px 0 16px;}
+.why__head p{color:var(--muted);font-size:1.05rem;max-width:460px;}
+.why__truck{width:100%;max-width:420px;color:var(--pine);opacity:0.9;}
+.why-list{display:flex;flex-direction:column;gap:0;}
+.why-item{padding:26px 0;border-top:1px solid var(--line-light);}
+.why-item:last-child{border-bottom:1px solid var(--line-light);}
+.why-item h3{font-size:1.16rem;margin-bottom:7px;}
+.why-item p{font-size:0.95rem;color:var(--muted);}
+.crew{margin-top:26px;display:flex;flex-wrap:wrap;gap:10px;}
+.crew__chip{font-family:'Inter',sans-serif;font-weight:600;font-size:0.84rem;padding:8px 15px;border:1.5px solid var(--line-light);border-radius:100px;color:var(--char);background:var(--off);}
+@media(max-width:860px){.why__layout{grid-template-columns:1fr;gap:40px;}}
+
+/* ---------- Reviews ---------- */
+.reviews{background:var(--off);padding:120px 0;}
+.reviews__top{max-width:640px;margin-bottom:20px;}
+.reviews__top h2{font-size:clamp(2rem,4.2vw,2.9rem);margin:16px 0 14px;}
+.reviews__top p{color:var(--muted);font-size:1.04rem;}
+.reviews__rating{display:flex;align-items:center;gap:16px;margin-bottom:54px;}
+.reviews__rating .stars{color:var(--pine);font-size:1.22rem;letter-spacing:2px;}
+.reviews__rating .num{font-family:'Fraunces',serif;font-weight:600;font-size:2.1rem;}
+.reviews__rating .count{color:var(--muted);font-size:0.93rem;}
+.quote-list{display:flex;flex-direction:column;}
+.quote-item{display:grid;grid-template-columns:52px 1fr;gap:22px;padding:34px 0;border-top:1px solid var(--line-light);}
+.quote-item:last-child{border-bottom:1px solid var(--line-light);}
+.quote-item__mark{font-family:'Fraunces',serif;font-weight:700;font-size:2.6rem;line-height:0.75;color:var(--pine);opacity:0.35;}
+.quote-item__text{font-family:'Fraunces',serif;font-weight:500;font-style:italic;font-size:clamp(1.18rem,2.1vw,1.5rem);line-height:1.34;margin-bottom:9px;}
+.quote-item__ctx{font-size:0.94rem;color:var(--muted);max-width:620px;}
+.quote-item__src{margin-top:9px;font-weight:600;font-size:0.76rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);}
+@media(max-width:640px){.quote-item{grid-template-columns:34px 1fr;gap:14px;padding:26px 0;}.quote-item__mark{font-size:2rem;}}
+
+/* ---------- Area ---------- */
+.area{background:var(--off-2);padding:100px 0;}
+.area__inner{max-width:680px;}
+.area__inner h2{font-size:clamp(1.7rem,3.6vw,2.3rem);margin:16px 0 16px;}
+.area__inner p{color:var(--muted);font-size:1.05rem;}
+
+.imgslot{border:2px dashed var(--line-light);border-radius:8px;background:rgba(139,94,60,0.05);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;padding:24px;text-align:center;color:var(--muted);font-weight:600;font-size:0.8rem;letter-spacing:0.03em;text-transform:uppercase;min-height:150px;margin:48px 0 0;}
+.imgslot svg{width:26px;height:26px;opacity:0.5;}
+
+/* ---------- Contact ---------- */
+.contact{background:var(--pine);padding:120px 0 70px;color:#fff;}
+.contact__layout{display:grid;grid-template-columns:1fr 1fr;gap:60px;}
+.contact__info h2{font-size:clamp(2rem,4.2vw,2.8rem);color:#fff;margin:16px 0 18px;}
+.contact__info p{color:rgba(245,240,232,0.72);font-size:1.04rem;max-width:430px;margin-bottom:30px;}
+.contact__phone{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.7rem,4vw,2.2rem);color:var(--bark);display:inline-block;margin-bottom:24px;}
+.contact__meta{font-size:0.93rem;color:rgba(245,240,232,0.6);line-height:1.8;}
+.contact__meta b{color:#fff;}
+.form{background:var(--off);border-radius:10px;padding:34px;color:var(--char);}
+.form h3{font-size:1.22rem;margin-bottom:6px;}
+.form__sub{font-size:0.89rem;color:var(--muted);margin-bottom:22px;}
+.field{margin-bottom:15px;}
+.field label{display:block;font-weight:600;font-size:0.78rem;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:6px;color:var(--muted);}
+.field input,.field textarea{width:100%;padding:12px 14px;border:1.5px solid var(--line-light);border-radius:5px;font-family:'Inter',sans-serif;font-size:1rem;background:#fff;color:var(--char);}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--bark-deep);}
+.field textarea{resize:vertical;min-height:82px;}
+.form__submit{width:100%;padding:15px;background:var(--bark);color:#fff;border-radius:5px;font-weight:700;font-size:0.98rem;transition:transform .15s,background .15s;}
+.form__submit:hover{background:#9a6942;}
+.form__submit:active{transform:scale(0.97);}
+.form__success{display:none;text-align:center;padding:16px 0;}
+.form__success.show{display:block;}
+.form__success svg{width:36px;height:36px;color:var(--pine);margin:0 auto 12px;}
+.form__success h4{font-size:1.12rem;margin-bottom:8px;}
+.form__success p{font-size:0.92rem;color:var(--muted);}
+@media(max-width:860px){.contact__layout{grid-template-columns:1fr;gap:40px;}}
+
+/* ---------- Footer ---------- */
+.footer{background:var(--pine);padding:34px 0;border-top:1px solid var(--line-dark);color:rgba(245,240,232,0.58);}
+.footer__inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:0.84rem;}
+.footer__links{display:flex;gap:22px;flex-wrap:wrap;}
+.footer__links a:hover{color:#fff;}
+.footer__preview{text-align:center;font-size:0.77rem;color:rgba(245,240,232,0.58);margin-top:18px;padding-top:18px;border-top:1px solid rgba(245,240,232,0.09);}
+
+/* ---------- Mobile CTA ---------- */
+.actionbar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:800;box-shadow:0 -4px 20px rgba(0,0,0,0.3);}
+.actionbar a{display:flex;align-items:center;justify-content:center;gap:10px;padding:17px 0;font-weight:700;font-size:1rem;background:var(--bark);color:#fff;}
+.actionbar svg{width:18px;height:18px;}
+@media(max-width:720px){.actionbar{display:block;}body{padding-bottom:68px;}}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;scroll-behavior:auto!important;}
+  .reveal{opacity:1!important;transform:none!important;}
+}
+
+#bid,#services,#why,#reviews,#area,#contact{scroll-margin-top:86px;}
+</style>
+</head>
+<body>
+
+<div class="loader" id="loader" aria-hidden="true">
+  <div>
+    <div class="loader__num"><span id="loaderCount">0</span></div>
+    <div class="loader__label">Reviews &middot; 5.0&#9733;</div>
+    <div class="loader__sub">Safety-first crews. Respectful of your property.</div>
+  </div>
+</div>
+
+<nav class="nav" id="nav">
+  <a href="#top" class="nav__word">Ironwood<small>Tree Service &middot; Tulsa</small></a>
+  <div class="nav__links" id="navLinks">
+    <a href="#bid">The Bid</a>
+    <a href="#services">Services</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact">Contact</a>
+    <a href="tel:+19182011987" class="nav__cta nav__cta--mobile">Call Now</a>
+  </div>
+  <a href="tel:+19182011987" class="nav__cta">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Call Now
+  </a>
+  <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+</nav>
+
+<section class="hero" id="top">
+  <div class="hero__bg" aria-hidden="true">
+    <div class="hero__truck">
+      <svg viewBox="0 0 400 210" fill="none" stroke="var(--off)" stroke-width="3">
+        <path d="M18 168h300" stroke-linecap="round"/>
+        <path d="M60 168v-42h86v42" />
+        <path d="M146 140h44l20 28h-64z"/>
+        <circle cx="96" cy="176" r="15"/><circle cx="216" cy="176" r="15"/>
+        <path d="M118 126L232 46" stroke-linecap="round" stroke-width="5"/>
+        <path d="M150 104l14 16" stroke-linecap="round"/>
+        <rect x="224" y="24" width="52" height="34" rx="4"/>
+        <path d="M52 168v14M300 168v14" stroke-linecap="round"/>
+      </svg>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="hero__body">
+      <span class="eyebrow eyebrow--dark">Tulsa, OK &middot; Tree &amp; Stump Removal</span>
+      <h1 class="hero__title">We Got Picked Over <em>Two Other Bids.</em> Here's Why.</h1>
+      <p class="hero__lede">One customer priced three companies before choosing Ironwood. The reasons they gave are the same ones that show up across 112 reviews.</p>
+      <div class="hero__row">
+        <a href="tel:+19182011987" class="btn btn--primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call (918) 201-1987
+        </a>
+        <div class="hero__rating">
+          <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <span class="num">5.0</span>
+          <span class="count">112 Google reviews</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bid" id="bid">
+  <div class="bid__wrap" id="bidWrap">
+    <div class="bid__stage">
+      <div class="wrap">
+        <div class="bid__head">
+          <span class="eyebrow eyebrow--dark">Three Bids, One Job</span>
+          <h2>Scroll. Watch the Other Two Fall Away.</h2>
+          <p>A reviewer collected three quotes for the same job. Here's the shape of that decision.</p>
+        </div>
+        <div class="bid__cards">
+          <article class="bidcard" data-bid="a">
+            <div class="bidcard__tag"><span class="tag-orig">Bid A</span></div>
+            <div class="bidcard__title">Lowest number</div>
+            <ul class="bidlist">
+              <li>Price quoted verbally<span class="strike"></span></li>
+              <li>Safety plan &mdash; not mentioned<span class="strike"></span></li>
+              <li>Cleanup &mdash; unclear<span class="strike"></span></li>
+            </ul>
+            <span class="bidcard__stamp">Passed over</span>
+          </article>
+          <article class="bidcard" data-bid="b">
+            <div class="bidcard__tag"><span class="tag-orig">Bid B</span></div>
+            <div class="bidcard__title">Middle of the road</div>
+            <ul class="bidlist">
+              <li>Reach &mdash; no bucket truck listed<span class="strike"></span></li>
+              <li>Debris haul-off billed separately<span class="strike"></span></li>
+              <li>Crew unnamed<span class="strike"></span></li>
+            </ul>
+            <span class="bidcard__stamp">Passed over</span>
+          </article>
+          <article class="bidcard bidcard--iron" data-bid="c">
+            <div class="bidcard__tag"><span class="tag-orig">Bid C</span><span class="tag-alt">Ironwood</span></div>
+            <div class="bidcard__title">Chosen</div>
+            <ul class="bidlist">
+              <li><svg class="bidcard__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M4 13l5 5L20 6"/></svg>Safety-first crew</li>
+              <li><svg class="bidcard__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M4 13l5 5L20 6"/></svg>Bucket truck for hard-to-reach limbs</li>
+              <li><svg class="bidcard__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M4 13l5 5L20 6"/></svg>Fair pricing &mdash; "well worth the money"</li>
+            </ul>
+          </article>
+        </div>
+        <p class="bid__note">An illustration of the decision one reviewer described &mdash; comparing three bids and choosing Ironwood. Bids A and B are generic stand-ins, not real quotes from named competitors.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="services__head reveal">
+      <span class="eyebrow">What We Do</span>
+      <h2>Tight Spaces, Tall Reach, Clean Exit.</h2>
+      <p>Every job below is something reviewers describe Ironwood actually doing around Tulsa and Grand Lake.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card reveal">
+        <div class="svc-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 17l6-6M13 7l7 7-3 3-7-7M13 7L9 3 3 9l4 4"/><circle cx="6" cy="14" r="1"/></svg></div>
+        <h3>Tree Removal</h3>
+        <p>Mature trees taken down in confined spaces — including a 36-year-old Bradford Pear removed from a tight spot.</p>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><ellipse cx="12" cy="18" rx="8" ry="3"/><circle cx="12" cy="18" r="4.5"/><circle cx="12" cy="18" r="2"/><path d="M12 4v11"/></svg></div>
+        <h3>Stump Removal</h3>
+        <p>Stumps taken out after the removal, so the spot is usable instead of something to mow around.</p>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 17c3 0 3-2 6-2s3 2 6 2 3-2 6-2"/><path d="M2 21c3 0 3-2 6-2s3 2 6 2 3-2 6-2"/><path d="M7 13V6M7 6l4 2M7 6L3 8"/></svg></div>
+        <h3>Property &amp; Shoreline Cleanup</h3>
+        <p>Larger property clearing, including a shoreline cleanup job at Grand Lake.</p>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20h16"/><path d="M6 20l3-9 3 4 3-7 3 12"/></svg></div>
+        <h3>Brush &amp; Debris Removal</h3>
+        <p>Branches and brush cleared out as part of the job — reviewers call the crew respectful of the property.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="why">
+  <div class="wrap">
+    <div class="why__layout">
+      <div class="why__head reveal">
+        <span class="eyebrow">Why Ironwood</span>
+        <h2>The Part Other Bids Left Blank.</h2>
+        <p>Safety, reach, and the same names on site every time.</p>
+        <div class="why__truck" aria-hidden="true">
+          <svg viewBox="0 0 400 210" fill="none" stroke="currentColor" stroke-width="3">
+            <path d="M18 168h300" stroke-linecap="round"/>
+            <path d="M60 168v-42h86v42"/>
+            <path d="M146 140h44l20 28h-64z"/>
+            <circle cx="96" cy="176" r="15"/><circle cx="216" cy="176" r="15"/>
+            <path d="M118 126L232 46" stroke-linecap="round" stroke-width="5"/>
+            <path d="M150 104l14 16" stroke-linecap="round"/>
+            <rect x="224" y="24" width="52" height="34" rx="4"/>
+          </svg>
+        </div>
+      </div>
+      <div class="why-list reveal">
+        <div class="why-item">
+          <h3>Safety Focus Reviewers Call Rare</h3>
+          <p>One customer described the crew's safety focus as "a rare thing with so many other companies" — on a shoreline cleanup at Grand Lake.</p>
+        </div>
+        <div class="why-item">
+          <h3>Bucket Truck for Hard-to-Reach Limbs</h3>
+          <p>Bucket-truck access means limbs over structures and awkward angles don't turn into a problem mid-job.</p>
+        </div>
+        <div class="why-item">
+          <h3>A Crew With Names</h3>
+          <p>Reviewers name the people who showed up — not a rotating roster of subcontractors.</p>
+          <div class="crew">
+            <span class="crew__chip">Nick</span>
+            <span class="crew__chip">Rick</span>
+            <span class="crew__chip">Jeff</span>
+            <span class="crew__chip">Sergio</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <div class="reviews__top reveal">
+      <span class="eyebrow">Customer Proof</span>
+      <h2>112 Five-Star Google Reviews</h2>
+      <p>Five of them, in the reviewers' own words.</p>
+    </div>
+    <div class="reviews__rating reveal">
+      <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      <span class="num">5.0</span>
+      <span class="count">out of 5, from 112 Google reviews</span>
+    </div>
+    <div class="quote-list">
+      <div class="quote-item reveal">
+        <div class="quote-item__mark">&ldquo;</div>
+        <div>
+          <div class="quote-item__text">5 stars in my book.</div>
+          <p class="quote-item__ctx">After a 36-year-old Bradford Pear was removed from a tight space.</p>
+          <div class="quote-item__src">Google Review</div>
+        </div>
+      </div>
+      <div class="quote-item reveal">
+        <div class="quote-item__mark">&ldquo;</div>
+        <div>
+          <div class="quote-item__text">A rare thing with so many other companies.</div>
+          <p class="quote-item__ctx">On the crew's safety focus during a shoreline cleanup at Grand Lake.</p>
+          <div class="quote-item__src">Google Review</div>
+        </div>
+      </div>
+      <div class="quote-item reveal">
+        <div class="quote-item__mark">&ldquo;</div>
+        <div>
+          <div class="quote-item__text">Very reasonable and well worth the money.</div>
+          <p class="quote-item__ctx">From a repeat customer.</p>
+          <div class="quote-item__src">Google Review</div>
+        </div>
+      </div>
+      <div class="quote-item reveal">
+        <div class="quote-item__mark">&ldquo;</div>
+        <div>
+          <div class="quote-item__text">Went above and beyond.</div>
+          <p class="quote-item__ctx">From the customer who chose Ironwood after comparing three bids.</p>
+          <div class="quote-item__src">Google Review</div>
+        </div>
+      </div>
+      <div class="quote-item reveal">
+        <div class="quote-item__mark">&ldquo;</div>
+        <div>
+          <div class="quote-item__text">Attentive to details and respectful of our property.</div>
+          <p class="quote-item__ctx">On how the crew worked and left the site.</p>
+          <div class="quote-item__src">Google Review</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="area" id="area">
+  <div class="wrap">
+    <div class="area__inner reveal">
+      <span class="eyebrow">Where We Work</span>
+      <h2>Tulsa, Oklahoma</h2>
+      <p>Based at 5831 E 99th St in Tulsa, with jobs out to Grand Lake. Call to check that your address is covered.</p>
+    </div>
+    <div class="imgslot reveal">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10.5" r="1.5"/><path d="M21 15l-5-5-9 9"/></svg>
+      Add job-site photo here
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="contact__layout">
+      <div class="contact__info reveal">
+        <span class="eyebrow eyebrow--dark">Get In Touch</span>
+        <h2>Get a Bid Worth Comparing.</h2>
+        <p>Call for the fastest answer, or leave the details and we'll follow up.</p>
+        <a href="tel:+19182011987" class="contact__phone">(918) 201-1987</a>
+        <div class="contact__meta">
+          <b>Ironwood Tree Service</b><br>
+          5831 E 99th St, Tulsa, OK 74137<br>
+          Serving Tulsa and the surrounding area
+        </div>
+      </div>
+      <div class="form reveal">
+        <div id="formFields">
+          <h3>Tell Us About the Tree</h3>
+          <p class="form__sub">A few details are enough to get started.</p>
+          <form id="quoteForm" novalidate>
+            <div class="field">
+              <label for="fname">Name</label>
+              <input type="text" id="fname" name="name" required autocomplete="name">
+            </div>
+            <div class="field">
+              <label for="fphone">Phone</label>
+              <input type="tel" id="fphone" name="phone" required autocomplete="tel">
+            </div>
+            <div class="field">
+              <label for="fjob">What do you need done?</label>
+              <textarea id="fjob" name="job" placeholder="e.g. Large oak close to the house, plus the stump"></textarea>
+            </div>
+            <button type="submit" class="form__submit">Request a Bid</button>
+          </form>
+        </div>
+        <div class="form__success" id="formSuccess">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6"/></svg>
+          <h4>Got it.</h4>
+          <p>This is a preview site, so nothing was actually sent yet — once live, this form will route straight to Ironwood. For a real request right now, call (918) 201-1987.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__inner">
+      <div>Ironwood Tree Service &middot; 5831 E 99th St, Tulsa, OK 74137</div>
+      <div class="footer__links">
+        <a href="tel:+19182011987">(918) 201-1987</a>
+        <a href="#services">Services</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer__preview">This is a preview site built to show what's possible — not yet the live Ironwood Tree Service website.</div>
+  </div>
+</footer>
+
+<div class="actionbar">
+  <a href="tel:+19182011987">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Call Now &mdash; (918) 201-1987
+  </a>
+</div>
+
+<script>
+var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ---- loader: real timed counter, 0 -> 112 ---- */
+(function(){
+  var loader = document.getElementById('loader');
+  if (reduceMotion) { return; }
+  loader.classList.add('active');
+  document.body.classList.add('loading');
+  var el = document.getElementById('loaderCount');
+  var target = 112, dur = 820, start = Date.now();
+  var timer = setInterval(function(){
+    var p = Math.min((Date.now() - start) / dur, 1);
+    el.textContent = Math.round(p * target);
+    if (p >= 1) {
+      clearInterval(timer);
+      loader.classList.add('done');
+      setTimeout(function(){
+        loader.classList.add('out');
+        document.body.classList.remove('loading');
+        setTimeout(function(){ if (loader.parentNode) loader.parentNode.removeChild(loader); }, 300);
+      }, 260);
+    }
+  }, 16);
+})();
+
+/* ---- nav ---- */
+var nav = document.getElementById('nav');
+window.addEventListener('scroll', function(){ nav.classList.toggle('scrolled', window.scrollY > 40); }, {passive:true});
+var navToggle = document.getElementById('navToggle');
+var navLinks = document.getElementById('navLinks');
+navToggle.addEventListener('click', function(){
+  var open = navLinks.classList.toggle('open');
+  navToggle.classList.toggle('active', open);
+  navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+});
+navLinks.querySelectorAll('a').forEach(function(a){
+  a.addEventListener('click', function(){ navLinks.classList.remove('open'); navToggle.classList.remove('active'); navToggle.setAttribute('aria-expanded','false'); });
+});
+
+/* ---- scroll-driven bid comparison ---- */
+(function(){
+  var wrap = document.getElementById('bidWrap');
+  if (!wrap) return;
+  if (reduceMotion) { wrap.classList.add('s1','s2','s3'); return; }
+  var ticking = false;
+  function update(){
+    ticking = false;
+    var rect = wrap.getBoundingClientRect();
+    var total = wrap.offsetHeight - window.innerHeight;
+    var p = total > 0 ? Math.min(Math.max(-rect.top / total, 0), 1) : 1;
+    wrap.classList.toggle('s1', p > 0.18);
+    wrap.classList.toggle('s2', p > 0.38);
+    wrap.classList.toggle('s3', p > 0.58);
+  }
+  window.addEventListener('scroll', function(){
+    if (!ticking) { ticking = true; requestAnimationFrame(update); }
+  }, {passive:true});
+  window.addEventListener('resize', update, {passive:true});
+  update();
+})();
+
+/* ---- reveals ---- */
+var revealEls = document.querySelectorAll('.reveal');
+if (reduceMotion) {
+  revealEls.forEach(function(el){ el.classList.add('in'); });
+} else {
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting) { entry.target.classList.add('in'); io.unobserve(entry.target); }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+  revealEls.forEach(function(el){ io.observe(el); });
+}
+
+/* ---- contact form (demo, no backend) ---- */
+var quoteForm = document.getElementById('quoteForm');
+var formFields = document.getElementById('formFields');
+var formSuccess = document.getElementById('formSuccess');
+quoteForm.addEventListener('submit', function(e){
+  e.preventDefault();
+  if (!quoteForm.checkValidity()) { quoteForm.reportValidity(); return; }
+  formFields.style.display = 'none';
+  formSuccess.classList.add('show');
+});
+</script>
+</body>
+</html>
