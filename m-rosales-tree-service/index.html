@@ -151,17 +151,27 @@ section{position:relative;}
 .tl__wrap.done .tl__cue .cue-a{display:none;}
 .tl__wrap.done .tl__cue .cue-b{display:inline;}
 .tl__swipe{display:none;}
+/* Mobile: no pin and no sideways swipe — the rail turns vertical and fills
+   with the normal downward page scroll the visitor is already doing. */
 @media(max-width:860px){
   .tl__wrap{height:auto;}
-  .tl__stage{position:static;min-height:0;padding:100px 0;display:block;}
-  .tl__scroller{overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;padding-bottom:10px;}
-  .tl__strip{width:940px;}
-  .tl__card{width:170px;}
-  /* the scroller clips on the y axis, so the strip must be tall enough to hold cards above AND below the rail */
-  .tl__strip{padding-top:124px;padding-bottom:124px;}
-  .tl__note{margin-top:26px;}
-  .tl__cue{position:static;transform:none;margin:28px auto 0;display:flex;width:fit-content;max-width:100%;}
-  .tl__swipe{display:block;margin-top:14px;font-weight:700;font-size:0.74rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);}
+  .tl__stage{position:static;min-height:0;padding:96px 0;display:block;}
+  .tl__scroller{overflow:visible;}
+  .tl__strip{width:auto;padding:0;}
+  .tl__ends{margin-bottom:26px;font-size:0.7rem;}
+  .tl__rail{height:auto;width:auto;background:none;margin:0;padding-left:30px;border-left:2px solid rgba(245,240,232,0.18);}
+  .tl__fill{top:0;left:-2px;width:2px;height:0;transition:height .2s linear;}
+  .tl__stop{position:relative;left:auto!important;top:auto;transform:none;padding-bottom:34px;}
+  .tl__stop:last-child{padding-bottom:0;}
+  .tl__dot{position:absolute;left:-39px;top:3px;margin:0;}
+  .tl__stop .tl__card,
+  .tl__stop:nth-child(odd) .tl__card{position:static;bottom:auto;width:auto;max-width:none;margin:0;
+    transform:translateY(10px);}
+  .tl__stop.on .tl__card,
+  .tl__stop:nth-child(odd).on .tl__card{transform:translateY(0);}
+  .tl__note{margin-top:34px;}
+  .tl__cue{display:none;}
+  .tl__swipe{display:none;}
 }
 
 /* ---------- Services ---------- */
@@ -661,63 +671,67 @@ navLinks.querySelectorAll('a').forEach(function(a){
   a.addEventListener('click', function(){ navLinks.classList.remove('open'); navToggle.classList.remove('active'); navToggle.setAttribute('aria-expanded','false'); });
 });
 
-/* ---- loyalty timeline: scroll-driven on desktop, drag-driven on mobile ---- */
+/* ---- reviews rail: horizontal + pinned on desktop, vertical on mobile.
+   Both are driven by ordinary downward page scroll — no sideways swipe. ---- */
 (function(){
   var wrap = document.getElementById('tlWrap');
   var fill = document.getElementById('tlFill');
-  var scroller = document.getElementById('tlScroller');
-  if (!wrap || !fill) return;
+  var strip = document.querySelector('.tl__strip');
+  if (!wrap || !fill || !strip) return;
   var stops = [].slice.call(wrap.querySelectorAll('.tl__stop'));
   var mqMobile = window.matchMedia('(max-width:860px)');
 
-  function setProgress(p){
+  function setFill(p){
     p = Math.min(Math.max(p, 0), 1);
-    fill.style.width = (p * 100) + '%';
-    stops.forEach(function(s){
-      s.classList.toggle('on', p >= (parseFloat(s.getAttribute('data-at')) / 100) - 0.02);
-    });
+    if (mqMobile.matches) { fill.style.height = (p * 100) + '%'; fill.style.width = ''; }
+    else { fill.style.width = (p * 100) + '%'; fill.style.height = ''; }
     wrap.classList.toggle('done', p >= 0.93);
   }
+  function lightAll(){ stops.forEach(function(s){ s.classList.add('on'); }); }
 
-  if (reduceMotion) { setProgress(1); return; }
+  if (reduceMotion) { setFill(1); lightAll(); return; }
 
-  var ticking = false;
-  function fromPage(){
+  function update(){
     ticking = false;
-    if (mqMobile.matches) return;
-    var rect = wrap.getBoundingClientRect();
-    var total = wrap.offsetHeight - window.innerHeight;
-    setProgress(total > 0 ? -rect.top / total : 1);
-  }
-  window.addEventListener('scroll', function(){
-    if (!ticking) { ticking = true; requestAnimationFrame(fromPage); }
-  }, {passive:true});
-  window.addEventListener('resize', fromPage, {passive:true});
-
-  function fromStrip(){
-    if (!mqMobile.matches) return;
-    var max = scroller.scrollWidth - scroller.clientWidth;
-    setProgress(max > 0 ? scroller.scrollLeft / max : 1);
-  }
-  if (scroller) scroller.addEventListener('scroll', function(){
-    requestAnimationFrame(fromStrip);
-  }, {passive:true});
-
-  /* on mobile, light the first marker when the section comes into view so it never reads as empty */
-  if ('IntersectionObserver' in window) {
-    var tio = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if (e.isIntersecting && mqMobile.matches) {
-          var max = scroller ? scroller.scrollWidth - scroller.clientWidth : 0;
-          setProgress(max > 0 ? scroller.scrollLeft / max : 1);
-          if (!scroller || scroller.scrollLeft < 4) setProgress(0.1);
-        }
+    if (mqMobile.matches) {
+      /* vertical rail: fill tracks the strip moving up past a read line */
+      var r = strip.getBoundingClientRect();
+      setFill((window.innerHeight * 0.78 - r.top) / Math.max(r.height, 1));
+    } else {
+      /* horizontal rail: fill tracks scroll through the pinned section */
+      var rect = wrap.getBoundingClientRect();
+      var total = wrap.offsetHeight - window.innerHeight;
+      var p = total > 0 ? -rect.top / total : 1;
+      setFill(p);
+      stops.forEach(function(s){
+        s.classList.toggle('on', p >= (parseFloat(s.getAttribute('data-at')) / 100) - 0.02);
       });
-    }, { threshold: 0.2 });
-    tio.observe(wrap);
+    }
+  }
+  var ticking = false;
+  window.addEventListener('scroll', function(){
+    if (!ticking) { ticking = true; requestAnimationFrame(update); }
+  }, {passive:true});
+  window.addEventListener('resize', function(){
+    fill.style.width = ''; fill.style.height = '';
+    stops.forEach(function(s){ s.classList.remove('on'); });
+    update();
+  }, {passive:true});
+
+  /* on mobile each marker lights as it reaches the viewport, so a plain
+     downward scroll reveals the whole rail with nothing to swipe */
+  if ('IntersectionObserver' in window) {
+    var sio = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting && mqMobile.matches) { e.target.classList.add('on'); }
+      });
+    }, { threshold: 0.4, rootMargin: '0px 0px -12% 0px' });
+    stops.forEach(function(s){ sio.observe(s); });
+  } else {
+    if (mqMobile.matches) lightAll();
   }
 
-  fromPage();
+  update();
 })();
 
 /* ---- reveals (also triggers the photo border draw) ---- */
