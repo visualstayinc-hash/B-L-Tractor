@@ -123,7 +123,7 @@ section{position:relative;}
 
 /* ---------- Bid comparison (scroll-driven) ---------- */
 .bid{background:var(--pine);color:#fff;}
-.bid__wrap{height:260vh;position:relative;}
+.bid__wrap{height:230vh;position:relative;}
 .bid__stage{position:sticky;top:0;min-height:100vh;display:flex;align-items:center;padding:100px 0;}
 .bid__head{max-width:660px;margin-bottom:46px;}
 .bid__head h2{font-size:clamp(1.9rem,4.2vw,2.8rem);color:#fff;margin:16px 0 14px;}
@@ -166,9 +166,19 @@ section{position:relative;}
 .bid__wrap.s3 .bidcard--iron .bidlist li{color:#fff;}
 .bid__wrap.s3 .bidcard--iron .bidlist li::before{opacity:0;}
 .bid__note{margin-top:30px;font-size:0.84rem;color:rgba(245,240,232,0.55);max-width:620px;font-style:italic;}
+/* keep-scrolling cue: the stage is pinned, so the page can feel "ended" without it */
+.bid__cue{position:absolute;left:50%;transform:translateX(-50%);bottom:34px;display:inline-flex;align-items:center;gap:11px;
+  font-family:'Inter',sans-serif;font-weight:800;font-size:0.8rem;letter-spacing:0.2em;text-transform:uppercase;color:#fff;
+  padding:12px 20px;border:1.5px solid var(--line-dark);border-radius:100px;background:rgba(20,38,28,0.75);white-space:nowrap;}
+.bid__cue svg{width:15px;height:15px;flex-shrink:0;animation:cue-bob 1.7s ease-in-out infinite;}
+@keyframes cue-bob{0%,100%{transform:translateY(-2px);}50%{transform:translateY(3px);}}
+.bid__cue .cue-b{display:none;}
+.bid__wrap.s3 .bid__cue .cue-a{display:none;}
+.bid__wrap.s3 .bid__cue .cue-b{display:inline;}
 @media(max-width:860px){
   .bid__wrap{height:auto;}
-  .bid__stage{position:static;min-height:0;padding:100px 0;}
+  .bid__stage{position:static;min-height:0;padding:100px 0;display:block;}
+  .bid__cue{position:static;transform:none;margin:30px auto 0;display:flex;width:fit-content;max-width:100%;}
   .bid__cards{grid-template-columns:1fr;gap:16px;}
   .bidcard--iron{transform:rotate(0deg);}
   .bid__wrap.s3 .bidcard--iron{transform:rotate(0deg) scale(1);}
@@ -379,6 +389,11 @@ section{position:relative;}
           </article>
         </div>
         <p class="bid__note">An illustration of the decision one reviewer described &mdash; comparing three bids and choosing Ironwood. Bids A and B are generic stand-ins, not real quotes from named competitors.</p>
+      </div>
+      <div class="bid__cue" aria-hidden="true">
+        <span class="cue-a">Keep scrolling</span>
+        <span class="cue-b">More below</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
       </div>
     </div>
   </div>
@@ -647,9 +662,9 @@ navLinks.querySelectorAll('a').forEach(function(a){
     var rect = wrap.getBoundingClientRect();
     var total = wrap.offsetHeight - window.innerHeight;
     var p = total > 0 ? Math.min(Math.max(-rect.top / total, 0), 1) : 1;
-    wrap.classList.toggle('s1', p > 0.18);
-    wrap.classList.toggle('s2', p > 0.38);
-    wrap.classList.toggle('s3', p > 0.58);
+    wrap.classList.toggle('s1', p > 0.16);
+    wrap.classList.toggle('s2', p > 0.40);
+    wrap.classList.toggle('s3', p > 0.68);
   }
   window.addEventListener('scroll', function(){
     if (!ticking) { ticking = true; requestAnimationFrame(update); }
